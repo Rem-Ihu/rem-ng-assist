@@ -42,27 +42,15 @@ private slots:
 
     void on_pushButtonOthers_clicked();
 
-    void on_pushButton_clicked();
-
     void on_pushButtonHome_clicked();
-
-    void on_test_clicked();
 
     void on_tabChartWidget_tabCloseRequested(int index);
 
     void on_addTabNameButton_clicked();
 
-    void on_pushButtonShrink_clicked();
-
     void on_pushButtonAboutUs_clicked();
 
     void on_pushButtonContact_clicked();
-
-    void on_pushButtonSplitTabs_clicked();
-
-    void on_pushButtonErrorWindow_clicked();
-
-    void on_pushButtondis_clicked();
 
     void on_pushButtonErrorPopUp_clicked();
 
