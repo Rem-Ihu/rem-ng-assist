@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="/icons"/>
+    <qresource prefix="/">
+        <file>icons/real_time_icon.png</file>
+        <file>icons/real_time_icon_checked.png</file>
+        <file>icons/home_icon.png</file>
+        <file>icons/home_icon_checked.png</file>
+        <file>icons/chart_icon.png</file>
+        <file>icons/chart_icon_checked.png</file>
+        <file>icons/3d_view_checked_icon.png</file>
+        <file>icons/3d_view_icon.png</file>
+        <file>icons/news_checked_icon.png</file>
+        <file>icons/news_icon.png</file>
+        <file>icons/merch_icon.png</file>
+        <file>icons/merch_icon_checked.png</file>
+        <file>icons/settings_icon.png</file>
+        <file>icons/settings_icon_checked.png</file>
+        <file>icons/others_icon.png</file>
+        <file>icons/others_icon_checked.png</file>
+        <file>icons/about_us_icon.png</file>
+        <file>icons/about_us_icon_checked.png</file>
+        <file>icons/contact_icon.png</file>
+        <file>icons/contact_icon_checked.png</file>
+        <file>icons/log_out_icon.png</file>
+        <file>icons/log_out_icon_checked.png</file>
+        <file>../../Pictures/Saved Pictures/LoRaWAN_data.png</file>
+    </qresource>
+</RCC>
