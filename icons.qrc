@@ -23,6 +23,5 @@
         <file>icons/contact_icon_checked.png</file>
         <file>icons/log_out_icon.png</file>
         <file>icons/log_out_icon_checked.png</file>
-        <file>../../Pictures/Saved Pictures/LoRaWAN_data.png</file>
     </qresource>
 </RCC>
