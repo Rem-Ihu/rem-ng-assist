@@ -100,6 +100,7 @@ int main(int argc, char *argv[])
     timer.moveToThread(&thread);
 
 
+
     // connect the timeout signal of the timer to a slot that sends the request and processes the response
     QObject::connect(&timer, &QTimer::timeout, [&]() {
         // sending the request and waiting for the response
