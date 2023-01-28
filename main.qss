@@ -1,0 +1,5 @@
+@import "colors.qss";
+
+#centralwidget {
+    background-color: background_color;
+}

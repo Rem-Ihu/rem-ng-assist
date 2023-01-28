@@ -31,112 +31,216 @@
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QJsonArray>
+//PDF_Drawings/03-SWINGRIGHT-004-002_DRAWING.svg
 
 
 //end of file and headers (#include)
 
-const QString kProjectId = "realtimeqttest";
+void Firestore_Read_Data(){
 
-const QString kDocumentId = "FrontBrakes";
 
-void ReadFromFirestore(QNetworkAccessManager* qnam) {
-  // Set up the URL for the Firestore REST API
-  QUrl url(QString("https://firestore.googleapis.com/v1/projects/%1/databases/(default)/documents/ChartFiles/%2").arg(kProjectId).arg(kDocumentId));
 
-  // Set up the request
-  QNetworkRequest request(url);
-  request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+    QNetworkAccessManager* manager = new QNetworkAccessManager();
 
-  // Make the GET request
-  QNetworkReply* reply = qnam->get(request);
+        // Set up the QNetworkRequest with the URL of the Firestore endpoint you want to access
+        QUrl url("https://firestore.googleapis.com/v1/projects/realtimeqttest/databases/(default)/documents/ChartFiles/FrontBrakes");
+        QNetworkRequest request(url);
 
-  // Wait for the response
-  while (!reply->isFinished()) { }
+        // Set the authentication headers if needed
+//        request.setRawHeader("Authorization", "Bearer YOUR_AUTH_TOKEN");
 
-  // Check the response status code
-  if (reply->attribute(QNetworkRequest::HttpStatusCodeAttribute).toInt() == 200) {
-    // Parse the JSON response
-    QJsonDocument jsonDoc = QJsonDocument::fromJson(reply->readAll());
-    QJsonObject jsonObject = jsonDoc.object();
+        // Send the GET request and retrieve the reply
+        QNetworkReply* reply = manager->get(request);
 
-    // Print the data from the document
-    qDebug() << "Document data: " << jsonObject["fields"].toObject();
-  } else {
-    std::cout << "Error reading document" << std::endl;
-  }
+        // Connect the signal QNetworkReply::finished() to the slot handleResponse
+        QObject::connect(reply, &QNetworkReply::finished, [reply]() {
+            if (reply->error()) {
+                qDebug() << "Error:" << reply->errorString();
+                return;
+            }
+            QJsonDocument jsonResponse = QJsonDocument::fromJson(reply->readAll());
+            QJsonObject jsonObject = jsonResponse.object();
+            QJsonObject fields = jsonObject["fields"].toObject();
+            int seconds = fields["Seconds"].toObject()["integerValue"].toString().toInt();
+            int value = fields["Value"].toObject()["integerValue"].toString().toInt();
+            std::cout << "Seconds: " << seconds <<std::endl;
+            std::cout << "Value: " << value<<std::endl;
+        });
 
-  // Clean up
-  reply->deleteLater();
 }
+
 
 int main(int argc, char *argv[])
 {
 
+
     QApplication app(argc, argv); //creates the application
-//    getRealTimeData();
 
 
-//    // Create a QNetworkAccessManager
-//     QNetworkAccessManager* qnam = new QNetworkAccessManager();
-
-//     // Read data from Firestore
-//     ReadFromFirestore(qnam);
-
-    // creating a qnetworkmanager
-    QNetworkAccessManager manager;
-
-    // creating a QThread to run the timer on
-    QThread thread;
-    // setting up the request
-    QNetworkRequest request;
-    request.setUrl(QUrl("https://realtimeqttest-default-rtdb.europe-west1.firebasedatabase.app/Dog.json"));
-
-    // creating a QTimer to send requests at regular intervals
-    QTimer timer;
-    timer.start(100); // send a request every 100 milli-seconds
-
-    // put timer and manager to same thread
-    manager.moveToThread(&thread);
-    timer.moveToThread(&thread);
+//    Firestore_Read_Data();
 
 
-
-    // connect the timeout signal of the timer to a slot that sends the request and processes the response
-    QObject::connect(&timer, &QTimer::timeout, [&]() {
-        // sending the request and waiting for the response
-        QNetworkReply *reply = manager.get(request);
-
-        // creating an event loop to process the response
-        QEventLoop loop;
-        QAbstractSocket::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit); //if there is data it then stops the connection
-        loop.exec();
-
-        // printf the response data
-        QString qans = reply->readAll(); //convert to QString
-        std::string c_ans = qans.toStdString(); //convert to regural C++ string
-
-        //removing '"' and holding on to '.' for it to be converted to float
-        c_ans.erase(std::remove_if(c_ans.begin(), c_ans.end(), [](char c){return !std::isdigit(c) && c != '.' && c != ' ';}), c_ans.end());
-
-        std::string first,second; //defining the first and the second numbers
-
-        std::stringstream ss(c_ans);
-        ss >> first >> second; //spliting the string on space
+    QFile file("main.qss");
+    file.open(QFile::ReadOnly);
+    QString styleSheet = QLatin1String(file.readAll());
+    qApp->setStyleSheet(styleSheet);
 
 
+    QNetworkAccessManager *manager = new QNetworkAccessManager();
 
+    // Create the JSON object with the field values
+    QJsonObject json;
+    json.insert("Seconds", 10);
+    json.insert("Value", 20);
 
-//        long double fin_ans = std::stold(first); //convert to float
-//        long double sec_ans = std::stold(second); //also
-//        std::cout << std::setprecision(12) << fin_ans << "  |||  " << std::setprecision(8) << sec_ans << std::endl; //print output
-        //with float precision (counting the decimal numbers also) 12.
+    // Convert the JSON object to a string
+    QJsonDocument jsonDoc(json);
+    QByteArray jsonData = jsonDoc.toJson();
 
+    // Create the request to add the document
+    QUrl url("https://firestore.googleapis.com/v1/projects/realtimeqttest/databases/(default)/documents/ChartFiles/Testing");
+    QNetworkRequest request(url);
+    request.setHeader(QNetworkRequest::ContentTypeHeader, "application/json");
+//    request.setRawHeader("Authorization", "Bearer " + ACCESS_TOKEN);
+
+    // Send the request to add the document
+    QNetworkReply *reply = manager->post(request, jsonData);
+
+    // Connect to the finished signal to handle the response
+    QObject::connect(reply, &QNetworkReply::finished, [reply]() {
+        if (reply->error() != QNetworkReply::NoError) {
+            // Handle error
+            qDebug() << "Error: " << reply->errorString();
+        } else {
+            // Handle success
+            qDebug() << "Successfully added document.";
+        }
+        reply->deleteLater();
     });
 
-    // Start the thread
-    thread.start();
+//        QNetworkAccessManager manager;
+
+//        // creating a QThread to run the timer on
+//        QThread thread;
+//        // setting up the request
+//        QNetworkRequest request;
+//        request.setUrl(QUrl("https://realtimeqttest-default-rtdb.europe-west1.firebasedatabase.app/Dog.json"));
+
+//        // creating a QTimer to send requests at regular intervals
+//        QTimer timer;
+//        timer.start(100); // send a request every 100 milli-seconds
+
+//        // put timer and manager to same thread
+//        manager.moveToThread(&thread);
+//        timer.moveToThread(&thread);
+
+
+
+//        // connect the timeout signal of the timer to a slot that sends the request and processes the response
+//        QObject::connect(&timer, &QTimer::timeout, [&]() {
+//            // sending the request and waiting for the response
+//            QNetworkReply *reply = manager.get(request);
+
+//            // creating an event loop to process the response
+//            QEventLoop loop;
+//            QAbstractSocket::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit); //if there is data it then stops the connection
+//            loop.exec();
+
+//            // printf the response data
+//            QString qans = reply->readAll(); //convert to QString
+//            std::string c_ans = qans.toStdString(); //convert to regural C++ string
+
+//            //removing '"' and holding on to '.' for it to be converted to float
+//            c_ans.erase(std::remove_if(c_ans.begin(), c_ans.end(), [](char c){return !std::isdigit(c) && c != '.' && c != ' ';}), c_ans.end());
+
+//            std::string first,second; //defining the first and the second numbers
+
+//            std::stringstream ss(c_ans);
+//            ss >> first >> second; //spliting the string on space
+
+
+
+
+//            long double fin_ans = atof(first.c_str()); //convert to float
+//            long double sec_ans = atof(second.c_str()); //also
+//            std::cout << std::setprecision(12) << fin_ans << "  |||  " << std::setprecision(8) << sec_ans << std::endl; //print output
+//    //        with float precision (counting the decimal numbers also) 12.
+
+//    });
+
+    // Start the thread        
+    //thread.start();
+
     MainWindow w;
     w.show();
 //    databasehandler1 dbhandler;
     return app.exec();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+    QNetworkAccessManager manager;
+
+        // creating a QThread to run the timer on
+        QThread thread;
+        // setting up the request for the first key
+        QNetworkRequest request1;
+        request1.setUrl(QUrl("https://realtimeqttest-default-rtdb.europe-west1.firebasedatabase.app/Dog.json"));
+
+        // setting up the request for the second key
+        QNetworkRequest request2;
+        request2.setUrl(QUrl("https://realtimeqttest-default-rtdb.europe-west1.firebasedatabase.app/Cat.json"));
+
+        // creating a QTimer to send requests at regular intervals
+        QTimer timer;
+        timer.start(50); // send a request every 50 milli-seconds
+
+        // put timer and manager to same thread
+        manager.moveToThread(&thread);
+        timer.moveToThread(&thread);
+
+        // connect the timeout signal of the timer to a slot that sends the requests and processes the responses
+        QObject::connect(&timer, &QTimer::timeout, [&]() {
+            // sending the request for the first key and waiting for the response
+            QNetworkReply *reply1 = manager.get(request1);
+
+            // creating an event loop to process the response
+            QEventLoop loop1;
+            QAbstractSocket::connect(reply1, &QNetworkReply::finished, &loop1, &QEventLoop::quit);
+            loop1.exec();
+
+            QNetworkReply *reply2 = manager.get(request2);
+
+            // creating an event loop to process the response
+            QEventLoop loop2;
+            QAbstractSocket::connect(reply2, &QNetworkReply::finished, &loop2, &QEventLoop::quit);
+            loop2.exec();
+            // printf the response data
+            QString qans = reply1->readAll();
+            double number1 = qans.toDouble();
+            int number2 = reply2->readAll().toInt();
+            std::cout << std::setprecision(12) << number1 << "   " << number2 << std::endl;
+
+
+
+*/
