@@ -5,7 +5,7 @@
 #include <QStackedWidget>
 #include <iostream>
 
-
+//Hello Peter
 
 
 MainWindow::MainWindow(QWidget *parent)
