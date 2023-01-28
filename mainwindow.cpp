@@ -2,10 +2,14 @@
 #include "./ui_mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QSvgRenderer>
 #include <QStackedWidget>
 #include <iostream>
-
-//Hello Peter
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <QSvgRenderer>
+#include <QPixmap>
+#include <QPainter>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -13,6 +17,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+
 
 
     QSplineSeries *series = new QSplineSeries();
