@@ -15,178 +15,111 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
 
-    QSplineSeries *series = new QSplineSeries();
-    series->setName("spline");
+    QSplineSeries *series_bigOneChart = new QSplineSeries();
+    series_bigOneChart->setName("spline");
 
-    series->append(0, 6);
-    series->append(2, 4);
-    series->append(3, 8);
-    series->append(7, 4);
-    series->append(10, 5);
+    series_bigOneChart->append(0, 6);
+    series_bigOneChart->append(2, 4);
+    series_bigOneChart->append(3, 8);
+    series_bigOneChart->append(7, 4);
+    series_bigOneChart->append(10, 5);
 
-    *series << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3) << QPointF(20, 2);
+    *series_bigOneChart << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3) << QPointF(20, 2);
 
-    QChart *chart = new QChart();
-    chart->legend()->hide();
-    chart->addSeries(series);
-    chart->setTitle("Simple spline chart example");
+    QChart *chart_bigOneChart = new QChart();
+    chart_bigOneChart->legend()->hide();
+    chart_bigOneChart->addSeries(series_bigOneChart);
+    chart_bigOneChart->setTitle("Simple spline chart example");
 //    chart->setBackgroundBrush(QBrush(QColor("none")));
-    chart->createDefaultAxes();
-    chart->axes(Qt::Vertical).first()->setRange(0, 10);
+    //chart_bigOneChart->createDefaultAxes();
+  //  chart_bigOneChart->axes(Qt::Vertical).first()->setRange(0, 10);
+    chart_bigOneChart->setTitleBrush(QBrush(Qt::white));//customize the color of the title in the chart
+    chart_bigOneChart->setBackgroundBrush(QBrush(Qt::white));//customize the color of the background in the chart
+
+    QPen pen(Qt::blue);//customize the color of the series in the chart
+    pen.setWidth(1);//customize the width of the series in the chart
+    series_bigOneChart->setPen(pen);
+
+    // Customize chart background(behind the chart)
+    QLinearGradient backgroundGradient;
+    backgroundGradient.setStart(QPointF(0, 0));
+    backgroundGradient.setFinalStop(QPointF(0, 1));
+    backgroundGradient.setColorAt(0.0, QRgb(0xd2d0d1));
+    backgroundGradient.setColorAt(1.0, QRgb(0x4c4547));
+    backgroundGradient.setCoordinateMode(QGradient::ObjectBoundingMode);
+    chart_bigOneChart->setBackgroundBrush(backgroundGradient);
+
+    // Customize plot area background(in the chart)
+    QLinearGradient plotAreaGradient;
+    plotAreaGradient.setStart(QPointF(0, 1));
+    plotAreaGradient.setFinalStop(QPointF(1, 0));
+    plotAreaGradient.setColorAt(0.0, QRgb(0x555555));
+    plotAreaGradient.setColorAt(1.0, QRgb(0x55aa55));
+    plotAreaGradient.setCoordinateMode(QGradient::ObjectBoundingMode);
+    chart_bigOneChart->setPlotAreaBackgroundBrush(plotAreaGradient);
+    chart_bigOneChart->setPlotAreaBackgroundVisible(true);
+
+    QCategoryAxis *axisX = new QCategoryAxis();
+    QCategoryAxis *axisY = new QCategoryAxis();
+
+    QFont labelsFont;
+    labelsFont.setPixelSize(12);
+    axisX->setLabelsFont(labelsFont);
+    axisY->setLabelsFont(labelsFont);
+
+    // Customize axis colors
+    QPen axisPen(Qt::black);
+    axisPen.setWidth(5);
+    axisX->setLinePen(axisPen);
+    axisY->setLinePen(axisPen);
+
+    // Customize axis label colors
+    QBrush axisBrush(Qt::yellow);
+    axisX->setLabelsBrush(axisBrush);
+    axisY->setLabelsBrush(axisBrush);
+
+    QTextCharFormat format;
+    format.setForeground(Qt::blue);
+    axisX->setLabelsColor(Qt::blue);
+    axisY->setLabelsColor(Qt::blue);
+    axisX->append("<span style=\"color: #339966;\">low</span>", 7);
+    axisX->append("<span style=\"color: #330066;\">optimal</span>", 14);
+    axisX->append("<span style=\"color: #55ff66;\">high</span>", 20);
+
+
+    axisY->append("<font color=\"red\">slow</font>", 3);
+    axisY->append("<font color=\"green\">med</font>", 7);
+    axisY->append("<span style=\"color: #ffff00;\">fast</span>", 10);
+
+//    axisX->setRange(0, 20);
+//    axisY->setRange(0, 10);
+
+    chart_bigOneChart->addAxis(axisX, Qt::AlignBottom);
+    chart_bigOneChart->addAxis(axisY, Qt::AlignLeft);
+    //chart_bigOneChart->setAxisX(axisX);
+    series_bigOneChart->attachAxis(axisX);
+    series_bigOneChart->attachAxis(axisY);
+
 
     QFrame *frame = ui->bigOneChart;
     //creating a drop shadow effect
-    QGraphicsDropShadowEffect *shadow = new QGraphicsDropShadowEffect;
-    shadow->setBlurRadius(15);
-    shadow->setColor(QColor(0, 0, 0, 60));
-    shadow->setOffset(0.5, 0);
-    frame->setGraphicsEffect(shadow);
+    QGraphicsDropShadowEffect *shadow_bigOneChart = new QGraphicsDropShadowEffect;
+    shadow_bigOneChart->setBlurRadius(15);
+    shadow_bigOneChart->setColor(QColor(0, 0, 0, 60));
+    shadow_bigOneChart->setOffset(0.5, 0);
+    frame->setGraphicsEffect(shadow_bigOneChart);
 
-    chart->setAnimationOptions(QChart::SeriesAnimations);
-    QChartView *chartView = new QChartView(chart);
-    chartView->setRenderHint(QPainter::Antialiasing);
+    chart_bigOneChart->setAnimationOptions(QChart::SeriesAnimations);
+    QChartView *chartView_bigOneChart = new QChartView(chart_bigOneChart);
+    chartView_bigOneChart->setRenderHint(QPainter::Antialiasing);
 //    chartView->setBackgroundBrush(QBrush(QColor("salmon")));
-    QVBoxLayout *layout = new QVBoxLayout(ui->bigOneChart);
-    layout->addWidget(chartView);
-//    QOpenGLWidget * <to_onoma_pou_tha_dwseis> = new QOpenGLWidget(<onoma_tou_ui>-><onoma_openglwidget_apo_to_mainwindow.ui>);
 
-//    //+++++++++++++++++++++++++++++++++++++++++++
-
-//    QLineSeries *series2 = new QLineSeries();
-
-//    series2->append(0, 6);
-//    series2->append(2, 4);
-//    series2->append(3, 8);
-//    series2->append(7, 4);
-//    series2->append(10, 5);
-
-//    *series2 << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3)
-//            << QPointF(20, 2);
-
-//    QChart *chart2 = new QChart();
-//    chart2->legend()->hide();
-//    chart2->addSeries(series2);
-//    chart2->createDefaultAxes();
-//    chart2->setTitle("Line Chart Example");
+    QVBoxLayout *layout_bigOneChart1 = new QVBoxLayout(ui->frame_3);
+    layout_bigOneChart1->addWidget(chartView_bigOneChart);
 
 
-//    chart2->setAnimationOptions(QChart::SeriesAnimations);
-//    QChartView *chartView2 = new QChartView(chart2);
-//    chartView2->setRenderHint(QPainter::Antialiasing);
-//    QVBoxLayout *layout2 = new QVBoxLayout(ui->frame2);
-//    layout2->addWidget(chartView2);
-
-
-//    //+++++++++++++++++++++++++++++++++++++++++++
-
-
-//    QBarSet *set0 = new QBarSet("Jane");
-//    QBarSet *set1 = new QBarSet("John");
-//    QBarSet *set2 = new QBarSet("Axel");
-//    QBarSet *set3 = new QBarSet("Mary");
-//    QBarSet *set4 = new QBarSet("Samantha");
-
-//    *set0 << 1 << 2 << 3 << 4 << 5 << 6;
-//    *set1 << 5 << 0 << 0 << 4 << 0 << 7;
-//    *set2 << 3 << 5 << 8 << 13 << 8 << 5;
-//    *set3 << 5 << 6 << 7 << 3 << 4 << 5;
-//    *set4 << 9 << 7 << 5 << 3 << 1 << 2;
-
-//    QBarSeries *series3 = new QBarSeries();
-
-//    series3->append(set0);
-//    series3->append(set1);
-//    series3->append(set2);
-//    series3->append(set3);
-//    series3->append(set4);
-
-
-//    QChart *chart3 = new QChart();
-//    chart3->addSeries(series3);
-//    chart3->setTitle("Simple barchart example");
-//    chart3->setAnimationOptions(QChart::SeriesAnimations);
-
-
-//    QStringList categories;
-
-//    categories << "Jan" << "Feb" << "Mar" << "Apr" << "May" << "Jun";
-//    QBarCategoryAxis *axisX = new QBarCategoryAxis();
-//    axisX->append(categories);
-//    chart3->addAxis(axisX, Qt::AlignBottom);
-//    series3->attachAxis(axisX);
-
-//    QValueAxis *axisY = new QValueAxis();
-//    axisY->setRange(0,15);
-//    chart3->addAxis(axisY, Qt::AlignLeft);
-//    series3->attachAxis(axisY);
-
-
-//    chart3->legend()->setVisible(true);
-//    chart3->legend()->setAlignment(Qt::AlignBottom);
-
-
-//    QChartView *chartView3 = new QChartView(chart3);
-//    chartView3->setRenderHint(QPainter::Antialiasing);
-//    QVBoxLayout *layout3 = new QVBoxLayout(ui->frame3);
-//    layout3->addWidget(chartView3);
-
-
-//    //+++++++++++++++++++++++++++++++++++++++++++
-
-
-
-//    QBarSet *set01 = new QBarSet("Jane");
-
-//    QBarSet *set11 = new QBarSet("John");
-//    QBarSet *set21 = new QBarSet("Axel");
-//    QBarSet *set31 = new QBarSet("Mary");
-//    QBarSet *set41 = new QBarSet("Samantha");
-
-//    *set01 << 1 << 2 << 3 << 4 << 5 << 6;
-//    *set11 << 5 << 0 << 0 << 4 << 0 << 7;
-//    *set21 << 3 << 5 << 8 << 13 << 8 << 5;
-//    *set31 << 5 << 6 << 7 << 3 << 4 << 5;
-//    *set41 << 9 << 7 << 5 << 3 << 1 << 2;
-
-
-//    QPercentBarSeries *series4 = new QPercentBarSeries();
-//    series4->append(set01);
-//    series4->append(set11);
-//    series4->append(set21);
-//    series4->append(set31);
-//    series4->append(set41);
-
-
-//    QChart *chart4 = new QChart();
-//    chart4->addSeries(series4);
-//    chart4->setTitle("Simple percentbarchart example");
-//    chart4->setAnimationOptions(QChart::SeriesAnimations);
-
-//    QStringList categories2;
-//    categories2 << "Jan" << "Feb" << "Mar" << "Apr" << "May" << "Jun";
-//    QBarCategoryAxis *axisX2 = new QBarCategoryAxis();
-//    axisX->append(categories2);
-//    chart4->addAxis(axisX2, Qt::AlignBottom);
-//    series4->attachAxis(axisX);
-//    QValueAxis *axisY2 = new QValueAxis();
-//    chart4->addAxis(axisY2, Qt::AlignLeft);
-//    series4->attachAxis(axisY);
-
-//    chart4->legend()->setVisible(true);
-//    chart4->legend()->setAlignment(Qt::AlignBottom);
-
-//    QChartView *chartView4 = new QChartView(chart4);
-//    chartView4->setRenderHint(QPainter::Antialiasing);
-//    QVBoxLayout *layout4 = new QVBoxLayout(ui->frame4);
-//    layout4->addWidget(chartView4);
-
-
-//    QFrame *frame1 = ui->buttonFrameAll;
-//    QPropertyAnimation *animation = new QPropertyAnimation(frame1, "geometry");
-//    animation->setDuration(500);
-//    animation->setStartValue(QRect(0, 0, 250, 16777215));
-//    animation->setEndValue(QRect(0, 0, 0, 16777215));
-
+    QVBoxLayout *layout_bigOneChart = new QVBoxLayout(ui->bigOneChart);
+    layout_bigOneChart->addWidget(chartView_bigOneChart);
 
 }
 
