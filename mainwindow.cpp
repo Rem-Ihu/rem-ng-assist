@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    //AERO CHART
+
 
     QSplineSeries *series_bigOneChart = new QSplineSeries();
     series_bigOneChart->setName("spline");
@@ -114,13 +116,45 @@ MainWindow::MainWindow(QWidget *parent)
     chartView_bigOneChart->setRenderHint(QPainter::Antialiasing);
 //    chartView->setBackgroundBrush(QBrush(QColor("salmon")));
 
-    QVBoxLayout *layout_bigOneChart1 = new QVBoxLayout(ui->frame_3);
+    QVBoxLayout *layout_bigOneChart1 = new QVBoxLayout(ui->bigOneChart);
     layout_bigOneChart1->addWidget(chartView_bigOneChart);
 
 
-    QVBoxLayout *layout_bigOneChart = new QVBoxLayout(ui->bigOneChart);
-    layout_bigOneChart->addWidget(chartView_bigOneChart);
+    //AREA CHART
 
+    QLineSeries *series0 = new QLineSeries();
+
+    *series0 << QPointF(1, 5) << QPointF(3, 7) << QPointF(7, 6) << QPointF(9, 7) << QPointF(12, 6)
+             << QPointF(16, 7) << QPointF(18, 5);
+
+
+
+
+
+    QAreaSeries *area_series = new QAreaSeries(series0);//, series1);
+    series0->setName("Area Chart");
+    QPen pen1(0x059605);
+    pen1.setWidth(3);
+    area_series->setPen(pen1);
+
+    QLinearGradient gradient(QPointF(0, 0), QPointF(0, 1));
+    gradient.setColorAt(0.0, 0x3cc63c);
+    gradient.setColorAt(1.0, 0x26f626);
+    gradient.setCoordinateMode(QGradient::ObjectBoundingMode);
+    area_series->setBrush(gradient);
+
+    QChart *area_chart = new QChart();
+    area_chart->addSeries(area_series);
+    area_chart->setTitle("Simple areachart example");
+    area_chart->createDefaultAxes();
+    area_chart->axes(Qt::Horizontal).first()->setRange(0, 20);
+    area_chart->axes(Qt::Vertical).first()->setRange(0, 10);
+
+    QChartView *chartView1 = new QChartView(area_chart);
+    chartView1->setRenderHint(QPainter::Antialiasing);
+
+    QVBoxLayout *layout_bigOneChart = new QVBoxLayout(ui->frame_3);
+    layout_bigOneChart->addWidget(chartView1);
 }
 
 MainWindow::~MainWindow()
