@@ -36,7 +36,7 @@ Window {
             eulerRotation: "-30, -20, -40"
             ambientColor: "#333"
         }
-
+//comment
         Node {
             id: orbitCameraNode
             PerspectiveCamera {
