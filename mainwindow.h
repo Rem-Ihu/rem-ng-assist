@@ -20,6 +20,7 @@ public:
 
 
 
+
 private slots:
 //    void on_pushButtonRTG_9_released();
 
@@ -53,6 +54,8 @@ private slots:
     void on_pushButtonContact_clicked();
 
     void on_pushButtonErrorPopUp_clicked();
+
+    void on_Button_recent_charts_clicked();
 
 private:
     Ui::MainWindow *ui;

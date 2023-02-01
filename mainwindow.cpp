@@ -4,6 +4,12 @@
 
 #include <QStackedWidget>
 #include <iostream>
+#include <QApplication>
+#include <QGraphicsView>
+#include <QGraphicsScene>
+#include <QPixmap>
+#include <QTimer>
+
 
 
 
@@ -48,6 +54,21 @@ MainWindow::MainWindow(QWidget *parent)
 //    chartView->setBackgroundBrush(QBrush(QColor("salmon")));
     QVBoxLayout *layout = new QVBoxLayout(ui->bigOneChart);
     layout->addWidget(chartView);
+
+    QScrollArea *scrollArea_Home = new QScrollArea;
+    scrollArea_Home->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+//    QGraphicsScene *scene = new QGraphicsScene();
+//    QGraphicsView *Slideshow = new QGraphicsView(scene);
+
+//    QPixmap pixmap1("merch_icon.png");
+//    QPixmap pixmap2("news_icon.png");
+//    scene->addPixmap(pixmap1);
+//    QTimer *timer = new QTimer();
+//    connect(timer, &QTimer::timeout, &scene, &QGraphicsScene::updateSlide);
+//    timer->start(5000);
+
+
 //    QOpenGLWidget * <to_onoma_pou_tha_dwseis> = new QOpenGLWidget(<onoma_tou_ui>-><onoma_openglwidget_apo_to_mainwindow.ui>);
 
 //    //+++++++++++++++++++++++++++++++++++++++++++
@@ -252,6 +273,11 @@ void MainWindow::on_pushButtonHome_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
+void MainWindow::on_Button_recent_charts_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(2);
+}
+
 
 //adding new tabs! ========================================
 void MainWindow::on_addTabNameButton_clicked()
