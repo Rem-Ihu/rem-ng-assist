@@ -23,5 +23,13 @@
         <file>icons/contact_icon_checked.png</file>
         <file>icons/log_out_icon.png</file>
         <file>icons/log_out_icon_checked.png</file>
+        <file>icons/tiktok_icon.png</file>
+        <file>icons/fb_icon.png</file>
+        <file>icons/instagram_icon.png</file>
+        <file>icons/instagram2_icon.png</file>
+        <file>icons/twitter_icon.png</file>
+        <file>icons/youtube_icon.png</file>
+        <file>icons/youtube2_icon.png</file>
+        <file>icons/LinkedIn_icon.png</file>
     </qresource>
 </RCC>
