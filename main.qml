@@ -4,10 +4,10 @@
 import QtQuick
 import QtQuick.Window
 import QtQuick.Controls
-
+import QtCharts
 import Qt.labs.platform
 import Qt.labs.settings
-
+import QtQml.Models
 import QtQuick3D
 import QtQuick3D.Helpers
 import QtQuick3D.AssetUtils
