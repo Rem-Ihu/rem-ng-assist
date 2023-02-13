@@ -151,7 +151,7 @@ border-top-color: rgb(15, 24, 31);</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="128">
+              <color alpha="255">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -216,7 +216,7 @@ border-top-color: rgb(15, 24, 31);</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="128">
+              <color alpha="255">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -281,7 +281,7 @@ border-top-color: rgb(15, 24, 31);</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="128">
+              <color alpha="255">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -600,7 +600,7 @@ padding-left:19px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="128">
+              <color alpha="255">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -665,7 +665,7 @@ padding-left:19px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="128">
+              <color alpha="255">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -730,7 +730,7 @@ padding-left:19px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="128">
+              <color alpha="255">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -981,7 +981,7 @@ padding-left:20px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="128">
+              <color alpha="255">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -1046,7 +1046,7 @@ padding-left:20px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="128">
+              <color alpha="255">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -1111,7 +1111,7 @@ padding-left:20px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="128">
+              <color alpha="255">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -1327,7 +1327,7 @@ padding-left:20px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="128">
+              <color alpha="255">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -1392,7 +1392,7 @@ padding-left:20px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="128">
+              <color alpha="255">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -1457,7 +1457,7 @@ padding-left:20px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="128">
+              <color alpha="255">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -1681,7 +1681,7 @@ padding-left:17px;
 padding: 0px;</string>
       </property>
       <property name="currentIndex">
-       <number>4</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
@@ -1728,8 +1728,8 @@ padding: 0px;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>129</width>
-             <height>1103</height>
+             <width>114</width>
+             <height>1057</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_9">
@@ -2011,7 +2011,7 @@ background-color: #ffffff;</string>
            <enum>QTabWidget::Rounded</enum>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <property name="documentMode">
            <bool>true</bool>
@@ -2032,6 +2032,12 @@ background-color: #ffffff;</string>
            <layout class="QGridLayout" name="gridLayout_7">
             <item row="0" column="0" colspan="2">
              <widget class="QFrame" name="bigOneChart">
+              <property name="maximumSize">
+               <size>
+                <width>1200</width>
+                <height>600</height>
+               </size>
+              </property>
               <property name="styleSheet">
                <string notr="true">background-color:white;
 border-radius:30px;
@@ -2057,48 +2063,12 @@ border:0px;
            </attribute>
            <layout class="QGridLayout" name="gridLayout_8">
             <item row="0" column="0">
-             <widget class="QFrame" name="frame_3">
+             <widget class="QFrame" name="area_chart">
               <property name="styleSheet">
-               <string notr="true">background-color:black;;</string>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="0" column="1">
-             <widget class="QFrame" name="frame_4">
-              <property name="styleSheet">
-               <string notr="true">background-color:black;;</string>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="0">
-             <widget class="QFrame" name="frame_5">
-              <property name="styleSheet">
-               <string notr="true">background-color:black;;</string>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-             </widget>
-            </item>
-            <item row="1" column="1">
-             <widget class="QFrame" name="frame_6">
-              <property name="styleSheet">
-               <string notr="true">background-color:black;;</string>
+               <string notr="true">background-color:white;
+border-radius:30px;
+border:0px;
+</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -2254,7 +2224,7 @@ border:0px;
            </colorrole>
            <colorrole role="PlaceholderText">
             <brush brushstyle="SolidPattern">
-             <color alpha="128">
+             <color alpha="255">
               <red>128</red>
               <green>128</green>
               <blue>128</blue>
@@ -2319,7 +2289,7 @@ border:0px;
            </colorrole>
            <colorrole role="PlaceholderText">
             <brush brushstyle="SolidPattern">
-             <color alpha="128">
+             <color alpha="255">
               <red>128</red>
               <green>128</green>
               <blue>128</blue>
@@ -2384,7 +2354,7 @@ border:0px;
            </colorrole>
            <colorrole role="PlaceholderText">
             <brush brushstyle="SolidPattern">
-             <color alpha="128">
+             <color alpha="255">
               <red>128</red>
               <green>128</green>
               <blue>128</blue>
@@ -2513,8 +2483,8 @@ padding-left:20px;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>5022</width>
-             <height>679</height>
+             <width>5018</width>
+             <height>686</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
@@ -3027,7 +2997,7 @@ padding:0;</string>
            </colorrole>
            <colorrole role="PlaceholderText">
             <brush brushstyle="SolidPattern">
-             <color alpha="128">
+             <color alpha="255">
               <red>128</red>
               <green>128</green>
               <blue>128</blue>
@@ -3092,7 +3062,7 @@ padding:0;</string>
            </colorrole>
            <colorrole role="PlaceholderText">
             <brush brushstyle="SolidPattern">
-             <color alpha="128">
+             <color alpha="255">
               <red>128</red>
               <green>128</green>
               <blue>128</blue>
@@ -3157,7 +3127,7 @@ padding:0;</string>
            </colorrole>
            <colorrole role="PlaceholderText">
             <brush brushstyle="SolidPattern">
-             <color alpha="128">
+             <color alpha="255">
               <red>128</red>
               <green>128</green>
               <blue>128</blue>
