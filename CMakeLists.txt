@@ -20,16 +20,13 @@ set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         mainwindow.h
-        Test.h
-        Test.cpp
         mainwindow.ui
         icons.qrc
         databasehandler1.h
-        databasehandler1.cpp
         main.qml
-        mythread.h
         colors.qss
         main.qss
+        includes.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
