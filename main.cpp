@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
 
 
     //test string for firestore url
-    std::string chart_id = "ID1";
+    std::string chart_id = "ID1";//////////
     Firestore_Read_Data(chart_id);
 
 
