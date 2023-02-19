@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     QSplineSeries *series_bigOneChart = new QSplineSeries();
-    series_bigOneChart->setName("spline");
+    series_bigOneChart->setName("Spline Values");//set the name of the measurement
 
     series_bigOneChart->append(0, 6);
     series_bigOneChart->append(2, 4);
@@ -33,13 +33,14 @@ MainWindow::MainWindow(QWidget *parent)
     *series_bigOneChart << QPointF(11, 1) << QPointF(13, 3) << QPointF(17, 6) << QPointF(18, 3) << QPointF(20, 2);
 
     QChart *chart_bigOneChart = new QChart();
-    chart_bigOneChart->legend()->hide();
+   // chart_bigOneChart->legend()->hide();
     chart_bigOneChart->addSeries(series_bigOneChart);
     chart_bigOneChart->setTitle("Simple spline chart example");
+    chart_bigOneChart->createDefaultAxes();
 //    chart->setBackgroundBrush(QBrush(QColor("none")));
     //chart_bigOneChart->createDefaultAxes();
   //  chart_bigOneChart->axes(Qt::Vertical).first()->setRange(0, 10);
-    chart_bigOneChart->setTitleBrush(QBrush(Qt::white));//customize the color of the title in the chart
+    chart_bigOneChart->setTitleBrush(QBrush(Qt::black));//customize the color of the title in the chart
     chart_bigOneChart->setBackgroundBrush(QBrush(Qt::white));//customize the color of the background in the chart
 
     QPen pen(Qt::blue);//customize the color of the series in the chart
@@ -47,22 +48,22 @@ MainWindow::MainWindow(QWidget *parent)
     series_bigOneChart->setPen(pen);
 
     // Customize chart background(behind the chart)
-    QLinearGradient backgroundGradient;
-    backgroundGradient.setStart(QPointF(0, 0));
-    backgroundGradient.setFinalStop(QPointF(0, 1));
-    backgroundGradient.setColorAt(0.0, QRgb(0xd2d0d1));
-    backgroundGradient.setColorAt(1.0, QRgb(0x4c4547));
-    backgroundGradient.setCoordinateMode(QGradient::ObjectBoundingMode);
-    chart_bigOneChart->setBackgroundBrush(backgroundGradient);
+//    QLinearGradient backgroundGradient;
+//    backgroundGradient.setStart(QPointF(0, 0));
+//    backgroundGradient.setFinalStop(QPointF(0, 1));
+//    backgroundGradient.setColorAt(0.0, QRgb(0xd2d0d1));
+//    backgroundGradient.setColorAt(1.0, QRgb(0x4c4547));
+//    backgroundGradient.setCoordinateMode(QGradient::ObjectBoundingMode);
+    chart_bigOneChart->setBackgroundBrush(QBrush(::Qt::white));
 
     // Customize plot area background(in the chart)
-    QLinearGradient plotAreaGradient;
-    plotAreaGradient.setStart(QPointF(0, 1));
-    plotAreaGradient.setFinalStop(QPointF(1, 0));
-    plotAreaGradient.setColorAt(0.0, QRgb(0x555555));
-    plotAreaGradient.setColorAt(1.0, QRgb(0x55aa55));
-    plotAreaGradient.setCoordinateMode(QGradient::ObjectBoundingMode);
-    chart_bigOneChart->setPlotAreaBackgroundBrush(plotAreaGradient);
+//    QLinearGradient plotAreaGradient;
+//    plotAreaGradient.setStart(QPointF(0, 1));
+//    plotAreaGradient.setFinalStop(QPointF(1, 0));
+//    plotAreaGradient.setColorAt(0.0, QRgb(0x555555));
+//    plotAreaGradient.setColorAt(1.0, QRgb(0x55aa55));
+//    plotAreaGradient.setCoordinateMode(QGradient::ObjectBoundingMode);
+    chart_bigOneChart->setPlotAreaBackgroundBrush(QColor(255, 255, 255, 0));
     chart_bigOneChart->setPlotAreaBackgroundVisible(true);
 
     QCategoryAxis *axisX = new QCategoryAxis();
@@ -71,6 +72,7 @@ MainWindow::MainWindow(QWidget *parent)
     QFont labelsFont;
     labelsFont.setPixelSize(12);
     axisX->setLabelsFont(labelsFont);
+    axisX->setLabelsColor(Qt::white);
     axisY->setLabelsFont(labelsFont);
 
     // Customize axis colors
@@ -88,14 +90,14 @@ MainWindow::MainWindow(QWidget *parent)
     format.setForeground(Qt::blue);
     axisX->setLabelsColor(Qt::blue);
     axisY->setLabelsColor(Qt::blue);
-    axisX->append("<span style=\"color: #339966;\">low</span>", 7);
-    axisX->append("<span style=\"color: #330066;\">optimal</span>", 14);
-    axisX->append("<span style=\"color: #55ff66;\">high</span>", 20);
+//    axisX->append("<span style=\"color: #339966;\">low</span>", 7);
+//    axisX->append("<span style=\"color: #330066;\">optimal</span>", 14);
+//    axisX->append("<span style=\"color: #55ff66;\">high</span>", 20);
 
 
-    axisY->append("<font color=\"red\">slow</font>", 3);
-    axisY->append("<font color=\"green\">med</font>", 7);
-    axisY->append("<span style=\"color: #ffff00;\">fast</span>", 10);
+//    axisY->append("<font color=\"red\">slow</font>", 3);
+//    axisY->append("<font color=\"green\">med</font>", 7);
+//    axisY->append("<span style=\"color: #ffff00;\">fast</span>", 10);
 
 //    axisX->setRange(0, 20);
 //    axisY->setRange(0, 10);
@@ -118,6 +120,7 @@ MainWindow::MainWindow(QWidget *parent)
     chart_bigOneChart->setAnimationOptions(QChart::SeriesAnimations);
     QChartView *chartView_bigOneChart = new QChartView(chart_bigOneChart);
     chartView_bigOneChart->setRenderHint(QPainter::Antialiasing);
+    chartView_bigOneChart->setBackgroundBrush(QBrush());
 //    chartView->setBackgroundBrush(QBrush(QColor("salmon")));
 
     QVBoxLayout *layout_bigOneChart1 = new QVBoxLayout(ui->bigOneChart);
@@ -127,7 +130,7 @@ MainWindow::MainWindow(QWidget *parent)
     //AREA CHART
 
     QLineSeries *series0 = new QLineSeries();
-
+    series0->setName("Area Chart Values");
     *series0 << QPointF(1, 5) << QPointF(3, 7) << QPointF(7, 6) << QPointF(9, 7) << QPointF(12, 6)
              << QPointF(16, 7) << QPointF(18, 5);
 
@@ -137,13 +140,13 @@ MainWindow::MainWindow(QWidget *parent)
 
     QAreaSeries *area_series = new QAreaSeries(series0);//, series1);
     series0->setName("Area Chart");
-    QPen pen1(0x059605);
-    pen1.setWidth(3);
+    QPen pen1(0x111110);
+    pen1.setWidth(2);
     area_series->setPen(pen1);
 
     QLinearGradient gradient(QPointF(0, 0), QPointF(0, 1));
-    gradient.setColorAt(0.0, 0x3cc63c);
-    gradient.setColorAt(1.0, 0x26f626);
+    gradient.setColorAt(0.0, 0xf9f6f3);
+    gradient.setColorAt(1.0, 0xa3a2a1);
     gradient.setCoordinateMode(QGradient::ObjectBoundingMode);
     area_series->setBrush(gradient);
 
@@ -153,12 +156,26 @@ MainWindow::MainWindow(QWidget *parent)
     area_chart->createDefaultAxes();
     area_chart->axes(Qt::Horizontal).first()->setRange(0, 20);
     area_chart->axes(Qt::Vertical).first()->setRange(0, 10);
+    area_chart->setTitleBrush(QBrush(Qt::black));//customize the color of the title in the chart
+    area_chart->setBackgroundBrush(QBrush(Qt::white));//customize the color of the background in the chart
+    area_chart->setPlotAreaBackgroundBrush(QColor(255, 255, 255, 0));
+    area_chart->setPlotAreaBackgroundVisible(true);
 
-    QChartView *chartView1 = new QChartView(area_chart);
-    chartView1->setRenderHint(QPainter::Antialiasing);
+    QGraphicsDropShadowEffect *shadow_area_chart = new QGraphicsDropShadowEffect;
+    shadow_area_chart->setBlurRadius(15);
+    shadow_area_chart->setColor(QColor(0, 0, 0, 60));
+    shadow_area_chart->setOffset(0.5, 0);
+    frame->setGraphicsEffect(shadow_area_chart);
 
-    QVBoxLayout *layout_bigOneChart = new QVBoxLayout(ui->frame_3);
-    layout_bigOneChart->addWidget(chartView1);
+    chart_bigOneChart->setAnimationOptions(QChart::SeriesAnimations);
+
+
+    QChartView *chartView_areaChart = new QChartView(area_chart);
+    chartView_areaChart->setRenderHint(QPainter::Antialiasing);
+    chartView_areaChart->setBackgroundBrush(QBrush());
+
+    QVBoxLayout *layout_bigOneChart = new QVBoxLayout(ui->area_chart);
+    layout_bigOneChart->addWidget(chartView_areaChart);
 }
 
 MainWindow::~MainWindow()
