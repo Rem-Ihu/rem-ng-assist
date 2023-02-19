@@ -42,7 +42,7 @@ void Firestore_Read_Data(){
 
     QNetworkAccessManager* manager = new QNetworkAccessManager();
 
-        // Set up the QNetworkRequest with the URL of the Firestore endpoint you want to access.
+        // Set up the QNetworkRequest with the URL of the Firestore endpoint you want to access
         QUrl url("https://firestore.googleapis.com/v1/projects/realtimeqttest/databases/(default)/documents/ChartFiles/FrontBrakes");
         QNetworkRequest request(url);
 
