@@ -2,7 +2,41 @@
 #define DATABASEHANDLER1_H
 
 
-#include "includes.h"
+# include <QApplication>
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
+#include <QQuickWindow>
+#include <QtQuick3D/qquick3d.h>
+#include <QCoreApplication>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QEventLoop>
+#include <QDebug>
+#include <QVariant>
+#include <QString>
+#include <QSocketDescriptor>
+#include <QObject>
+#include <QThread>
+#include <QTimer>
+#include <iostream>
+#include <string>
+#include <algorithm>
+#include <iomanip>
+#include <sstream>
+#include <QtConcurrent/qtconcurrentrun.h>
+#include <QtCore>
+#include <QtWidgets>
+#include <QUrl>
+#include <QUrlQuery>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QCoreApplication>
+#include <QSvgRenderer>
+#include <QStackedWidget>
+#include <iostream>
+
 
 std::vector<int> vec_val; //global vector value for charts
 

@@ -3,8 +3,10 @@
 //end of file and headers (#include)
 
 
-
-
+namespace myNamespace{
+    float fin_ans,sec_ans=10;
+    float ok;
+}
 
 
 int main(int argc, char *argv[])
@@ -69,9 +71,9 @@ int main(int argc, char *argv[])
 
 
 
-            long double fin_ans = atof(first.c_str()); //convert to float
-            long double sec_ans = atof(second.c_str()); //also
-            std::cout << std::setprecision(12) << fin_ans << "  |||  " << std::setprecision(8) << sec_ans << std::endl; //print output
+            myNamespace::fin_ans = atof(first.c_str()); //convert to float
+            myNamespace::sec_ans = atof(second.c_str()); //also
+            std::cout << std::setprecision(12) << myNamespace::fin_ans << "  |||  " << std::setprecision(8) << myNamespace::sec_ans << std::endl; //print output
     //        with float precision (counting the decimal numbers also) 12.
 
     });

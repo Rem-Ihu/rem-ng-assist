@@ -33,4 +33,6 @@
 #include <QJsonArray>
 #include <QCoreApplication>
 
+long double ok1,ok2;
+
 #endif // INCLUDES_H
