@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //AERO CHART
+//    AERO CHART////////
 
 
     QSplineSeries *series_bigOneChart = new QSplineSeries();
