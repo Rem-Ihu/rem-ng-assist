@@ -2,7 +2,7 @@
 #define DATABASEHANDLER1_H
 
 
-# include <QApplication>
+#include <QApplication>
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQuickWindow>
@@ -36,9 +36,10 @@
 #include <QSvgRenderer>
 #include <QStackedWidget>
 #include <iostream>
+#include <iomanip>
 
 
-std::vector<int> vec_val; //global vector value for charts
+std::vector<std::variant<double, int>> vec_val; //global vector value for charts
 
 void Firestore_Read_Data(std::string chart_id){
 
@@ -49,7 +50,7 @@ void Firestore_Read_Data(std::string chart_id){
 
     QNetworkRequest request(url); //setting the url request
 
-    // Send the GET request and retrieve the reply
+    //sending the GET request and retrieve the reply
     QNetworkReply* reply = manager->get(request);
 
     //creating the lambda function to connect and get the response from the reply
@@ -74,51 +75,48 @@ void Firestore_Read_Data(std::string chart_id){
 
 
 
-        //parsing through the data
         for (int i = 0; i < data.size(); i++) {
-            /*  1.  QJsonObject mapValue = data[i].toObject()["mapValue"].toObject()["fields"].toObject();
-                This line extracts the i-th element of the "values" array from the "data" object,
-                and then extracts the "mapValue" object and the "fields" object from it.
-                Finally, it converts the "fields" object to a QJsonObject called "mapValue".
-                In the Firestore document, the "mapValue" object represents a map or dictionary data type,
-                and the "fields" object within it represents key-value pairs.
-
-                2.  QString timestampStr = mapValue["timestamp"].toObject()["timestampValue"].toString();
-                This line extracts the value of the "timestampValue" key from the "timestamp" object within
-                the "mapValue" object. It then converts the value to a QString variable called "timestampStr".
-                In the Firestore document, the "timestampValue" key represents a timestamp data type.
-
-                3.  timestamp = QDateTime::fromString(timestampStr, Qt::ISODateWithMs); This line converts
-                the QString variable "timestampStr" to a QDateTime object, using the fromString() function of the QDateTime
-                class. The second argument to the function is a string that specifies the format of the input string.
-                In this case, the format is ISO 8601 with milliseconds precision. The resulting QDateTime object is
-                stored in the "timestamp" variable.
-
-                4.  int value = mapValue["value"].toObject()["integerValue"].toString().toInt(); This line
-                extracts the value of the "integerValue" key from the "value" object within the "mapValue" object.
-                It then converts the value to an integer and stores it in the "value" variable. In the
-                Firestore document, the "integerValue" key represents an integer data type.*/
-
-            //1.
             QJsonObject mapValue = data[i].toObject()["mapValue"].toObject()["fields"].toObject();
-            //2.
             QString timestampStr = mapValue["timestamp"].toObject()["timestampValue"].toString();
-            //3.
             timestamp = QDateTime::fromString(timestampStr, Qt::ISODateWithMs);
-            //4.
-            int value = mapValue["value"].toObject()["integerValue"].toString().toInt();
 
-            vec_val.push_back(value);//vector for the resulting values
-            vec_val.shrink_to_fit();
+            //trying to extract the value as an int first
+            bool ok = false;
+            int intValue = mapValue["value"].toObject()["integerValue"].toString().toInt(&ok);
+            if (ok) {
+                vec_val.push_back(intValue);
+            } else {
+                //if it's not an int, try to extract it as a double
+                double doubleValue = mapValue["value"].toObject()["doubleValue"].toDouble();
+                vec_val.push_back(doubleValue);
+            }
+
+            std::string testprintdate = timestamp.toString("yyyy-MM-dd hh:mm:ss.zzz").toStdString();
+
 
             //printing the modified results
-            qDebug() << "Timestamp:" << timestamp.toString("yyyy-MM-dd hh:mm:ss.zzz") << "Value:" << value;
+            std::visit([](auto&& value){
+                if constexpr(std::is_same_v<double, decltype(value)>){
+                    std::cout << "THIS HERE " << value << std::endl;
+                } else if constexpr(std::is_same_v<int, decltype(value)>){
+                    std::cout << value << std::endl;
+                }
+            }, vec_val.back());
         }
 
-    });
 
-//    for (auto i = vec_val.begin(); i != vec_val.end(); ++i)
-//            std::cout << *i << " ";
+
+        //printing the vector
+        for (auto&& value : vec_val) {
+            std::visit([](auto&& arg){
+                std::cout << std::setprecision(15) <<"Value: " << arg << std::endl;
+            }, value);
+        }
+
+
+
+
+    });
 
 }
 #endif // DATABASEHANDLER1_H

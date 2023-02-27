@@ -151,7 +151,7 @@ border-top-color: rgb(15, 24, 31);</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -216,7 +216,7 @@ border-top-color: rgb(15, 24, 31);</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -281,7 +281,7 @@ border-top-color: rgb(15, 24, 31);</string>
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -600,7 +600,7 @@ padding-left:19px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -665,7 +665,7 @@ padding-left:19px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -730,7 +730,7 @@ padding-left:19px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -981,7 +981,7 @@ padding-left:20px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -1046,7 +1046,7 @@ padding-left:20px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -1111,7 +1111,7 @@ padding-left:20px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -1327,7 +1327,7 @@ padding-left:20px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -1392,7 +1392,7 @@ padding-left:20px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -1457,7 +1457,7 @@ padding-left:20px;
             </colorrole>
             <colorrole role="PlaceholderText">
              <brush brushstyle="SolidPattern">
-              <color alpha="255">
+              <color alpha="128">
                <red>128</red>
                <green>128</green>
                <blue>128</blue>
@@ -2224,7 +2224,7 @@ border:0px;
            </colorrole>
            <colorrole role="PlaceholderText">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
+             <color alpha="128">
               <red>128</red>
               <green>128</green>
               <blue>128</blue>
@@ -2289,7 +2289,7 @@ border:0px;
            </colorrole>
            <colorrole role="PlaceholderText">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
+             <color alpha="128">
               <red>128</red>
               <green>128</green>
               <blue>128</blue>
@@ -2354,7 +2354,7 @@ border:0px;
            </colorrole>
            <colorrole role="PlaceholderText">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
+             <color alpha="128">
               <red>128</red>
               <green>128</green>
               <blue>128</blue>
@@ -2484,7 +2484,7 @@ padding-left:20px;
              <x>0</x>
              <y>0</y>
              <width>5018</width>
-             <height>686</height>
+             <height>28</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
@@ -3000,7 +3000,7 @@ padding:0;</string>
            </colorrole>
            <colorrole role="PlaceholderText">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
+             <color alpha="128">
               <red>128</red>
               <green>128</green>
               <blue>128</blue>
@@ -3065,7 +3065,7 @@ padding:0;</string>
            </colorrole>
            <colorrole role="PlaceholderText">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
+             <color alpha="128">
               <red>128</red>
               <green>128</green>
               <blue>128</blue>
@@ -3130,7 +3130,7 @@ padding:0;</string>
            </colorrole>
            <colorrole role="PlaceholderText">
             <brush brushstyle="SolidPattern">
-             <color alpha="255">
+             <color alpha="128">
               <red>128</red>
               <green>128</green>
               <blue>128</blue>
