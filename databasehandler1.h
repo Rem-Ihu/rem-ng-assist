@@ -39,7 +39,7 @@
 #include <iomanip>
 
 
-std::vector<std::variant<double, int>> vec_val; //global vector value for charts
+std::vector<std::variant<double, int>> vec_val; //global vector value for charts.
 
 void Firestore_Read_Data(std::string chart_id){
 
