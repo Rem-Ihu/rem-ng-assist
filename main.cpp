@@ -2,6 +2,7 @@
 #include "login_sign_up_in.h"
 #include "mainwindow.h"
 //end of file and headers (#include)
+//hello_test
 
 
 namespace myNamespace{
