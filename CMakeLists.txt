@@ -27,6 +27,9 @@ set(PROJECT_SOURCES
         colors.qss
         main.qss
         includes.h
+        login_sign_up_in.h
+        login_sign_up_in.cpp
+        login_sign_up_in.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
