@@ -1681,7 +1681,7 @@ padding-left:17px;
 padding: 0px;</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
@@ -1728,8 +1728,8 @@ padding: 0px;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1176</width>
-             <height>702</height>
+             <width>1171</width>
+             <height>698</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_9"/>
@@ -1740,63 +1740,15 @@ padding: 0px;</string>
       </widget>
       <widget class="QWidget" name="RealTime">
        <layout class="QGridLayout" name="gridLayout_4">
-        <item row="1" column="1">
-         <widget class="QPushButton" name="pushButtonInstagram">
-          <property name="text">
-           <string>I</string>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="0">
-         <widget class="QPushButton" name="pushButton_3">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
+         <widget class="QFrame" name="Real_Time_Chart">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
           </property>
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>100</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>PushButton</string>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
           </property>
          </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QPushButton" name="pushButton_5">
-          <property name="text">
-           <string>F</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="styleSheet">
-           <string notr="true">color:white;
-padding: 50px;
-background-color: white;</string>
-          </property>
-          <property name="text">
-           <string>PushButton</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <spacer name="verticalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
         </item>
        </layout>
       </widget>
@@ -1829,6 +1781,9 @@ background-color: white;</string>
             <height>0</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>More Info</string>
           </property>
@@ -1841,6 +1796,9 @@ background-color: white;</string>
             <width>100</width>
             <height>0</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
           </property>
           <property name="text">
            <string>Add Tab</string>
@@ -1857,7 +1815,7 @@ background-color: white;</string>
           </property>
           <property name="styleSheet">
            <string notr="true">border:0;
-background-color: NULLf;</string>
+background-color: rgba(255, 0, 0, 0);</string>
           </property>
           <property name="tabShape">
            <enum>QTabWidget::Rounded</enum>
@@ -1878,11 +1836,21 @@ background-color: NULLf;</string>
            <bool>false</bool>
           </property>
           <widget class="QWidget" name="Aero">
+           <property name="font">
+            <font>
+             <pointsize>9</pointsize>
+             <bold>false</bold>
+            </font>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgba(255, 0, 0, 0);
+color: rgb(255, 255, 255);</string>
+           </property>
            <attribute name="title">
             <string>Aero</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_7">
-            <item row="0" column="0" colspan="2">
+            <item row="0" column="0">
              <widget class="QFrame" name="bigOneChart">
               <property name="maximumSize">
                <size>
@@ -1891,7 +1859,7 @@ background-color: NULLf;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color:NULL;
+               <string notr="true">background-color: rgba(255, 0, 0, 0);
 border-radius:30px;
 border:0px;
 </string>
@@ -1917,7 +1885,7 @@ border:0px;
             <item row="0" column="0">
              <widget class="QFrame" name="area_chart">
               <property name="styleSheet">
-               <string notr="true">background-color:NULL;
+               <string notr="true">background-color: rgba(255, 0, 0, 0);
 border-radius:30px;
 border:0px;
 </string>
@@ -1991,6 +1959,9 @@ border:0px;
         </item>
         <item row="2" column="3">
          <widget class="QPushButton" name="pushButtonErrorPopUp">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>PushButton</string>
           </property>
@@ -2434,8 +2405,8 @@ padding-left:20px;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>5018</width>
-             <height>28</height>
+             <width>5022</width>
+             <height>32</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">

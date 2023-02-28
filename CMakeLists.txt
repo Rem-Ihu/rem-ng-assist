@@ -27,6 +27,8 @@ set(PROJECT_SOURCES
         colors.qss
         main.qss
         includes.h
+        realtimechart.h
+        realtimechart.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
