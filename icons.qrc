@@ -24,5 +24,8 @@
         <file>icons/log_out_icon.png</file>
         <file>icons/log_out_icon_checked.png</file>
         <file>main.qss</file>
+        <file>icons/Screenshot 2023-02-03 152507.png</file>
+        <file>icons/1-1024x684.jpg</file>
+        <file>icons/XAL_1628_1.png</file>
     </qresource>
 </RCC>
