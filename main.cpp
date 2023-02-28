@@ -1,6 +1,7 @@
 #include "databasehandler1.h"
 #include "mainwindow.h"
 //end of file and headers (#include)
+//hello_test
 
 
 namespace myNamespace{
