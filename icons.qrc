@@ -24,6 +24,8 @@
         <file>icons/log_out_icon.png</file>
         <file>icons/log_out_icon_checked.png</file>
         <file>main.qss</file>
+        <file>icons/ihu-photo.png</file>
+        <file>.gitignore</file>
         <file>icons/logo_icon_login_page.png</file>
         <file>icons/apple_icon.png</file>
         <file>icons/facebook_icon.png</file>
