@@ -87,404 +87,74 @@ border-top-color: rgb(15, 24, 31);</string>
        <property name="bottomMargin">
         <number>60</number>
        </property>
+       <item row="12" column="1">
+        <widget class="QPushButton" name="pushButtonAboutUs">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+color:grey;
+text-align:left;
+padding-left:17px;
+}
+
+QPushButton:focus{
+border:none;
+}
+
+QPushButton:checked{
+border: none;
+/*background-color: rgb(79, 93, 218);
+/*background-color: #FB2576;*/
+color:white;
+text-align:left;
+padding-left:17px;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="icons.qrc">
+           <normaloff>:/icons/about_us_icon_checked.png</normaloff>:/icons/about_us_icon_checked.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
        <item row="8" column="1">
-        <widget class="QPushButton" name="pushButtonCharts">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>35</height>
-          </size>
-         </property>
-         <property name="palette">
-          <palette>
-           <active>
-            <colorrole role="WindowText">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>128</red>
-               <green>128</green>
-               <blue>128</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Button">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>0</red>
-               <green>0</green>
-               <blue>0</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Text">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>128</red>
-               <green>128</green>
-               <blue>128</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="ButtonText">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>128</red>
-               <green>128</green>
-               <blue>128</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Base">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>0</red>
-               <green>0</green>
-               <blue>0</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Window">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>0</red>
-               <green>0</green>
-               <blue>0</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="PlaceholderText">
-             <brush brushstyle="SolidPattern">
-              <color alpha="128">
-               <red>128</red>
-               <green>128</green>
-               <blue>128</blue>
-              </color>
-             </brush>
-            </colorrole>
-           </active>
-           <inactive>
-            <colorrole role="WindowText">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>128</red>
-               <green>128</green>
-               <blue>128</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Button">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>0</red>
-               <green>0</green>
-               <blue>0</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Text">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>128</red>
-               <green>128</green>
-               <blue>128</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="ButtonText">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>128</red>
-               <green>128</green>
-               <blue>128</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Base">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>0</red>
-               <green>0</green>
-               <blue>0</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Window">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>0</red>
-               <green>0</green>
-               <blue>0</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="PlaceholderText">
-             <brush brushstyle="SolidPattern">
-              <color alpha="128">
-               <red>128</red>
-               <green>128</green>
-               <blue>128</blue>
-              </color>
-             </brush>
-            </colorrole>
-           </inactive>
-           <disabled>
-            <colorrole role="WindowText">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>128</red>
-               <green>128</green>
-               <blue>128</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Button">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>0</red>
-               <green>0</green>
-               <blue>0</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Text">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>128</red>
-               <green>128</green>
-               <blue>128</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="ButtonText">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>128</red>
-               <green>128</green>
-               <blue>128</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Base">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>0</red>
-               <green>0</green>
-               <blue>0</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="Window">
-             <brush brushstyle="SolidPattern">
-              <color alpha="255">
-               <red>0</red>
-               <green>0</green>
-               <blue>0</blue>
-              </color>
-             </brush>
-            </colorrole>
-            <colorrole role="PlaceholderText">
-             <brush brushstyle="SolidPattern">
-              <color alpha="128">
-               <red>128</red>
-               <green>128</green>
-               <blue>128</blue>
-              </color>
-             </brush>
-            </colorrole>
-           </disabled>
-          </palette>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="mouseTracking">
-          <bool>false</bool>
-         </property>
-         <property name="autoFillBackground">
-          <bool>false</bool>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-
-color:grey;
-text-align:left;
-padding-left:20px;
-}
-
-QPushButton:focus{
-border:none;
-}
-
-QPushButton:checked{
-border: none;
-/*background-color: rgb(79, 93, 218);
-/*background-color: #FB2576;*/
-color:white;
-text-align:left;
-padding-left:20px;
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="icons.qrc">
-           <normaloff>:/icons/chart_icon_checked.png</normaloff>:/icons/chart_icon_checked.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>25</width>
-           <height>25</height>
-          </size>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="checked">
-          <bool>false</bool>
-         </property>
-         <property name="autoRepeat">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-         <property name="autoDefault">
-          <bool>false</bool>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <spacer name="verticalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Minimum</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>5</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="7" column="1">
-        <widget class="QPushButton" name="pushButtonRealTimeData">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>35</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-color:grey;
-text-align:left;
-padding-left:20px;
-}
-
-QPushButton:focus{
-border:none;
-}
-
-QPushButton:checked{
-border: none;
-/*background-color: rgb(79, 93, 218);
-/*background-color: #FB2576;*/
-color:white;
-text-align:left;
-padding-left:20px;
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="icons.qrc">
-           <normaloff>:/icons/real_time_icon_checked.png</normaloff>:/icons/real_time_icon_checked.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>23</width>
-           <height>23</height>
-          </size>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoRepeat">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-         <property name="autoDefault">
-          <bool>true</bool>
-         </property>
-         <property name="default">
-          <bool>false</bool>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="0">
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Minimum</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>2</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="8" column="2">
-        <spacer name="horizontalSpacer_2">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Minimum</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>13</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="9" column="1">
         <widget class="QPushButton" name="pushButton3DBikeView">
          <property name="enabled">
           <bool>true</bool>
@@ -763,142 +433,23 @@ padding-left:18px;
          </property>
         </widget>
        </item>
-       <item row="5" column="1">
-        <widget class="QPushButton" name="pushButtonHome">
-         <property name="minimumSize">
+       <item row="7" column="0">
+        <spacer name="horizontalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
           <size>
-           <width>0</width>
-           <height>35</height>
+           <width>2</width>
+           <height>20</height>
           </size>
          </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-color:grey;
-text-align:left;
-padding-left:20px;
-}
-
-QPushButton:focus{
-border:none;
-}
-
-QPushButton:checked{
-border: none;
-/*background-color: rgb(79, 93, 218);
-/*background-color: #FB2576;*/
-color:white;
-text-align:left;
-padding-left:20px;
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="icons.qrc">
-           <normaloff>:/icons/home_icon_checked.png</normaloff>:/icons/home_icon_checked.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>22</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-         <property name="autoRepeat">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
+        </spacer>
        </item>
-       <item row="12" column="1">
-        <widget class="QPushButton" name="pushButtonOthers">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>35</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-
-color:grey;
-text-align:left;
-padding-left:17px;
-}
-
-QPushButton:focus{
-border:none;
-}
-
-QPushButton:checked{
-border: none;
-/*background-color: rgb(79, 93, 218);
-/*background-color: #FB2576;*/
-color:white;
-text-align:left;
-padding-left:17px;
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="icons.qrc">
-           <normaloff>:/icons/others_icon_checked.png</normaloff>:/icons/others_icon_checked.png</iconset>
-         </property>
-         <property name="iconSize">
-          <size>
-           <width>23</width>
-           <height>23</height>
-          </size>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoRepeat">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-         <property name="autoDefault">
-          <bool>true</bool>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="18" column="1">
+       <item row="17" column="1">
         <widget class="QPushButton" name="pushButtonLogOut">
          <property name="maximumSize">
           <size>
@@ -950,121 +501,60 @@ padding-left:15px;
          </property>
         </widget>
        </item>
-       <item row="13" column="1">
-        <widget class="QPushButton" name="pushButtonAboutUs">
+       <item row="1" column="1">
+        <widget class="QFrame" name="frame">
          <property name="minimumSize">
           <size>
            <width>0</width>
-           <height>35</height>
+           <height>70</height>
           </size>
          </property>
-         <property name="font">
-          <font>
-           <pointsize>11</pointsize>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">QPushButton{
-color:grey;
-text-align:left;
-padding-left:17px;
-}
-
-QPushButton:focus{
-border:none;
-}
-
-QPushButton:checked{
-border: none;
-/*background-color: rgb(79, 93, 218);
-/*background-color: #FB2576;*/
-color:white;
-text-align:left;
-padding-left:17px;
-}</string>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="icon">
-          <iconset resource="icons.qrc">
-           <normaloff>:/icons/about_us_icon_checked.png</normaloff>:/icons/about_us_icon_checked.png</iconset>
-         </property>
-         <property name="iconSize">
+         <property name="maximumSize">
           <size>
-           <width>22</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-         <property name="autoRepeat">
-          <bool>true</bool>
-         </property>
-         <property name="autoExclusive">
-          <bool>true</bool>
-         </property>
-         <property name="autoDefault">
-          <bool>true</bool>
-         </property>
-         <property name="flat">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="1">
-        <spacer name="verticalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Minimum</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
+           <width>16777215</width>
            <height>30</height>
           </size>
          </property>
-        </spacer>
-       </item>
-       <item row="3" column="1">
-        <widget class="QWidget" name="Team_Icon" native="true">
-         <property name="minimumSize">
-          <size>
-           <width>50</width>
-           <height>50</height>
-          </size>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
          </property>
-         <property name="styleSheet">
-          <string notr="true">max-width:50px;
-max-height:50px;
-border-radius:50%;
-background-image: url(C:/Users/zedka/Desktop/qmake_version/qmake_test/REM_IHU_Logo2.png);
-margin-left:4px;
-</string>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
          </property>
+         <widget class="QLabel" name="label_4">
+          <property name="geometry">
+           <rect>
+            <x>15</x>
+            <y>10</y>
+            <width>30</width>
+            <height>40</height>
+           </rect>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>40</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="sizeIncrement">
+           <size>
+            <width>40</width>
+            <height>50</height>
+           </size>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="pixmap">
+           <pixmap resource="icons.qrc">:/icons/cropped-cropped-PWSTOEKANALATHOSRE-3 (1).png</pixmap>
+          </property>
+          <property name="scaledContents">
+           <bool>true</bool>
+          </property>
+         </widget>
         </widget>
        </item>
-       <item row="15" column="1">
-        <spacer name="verticalSpacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="10" column="1">
+       <item row="9" column="1">
         <widget class="QPushButton" name="pushButtonNews">
          <property name="enabled">
           <bool>true</bool>
@@ -1343,7 +833,132 @@ padding-left:20px;
          </property>
         </widget>
        </item>
-       <item row="11" column="1">
+       <item row="16" column="1">
+        <widget class="QPushButton" name="pushButtonContact">
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+color:grey;
+text-align:left;
+padding-left:19px;
+}
+
+QPushButton:focus{
+border:none;
+}
+
+QPushButton:checked{
+border: none;
+/*background-color: rgb(79, 93, 218);
+/*background-color: #FB2576;*/
+color:white;
+text-align:left;
+padding-left:19px;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="icons.qrc">
+           <normaloff>:/icons/contact_icon_checked.png</normaloff>:/icons/contact_icon_checked.png</iconset>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QPushButton" name="pushButtonRealTimeData">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+color:grey;
+text-align:left;
+padding-left:20px;
+}
+
+QPushButton:focus{
+border:none;
+}
+
+QPushButton:checked{
+border: none;
+/*background-color: rgb(79, 93, 218);
+/*background-color: #FB2576;*/
+color:white;
+text-align:left;
+padding-left:20px;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="icons.qrc">
+           <normaloff>:/icons/real_time_icon_checked.png</normaloff>:/icons/real_time_icon_checked.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>23</width>
+           <height>23</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="default">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
         <widget class="QPushButton" name="pushButtonMerch">
          <property name="enabled">
           <bool>true</bool>
@@ -1622,8 +1237,216 @@ padding-left:16px;
          </property>
         </widget>
        </item>
-       <item row="17" column="1">
-        <widget class="QPushButton" name="pushButtonContact">
+       <item row="7" column="1">
+        <widget class="QPushButton" name="pushButtonCharts">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="palette">
+          <palette>
+           <active>
+            <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>128</red>
+               <green>128</green>
+               <blue>128</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Button">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Text">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>128</red>
+               <green>128</green>
+               <blue>128</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="ButtonText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>128</red>
+               <green>128</green>
+               <blue>128</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Base">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="PlaceholderText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="128">
+               <red>128</red>
+               <green>128</green>
+               <blue>128</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </active>
+           <inactive>
+            <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>128</red>
+               <green>128</green>
+               <blue>128</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Button">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Text">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>128</red>
+               <green>128</green>
+               <blue>128</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="ButtonText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>128</red>
+               <green>128</green>
+               <blue>128</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Base">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="PlaceholderText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="128">
+               <red>128</red>
+               <green>128</green>
+               <blue>128</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </inactive>
+           <disabled>
+            <colorrole role="WindowText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>128</red>
+               <green>128</green>
+               <blue>128</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Button">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Text">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>128</red>
+               <green>128</green>
+               <blue>128</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="ButtonText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>128</red>
+               <green>128</green>
+               <blue>128</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Base">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="Window">
+             <brush brushstyle="SolidPattern">
+              <color alpha="255">
+               <red>0</red>
+               <green>0</green>
+               <blue>0</blue>
+              </color>
+             </brush>
+            </colorrole>
+            <colorrole role="PlaceholderText">
+             <brush brushstyle="SolidPattern">
+              <color alpha="128">
+               <red>128</red>
+               <green>128</green>
+               <blue>128</blue>
+              </color>
+             </brush>
+            </colorrole>
+           </disabled>
+          </palette>
+         </property>
          <property name="font">
           <font>
            <pointsize>11</pointsize>
@@ -1633,11 +1456,18 @@ padding-left:16px;
          <property name="cursor">
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
+         <property name="mouseTracking">
+          <bool>false</bool>
+         </property>
+         <property name="autoFillBackground">
+          <bool>false</bool>
+         </property>
          <property name="styleSheet">
           <string notr="true">QPushButton{
+
 color:grey;
 text-align:left;
-padding-left:19px;
+padding-left:20px;
 }
 
 QPushButton:focus{
@@ -1650,7 +1480,7 @@ border: none;
 /*background-color: #FB2576;*/
 color:white;
 text-align:left;
-padding-left:19px;
+padding-left:20px;
 }</string>
          </property>
          <property name="text">
@@ -1658,7 +1488,84 @@ padding-left:19px;
          </property>
          <property name="icon">
           <iconset resource="icons.qrc">
-           <normaloff>:/icons/contact_icon_checked.png</normaloff>:/icons/contact_icon_checked.png</iconset>
+           <normaloff>:/icons/chart_icon_checked.png</normaloff>:/icons/chart_icon_checked.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>false</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>false</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1">
+        <widget class="QPushButton" name="pushButtonOthers">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+
+color:grey;
+text-align:left;
+padding-left:17px;
+}
+
+QPushButton:focus{
+border:none;
+}
+
+QPushButton:checked{
+border: none;
+/*background-color: rgb(79, 93, 218);
+/*background-color: #FB2576;*/
+color:white;
+text-align:left;
+padding-left:17px;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="icons.qrc">
+           <normaloff>:/icons/others_icon_checked.png</normaloff>:/icons/others_icon_checked.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>23</width>
+           <height>23</height>
+          </size>
          </property>
          <property name="checkable">
           <bool>true</bool>
@@ -1677,6 +1584,118 @@ padding-left:19px;
          </property>
         </widget>
        </item>
+       <item row="14" column="1">
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="pushButtonHome">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>35</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>11</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+color:grey;
+text-align:left;
+padding-left:20px;
+}
+
+QPushButton:focus{
+border:none;
+}
+
+QPushButton:checked{
+border: none;
+/*background-color: rgb(79, 93, 218);
+/*background-color: #FB2576;*/
+color:white;
+text-align:left;
+padding-left:20px;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="icons.qrc">
+           <normaloff>:/icons/home_icon_checked.png</normaloff>:/icons/home_icon_checked.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Minimum</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>13</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="3" column="1">
+        <spacer name="verticalSpacer_3">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Fixed</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
       </layout>
      </widget>
     </item>
@@ -1686,8 +1705,11 @@ padding-left:19px;
        <string notr="true">
 padding: 0px;</string>
       </property>
-      <property name="currentIndex">
+      <property name="midLineWidth">
        <number>0</number>
+      </property>
+      <property name="currentIndex">
+       <number>4</number>
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
@@ -1734,8 +1756,8 @@ padding: 0px;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1171</width>
-             <height>698</height>
+             <width>78</width>
+             <height>22</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_9"/>
@@ -1869,7 +1891,7 @@ background-color: #ffffff;</string>
            <enum>QTabWidget::Rounded</enum>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>3</number>
           </property>
           <property name="documentMode">
            <bool>true</bool>
@@ -2430,13 +2452,22 @@ padding-left:20px;
       </widget>
       <widget class="QWidget" name="News">
        <layout class="QGridLayout" name="gridLayout_5">
-        <item row="0" column="0">
-         <widget class="QScrollArea" name="scrollArea">
+        <item row="0" column="1">
+         <widget class="QScrollArea" name="newsscroll">
+          <property name="toolTip">
+           <string/>
+          </property>
           <property name="styleSheet">
-           <string notr="true">background-color:null;</string>
+           <string notr="true">background-color: rgba(255, 0, 0, 0);</string>
           </property>
           <property name="frameShape">
            <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
           </property>
           <property name="widgetResizable">
            <bool>true</bool>
@@ -2444,19 +2475,851 @@ padding-left:20px;
           <widget class="QWidget" name="scrollAreaWidgetContents">
            <property name="geometry">
             <rect>
-             <x>-667</x>
+             <x>0</x>
              <y>0</y>
-             <width>3457</width>
-             <height>681</height>
+             <width>3357</width>
+             <height>698</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">
+            <item row="0" column="1" rowspan="6">
+             <widget class="QFrame" name="tributemainframe">
+              <property name="minimumSize">
+               <size>
+                <width>500</width>
+                <height>630</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>500</width>
+                <height>1200</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background:none;</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_16">
+               <item row="0" column="0" colspan="2">
+                <widget class="QLabel" name="tributetitle">
+                 <property name="maximumSize">
+                  <size>
+                   <width>500</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;A tribute to our sponsors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="publishedlabel_3">
+                 <property name="maximumSize">
+                  <size>
+                   <width>250</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(195, 195, 195)</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 2-November 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QTextBrowser" name="textBrowser_2">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>150</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>300</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">text-color:white;
+background-color: rgba(255, 0, 0, 0);</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="sizeAdjustPolicy">
+                  <enum>QAbstractScrollArea::AdjustToContents</enum>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt;Welcoming November with a tribute to the people and companies who believe in and passionately support our team’s effort, the sponsors of REM IHU.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt;Their seamless support combined with the passion and willingness of our team’s members are our driving force in order to design and develop the 2nd Greek electric racing motorcycle. &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:700; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu&lt;/span&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:700; text-decoration: underline; color:#ffffff;&quot;&gt;#rem #ridethethunder #sponsors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="0">
+                <spacer name="verticalSpacer_5">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="0">
+                <widget class="QFrame" name="sponsorsframe_3">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>85</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(255, 165, 0);
+border-radius:10px</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <widget class="QLabel" name="sponsorslabel_3">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>0</y>
+                    <width>71</width>
+                    <height>20</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color:black;</string>
+                  </property>
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; font-weight:700;&quot;&gt;SPONSORS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="tributepic">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>300</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="icons.qrc">:/icons/Screenshot 2023-02-03 152507.png</pixmap>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="tributepicture">
+                 <property name="maximumSize">
+                  <size>
+                   <width>480</width>
+                   <height>280</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap>:/Pictures/Screenshots/Screenshot_20230203_032446.png</pixmap>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="6">
+             <widget class="QFrame" name="adaymainframe">
+              <property name="minimumSize">
+               <size>
+                <width>600</width>
+                <height>630</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>600</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgba(255, 0, 0, 0);</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_13">
+               <item row="2" column="0">
+                <widget class="QTextBrowser" name="adaytext">
+                 <property name="maximumSize">
+                  <size>
+                   <width>600</width>
+                   <height>100</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 0, 0, 0);
+color:white;</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;REM x BMW&lt;br /&gt;Special thanks to our supporters &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700; text-decoration: underline; color:#ffffff;&quot;&gt;@bmwmotorradhellas&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; for making all this possible!&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700; text-decoration: underline;&quot;&gt;#bmwmotorradhellas #bmwmotorrad #presentationday #motorcycle #motorcycleelectrics #motostudent #motostudentelectric #motostudent2023 #remihu #ridethethunder.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QFrame" name="sponsorsframe_12">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(149, 73, 255);
+border-radius:10px</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <widget class="QLabel" name="sponsorslabel_18">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>0</y>
+                    <width>51</width>
+                    <height>20</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color:black;</string>
+                  </property>
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; font-weight:700;&quot;&gt;  EVENT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="publishedlabel_2">
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 5-June 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="label_3">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>350</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="icons.qrc">:/icons/XAL_1628_1.png</pixmap>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>true</bool>
+                 </property>
+                 <property name="wordWrap">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="adaytitle">
+                 <property name="styleSheet">
+                  <string notr="true">color:white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;A day to be remembered&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QFrame" name="bmwmotorradmainframe">
+              <property name="minimumSize">
+               <size>
+                <width>600</width>
+                <height>630</height>
+               </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color:none</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_17">
+               <item row="6" column="0">
+                <widget class="QTextBrowser" name="remxabbtest">
+                 <property name="minimumSize">
+                  <size>
+                   <width>600</width>
+                   <height>100</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>600</width>
+                   <height>250</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:white;
+background-color: rgba(255, 0, 0, 0);</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="sizeAdjustPolicy">
+                  <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;We would like to thank &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:700;&quot;&gt;@ABB&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; for trusting and supporting us for the second consecutive racing season. ABB is a leading global technology company that energizes the transformation of society and industry to achieve a more productive, sustainable future. By connecting software to its electrification, robotics, automation and motion portfolio, ABB pushes the boundaries of technology to drive performance to new levels. With a history of excellence stretching back more than 130 years, ABB’s success is driven by about 105,000 talented employees in over 100 countries. &lt;/span&gt;&lt;span style=&quot; font-size:12pt; font-weight:700; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu #rem #ridethethunder #abb&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 16-November 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="remxbmwtitle">
+                 <property name="styleSheet">
+                  <string notr="true">color:white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;REM IHU x BMW Motorrad Hellas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QFrame" name="sponsorsframe_4">
+                 <property name="minimumSize">
+                  <size>
+                   <width>85</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>85</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(255, 165, 0);
+border-radius:10px;</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <widget class="QLabel" name="sponsorslabel_6">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>0</y>
+                    <width>71</width>
+                    <height>20</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color:black;</string>
+                  </property>
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; font-weight:700;&quot;&gt;SPONSORS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QTextBrowser" name="remxbmwtext">
+                 <property name="maximumSize">
+                  <size>
+                   <width>600</width>
+                   <height>240</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:white;
+background-color: rgba(255, 0, 0, 0);</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;We would like to thank BMW Motorrad Hellas (&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt;@bmwmotorradhellas&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;) for being by our side for the second consecutive racing season. Without their help and support we would not have achieved the desired result.BMW Hellas is one of the most successful premium motorcycle distribution companies. With its presence in the Greek market, as a subsidiary of the BMW Group, BMW Hellas represents BMW Motorrad. The goal of the BMW Group is the perfection of motorcycles and services using minimally natural resources during the production process, aiming at meeting the needs of future mobility. With models that not only express evolution, but the beginning of a new era in motorcycling.&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700; text-decoration: underline;&quot;&gt;#remihu #rem #ridethethunder #bmwmotorradhellas #remihupowerredbybmwmotorradhellas&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; color:#bcbcbc;&quot;&gt;Published on: 7-November 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="abbtitle">
+                 <property name="styleSheet">
+                  <string notr="true">color:white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;REM IHU x ABB&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QFrame" name="sponsorsframe_5">
+                 <property name="minimumSize">
+                  <size>
+                   <width>85</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>85</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(255, 165, 0);
+border-radius:10px</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <widget class="QLabel" name="sponsorslabel_9">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>0</y>
+                    <width>71</width>
+                    <height>20</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color:black;</string>
+                  </property>
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; font-weight:700;&quot;&gt;SPONSORS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="0" column="5">
+             <widget class="QFrame" name="presentationmainframe">
+              <property name="minimumSize">
+               <size>
+                <width>600</width>
+                <height>630</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>600</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_14">
+               <item row="7" column="0">
+                <widget class="QTextBrowser" name="presentationbmwtext">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>170</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 0, 0, 0);
+color:white;</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;An exciting day spent with our number one supporters @bmwmotorradhellas. A presentation of a ''rad'' electric motorcycle that left everyone astonished took place and we are very happy to be part of all this!&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:700; text-decoration: underline; color:#ffffff;&quot;&gt;#bmwmotorrad #bmwmotorradhellas #electricmotorcycle #electric #ridethethunder #motorcycle #motostudentelectric #motostuden2023&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 29- March 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QTextBrowser" name="presentationchallengetext">
+                 <property name="maximumSize">
+                  <size>
+                   <width>600</width>
+                   <height>190</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 0, 0, 0);
+color:white;</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;After an outstanding team presentation the winner is the subgroup of BSS (brake suspension steering) showcasing its’ progress and accomplishments over the last weeks. The presentation’s challenge was fully accomplished by the BSS subgroup, hence they won a photoshooting with Hyperion, our powerful electric motorbike.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:700; text-decoration: underline; color:#ffffff;&quot;&gt;#rem #remihu #ridethethunder #remihupoweredbymotorradhellas #moto #electric&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:700; text-decoration: underline; color:#ffffff;&quot;&gt;#motostudent #motostudent2023 #motorbike #photography #photoshooting&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 31- March 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="presentationchallengetitle">
+                 <property name="styleSheet">
+                  <string notr="true">background:none;
+color:white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Presentation Challenge of March 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="0">
+                <widget class="QLabel" name="supporttitle">
+                 <property name="styleSheet">
+                  <string notr="true">color:white</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Support from Serres Racing Circuit&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QFrame" name="sponsorsframe_10">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(149, 73, 255);
+border-radius:10px</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <widget class="QLabel" name="sponsorslabel_16">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>0</y>
+                    <width>51</width>
+                    <height>20</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color:black;</string>
+                  </property>
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; font-weight:700;&quot;&gt;  EVENT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="presentationbmwtitle">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background:none;
+color:white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Presentation with BMW Motorrad Hellas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QFrame" name="sponsorsframe_9">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(149, 73, 255);
+border-radius:10px</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <widget class="QLabel" name="sponsorslabel_14">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>0</y>
+                    <width>51</width>
+                    <height>20</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color:black;</string>
+                  </property>
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; font-weight:700;&quot;&gt;  EVENT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </widget>
+               </item>
+               <item row="10" column="0">
+                <widget class="QTextBrowser" name="supporttext">
+                 <property name="styleSheet">
+                  <string notr="true">color:white;
+background-color: rgba(255, 0, 0, 0);</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;We are grateful for the support we have from the &lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#ffffff;&quot;&gt;@serres.racing.circuit&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; with our attendance and the opportunity to take photos at such a big event as the ''Balkan Motorcycle championship''.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:700; text-decoration: underline; color:#ffffff;&quot;&gt;#serresracingcircuit #serres #motorcycle #motorbike #motor #balkanmotorsports #balkanmotor #ridethethunder #racing #race #raceweekend #raceteam #weels #circuits #racebike #bikelife #superbike #sportsbike #biker #truckbike #bikesofinstagram #motorrad&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 23- June 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="0">
+                <widget class="QFrame" name="sponsorsframe_11">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(149, 73, 255);
+border-radius:10px</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <widget class="QLabel" name="sponsorslabel_17">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>0</y>
+                    <width>51</width>
+                    <height>20</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color:black;</string>
+                  </property>
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; font-weight:700;&quot;&gt;  EVENT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
             <item row="0" column="3">
              <widget class="QFrame" name="remihumainframe">
               <property name="minimumSize">
                <size>
                 <width>500</width>
-                <height>657</height>
+                <height>630</height>
                </size>
               </property>
               <property name="styleSheet">
@@ -2469,6 +3332,98 @@ padding-left:20px;
                <enum>QFrame::Raised</enum>
               </property>
               <layout class="QGridLayout" name="gridLayout_11">
+               <item row="6" column="0">
+                <widget class="QLabel" name="typographictitle">
+                 <property name="styleSheet">
+                  <string notr="true">color:white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;REM IHU x Typographic&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QFrame" name="sponsorsframe_6">
+                 <property name="minimumSize">
+                  <size>
+                   <width>85</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>85</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color:rgb(255, 165, 0);
+border-radius:10px</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <widget class="QLabel" name="sponsorslabel_10">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>0</y>
+                    <width>71</width>
+                    <height>20</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color:black;</string>
+                  </property>
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; font-weight:700;&quot;&gt;SPONSORS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </widget>
+               </item>
+               <item row="9" column="0">
+                <widget class="QTextBrowser" name="typographictext">
+                 <property name="minimumSize">
+                  <size>
+                   <width>600</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>600</width>
+                   <height>300</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:white;
+background-color: rgba(255, 0, 0, 0);</string>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;We would like to thank Typographic &lt;/span&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700; text-decoration: underline; color:#ffffff;&quot;&gt;@typographic.gr&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;) for supporting us and helping us promote our team’s effort by providing us with their services.&lt;br /&gt;&lt;br /&gt;Typographic has been active in the field of graphic arts since 1989 and provides complete solutions for the promotion of companies and professionals through print and digital advertising since they design and print posters, books, letterheads and business cards, calendars, catalogues, magazines and flyers. Going through their fourth decade in the field, they aim at continuous development and the establishment of partnerships with professionals who are looking for the best result in promoting their products or services.&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu #rem #ridethethunder #typographic.&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 23-November 2022&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#bcbcbc;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
                <item row="0" column="0">
                 <widget class="QLabel" name="bmwtitle">
                  <property name="minimumSize">
@@ -2500,7 +3455,7 @@ padding-left:20px;
                <item row="2" column="0">
                 <widget class="QTextBrowser" name="bmwtext">
                  <property name="styleSheet">
-                  <string notr="true">background:null;
+                  <string notr="true">background-color: rgba(255, 0, 0, 0);
 color:white;</string>
                  </property>
                  <property name="frameShape">
@@ -2520,125 +3475,28 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;We would like to thank &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/spmotorsports_gr/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;@spmotorsports_gr&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;for supporting us in our effort for the first racing season.Sp Motorsports is based at the 3rd km of Serres – Thessaloniki, 3.5 km from the Serres Racing Circuit. After 10 years in the motorcycling field and 6 of them in the racing part, mainly as a technician but also as a rider in panhellenic and international races, SP Motorsports was founded in September 2020. With race track experience and expertise SP Motorsports can offer the market leading motorcycle parts and accessories as well as lubricants and tyres of all types&lt;/span&gt;&lt;span style=&quot; font-size:11pt; color:#000000;&quot;&gt;.&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/remihu/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#remihu&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/rem/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#rem&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/ridetethunder/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#ridetethunder&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/spmotorsports/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#spmotorsports&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;We would like to thank&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700; text-decoration: underline; color:#ffffff;&quot;&gt;@spmotorsports.gr&lt;/span&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;for supporting us in our effort for the first racing season.Sp Motorsports is based at the 3rd km of Serres – Thessaloniki, 3.5 km from the Serres Racing Circuit. After 10 years in the motorcycling field and 6 of them in the racing part, mainly as a technician but also as a rider in panhellenic and international races, SP Motorsports was founded in September 2020. With race track experience and expertise SP Motorsports can offer the market leading motorcycle parts and accessories as well as lubricants and tyres of all types.&lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu #rem #ridethethurnder #spmotorsports&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 25-November 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
-               <item row="9" column="0">
-                <widget class="QTextBrowser" name="typographictext">
-                 <property name="minimumSize">
-                  <size>
-                   <width>600</width>
-                   <height>0</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>600</width>
-                   <height>300</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color:white;
-background:null;</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="horizontalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="html">
-                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;We would like to thank Typographic &lt;/span&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/typographic.gr/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;@typographic.gr&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;) for supporting us and helping us promote our team’s effort by providing us with their services.&lt;br /&gt;&lt;br /&gt;Typographic has been active in the field of graphic arts since 1989 and provides complete solutions for the promotion of companies and professionals through print and digital advertising since they design and print posters, books, letterheads and business cards, calendars, catalogues, magazines and flyers. Going through their fourth decade in the field, they aim at continuous development and the establishment of partnerships with professionals who are looking for the best result in promoting their products or services.&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/remihu/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#remihu&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/rem/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#rem&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/ridethethunder/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#ridethethunder&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/typographic/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#typographic&lt;/span&gt;&lt;/a&gt;&lt;br /&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 23-November 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QFrame" name="sponsors">
-                 <property name="minimumSize">
-                  <size>
-                   <width>130</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>130</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color:#9d9d9d;
-border-radius:20px</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <widget class="QLabel" name="sponsorstext">
-                  <property name="geometry">
-                   <rect>
-                    <x>20</x>
-                    <y>10</y>
-                    <width>81</width>
-                    <height>20</height>
-                   </rect>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>40</height>
-                   </size>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color:white;</string>
-                  </property>
-                  <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;SPONSORS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                  </property>
-                 </widget>
-                </widget>
-               </item>
-               <item row="6" column="0">
-                <widget class="QLabel" name="typographictitle">
-                 <property name="styleSheet">
-                  <string notr="true">color:white;</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;REM IHU x Typographic&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
                <item row="7" column="0">
-                <widget class="QFrame" name="sponsors_2">
+                <widget class="QFrame" name="sponsorsframe_7">
                  <property name="minimumSize">
                   <size>
-                   <width>130</width>
-                   <height>40</height>
+                   <width>85</width>
+                   <height>20</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>130</width>
-                   <height>40</height>
+                   <width>85</width>
+                   <height>20</height>
                   </size>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">background-color:#9d9d9d;
-border-radius:20px</string>
+                  <string notr="true">background-color:rgb(255, 165, 0);
+border-radius:10px</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
@@ -2646,270 +3504,12 @@ border-radius:20px</string>
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
-                 <widget class="QLabel" name="sponsorstext_2">
+                 <widget class="QLabel" name="sponsorslabel_15">
                   <property name="geometry">
                    <rect>
-                    <x>20</x>
-                    <y>10</y>
-                    <width>81</width>
-                    <height>20</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color:white;</string>
-                  </property>
-                  <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;SPONSORS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                  </property>
-                 </widget>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="0" column="1" rowspan="6">
-             <widget class="QFrame" name="tributemainframe">
-              <property name="minimumSize">
-               <size>
-                <width>500</width>
-                <height>657</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>500</width>
-                <height>1200</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background:none;</string>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::NoFrame</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_16">
-               <item row="2" column="0">
-                <widget class="QTextBrowser" name="textBrowser">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>500</width>
-                   <height>210</height>
-                  </size>
-                 </property>
-                 <property name="mouseTracking">
-                  <bool>false</bool>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">text-color:white;
-background:null;</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="horizontalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="sizeAdjustPolicy">
-                  <enum>QAbstractScrollArea::AdjustToContents</enum>
-                 </property>
-                 <property name="html">
-                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt;Welcoming November with a tribute to the people and companies who believe in and passionately support our team’s effort, the sponsors of REM IHU.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt;Their seamless support combined with the passion and willingness of our team’s members are our driving force in order to design and develop the 2nd Greek electric racing motorcycle. &lt;/span&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu #rem #ridethethunder #sponsors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="0">
-                <widget class="QLabel" name="publishedlabel_3">
-                 <property name="maximumSize">
-                  <size>
-                   <width>250</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color:rgb(195, 195, 195)</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 2-November 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="tributepicture">
-                 <property name="maximumSize">
-                  <size>
-                   <width>480</width>
-                   <height>280</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="pixmap">
-                  <pixmap>:/Pictures/Screenshots/Screenshot_20230203_032446.png</pixmap>
-                 </property>
-                 <property name="scaledContents">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0" colspan="2">
-                <widget class="QLabel" name="tributetitle">
-                 <property name="maximumSize">
-                  <size>
-                   <width>500</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color:white;</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:20pt; font-weight:700;&quot;&gt;A tribute to our sponsors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QFrame" name="sponsorsframe_3">
-                 <property name="minimumSize">
-                  <size>
-                   <width>130</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>130</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgb(157, 157, 157);
-border-radius:20px</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <widget class="QLabel" name="sponsorslabel_3">
-                  <property name="geometry">
-                   <rect>
-                    <x>20</x>
-                    <y>10</y>
-                    <width>81</width>
-                    <height>20</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color:white;</string>
-                  </property>
-                  <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;SPONSORS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                  </property>
-                 </widget>
-                </widget>
-               </item>
-               <item row="6" column="0">
-                <spacer name="verticalSpacer_5">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeType">
-                  <enum>QSizePolicy::Fixed</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>100</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="0" column="6">
-             <widget class="QFrame" name="adaymainframe">
-              <property name="minimumSize">
-               <size>
-                <width>600</width>
-                <height>657</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>600</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::NoFrame</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_13">
-               <item row="5" column="0">
-                <widget class="QLabel" name="publishedlabel_2">
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 5-June 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QFrame" name="eventframe_2">
-                 <property name="minimumSize">
-                  <size>
-                   <width>90</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgb(149, 73, 255);
-border-radius:20px</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <widget class="QLabel" name="eventlabel_2">
-                  <property name="geometry">
-                   <rect>
-                    <x>20</x>
-                    <y>10</y>
-                    <width>51</width>
+                    <x>10</x>
+                    <y>0</y>
+                    <width>71</width>
                     <height>20</height>
                    </rect>
                   </property>
@@ -2917,559 +3517,9 @@ border-radius:20px</string>
                    <string notr="true">color:black;</string>
                   </property>
                   <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;EVENT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; font-weight:700;&quot;&gt;SPONSORS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                  </widget>
-                </widget>
-               </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="adayphoto">
-                 <property name="maximumSize">
-                  <size>
-                   <width>600</width>
-                   <height>400</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="pixmap">
-                  <pixmap>:/Pictures/XAL_1628_1.png</pixmap>
-                 </property>
-                 <property name="scaledContents">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0">
-                <widget class="QTextBrowser" name="adaytext">
-                 <property name="maximumSize">
-                  <size>
-                   <width>600</width>
-                   <height>250</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background:null;
-color:white;</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="horizontalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="html">
-                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;REM x BMW&lt;br /&gt;Special thanks to our supporters &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/bmwmotorradhellas/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;@bmwmotorradhellas&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; for making all this possible!&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/bmwmotorradhellas/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#bmwmotorradhellas&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/bmwmotorrad/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#bmwmotorrad&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/presentationday/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#presentationday&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/motorcycle/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#motorcycle&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/motorcycleelectrics/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#motorcycleelectrics&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/motostudent/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#motostudent&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/motostudentelectric/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#motostudentelectric&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/motostudent2023/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#motostudent2023&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/remihu/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#remihu&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/ridethethunder/&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#ridethethunder&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="adaytitle">
-                 <property name="styleSheet">
-                  <string notr="true">color:white;</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;A day to be remembered&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="0" column="2">
-             <widget class="QFrame" name="bmwmotorradmainframe">
-              <property name="minimumSize">
-               <size>
-                <width>600</width>
-                <height>657</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color:none</string>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::NoFrame</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_17">
-               <item row="5" column="0">
-                <widget class="QTextBrowser" name="remxabbtest">
-                 <property name="minimumSize">
-                  <size>
-                   <width>600</width>
-                   <height>100</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>600</width>
-                   <height>250</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color:white;
-background:null;</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="horizontalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="sizeAdjustPolicy">
-                  <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
-                 </property>
-                 <property name="html">
-                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;We would like to thank @ABB for trusting and supporting us for the second consecutive racing season. ABB is a leading global technology company that energizes the transformation of society and industry to achieve a more productive, sustainable future. By connecting software to its electrification, robotics, automation and motion portfolio, ABB pushes the boundaries of technology to drive performance to new levels. With a history of excellence stretching back more than 130 years, ABB’s success is driven by about 105,000 talented employees in over 100 countries. &lt;/span&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu #rem #ridethethunder #abb&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 16-November 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="0">
-                <widget class="QFrame" name="sponsorsframe_2">
-                 <property name="minimumSize">
-                  <size>
-                   <width>130</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>130</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color:#9d9d9d;
-border-radius:20px</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <widget class="QLabel" name="sponsorslabel_2">
-                  <property name="geometry">
-                   <rect>
-                    <x>20</x>
-                    <y>10</y>
-                    <width>81</width>
-                    <height>20</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color:white;</string>
-                  </property>
-                  <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;SPONSORS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                  </property>
-                 </widget>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="remxbmwtitle">
-                 <property name="styleSheet">
-                  <string notr="true">color:white;</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;REM IHU x BMW Motorrad Hellas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="abbtitle">
-                 <property name="styleSheet">
-                  <string notr="true">color:white;</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;REM IHU x ABB&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0">
-                <widget class="QTextBrowser" name="remxbmwtext">
-                 <property name="maximumSize">
-                  <size>
-                   <width>600</width>
-                   <height>250</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color:white;
-background-color:null</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="horizontalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="html">
-                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;We would like to thank BMW Motorrad Hellas (@bmwmotorradhellas) for being by our side for the second consecutive racing season. Without their help and support we would not have achieved the desired result.BMW Hellas is one of the most successful premium motorcycle distribution companies. With its presence in the Greek market, as a subsidiary of the BMW Group, BMW Hellas represents BMW Motorrad. The goal of the BMW Group is the perfection of motorcycles and services using minimally natural resources during the production process, aiming at meeting the needs of future mobility. With models that not only express evolution, but the beginning of a new era in motorcycling.&lt;/span&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline;&quot;&gt;#remihu #rem #ridethethunder #bmwmotorradhellas #remihupowerredbybmwmotorradhellas&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt; color:#bcbcbc;&quot;&gt;Published on: 7-November 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QFrame" name="sponsorsframe">
-                 <property name="minimumSize">
-                  <size>
-                   <width>130</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>130</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color:#9d9d9d;
-border-radius:20px</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <widget class="QLabel" name="sponsorslabel">
-                  <property name="geometry">
-                   <rect>
-                    <x>20</x>
-                    <y>10</y>
-                    <width>81</width>
-                    <height>20</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color:white;</string>
-                  </property>
-                  <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;SPONSORS&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                  </property>
-                 </widget>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="0" column="5">
-             <widget class="QFrame" name="presentationmainframe">
-              <property name="minimumSize">
-               <size>
-                <width>600</width>
-                <height>657</height>
-               </size>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>600</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::NoFrame</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_14">
-               <item row="4" column="0">
-                <widget class="QFrame" name="eventframe_4">
-                 <property name="minimumSize">
-                  <size>
-                   <width>90</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgb(149, 73, 255);
-border-radius:20px</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <widget class="QLabel" name="eventlabel_4">
-                  <property name="geometry">
-                   <rect>
-                    <x>20</x>
-                    <y>10</y>
-                    <width>51</width>
-                    <height>20</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color:black;</string>
-                  </property>
-                  <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;EVENT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                  </property>
-                 </widget>
-                </widget>
-               </item>
-               <item row="2" column="0">
-                <widget class="QTextBrowser" name="presentationchallengetext">
-                 <property name="maximumSize">
-                  <size>
-                   <width>600</width>
-                   <height>190</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background:null;
-color:white;</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="horizontalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="html">
-                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;After an outstanding team presentation the winner is the subgroup of BSS (brake suspension steering) showcasing its’ progress and accomplishments over the last weeks. The presentation’s challenge was fully accomplished by the BSS subgroup, hence they won a photoshooting with Hyperion, our powerful electric motorbike.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#ffffff;&quot;&gt;#rem #remihu #ridethethunder #remihupoweredbymotorradhellas #moto #electric&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#ffffff;&quot;&gt;#motostudent #motostudent2023 #motorbike #photography #photoshooting&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 31- March 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="8" column="0">
-                <widget class="QLabel" name="supporttitle">
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Support from Serres Racing Circuit&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QFrame" name="eventframe_5">
-                 <property name="minimumSize">
-                  <size>
-                   <width>90</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgb(149, 73, 255);
-border-radius:20px</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <widget class="QLabel" name="eventlabel_5">
-                  <property name="geometry">
-                   <rect>
-                    <x>20</x>
-                    <y>10</y>
-                    <width>51</width>
-                    <height>20</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color:black;</string>
-                  </property>
-                  <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;EVENT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                  </property>
-                 </widget>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="presentationchallengetitle">
-                 <property name="styleSheet">
-                  <string notr="true">background:none;
-color:white;</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Presentation Challenge of March 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="10" column="0">
-                <widget class="QTextBrowser" name="supporttext">
-                 <property name="styleSheet">
-                  <string notr="true">background:null;
-color:white;</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="horizontalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="html">
-                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;We are grateful for the support we have from the &lt;/span&gt;&lt;span style=&quot; font-size:10pt; color:#ffffff;&quot;&gt;@serres.racing.circuit&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; with our attendance and the opportunity to take photos at such a big event as the ''Balkan Motorcycle championship''.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#ffffff;&quot;&gt;#serresracingcircuit #serres #motorcycle #motorbike #motor #balkanmotorsports #balkanmotor #ridethethunder #racing #race #raceweekend #raceteam #weels #circuits #racebike #bikelife #superbike #sportsbike #biker #truckbike #bikesofinstagram #motorrad&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 23- June 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="9" column="0">
-                <widget class="QFrame" name="eventframe_3">
-                 <property name="minimumSize">
-                  <size>
-                   <width>90</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>80</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background-color:rgb(149, 73, 255);
-border-radius:20px</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::StyledPanel</enum>
-                 </property>
-                 <property name="frameShadow">
-                  <enum>QFrame::Raised</enum>
-                 </property>
-                 <widget class="QLabel" name="eventlabel_3">
-                  <property name="geometry">
-                   <rect>
-                    <x>20</x>
-                    <y>10</y>
-                    <width>51</width>
-                    <height>20</height>
-                   </rect>
-                  </property>
-                  <property name="styleSheet">
-                   <string notr="true">color:black;</string>
-                  </property>
-                  <property name="text">
-                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;EVENT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                  </property>
-                 </widget>
-                </widget>
-               </item>
-               <item row="7" column="0">
-                <widget class="QTextBrowser" name="presentationbmwtext">
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>170</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background:null;
-color:white;</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="horizontalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="html">
-                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;An exciting day spent with our number one supporters @bmwmotorradhellas. A presentation of a ''rad'' electric motorcycle that left everyone astonished took place and we are very happy to be part of all this!&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#ffffff;&quot;&gt;#bmwmotorrad #bmwmotorradhellas #electricmotorcycle #electric #ridethethunder #motorcycle #motostudentelectric #motostuden2023&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 29- March 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="presentationbmwtitle">
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">background:none;
-color:white;</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Presentation with BMW Motorrad Hellas&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
                 </widget>
                </item>
               </layout>
@@ -3479,8 +3529,8 @@ color:white;</string>
              <widget class="QFrame" name="bmumainframe">
               <property name="minimumSize">
                <size>
-                <width>600</width>
-                <height>657</height>
+                <width>500</width>
+                <height>400</height>
                </size>
               </property>
               <property name="frameShape">
@@ -3491,22 +3541,6 @@ color:white;</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_12">
                <item row="6" column="0">
-                <widget class="QLabel" name="publishedlabel">
-                 <property name="maximumSize">
-                  <size>
-                   <width>250</width>
-                   <height>30</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color:rgb(107, 107, 107)</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 2-November 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="0">
                 <widget class="QLabel" name="bmuphoto">
                  <property name="maximumSize">
                   <size>
@@ -3525,49 +3559,48 @@ color:white;</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="bmutitle">
-                 <property name="styleSheet">
-                  <string notr="true">color:white;</string>
-                 </property>
-                 <property name="text">
-                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;BMU Championship&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="8" column="0">
-                <spacer name="bmuspacer">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeType">
-                  <enum>QSizePolicy::Fixed</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>100</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="1" column="0">
-                <widget class="QFrame" name="eventframe">
+               <item row="4" column="0">
+                <widget class="QLabel" name="label_2">
                  <property name="minimumSize">
                   <size>
-                   <width>90</width>
-                   <height>40</height>
+                   <width>500</width>
+                   <height>300</height>
                   </size>
                  </property>
                  <property name="maximumSize">
                   <size>
-                   <width>80</width>
-                   <height>40</height>
+                   <width>500</width>
+                   <height>300</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="icons.qrc">:/icons/1-1024x684.jpg</pixmap>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QFrame" name="sponsorsframe_8">
+                 <property name="minimumSize">
+                  <size>
+                   <width>60</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>60</width>
+                   <height>20</height>
                   </size>
                  </property>
                  <property name="styleSheet">
                   <string notr="true">background-color:rgb(149, 73, 255);
-border-radius:20px</string>
+border-radius:10px</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
@@ -3575,40 +3608,40 @@ border-radius:20px</string>
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
                  </property>
-                 <layout class="QGridLayout" name="gridLayout_15">
-                  <item row="0" column="1">
-                   <widget class="QLabel" name="eventlabel">
-                    <property name="styleSheet">
-                     <string notr="true">color:black;</string>
-                    </property>
-                    <property name="text">
-                     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:700;&quot;&gt;                                    EVENT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="0" column="0">
-                   <spacer name="horizontalSpacer_4">
-                    <property name="orientation">
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeType">
-                     <enum>QSizePolicy::Fixed</enum>
-                    </property>
-                    <property name="sizeHint" stdset="0">
-                     <size>
-                      <width>5</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                 </layout>
+                 <widget class="QLabel" name="sponsorslabel_12">
+                  <property name="geometry">
+                   <rect>
+                    <x>10</x>
+                    <y>0</y>
+                    <width>51</width>
+                    <height>20</height>
+                   </rect>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color:black;</string>
+                  </property>
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:8pt; font-weight:700;&quot;&gt;  EVENT&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
                 </widget>
                </item>
-               <item row="5" column="0">
+               <item row="3" column="0">
                 <widget class="QTextBrowser" name="bmutext">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>120</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>120</height>
+                  </size>
+                 </property>
                  <property name="styleSheet">
-                  <string notr="true">background:null;
+                  <string notr="true">background-color: rgba(255, 0, 0, 0);
 color:white;</string>
                  </property>
                  <property name="frameShape">
@@ -3628,7 +3661,40 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;It is our honor that once again REM IHU, with the help and support of Serres Racing Circuit (@serres.racing.circuit) attended on October 21-22-23 such a big event as the “Balkan Motorcycle Championship”. Throughout these three days, we were given the opportunity to get to know many of you and discuss about us and our work!&lt;br /&gt;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/remihu/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#remihu&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/ridethethunder/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#ridethethunder&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/serresracingcircuit/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#serresracingcircuit&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/serres/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#serres&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/motorcycle/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#motorcycle&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/motorbike/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#motorbike&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/motor/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#motor&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/balkanmotorsports/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#balkanmotorsports&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/bmu/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#bmu&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/balkanmotor/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#balkanmotor&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/racing/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#racing&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/race/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#race&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/raceweekend/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#raceweekend&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/raceteam/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#raceteam&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/wheels/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#wheels&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/circuits/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#circuits&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/racebike/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#racebike&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/bikelife/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#bikelife&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/superbike/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#superbike&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/sportsbike/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#sportsbike&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/biker/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#biker&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/truckbike/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#truckbike&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/bikesofinstagram/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#bikesofinstagram&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;a href=&quot;https://www.instagram.com/explore/tags/motorrad/?next=%2F&quot;&gt;&lt;span style=&quot; font-size:11pt; text-decoration: underline; color:#ffffff; background-color:transparent;&quot;&gt;#motorrad&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;It is our honor that once again REM IHU, with the help and support of Serres Racing Circuit &lt;/span&gt;&lt;span style=&quot; font-size:11pt; font-weight:700; text-decoration: underline; color:#ffffff;&quot;&gt;@serres.racing.circuit&lt;/span&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt; attended on October 21-22-23 such a big event as the “Balkan Motorcycle Championship”. Throughout these three days, we were given the opportunity to get to know many of you and discuss about us and our work!&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="0">
+                <widget class="QLabel" name="publishedlabel">
+                 <property name="maximumSize">
+                  <size>
+                   <width>250</width>
+                   <height>30</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:rgb(107, 107, 107)</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#bcbcbc;&quot;&gt;Published on: 2-November 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="bmutitle">
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:white;</string>
+                 </property>
+                 <property name="text">
+                  <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;BMU Championship&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
