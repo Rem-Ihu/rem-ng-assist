@@ -85,10 +85,10 @@ border:none;</string>
    <widget class="QPushButton" name="pushButton_Login">
     <property name="geometry">
      <rect>
-      <x>86</x>
-      <y>260</y>
-      <width>221</width>
-      <height>24</height>
+      <x>72</x>
+      <y>240</y>
+      <width>251</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="cursor">
@@ -96,8 +96,8 @@ border:none;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border: 1px solid black;
-border-radius:5px;
-/*background-color: rgb(170, 0, 127);
+border-radius:2px;
+background-color: #ffffff;
 
 </string>
     </property>
@@ -137,6 +137,18 @@ border-radius:5px;
     </property>
     <property name="text">
      <string>Quit</string>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="email_address">
@@ -213,7 +225,7 @@ color: rgb(204, 204, 204);</string>
     <property name="geometry">
      <rect>
       <x>29</x>
-      <y>320</y>
+      <y>290</y>
       <width>151</width>
       <height>16</height>
      </rect>
@@ -230,7 +242,7 @@ color: rgb(204, 204, 204);</string>
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>320</y>
+      <y>290</y>
       <width>161</width>
       <height>16</height>
      </rect>
@@ -247,7 +259,7 @@ color: rgb(204, 204, 204);</string>
     <property name="geometry">
      <rect>
       <x>187</x>
-      <y>327</y>
+      <y>297</y>
       <width>16</width>
       <height>16</height>
      </rect>
@@ -259,8 +271,258 @@ color: rgb(204, 204, 204);</string>
      <string>OR</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>22</y>
+      <width>181</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 700 7pt &quot;Segoe UI&quot;;
+color: rgb(88, 88, 88);</string>
+    </property>
+    <property name="text">
+     <string>CREATE ACCOUNT</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>91</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icons.qrc">
+      <normaloff>:/icons/logo_icon_login_page.png</normaloff>:/icons/logo_icon_login_page.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>60</width>
+      <height>60</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>87</x>
+      <y>380</y>
+      <width>220</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>220</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid black;
+border-radius:2px;
+padding-right:11px;</string>
+    </property>
+    <property name="text">
+     <string>     Log in with Gmail</string>
+    </property>
+    <property name="icon">
+     <iconset resource="icons.qrc">
+      <normaloff>:/icons/gmail_icon.png</normaloff>:/icons/gmail_icon.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>16</width>
+      <height>16</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_3">
+    <property name="geometry">
+     <rect>
+      <x>87</x>
+      <y>430</y>
+      <width>220</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>220</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid black;
+border-radius:2px;</string>
+    </property>
+    <property name="text">
+     <string>   Log in with Facebook</string>
+    </property>
+    <property name="icon">
+     <iconset resource="icons.qrc">
+      <normaloff>:/icons/facebook_icon.png</normaloff>:/icons/facebook_icon.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>30</width>
+      <height>23</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>87</x>
+      <y>330</y>
+      <width>220</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>220</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: 1px solid black;
+border-radius:2px;</string>
+    </property>
+    <property name="text">
+     <string>     Log in with Apple ID</string>
+    </property>
+    <property name="icon">
+     <iconset resource="icons.qrc">
+      <normaloff>:/icons/apple_icon.png</normaloff>:/icons/apple_icon.png</iconset>
+    </property>
+    <property name="checkable">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>line1</zorder>
+   <zorder>line2</zorder>
+   <zorder>lineEdit_Password</zorder>
+   <zorder>lineEdit_User_Name</zorder>
+   <zorder>pushButton_Login</zorder>
+   <zorder>pushButton_Cancel</zorder>
+   <zorder>email_address</zorder>
+   <zorder>password</zorder>
+   <zorder>line2_2</zorder>
+   <zorder>line2_3</zorder>
+   <zorder>label</zorder>
+   <zorder>label_2</zorder>
+   <zorder>pushButton</zorder>
+   <zorder>pushButton_2</zorder>
+   <zorder>pushButton_3</zorder>
+   <zorder>pushButton_4</zorder>
   </widget>
  </widget>
- <resources/>
- <connections/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>lineEdit_Password</sender>
+   <signal>returnPressed()</signal>
+   <receiver>pushButton_Login</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>190</x>
+     <y>201</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>196</x>
+     <y>271</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

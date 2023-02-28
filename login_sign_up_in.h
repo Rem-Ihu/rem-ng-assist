@@ -27,6 +27,7 @@ private slots:
 
 private:
     Ui::login_sign_up_in *ui;
+    MainWindow *mainwindow;
 };
 
 

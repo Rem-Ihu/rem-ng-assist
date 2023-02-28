@@ -59,5 +59,6 @@ private:
     Ui::MainWindow *ui;
     QTabWidget *tabWidget;
     QSplitter *splitter;
+
 };
 #endif // MAINWINDOW_H
