@@ -1,6 +1,7 @@
 #include "databasehandler1.h"
 #include "login_sign_up_in.h"
 #include "mainwindow.h"
+#include "chart.cpp"
 //end of file and headers (#include)
 
 
@@ -105,6 +106,7 @@ int main(int argc, char *argv[])
 
 
 
+    QChart* chart = new Charts();
     MainWindow w;
     w.show();
     return app.exec();
