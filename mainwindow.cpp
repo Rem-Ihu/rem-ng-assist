@@ -36,10 +36,10 @@ MainWindow::MainWindow(QWidget *parent)
     chart_bigOneChart->setTitle("Simple spline chart example"); //create a label for it
     chart_bigOneChart->createDefaultAxes(); //create the axes
     chart_bigOneChart->axes(Qt::Vertical).first()->setRange(-7, 12); //set the range of values of axis y
-    chart_bigOneChart->setTitleBrush(QBrush(Qt::black));//customize the color of the title in the chart
-    chart_bigOneChart->setBackgroundBrush(QBrush(Qt::white));//customize the color of the background in the chart
+    chart_bigOneChart->setTitleBrush(QBrush(Qt::white));//customize the color of the title in the chart
+    chart_bigOneChart->setBackgroundBrush(Qt::transparent);//customize the color of the background in the chart
 
-    QPen pen(Qt::blue);//customize the color of the series in the chart--create the color layer
+    QPen pen(Qt::white);//customize the color of the series in the chart--create the color layer
     pen.setWidth(1);//customize the width of the series in the chart
     series_bigOneChart->setPen(pen); //apply the color to the series
 
@@ -84,7 +84,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-    chart_bigOneChart->setPlotAreaBackgroundBrush(QColor(255, 255, 255, 0));// set the color of the plot area to trasnparent
+    chart_bigOneChart->setPlotAreaBackgroundBrush(Qt::transparent);// set the color of the plot area to trasnparent
     chart_bigOneChart->setPlotAreaBackgroundVisible(true); //set the application layer to visible
     chart_bigOneChart->setAnimationOptions(QChart::NoAnimation); //disable the animation for a smoother transition from point to point
     QCategoryAxis *axisX = new QCategoryAxis();//create the 2 axes
@@ -97,20 +97,20 @@ MainWindow::MainWindow(QWidget *parent)
     axisY->setLabelsFont(labelsFont); //apply to axis y
 
     // Customize axis colors
-    QPen axisPen(Qt::black);
+    QPen axisPen(Qt::white);
     axisPen.setWidth(5);
     axisX->setLinePen(axisPen);
     axisY->setLinePen(axisPen);
 
     // Customize axis label colors
-    QBrush axisBrush(Qt::yellow);
+    QBrush axisBrush(Qt::white);
     axisX->setLabelsBrush(axisBrush);
     axisY->setLabelsBrush(axisBrush);
 
     QTextCharFormat format;
-    format.setForeground(Qt::blue);
-    axisX->setLabelsColor(Qt::blue);
-    axisY->setLabelsColor(Qt::blue);
+    format.setForeground(Qt::white);
+    axisX->setLabelsColor(Qt::white);
+    axisY->setLabelsColor(Qt::white);
 
 
     chart_bigOneChart->addAxis(axisX, Qt::AlignBottom);
@@ -131,7 +131,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QChartView *chartView_bigOneChart = new QChartView(chart_bigOneChart);
     chartView_bigOneChart->setRenderHint(QPainter::Antialiasing);
-    chartView_bigOneChart->setBackgroundBrush(QBrush());
+    chartView_bigOneChart->setBackgroundBrush(Qt::transparent);
 //    chartView->setBackgroundBrush(QBrush(QColor("salmon")));
 
     QVBoxLayout *layout_bigOneChart1 = new QVBoxLayout(ui->bigOneChart);
@@ -198,9 +198,9 @@ MainWindow::MainWindow(QWidget *parent)
     area_chart->createDefaultAxes();
     area_chart->axes(Qt::Horizontal).first()->setRange(0, 20);
     area_chart->axes(Qt::Vertical).first()->setRange(0, 10);
-    area_chart->setTitleBrush(QBrush(Qt::black));//customize the color of the title in the chart
-    area_chart->setBackgroundBrush(QBrush(Qt::white));//customize the color of the background in the chart
-    area_chart->setPlotAreaBackgroundBrush(QColor(255, 255, 255, 0));
+    area_chart->setTitleBrush(QBrush(Qt::white));//customize the color of the title in the chart
+    area_chart->setBackgroundBrush(QBrush(QColor(0, 0, 0, 0)));//customize the color of the background in the chart
+    area_chart->setPlotAreaBackgroundBrush(QBrush(QColor(0, 0, 0, 0)));
     area_chart->setPlotAreaBackgroundVisible(true);
 
     QGraphicsDropShadowEffect *shadow_area_chart = new QGraphicsDropShadowEffect;
@@ -214,7 +214,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     QChartView *chartView_areaChart = new QChartView(area_chart);
     chartView_areaChart->setRenderHint(QPainter::Antialiasing);
-    chartView_areaChart->setBackgroundBrush(QBrush());
+    chartView_areaChart->setBackgroundBrush(QBrush(QColor(0, 0, 0, 0)));
+
 
     QVBoxLayout *layout_bigOneChart = new QVBoxLayout(ui->area_chart);
     layout_bigOneChart->addWidget(chartView_areaChart);

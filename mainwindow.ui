@@ -1681,7 +1681,7 @@ padding-left:17px;
 padding: 0px;</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
@@ -1728,8 +1728,8 @@ padding: 0px;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1171</width>
-             <height>698</height>
+             <width>1176</width>
+             <height>702</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_9"/>
@@ -1857,13 +1857,13 @@ background-color: white;</string>
           </property>
           <property name="styleSheet">
            <string notr="true">border:0;
-background-color: #ffffff;</string>
+background-color: NULLf;</string>
           </property>
           <property name="tabShape">
            <enum>QTabWidget::Rounded</enum>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <property name="documentMode">
            <bool>true</bool>
@@ -1891,7 +1891,7 @@ background-color: #ffffff;</string>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color:white;
+               <string notr="true">background-color:NULL;
 border-radius:30px;
 border:0px;
 </string>
@@ -1917,7 +1917,7 @@ border:0px;
             <item row="0" column="0">
              <widget class="QFrame" name="area_chart">
               <property name="styleSheet">
-               <string notr="true">background-color:white;
+               <string notr="true">background-color:NULL;
 border-radius:30px;
 border:0px;
 </string>
