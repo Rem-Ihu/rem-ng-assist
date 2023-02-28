@@ -1,7 +1,7 @@
 #include "databasehandler1.h"
 #include "login_sign_up_in.h"
 #include "mainwindow.h"
-#include "chart.cpp"
+#include "mychartwindow.h"
 //end of file and headers (#include)
 
 
@@ -105,10 +105,20 @@ int main(int argc, char *argv[])
 
 
 
-
-    QChart* chart = new Charts();
+//    Charts chart= new Chart();
+//    chart.show();
     MainWindow w;
+
+    // create an instance of MyChartWindow
+    MyChartWindow chartWindow;
+
+    // add the chart window to the main window
+    w.setCentralWidget(&chartWindow);
+
+    // show both windows
     w.show();
+    chartWindow.show();
+
     return app.exec();
 }
 

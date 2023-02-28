@@ -32,6 +32,8 @@ set(PROJECT_SOURCES
         login_sign_up_in.ui
         chart.h
         chart.cpp
+        mychartwindow.h
+        mychartwindow.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
