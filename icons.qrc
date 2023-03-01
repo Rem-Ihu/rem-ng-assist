@@ -36,5 +36,6 @@
         <file>icons/apple_icon.png</file>
         <file>icons/facebook_icon.png</file>
         <file>icons/gmail_icon.png</file>
+        <file>Unbounded-VariableFont_wght.ttf</file>
     </qresource>
 </RCC>

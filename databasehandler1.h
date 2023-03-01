@@ -107,6 +107,7 @@ void Firestore_Read_Data(std::string chart_id){
 
 
         //printing the vector
+        while(1)
         for (auto&& value : vec_val) {
             std::visit([](auto&& arg){
                 std::cout << std::setprecision(15) <<"Value: " << arg << std::endl;
