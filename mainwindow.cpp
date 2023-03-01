@@ -10,7 +10,7 @@
 #include <QPixmap>
 #include <QPainter>
 #include <QTimer>
-
+#include <QFile>
 namespace myNamespace{
     extern float fin_ans,sec_ans,ok;
 
@@ -23,12 +23,26 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
 
+//    QFile res(":/fonts/Unbounded-VariableFont_wght");
+    int fontId = QFontDatabase::addApplicationFont(":/fonts/Unbounded-VariableFont_wght");
+    QStringList fontFamilies = QFontDatabase::applicationFontFamilies(fontId);
+    qDebug() << fontFamilies;
+
+//    if(!res.open(QIODevice::ReadOnly)){
+//        qDebug() << "NOPEEE";
+//    }
+
+    QFont font("Unbounded");
+    ui->sponsorslabel_3->setFont(font);
+//    ui->sponsorslabel_3->setFont(f);
+
+
     //AERO CHART SETUP
 
     QSplineSeries *series_bigOneChart = new QSplineSeries();//create the series for the aero chart
     series_bigOneChart->setName("Spline Values");//set the name of the measurement
 
-    qDebug() << myNamespace::sec_ans ; //testing for real time data
+    qDebug() << myNamespace::sec_ans << "HEELLOOOOOOOO" ; //testing for real time data
 
     QChart *chart_bigOneChart = new QChart();//create the aero chart
    // chart_bigOneChart->legend()->hide(); //hide the legend of the chart

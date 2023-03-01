@@ -1,6 +1,8 @@
 #include "databasehandler1.h"
 #include "login_sign_up_in.h"
 #include "mainwindow.h"
+#include <QDebug>
+
 //end of file and headers (#include)
 //hello_test
 
@@ -15,25 +17,24 @@ int main(int argc, char *argv[])
 {
 
     QApplication app(argc, argv); //creates the application
-    login_sign_up_in loginWindow;
-       loginWindow.setWindowModality(Qt::ApplicationModal);
-       loginWindow.show();
-
-       // Run the application event loop until the login/sign up window is closed
-       int result = app.exec();
-
-       // If the login/sign up window was accepted, show the main window
-       if (result == QDialog::Accepted) {
-           MainWindow mainWindow;
-           mainWindow.show();
-           return app.exec();
-       } else {
-           return 0;
-       }
-
     //test string for firestore url
     std::string chart_id = "AAA";
     Firestore_Read_Data(chart_id);
+    login_sign_up_in loginWindow;
+    loginWindow.setWindowModality(Qt::ApplicationModal);
+    loginWindow.show();
+
+
+    // Run the application event loop until the login/sign up window is closed
+    int result = app.exec();
+
+    // If the login/sign up window was accepted, show the main window
+    if (result == QDialog::Accepted) {
+        MainWindow mainWindow;
+        mainWindow.show();
+        return app.exec();
+    }
+
 
 
 
@@ -105,9 +106,9 @@ int main(int argc, char *argv[])
 
 
 
-    MainWindow w;
-    w.show();
-    return app.exec();
+//    MainWindow w;
+//    w.show();
+//    return app.exec();
 }
 
 

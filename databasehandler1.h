@@ -42,7 +42,6 @@
 std::vector<std::variant<double, int>> vec_val; //global vector value for charts.
 
 void Firestore_Read_Data(std::string chart_id){
-
     QNetworkAccessManager* manager = new QNetworkAccessManager();
 
     //creating the url
@@ -107,7 +106,6 @@ void Firestore_Read_Data(std::string chart_id){
 
 
         //printing the vector
-        while(1)
         for (auto&& value : vec_val) {
             std::visit([](auto&& arg){
                 std::cout << std::setprecision(15) <<"Value: " << arg << std::endl;

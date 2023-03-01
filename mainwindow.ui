@@ -1734,8 +1734,8 @@ padding: 0px;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>78</width>
-             <height>22</height>
+             <width>82</width>
+             <height>18</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_9"/>
@@ -2452,8 +2452,8 @@ padding-left:20px;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>3457</width>
-             <height>698</height>
+             <width>3448</width>
+             <height>702</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -2749,7 +2749,7 @@ li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt;Welcoming November with a tribute to the people and companies who believe in and passionately support our team’s effort, the sponsors of REM IHU.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt;Their seamless support combined with the passion and willingness of our team’s members are our driving force in order to design and develop the 2nd Greek electric racing motorcycle. &lt;/span&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu #rem #ridethethunder #sponsors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt; color:#ffffff;&quot;&gt;Their seamless support combined with the passion and willingness of our team’s members are our driving force in order to design and develop the 2nd Greek electric racing motorcycle. &lt;/span&gt;&lt;span style=&quot; font-size:12pt; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu #rem #ridethethunder #sponsors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -4287,9 +4287,9 @@ padding-left:23px;
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>-759</y>
-             <width>1153</width>
-             <height>1562</height>
+             <y>0</y>
+             <width>1144</width>
+             <height>1545</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_19">
