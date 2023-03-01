@@ -29,7 +29,9 @@ void login_sign_up_in::on_pushButton_Login_clicked()
 
     QString Username = ui->lineEdit_User_Name->text();
     QString Password = ui->lineEdit_Password->text();
-    if(Username == "jim123" && Password == "123"){
+    //MANUAL OVERRIDE FOR DEBUG
+    if(Username == "" && Password == ""){
+    //if(Username == "jim123" && Password == "123"){
         if(!mainwindow){
             mainwindow = new MainWindow();
         }

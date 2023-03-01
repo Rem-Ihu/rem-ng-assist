@@ -1687,7 +1687,7 @@ padding-left:17px;
 padding: 0px;</string>
       </property>
       <property name="currentIndex">
-       <number>8</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
@@ -1746,63 +1746,42 @@ padding: 0px;</string>
       </widget>
       <widget class="QWidget" name="RealTime">
        <layout class="QGridLayout" name="gridLayout_4">
-        <item row="1" column="1">
-         <widget class="QPushButton" name="pushButtonInstagram">
-          <property name="text">
-           <string>I</string>
-          </property>
-         </widget>
-        </item>
         <item row="0" column="0">
-         <widget class="QPushButton" name="pushButton_3">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>0</height>
-           </size>
+         <widget class="QFrame" name="frame">
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
           </property>
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>100</height>
-           </size>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
           </property>
-          <property name="text">
-           <string>PushButton</string>
-          </property>
+          <layout class="QGridLayout" name="gridLayout_18">
+           <item row="0" column="0">
+            <widget class="QFrame" name="bigOneChart_2">
+             <property name="maximumSize">
+              <size>
+               <width>18888</width>
+               <height>18888</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgba(255, 0, 0, 0);
+border-radius:30px;
+border:0px;
+</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="lineWidth">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
-        </item>
-        <item row="0" column="1">
-         <widget class="QPushButton" name="pushButton_5">
-          <property name="text">
-           <string>F</string>
-          </property>
-         </widget>
-        </item>
-        <item row="4" column="1">
-         <widget class="QPushButton" name="pushButton_2">
-          <property name="styleSheet">
-           <string notr="true">color:white;
-padding: 50px;
-background-color: white;</string>
-          </property>
-          <property name="text">
-           <string>PushButton</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="1">
-         <spacer name="verticalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
         </item>
        </layout>
       </widget>
@@ -1835,6 +1814,9 @@ background-color: white;</string>
             <height>0</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>More Info</string>
           </property>
@@ -1847,6 +1829,9 @@ background-color: white;</string>
             <width>100</width>
             <height>0</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
           </property>
           <property name="text">
            <string>Add Tab</string>
@@ -1863,7 +1848,7 @@ background-color: white;</string>
           </property>
           <property name="styleSheet">
            <string notr="true">border:0;
-background-color: #ffffff;</string>
+background-color: rgba(255, 0, 0, 0);</string>
           </property>
           <property name="tabShape">
            <enum>QTabWidget::Rounded</enum>
@@ -1892,12 +1877,12 @@ background-color: #ffffff;</string>
              <widget class="QFrame" name="bigOneChart">
               <property name="maximumSize">
                <size>
-                <width>1200</width>
-                <height>600</height>
+                <width>18888</width>
+                <height>18888</height>
                </size>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color:white;
+               <string notr="true">background-color: rgba(255, 0, 0, 0);
 border-radius:30px;
 border:0px;
 </string>
@@ -1923,7 +1908,7 @@ border:0px;
             <item row="0" column="0">
              <widget class="QFrame" name="area_chart">
               <property name="styleSheet">
-               <string notr="true">background-color:white;
+               <string notr="true">background-color: rgba(255, 0, 0, 0);
 border-radius:30px;
 border:0px;
 </string>
@@ -1997,6 +1982,9 @@ border:0px;
         </item>
         <item row="2" column="3">
          <widget class="QPushButton" name="pushButtonErrorPopUp">
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
           <property name="text">
            <string>PushButton</string>
           </property>
