@@ -28,5 +28,7 @@
         <file>.gitignore</file>
         <file>icons/rem 2.png</file>
         <file>icons/rem3.png</file>
+        <file>icons/Group_Photo.jpg</file>
+        <file>icons/europe2.png</file>
     </qresource>
 </RCC>
