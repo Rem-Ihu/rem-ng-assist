@@ -1687,7 +1687,7 @@ padding-left:19px;
 padding: 0px;</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
@@ -1734,8 +1734,8 @@ padding: 0px;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1171</width>
-             <height>698</height>
+             <width>78</width>
+             <height>22</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_9"/>
@@ -1754,6 +1754,33 @@ padding: 0px;</string>
           <property name="frameShadow">
            <enum>QFrame::Raised</enum>
           </property>
+          <layout class="QGridLayout" name="gridLayout_18">
+           <item row="0" column="0">
+            <widget class="QFrame" name="bigOneChart_2">
+             <property name="maximumSize">
+              <size>
+               <width>18888</width>
+               <height>18888</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">background-color: rgba(255, 0, 0, 0);
+border-radius:30px;
+border:0px;
+</string>
+             </property>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Raised</enum>
+             </property>
+             <property name="lineWidth">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </widget>
         </item>
        </layout>
@@ -1827,7 +1854,7 @@ background-color: rgba(255, 0, 0, 0);</string>
            <enum>QTabWidget::Rounded</enum>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <property name="documentMode">
            <bool>true</bool>
@@ -1850,8 +1877,8 @@ background-color: rgba(255, 0, 0, 0);</string>
              <widget class="QFrame" name="bigOneChart">
               <property name="maximumSize">
                <size>
-                <width>1200</width>
-                <height>600</height>
+                <width>18888</width>
+                <height>18888</height>
                </size>
               </property>
               <property name="styleSheet">
@@ -2408,7 +2435,7 @@ padding-left:20px;
              <x>0</x>
              <y>0</y>
              <width>3457</width>
-             <height>681</height>
+             <height>679</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_2">

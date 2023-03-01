@@ -10,10 +10,25 @@
 #include <QPixmap>
 #include <QPainter>
 #include <QTimer>
+#include <QFont>
+#include <QPalette>
+#include <QLegendMarker>
+#include <QtCharts/QChartView>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QValueAxis>
+#include <variant>
+
+
+
+
 
 namespace myNamespace{
     extern float fin_ans,sec_ans,ok;
+}
 
+namespace myNamespace2{
+    extern int N;
+    extern double* array;
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -22,14 +37,17 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     //AERO CHART SETUP
-
     QSplineSeries *series_bigOneChart = new QSplineSeries();//create the series for the aero chart
-    series_bigOneChart->setName("Spline Values");//set the name of the measurement
+    series_bigOneChart->setName("Real Time Values");//set the name of the measurement
+
+
 
 
     QChart *chart_bigOneChart = new QChart();//create the aero chart
     chart_bigOneChart->addSeries(series_bigOneChart); //add the values
-    chart_bigOneChart->setTitle("Simple spline chart example"); //create a label for it
+    QFont titleFont("Arial", 16, QFont::Bold); // Create a QFont object with desired font family, size, and weight
+    chart_bigOneChart->setTitle("Real Time Chart"); // Set the chart title
+    chart_bigOneChart->setTitleFont(titleFont); // Set the font of the chart title
     chart_bigOneChart->createDefaultAxes(); //create the axes
     chart_bigOneChart->axes(Qt::Vertical).first()->setRange(-7, 12); //set the range of values of axis y
     chart_bigOneChart->setTitleBrush(QBrush(Qt::white));//customize the color of the title in the chart
@@ -117,7 +135,7 @@ MainWindow::MainWindow(QWidget *parent)
     series_bigOneChart->attachAxis(axisY);
 
 
-    QFrame *frame = ui->bigOneChart;
+    QFrame *frame = ui->bigOneChart_2;
     //creating a drop shadow effect
     QGraphicsDropShadowEffect *shadow_bigOneChart = new QGraphicsDropShadowEffect;
     shadow_bigOneChart->setBlurRadius(15);
@@ -131,9 +149,10 @@ MainWindow::MainWindow(QWidget *parent)
     chartView_bigOneChart->setBackgroundBrush(QBrush());
 //    chartView->setBackgroundBrush(QBrush(QColor("salmon")));
 
-    QVBoxLayout *layout_bigOneChart1 = new QVBoxLayout(ui->bigOneChart);
+    QVBoxLayout *layout_bigOneChart1 = new QVBoxLayout(ui->bigOneChart_2);
     layout_bigOneChart1->addWidget(chartView_bigOneChart);
-}
+
+
     //AERO CHART SETUP
 
 //    QSplineSeries *series_bigOneChart = new QSplineSeries();//create the series for the aero chart
@@ -279,56 +298,57 @@ MainWindow::MainWindow(QWidget *parent)
 //    //    axisX->setRange(0, 20);
 //    //    axisY->setRange(0, 10);
 
-//    //AREA CHART
-
-//    QLineSeries *series0 = new QLineSeries();
-//    series0->setName("Area Chart Values");
-//    *series0 << QPointF(1, 5) << QPointF(3, 7) << QPointF(7, 6) << QPointF(9, 7) << QPointF(12, 6)
-//             << QPointF(16, 7) << QPointF(18, 5);
+    //AREA CHART
 
 
 
 
 
-//    QAreaSeries *area_series = new QAreaSeries(series0);//, series1);
-//    series0->setName("Area Chart");
-//    QPen pen1(0x111110);
-//    pen1.setWidth(2);
-//    area_series->setPen(pen1);
-
-//    QLinearGradient gradient(QPointF(0, 0), QPointF(0, 1));
-//    gradient.setColorAt(0.0, 0xf9f6f3);
-//    gradient.setColorAt(1.0, 0xa3a2a1);
-//    gradient.setCoordinateMode(QGradient::ObjectBoundingMode);
-//    area_series->setBrush(gradient);
-
-//    QChart *area_chart = new QChart();
-//    area_chart->addSeries(area_series);
-//    area_chart->setTitle("Simple areachart example");
-//    area_chart->createDefaultAxes();
-//    area_chart->axes(Qt::Horizontal).first()->setRange(0, 20);
-//    area_chart->axes(Qt::Vertical).first()->setRange(0, 10);
-//    area_chart->setTitleBrush(QBrush(Qt::white));//customize the color of the title in the chart
-//    area_chart->setBackgroundBrush(QBrush(Qt::transparent));//customize the color of the background in the chart
-//    area_chart->setPlotAreaBackgroundBrush(QColor(255, 255, 255, 0));
-//    area_chart->setPlotAreaBackgroundVisible(true);
-
-//    QGraphicsDropShadowEffect *shadow_area_chart = new QGraphicsDropShadowEffect;
-//    shadow_area_chart->setBlurRadius(15);
-//    shadow_area_chart->setColor(QColor(0, 0, 0, 60));
-//    shadow_area_chart->setOffset(0.5, 0);
-//    frame->setGraphicsEffect(shadow_area_chart);
-
-//    chart_bigOneChart->setAnimationOptions(QChart::SeriesAnimations);
+    for(int i=0; i<myNamespace2::N; i++)
+        qDebug() << "HEREEEEE--->" << myNamespace2::array[i];
 
 
-//    QChartView *chartView_areaChart = new QChartView(area_chart);
-//    chartView_areaChart->setRenderHint(QPainter::Antialiasing);
-//    chartView_areaChart->setBackgroundBrush(QBrush());
+    // Create a chart object
+    QChart *chart = new QChart();
 
-//    QVBoxLayout *layout_bigOneChart = new QVBoxLayout(ui->area_chart);
-//    layout_bigOneChart->addWidget(chartView_areaChart);
-//}
+    // Create a line series object and add the values from the vector
+    QLineSeries *series = new QLineSeries();
+    for (int i = 0; i < myNamespace2::N; i++) {
+        series->append(i + 0.5, myNamespace2::array[i]);
+    }
+
+    // Add the line series to the chart
+    chart->addSeries(series);
+
+    // Set up the X-axis with 0.5 increments
+    QValueAxis *axisX1 = new QValueAxis();
+    axisX1->setTickCount(myNamespace2::N);
+    axisX1->setLabelFormat("%.1f");
+    axisX1->setRange(0, myNamespace2::N);
+    axisX1->setTickInterval(0.5);
+    chart->addAxis(axisX1, Qt::AlignBottom);
+    series->attachAxis(axisX1);
+
+    // Set up the Y-axis
+    QValueAxis *axisY1 = new QValueAxis();
+    chart->addAxis(axisY1, Qt::AlignLeft);
+    series->attachAxis(axisY1);
+
+    // Set the title of the chart
+    chart->setTitle("My Chart");
+
+    // Create a chart view object and set the chart
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    chartView->setChart(chart);
+
+    QVBoxLayout *layout_bigOneChart2 = new QVBoxLayout(ui->area_chart);
+    layout_bigOneChart2->addWidget(chartView);
+
+
+
+
+}
 
 MainWindow::~MainWindow()
 {
@@ -409,10 +429,12 @@ void MainWindow::on_addTabNameButton_clicked()
     std::stringstream ss_pref(whole_preference); //using stringstream to be able to use the getline to split the string.
     std::string preferences_split_part; //the parts that are going to be pushed back to the vector
 
-
-    while (std::getline(ss_pref, preferences_split_part, ':')) {
-        preferences_split.push_back(preferences_split_part); //pushing the values in the vector
-    }
+    if(whole_preference.size()!=0)
+        while (std::getline(ss_pref, preferences_split_part, ':')) {
+            preferences_split.push_back(preferences_split_part); //pushing the values in the vector
+        }
+    else
+        return;
 
     QWidget *tabContent = new QWidget; //makes a widget for the tab window
 
@@ -443,7 +465,7 @@ void MainWindow::on_addTabNameButton_clicked()
         layout->addWidget(label2, 0, 1);
         layout->addWidget(label3, 1, 0, 1, 2); //puting the frames like a 2x2 pinaka
         //1 = position x, 0 = position y, 1 = number of rows that the label is able to acumulate, 2 = number of rows antistoixa
-    }else{
+    }else if(std::stoi(preferences_split.at(1)) == 4){
         QFrame *label1 = new QFrame;
         QFrame *label2 = new QFrame;
         QFrame *label3 = new QFrame;
@@ -456,6 +478,8 @@ void MainWindow::on_addTabNameButton_clicked()
         layout->addWidget(label2, 0, 1);
         layout->addWidget(label3, 1, 0); //puting the frames like a 2x2 pinaka
         layout->addWidget(label4, 1, 1);
+    }else{
+        qDebug() << "NOPE";
     }
 
     QString final_name = QString::fromStdString(preferences_split.at(0));
