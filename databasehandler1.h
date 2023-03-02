@@ -41,7 +41,7 @@
 
 std::vector<double> vec_val; //global vector value for charts.
 namespace myNamespace2{
-    int N = vec_val.size();
+    int N = vec_val.size(), number_of_frames = 0;
     double* array = (double*) malloc(N*sizeof(double));
 }
 
@@ -109,18 +109,17 @@ void Firestore_Read_Data(std::string chart_id){
             myNamespace2::N = vec_val.size();
         }
 
-
-
-        //printing the vector
-        for (int i = 0; i < vec_val.size(); i++) {
-            std::cout << vec_val[i] << std::endl;
-        }
-
+        //copying vec_val to dynamic global array.
         for (int i = 0; i < myNamespace2::N; i++) {
-            qDebug() << "1111111111--->" << vec_val[i];
             myNamespace2::array[i]=vec_val[i];
-            qDebug() << "2222222222--->" << myNamespace2::array[i];
         }
+
+
+//        //printing the vector
+//        for (int i = 0; i < vec_val.size(); i++) {
+//            std::cout << vec_val[i] << std::endl;
+//        }
+
 
 
 

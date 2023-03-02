@@ -2,9 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include<QtCharts>
-#include<QChartView>
-#include<QLineSeries>
+#include <QtCharts>
+#include <QChartView>
+#include <QLineSeries>
+
 
 
 QT_BEGIN_NAMESPACE
@@ -55,10 +56,15 @@ private slots:
 
     void on_pushButtonErrorPopUp_clicked();
 
+    void create_chart(std::vector<QFrame*> frameArray);
+
+    void chartCreationSetup(int parses, std::vector<std::string> preferences_split, std::vector<QFrame*> frameArray);
+
 private:
     Ui::MainWindow *ui;
     QTabWidget *tabWidget;
     QSplitter *splitter;
+
 
 };
 #endif // MAINWINDOW_H
