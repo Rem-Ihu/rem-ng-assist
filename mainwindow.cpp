@@ -209,9 +209,6 @@ void MainWindow::create_chart(/*final_name, */std::vector<QFrame*> frameArray, i
         // Get the layout for the current frame and add the chart view
         QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
         layout->addWidget(chartView);
-        if(flag_first_chart)
-            vector_counter_chart = myNamespace2::N;
-        flag_first_chart=true;
     }
 
 
@@ -276,23 +273,19 @@ void MainWindow::on_addTabNameButton_clicked()
             frameArray[i]->setStyleSheet("QFrame { background-color: blue; }");
             layout->addWidget(frameArray[i], 0, 0);
             chartCreationSetup(parses, preferences_split, frameArray);
-
         }else if (i == 1){
-            //function pou tha exei ws orisma ta parses dhladh sto paradeigma auto 2
-                //firestore_chart_data();
-                //create_chart();
-                //free(MyNamespace2::array);
-                //vec_val.clear();
             frameArray[i]->setStyleSheet("QFrame { background-color: red; }"); //styling the frames
             layout->addWidget(frameArray[i], 0, 1);
             chartCreationSetup(parses, preferences_split, frameArray);
         }else if(i == 2){
             frameArray[i]->setStyleSheet("QFrame { background-color: white; }");
             layout->addWidget(frameArray[i], 1, 0, 1, 2); //puting the frames like a 2x2 pinaka
+            chartCreationSetup(parses, preferences_split, frameArray);
         }else if(i == 3){
             layout->addWidget(frameArray[i-1], 1, 0, 1, 1);
             frameArray[i]->setStyleSheet("QFrame { background-color: green; }");
             layout->addWidget(frameArray[i], 1, 1);
+            chartCreationSetup(parses, preferences_split, frameArray);
         }else{
             qDebug() << "NOPE";
         }
