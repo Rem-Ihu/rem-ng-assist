@@ -56,7 +56,7 @@ private slots:
 
     void on_pushButtonErrorPopUp_clicked();
 
-    void create_chart(std::vector<QFrame*> frameArray);
+    void create_chart(std::vector<QFrame*> frameArray, int parses);
 
     void chartCreationSetup(int parses, std::vector<std::string> preferences_split, std::vector<QFrame*> frameArray);
 

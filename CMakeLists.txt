@@ -22,6 +22,7 @@ set(PROJECT_SOURCES
         mainwindow.h
         mainwindow.ui
         icons.qrc
+        chart_data.qrc
         databasehandler1.h
         main.qml
         colors.qss

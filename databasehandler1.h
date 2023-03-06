@@ -37,16 +37,22 @@
 #include <QStackedWidget>
 #include <iostream>
 #include <iomanip>
-
+#include <fstream>
+#include <QFile>
+#include <QTextStream>
 
 std::vector<double> vec_val; //global vector value for charts.
+
 namespace myNamespace2{
     int N = vec_val.size(), number_of_frames = 0;
     double* array = (double*) malloc(N*sizeof(double));
 }
 
-void Firestore_Read_Data(std::string chart_id){
 
+
+
+std::vector<double> Firestore_Read_Data(std::string chart_id){
+//    qDebug() << "CALLED FROM MAINWINDOW.CPP";
     QNetworkAccessManager* manager = new QNetworkAccessManager();
 
     //creating the url
@@ -58,7 +64,7 @@ void Firestore_Read_Data(std::string chart_id){
     QNetworkReply* reply = manager->get(request);
 
     //creating the lambda function to connect and get the response from the reply
-    QObject::connect(reply, &QNetworkReply::finished, [reply]() {
+    QObject::connect(reply, &QNetworkReply::finished, [reply, &chart_id]() {
         //printing the error if it has one
         if (reply->error()) {
             qDebug() << "Error:" << reply->errorString();
@@ -109,7 +115,10 @@ void Firestore_Read_Data(std::string chart_id){
             myNamespace2::N = vec_val.size();
         }
 
-        //copying vec_val to dynamic global array.
+
+
+
+//        //copying vec_val to dynamic global array.
         for (int i = 0; i < myNamespace2::N; i++) {
             myNamespace2::array[i]=vec_val[i];
         }
@@ -117,7 +126,7 @@ void Firestore_Read_Data(std::string chart_id){
 
 //        //printing the vector
 //        for (int i = 0; i < vec_val.size(); i++) {
-//            std::cout << vec_val[i] << std::endl;
+//            std::cout << "in databasehandler1" << myNamespace2::array[i] << std::endl;
 //        }
 
 
@@ -125,5 +134,10 @@ void Firestore_Read_Data(std::string chart_id){
 
     });
 
+    return vec_val;
+
 }
+
+
+
 #endif // DATABASEHANDLER1_H

@@ -1,5 +1,8 @@
 #include "login_sign_up_in.h"
 #include "mainwindow.h"
+#include <iostream>
+#include <fstream>
+//#include "databasehandler1.h"
 //end of file and headers (#include)
 //hello_test
 
@@ -16,6 +19,11 @@ int main(int argc, char *argv[])
 
     QApplication app(argc, argv); //creates the application
     //test string for firestore url
+
+
+//    std::string chart_id = "AAAA";
+//    Firestore_Read_Data(chart_id);
+
 
 
     login_sign_up_in loginWindow;
