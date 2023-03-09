@@ -2,6 +2,45 @@
 #include "mainwindow.h"
 #include <iostream>
 #include <fstream>
+#include <QApplication>
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
+#include <QQuickWindow>
+#include <QtQuick3D/qquick3d.h>
+#include <QCoreApplication>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QEventLoop>
+#include <QDebug>
+#include <QVariant>
+#include <QString>
+#include <QSocketDescriptor>
+#include <QObject>
+#include <QThread>
+#include <QTimer>
+#include <iostream>
+#include <QMutex>
+#include <string>
+#include <algorithm>
+#include <iomanip>
+#include <sstream>
+#include <QtConcurrent/qtconcurrentrun.h>
+#include <QtCore>
+#include <QtWidgets>
+#include <QUrl>
+#include <QUrlQuery>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QCoreApplication>
+#include <QSvgRenderer>
+#include <QStackedWidget>
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <QFile>
+#include <QTextStream>
 //#include "databasehandler1.h"
 //end of file and headers (#include)
 //hello_test
@@ -12,18 +51,11 @@ namespace myNamespace{
     float ok;
 }
 
-
 int main(int argc, char *argv[])
 {
 
 
     QApplication app(argc, argv); //creates the application
-    //test string for firestore url
-
-
-//    std::string chart_id = "AAAA";
-//    Firestore_Read_Data(chart_id);
-
 
 
     login_sign_up_in loginWindow;
@@ -104,13 +136,6 @@ int main(int argc, char *argv[])
 //    //start the thread
 //    thread.start();
 ////end of reading from firebase
-
-
-
-
-
-
-
 
 
 }

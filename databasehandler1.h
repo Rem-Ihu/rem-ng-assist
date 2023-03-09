@@ -20,6 +20,7 @@
 #include <QThread>
 #include <QTimer>
 #include <iostream>
+#include <QMutex>
 #include <string>
 #include <algorithm>
 #include <iomanip>
@@ -41,101 +42,59 @@
 #include <QFile>
 #include <QTextStream>
 
-std::vector<double> vec_val; //global vector value for charts.
 
+
+ //global vector value for charts.
+bool frame_go_ahead = false;
 namespace myNamespace2{
-    int N = vec_val.size(), number_of_frames = 0;
-    double* array = (double*) malloc(N*sizeof(double));
+    int number_of_frames = 0;
+//    double* array = (double*) malloc(N*sizeof(double));
 }
 
 
 
-
 std::vector<double> Firestore_Read_Data(std::string chart_id){
-//    qDebug() << "CALLED FROM MAINWINDOW.CPP";
     QNetworkAccessManager* manager = new QNetworkAccessManager();
-
-    //creating the url
-    QUrl url("https://firestore.googleapis.com/v1/projects/realtimeqttest/databases/(default)/documents/ChartFiles/" + QString::fromStdString(chart_id));//adding the chart id for getting the correct url and convrting it first to QString
-
-    QNetworkRequest request(url); //setting the url request
-
-    //sending the GET request and retrieve the reply
+    QUrl url("https://firestore.googleapis.com/v1/projects/realtimeqttest/databases/(default)/documents/ChartFiles/" + QString::fromStdString(chart_id));
+    QNetworkRequest request(url);
     QNetworkReply* reply = manager->get(request);
-
-    //creating the lambda function to connect and get the response from the reply
-    QObject::connect(reply, &QNetworkReply::finished, [reply, &chart_id]() {
-        //printing the error if it has one
+    std::vector<double> vec_val;
+    QEventLoop loop; // create a new event loop
+    QObject::connect(reply, &QNetworkReply::finished, [&loop, reply, &vec_val]() {
         if (reply->error()) {
             qDebug() << "Error:" << reply->errorString();
+            loop.quit(); // quit the event loop if there's an error
             return;
         }
-
-        //creating the json object from all the data that was received
         QJsonDocument jsonResponse = QJsonDocument::fromJson(reply->readAll());
-
-        //extracting the object from all the data
         QJsonObject jsonObject = jsonResponse.object();
-        //extracting the fields from the object and making the fields json objects
         QJsonObject fields = jsonObject["fields"].toObject();
-        //making the extracted data into an array (extracting the data from the arrayValue)
         QJsonArray data = fields["data"].toObject()["arrayValue"].toObject()["values"].toArray();
-
+//        std::vector<double> vec_val;
         QDateTime timestamp;
-
-
 
         for (int i = 0; i < data.size(); i++) {
             QJsonObject mapValue = data[i].toObject()["mapValue"].toObject()["fields"].toObject();
             QString timestampStr = mapValue["timestamp"].toObject()["timestampValue"].toString();
             timestamp = QDateTime::fromString(timestampStr, Qt::ISODateWithMs);
 
-            //trying to extract the value as an int first
             bool ok = false;
             int intValue = mapValue["value"].toObject()["integerValue"].toString().toInt(&ok);
             if (ok) {
                 double doubleValue = static_cast<double>(intValue);
                 vec_val.push_back(doubleValue);
             } else {
-                //if it's not an int, try to extract it as a double
                 double doubleValue = mapValue["value"].toObject()["doubleValue"].toDouble();
                 vec_val.push_back(doubleValue);
             }
-
-            std::string testprintdate = timestamp.toString("yyyy-MM-dd hh:mm:ss.zzz").toStdString();
-
-//            //printing the modified results
-//            std::visit([](auto&& value){
-//                if constexpr(std::is_same_v<double, decltype(value)>){
-//                    std::cout << "THIS HERE " << value << std::endl;
-//                } else if constexpr(std::is_same_v<int, decltype(value)>){
-//                    std::cout << value << std::endl;
-//                }
-//            }, vec_val.back());
-            myNamespace2::N = vec_val.size();
         }
 
-
-
-
-//        //copying vec_val to dynamic global array.
-        for (int i = 0; i < myNamespace2::N; i++) {
-            myNamespace2::array[i]=vec_val[i];
-        }
-
-
-//        //printing the vector
-//        for (int i = 0; i < vec_val.size(); i++) {
-//            std::cout << "in databasehandler1" << myNamespace2::array[i] << std::endl;
-//        }
-
-
-
-
+        loop.quit(); // quit the event loop when the reply is finished
     });
 
-    return vec_val;
+    loop.exec(); // start the event loop and wait until it quits
 
+    return vec_val;
 }
 
 

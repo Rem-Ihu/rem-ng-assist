@@ -15,6 +15,7 @@
 #include <QFont>
 #include <QPalette>
 #include <QLegendMarker>
+#include <QSemaphore>
 #include <QtCharts/QChartView>
 #include <QtCharts/QLineSeries>
 #include <QtCharts/QValueAxis>
@@ -25,13 +26,18 @@
 
 int vector_counter_chart=0;
 
+bool flag_first_chart=false;
+std::vector<QFrame*> frameArray;
+int last_counted_frame =0;
+std::vector<double> Pasxa;
+
 namespace myNamespace{
     extern float fin_ans,sec_ans,ok;
 }
 
 namespace myNamespace2{
-    extern int N, number_of_frames;
-    extern double* array;
+    extern int number_of_frames;
+//    extern double* array;
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -40,16 +46,11 @@ MainWindow::MainWindow(QWidget *parent)
 
 {
     ui->setupUi(this);
+//    DataRead = Firestore_Read_Data("AAA");
     //AERO CHART SETUP
     QSplineSeries *series_bigOneChart = new QSplineSeries();//create the series for the aero chart
     series_bigOneChart->setName("Real Time Values");//set the name of the measurement
 
-
-
-    std::vector<double> vec_val1 = Firestore_Read_Data("AAA");
-    for (int i = 0; i < vec_val1.size(); i++) {
-        std::cout << vec_val1[i] << std::endl;
-    }
 
 
 
@@ -164,56 +165,55 @@ MainWindow::MainWindow(QWidget *parent)
     layout_bigOneChart1->addWidget(chartView_bigOneChart);
 }
 
-bool flag_first_chart=false;
+
 
 void MainWindow::create_chart(/*final_name, */std::vector<QFrame*> frameArray, int parses){
 
 //        qDebug() << "HEREEEEE--->" << frameArray.size();
 
     qDebug() << "HEREEEEE VECTOR--->" << vector_counter_chart;
-    qDebug() << "HEREEEEE N--->" << myNamespace2::N;
+//    qDebug() << "HEREEEEE N--->" << N;
 
-    for (int i = 0; i < frameArray.size(); i++) {
-        QChart *chart = new QChart();
-        chart->setTitle("My Chart " + QString::number(i+1));
-        // Create a QPointF vector and add the values from the array
-        QVector<QPointF> points;
-        for (int j = vector_counter_chart; j < myNamespace2::N; j++) {
-            points.append(QPointF(j + 0.5, myNamespace2::array[j]));
-        }
+//    for (int i = 0; i < frameArray.size(); i++) {
+//        QChart *chart = new QChart();
+//        chart->setTitle("My Chart " + QString::number(i+1));
+//        // Create a QPointF vector and add the values from the array
+//        QVector<QPointF> points;
+//        for (int j = vector_counter_chart; j < myNamespace2::N; j++) {
+//            points.append(QPointF(j + 0.5, myNamespace2::array[j]));
+//        }
 
-        // Create a line series object and set the points
-        QLineSeries *series = new QLineSeries();
-        series->append(points);
-        chart->addSeries(series);
+//        // Create a line series object and set the points
+//        QLineSeries *series = new QLineSeries();
+//        series->append(points);
+//        chart->addSeries(series);
 
-        // Set up the X-axis with 0.5 increments
-        QValueAxis *axisX1 = new QValueAxis();
-        axisX1->setTickCount(myNamespace2::N);
-        axisX1->setLabelFormat("%.1f");
-        axisX1->setRange(0, myNamespace2::N);
-        axisX1->setTickInterval(0.5);
-        chart->addAxis(axisX1, Qt::AlignBottom);
-        series->attachAxis(axisX1);
+//        // Set up the X-axis with 0.5 increments
+//        QValueAxis *axisX1 = new QValueAxis();
+//        axisX1->setTickCount(myNamespace2::N);
+//        axisX1->setLabelFormat("%.1f");
+//        axisX1->setRange(0, myNamespace2::N);
+//        axisX1->setTickInterval(0.5);
+//        chart->addAxis(axisX1, Qt::AlignBottom);
+//        series->attachAxis(axisX1);
 
-        // Set up the Y-axis
-        QValueAxis *axisY1 = new QValueAxis();
-        chart->addAxis(axisY1, Qt::AlignLeft);
-        series->attachAxis(axisY1);
+//        // Set up the Y-axis
+//        QValueAxis *axisY1 = new QValueAxis();
+//        chart->addAxis(axisY1, Qt::AlignLeft);
+//        series->attachAxis(axisY1);
 
-        // Create a chart view object and set the chart
-        QChartView *chartView = new QChartView(chart);
-        chartView->setRenderHint(QPainter::Antialiasing);
-        chartView->setChart(chart);
+//        // Create a chart view object and set the chart
+//        QChartView *chartView = new QChartView(chart);
+//        chartView->setRenderHint(QPainter::Antialiasing);
+//        chartView->setChart(chart);
 
-        // Get the layout for the current frame and add the chart view
-        QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
-        layout->addWidget(chartView);
-    }
+//        // Get the layout for the current frame and add the chart view
+//        QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
+//        layout->addWidget(chartView);
+//    }
 
 
 }
-
 
 
 
@@ -240,9 +240,261 @@ void MainWindow::on_addTabNameButton_clicked()
     else
         return;
 
-    QWidget *tabContent = new QWidget; //makes a widget for the tab window
+
+
+    int parses = std::stoi(preferences_split.at(1));
 
     QGridLayout *layout = new QGridLayout; //makes the layout be a grid
+
+
+
+
+
+    // Create and add QFrames to the array
+    for(int i = 0; i < parses; i++) {
+
+        QFrame *frame = new QFrame();
+        // Set the object name for the QFrame
+        frame->setObjectName("frame" + QString::number(++myNamespace2::number_of_frames));
+        frameArray.push_back(frame);
+
+        // Create a label and set its text to the current value of number_of_frames
+        QLabel *label = new QLabel(QString::number(myNamespace2::number_of_frames), frame);
+        label->setAlignment(Qt::AlignCenter);
+        label->setFixedSize(frame->size());
+        if(flag_first_chart){
+            last_counted_frame = frameArray.size()-parses;
+            qDebug() << "i  ---- "  << i;
+        }
+    }
+
+    flag_first_chart = true;
+
+
+
+    if(parses == 1){
+        layout->addWidget(frameArray[frameArray.size()-1], 0, 0);
+        chartCreationSetup(parses, preferences_split, frameArray);
+        std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(parses+1).c_str());
+        qDebug() << "ebala sto frame[" << frameArray.size()-1 << "] = ";
+//        for (int i = 0; i < vec_val.size(); i++) {
+//            qDebug() << "Pasxa: --> " << vec_val[i];
+//        }
+
+        QChart *chart = new QChart();
+        chart->setTitle(preferences_split.at(parses+1).c_str());
+        // Create a QPointF vector and add the values from the array
+        QVector<QPointF> points;
+        int N = DataRead.size();
+        for (int j = 0; j < N; j++) {
+            points.append(QPointF(j + 0.5, DataRead[j]));
+        }
+        // Create a line series object and set the points
+        QLineSeries *series = new QLineSeries();
+        series->append(points);
+        chart->addSeries(series);
+
+        // Set up the X-axis with 0.5 increments
+        QValueAxis *axisX1 = new QValueAxis();
+        axisX1->setTickCount(N);
+        axisX1->setLabelFormat("%.1f");
+        axisX1->setRange(0, N);
+        axisX1->setTickInterval(0.5);
+        chart->addAxis(axisX1, Qt::AlignBottom);
+        series->attachAxis(axisX1);
+
+        // Set up the Y-axis
+        QValueAxis *axisY1 = new QValueAxis();
+        chart->addAxis(axisY1, Qt::AlignLeft);
+        series->attachAxis(axisY1);
+
+        // Create a chart view object and set the chart
+        QChartView *chartView = new QChartView(chart);
+        chartView->setRenderHint(QPainter::Antialiasing);
+        chartView->setChart(chart);
+
+        // Get the layout for the current frame and add the chart view
+        QVBoxLayout *layout = new QVBoxLayout(frameArray[frameArray.size()-1]);
+        layout->addWidget(chartView);
+
+
+    }else if (parses == 2){
+        int counter =0;
+        for(int i=last_counted_frame; i<frameArray.size(); i++){
+            if(counter == 0) {
+                    layout->addWidget(frameArray[i], 0, 0);
+                } else {
+                    layout->addWidget(frameArray[i], 0, 1);
+                }
+
+                std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(counter + 2).c_str());
+                qDebug() << "ebala sto frame[" << i << "] = ";
+
+                QChart *chart = new QChart();
+                chart->setTitle(preferences_split.at(counter + 2).c_str());
+
+                // Create a line series object and set the points
+                QLineSeries *series = new QLineSeries();
+
+                // Create a QPointF vector and add the values from the array
+                QVector<QPointF> points;
+                int N = DataRead.size();
+                for (int j = 0; j < N; j++) {
+                    points.append(QPointF(j + 0.5, DataRead[j]));
+                }
+
+                series->append(points);
+                chart->addSeries(series);
+
+                // Set up the X-axis with 0.5 increments
+                QValueAxis *axisX1 = new QValueAxis();
+                axisX1->setTickCount(N);
+                axisX1->setLabelFormat("%.1f");
+                axisX1->setRange(0, N);
+                axisX1->setTickInterval(0.5);
+                chart->addAxis(axisX1, Qt::AlignBottom);
+                series->attachAxis(axisX1);
+
+                // Set up the Y-axis
+                QValueAxis *axisY1 = new QValueAxis();
+                chart->addAxis(axisY1, Qt::AlignLeft);
+                series->attachAxis(axisY1);
+
+                // Create a chart view object and set the chart
+                QChartView *chartView = new QChartView(chart);
+                chartView->setRenderHint(QPainter::Antialiasing);
+                chartView->setChart(chart);
+
+                // Get the layout for the current frame and add the chart view
+                QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
+                layout->addWidget(chartView);
+
+                counter++;
+        }
+    }else if(parses == 3){
+
+        int counter =0;
+        for(int i=last_counted_frame; i<frameArray.size(); i++){
+            if(counter == 0) {
+                    layout->addWidget(frameArray[i], 0, 0);
+                } else if (counter == 1) {
+                    layout->addWidget(frameArray[i], 0, 1);
+                }else{
+                    layout->addWidget(frameArray[i], 1, 0, 1, 2); //puting the frames like a 2x2 pinaka
+                }
+
+                std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(counter + 2).c_str());
+                qDebug() << "ebala sto frame[" << i << "] = ";
+
+                QChart *chart = new QChart();
+                chart->setTitle(preferences_split.at(counter + 2).c_str());
+
+                // Create a line series object and set the points
+                QLineSeries *series = new QLineSeries();
+
+                // Create a QPointF vector and add the values from the array
+                QVector<QPointF> points;
+                int N = DataRead.size();
+                for (int j = 0; j < N; j++) {
+                    points.append(QPointF(j + 0.5, DataRead[j]));
+                }
+
+                series->append(points);
+                chart->addSeries(series);
+
+                // Set up the X-axis with 0.5 increments
+                QValueAxis *axisX1 = new QValueAxis();
+                axisX1->setTickCount(N);
+                axisX1->setLabelFormat("%.1f");
+                axisX1->setRange(0, N);
+                axisX1->setTickInterval(0.5);
+                chart->addAxis(axisX1, Qt::AlignBottom);
+                series->attachAxis(axisX1);
+
+                // Set up the Y-axis
+                QValueAxis *axisY1 = new QValueAxis();
+                chart->addAxis(axisY1, Qt::AlignLeft);
+                series->attachAxis(axisY1);
+
+                // Create a chart view object and set the chart
+                QChartView *chartView = new QChartView(chart);
+                chartView->setRenderHint(QPainter::Antialiasing);
+                chartView->setChart(chart);
+
+                // Get the layout for the current frame and add the chart view
+                QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
+                layout->addWidget(chartView);
+
+                counter++;
+        }
+    }else if(parses == 4){
+        int counter =0;
+        for(int i=last_counted_frame; i<frameArray.size(); i++){
+            if(counter == 0) {
+                    layout->addWidget(frameArray[i], 0, 0);
+                }else if(counter == 1) {
+                    layout->addWidget(frameArray[i], 0, 1);
+                }else if(counter == 2){
+                    layout->addWidget(frameArray[i], 1, 0); //puting the frames like a 2x2 pinaka
+                }else{
+                    layout->addWidget(frameArray[i], 1, 1);
+                }
+
+                std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(counter + 2).c_str());
+                qDebug() << "ebala sto frame[" << i << "] = ";
+
+                QChart *chart = new QChart();
+                chart->setTitle(preferences_split.at(counter + 2).c_str());
+
+                // Create a line series object and set the points
+                QLineSeries *series = new QLineSeries();
+
+                // Create a QPointF vector and add the values from the array
+                QVector<QPointF> points;
+                int N = DataRead.size();
+                for (int j = 0; j < N; j++) {
+                    points.append(QPointF(j + 0.5, DataRead[j]));
+                }
+
+                series->append(points);
+                chart->addSeries(series);
+
+
+                // Set up the X-axis with 0.5 increments
+                QValueAxis *axisX1 = new QValueAxis();
+                axisX1->setTickCount(N);
+                axisX1->setLabelFormat("%.1f");
+                axisX1->setRange(0, 2);
+                axisX1->setTickInterval(0.5);
+                chart->addAxis(axisX1, Qt::AlignBottom);
+                series->attachAxis(axisX1);
+
+                // Set up the Y-axis
+                QValueAxis *axisY1 = new QValueAxis();
+                chart->addAxis(axisY1, Qt::AlignLeft);
+                series->attachAxis(axisY1);
+
+                // Create a chart view object and set the chart
+                QChartView *chartView = new QChartView(chart);
+                chartView->setRenderHint(QPainter::Antialiasing);
+                chartView->setChart(chart);
+                chartView->setDragMode(QGraphicsView::ScrollHandDrag); // Enable drag mode
+
+                // Get the layout for the current frame and add the chart view
+                QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
+                layout->addWidget(chartView);
+
+                counter++;
+        }
+    }else{
+        qDebug() << "NOPE";
+//        for (int i = 0; i < DataRead.size(); i++) {
+//            std::cout << "Pasxa: --> " << DataRead[i] << std::endl;
+//        }
+    }
+
+    QWidget *tabContent = new QWidget; //makes a widget for the tab window
+
     tabContent->setLayout(layout); //setting the layout of the widget
 
     QString final_name = QString::fromStdString(preferences_split.at(0));
@@ -253,67 +505,10 @@ void MainWindow::on_addTabNameButton_clicked()
     //setting the name of the new tab
     tabWidget->setTabText(tabIndex, final_name);
 
-    int parses = std::stoi(preferences_split.at(1));
-
-
-    std::vector<QFrame*> frameArray;
-    // Create and add QFrames to the array
-    for(int i = 0; i < parses; i++) {
-        QFrame *frame = new QFrame();
-        // Set the object name for the QFrame
-        frame->setObjectName("frame" + QString::number(++myNamespace2::number_of_frames));
-        frameArray.push_back(frame);
-
-        // Create a label and set its text to the current value of number_of_frames
-        QLabel *label = new QLabel(QString::number(myNamespace2::number_of_frames), frame);
-        label->setAlignment(Qt::AlignCenter);
-        label->setFixedSize(frame->size());
-
-        if(i == 0){
-            frameArray[i]->setStyleSheet("QFrame { background-color: blue; }");
-            layout->addWidget(frameArray[i], 0, 0);
-            chartCreationSetup(parses, preferences_split, frameArray);
-        }else if (i == 1){
-            frameArray[i]->setStyleSheet("QFrame { background-color: red; }"); //styling the frames
-            layout->addWidget(frameArray[i], 0, 1);
-            chartCreationSetup(parses, preferences_split, frameArray);
-        }else if(i == 2){
-            frameArray[i]->setStyleSheet("QFrame { background-color: white; }");
-            layout->addWidget(frameArray[i], 1, 0, 1, 2); //puting the frames like a 2x2 pinaka
-            chartCreationSetup(parses, preferences_split, frameArray);
-        }else if(i == 3){
-            layout->addWidget(frameArray[i-1], 1, 0, 1, 1);
-            frameArray[i]->setStyleSheet("QFrame { background-color: green; }");
-            layout->addWidget(frameArray[i], 1, 1);
-            chartCreationSetup(parses, preferences_split, frameArray);
-        }else{
-            qDebug() << "NOPE";
-        }
-    }
-
-
-
-//    for (QFrame* frame : frameArray) {
-//           delete frame;
-//    }
-//    frameArray.clear();
-
-
-
-
 }
 
-
 void MainWindow::chartCreationSetup(int parses, std::vector<std::string> preferences_split, std::vector<QFrame*> frameArray){
-    qDebug() << "PARSES" << parses;
-    for(int k=0; k<parses; k++){
-        std::vector<double> Pasxa = Firestore_Read_Data(preferences_split.at(parses+1).c_str());
-        create_chart(frameArray, parses);
-        Pasxa.clear();
 
-    }
-
-//    free(myNamespace2::array);
 }
 
 

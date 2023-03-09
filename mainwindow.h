@@ -19,7 +19,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-
+    void chartCreationSetup(int parses, std::vector<std::string> preferences_split, std::vector<QFrame*> frameArray);
 
 
 private slots:
@@ -58,7 +58,7 @@ private slots:
 
     void create_chart(std::vector<QFrame*> frameArray, int parses);
 
-    void chartCreationSetup(int parses, std::vector<std::string> preferences_split, std::vector<QFrame*> frameArray);
+
 
 private:
     Ui::MainWindow *ui;
