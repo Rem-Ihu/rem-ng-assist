@@ -36,5 +36,9 @@
         <file>icons/apple_icon.png</file>
         <file>icons/facebook_icon.png</file>
         <file>icons/gmail_icon.png</file>
+        <file>icons/blue_spinner.gif</file>
+        <file>icons/final_loading.gif</file>
+        <file>icons/loading.gif</file>
+        <file>icons/loading-5.gif</file>
     </qresource>
 </RCC>

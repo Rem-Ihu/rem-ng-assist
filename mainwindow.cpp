@@ -1,11 +1,14 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "qregularexpression.h"
+#include <QJSEngine>
 #include "ui_mainwindow.h"
 #include "databasehandler1.h"
 #include <QSvgRenderer>
 #include <QStackedWidget>
+#include <QDialog>
 #include <iostream>
+#include <QGraphicsProxyWidget>
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QSvgRenderer>
@@ -271,15 +274,48 @@ void MainWindow::on_addTabNameButton_clicked()
     flag_first_chart = true;
 
 
+//        for (int i = 0; i < vec_val.size(); i++) {
+//            qDebug() << "Pasxa: --> " << vec_val[i];
+//        }
 
     if(parses == 1){
+        int mainWidth = this->width();
+        int mainHeight = this->height();
+
+        // Create a loading dialog with a spinning animation
+        QDialog loadingDialog(this);
+        loadingDialog.setModal(true);
+        loadingDialog.setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
+        loadingDialog.setStyleSheet("background-color: rgb(0, 0, 0);");
+        loadingDialog.setWindowTitle("Loading");
+        loadingDialog.setFixedSize(mainWidth, mainHeight);
+
+        QMovie loadingMovie(":/icons/loading-5.gif");
+        QLabel loadingLabel(&loadingDialog);
+        loadingLabel.setMovie(&loadingMovie);
+        loadingMovie.start();
+
+        QVBoxLayout loadingLayout(&loadingDialog);
+        loadingLayout.addWidget(&loadingLabel, 0, Qt::AlignCenter);
+
+        // Calculate the position of the loading dialog
+        int dialogX = (mainWidth - loadingDialog.width()) / 2;
+        int dialogY = (mainHeight - loadingDialog.height()) / 2;
+
+        // Move the loading dialog to the center of the main window
+        loadingDialog.move(dialogX, dialogY);
+
+        // Disable the main window
+        setDisabled(true);
+
+        // Show the loading dialog
+        loadingDialog.show();
+        QApplication::processEvents();
+        // Run the long-running code
         layout->addWidget(frameArray[frameArray.size()-1], 0, 0);
         chartCreationSetup(parses, preferences_split, frameArray);
         std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(parses+1).c_str());
         qDebug() << "ebala sto frame[" << frameArray.size()-1 << "] = ";
-//        for (int i = 0; i < vec_val.size(); i++) {
-//            qDebug() << "Pasxa: --> " << vec_val[i];
-//        }
 
         QChart *chart = new QChart();
         chart->setTitle(preferences_split.at(parses+1).c_str());
@@ -296,7 +332,7 @@ void MainWindow::on_addTabNameButton_clicked()
 
         // Set up the X-axis with 0.5 increments
         QValueAxis *axisX1 = new QValueAxis();
-        axisX1->setTickCount(N);
+        axisX1->setTickCount(10);
         axisX1->setLabelFormat("%.1f");
         axisX1->setRange(0, N);
         axisX1->setTickInterval(0.5);
@@ -313,13 +349,56 @@ void MainWindow::on_addTabNameButton_clicked()
         chartView->setRenderHint(QPainter::Antialiasing);
         chartView->setChart(chart);
 
+        // Enable panning and disable zooming
+        chartView->setRubberBand(QChartView::HorizontalRubberBand);
+        chartView->setDragMode(QGraphicsView::ScrollHandDrag);
+
+        // Disable animations
+        chart->setAnimationOptions(QChart::NoAnimation);
+
         // Get the layout for the current frame and add the chart view
         QVBoxLayout *layout = new QVBoxLayout(frameArray[frameArray.size()-1]);
         layout->addWidget(chartView);
 
+        // Hide the loading dialog and enable the main window
+        loadingDialog.hide();
+        setDisabled(false);
+
 
     }else if (parses == 2){
         int counter =0;
+        int mainWidth = this->width();
+        int mainHeight = this->height();
+
+        // Create a loading dialog with a spinning animation
+        QDialog loadingDialog(this);
+        loadingDialog.setModal(true);
+        loadingDialog.setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
+        loadingDialog.setStyleSheet("background-color: rgb(0, 0, 0);");
+        loadingDialog.setWindowTitle("Loading");
+        loadingDialog.setFixedSize(mainWidth, mainHeight);
+
+        QMovie loadingMovie(":/icons/loading-5.gif");
+        QLabel loadingLabel(&loadingDialog);
+        loadingLabel.setMovie(&loadingMovie);
+        loadingMovie.start();
+
+        QVBoxLayout loadingLayout(&loadingDialog);
+        loadingLayout.addWidget(&loadingLabel, 0, Qt::AlignCenter);
+
+        // Calculate the position of the loading dialog
+        int dialogX = (mainWidth - loadingDialog.width()) / 2;
+        int dialogY = (mainHeight - loadingDialog.height()) / 2;
+
+        // Move the loading dialog to the center of the main window
+        loadingDialog.move(dialogX, dialogY);
+
+        // Disable the main window
+        setDisabled(true);
+
+        // Show the loading dialog
+        loadingDialog.show();
+        QApplication::processEvents();
         for(int i=last_counted_frame; i<frameArray.size(); i++){
             if(counter == 0) {
                     layout->addWidget(frameArray[i], 0, 0);
@@ -327,52 +406,93 @@ void MainWindow::on_addTabNameButton_clicked()
                     layout->addWidget(frameArray[i], 0, 1);
                 }
 
-                std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(counter + 2).c_str());
-                qDebug() << "ebala sto frame[" << i << "] = ";
 
-                QChart *chart = new QChart();
-                chart->setTitle(preferences_split.at(counter + 2).c_str());
+            // Run the long-running code
+            chartCreationSetup(parses, preferences_split, frameArray);
+            std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(parses+1).c_str());
+            qDebug() << "ebala sto frame[" << i << "] = ";
 
-                // Create a line series object and set the points
-                QLineSeries *series = new QLineSeries();
+            QChart *chart = new QChart();
+            chart->setTitle(preferences_split.at(parses+1).c_str());
+            // Create a QPointF vector and add the values from the array
+            QVector<QPointF> points;
+            int N = DataRead.size();
+            for (int j = 0; j < N; j++) {
+                points.append(QPointF(j + 0.5, DataRead[j]));
+            }
+            // Create a line series object and set the points
+            QLineSeries *series = new QLineSeries();
+            series->append(points);
+            chart->addSeries(series);
 
-                // Create a QPointF vector and add the values from the array
-                QVector<QPointF> points;
-                int N = DataRead.size();
-                for (int j = 0; j < N; j++) {
-                    points.append(QPointF(j + 0.5, DataRead[j]));
-                }
+            // Set up the X-axis with 0.5 increments
+            QValueAxis *axisX1 = new QValueAxis();
+            axisX1->setTickCount(10);
+            axisX1->setLabelFormat("%.1f");
+            axisX1->setRange(0, N);
+            axisX1->setTickInterval(0.5);
+            chart->addAxis(axisX1, Qt::AlignBottom);
+            series->attachAxis(axisX1);
 
-                series->append(points);
-                chart->addSeries(series);
+            // Set up the Y-axis
+            QValueAxis *axisY1 = new QValueAxis();
+            chart->addAxis(axisY1, Qt::AlignLeft);
+            series->attachAxis(axisY1);
 
-                // Set up the X-axis with 0.5 increments
-                QValueAxis *axisX1 = new QValueAxis();
-                axisX1->setTickCount(N);
-                axisX1->setLabelFormat("%.1f");
-                axisX1->setRange(0, N);
-                axisX1->setTickInterval(0.5);
-                chart->addAxis(axisX1, Qt::AlignBottom);
-                series->attachAxis(axisX1);
+            // Create a chart view object and set the chart
+            QChartView *chartView = new QChartView(chart);
+            chartView->setRenderHint(QPainter::Antialiasing);
+            chartView->setChart(chart);
 
-                // Set up the Y-axis
-                QValueAxis *axisY1 = new QValueAxis();
-                chart->addAxis(axisY1, Qt::AlignLeft);
-                series->attachAxis(axisY1);
+            // Enable panning and disable zooming
+            chartView->setRubberBand(QChartView::HorizontalRubberBand);
+            chartView->setDragMode(QGraphicsView::ScrollHandDrag);
 
-                // Create a chart view object and set the chart
-                QChartView *chartView = new QChartView(chart);
-                chartView->setRenderHint(QPainter::Antialiasing);
-                chartView->setChart(chart);
+            // Disable animations
+            chart->setAnimationOptions(QChart::NoAnimation);
 
-                // Get the layout for the current frame and add the chart view
-                QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
-                layout->addWidget(chartView);
+            // Get the layout for the current frame and add the chart view
+            QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
+            layout->addWidget(chartView);
 
-                counter++;
+            // Hide the loading dialog and enable the main window
+                    counter++;
         }
+        loadingDialog.hide();
+        setDisabled(false);
     }else if(parses == 3){
+        int mainWidth = this->width();
+        int mainHeight = this->height();
 
+        // Create a loading dialog with a spinning animation
+        QDialog loadingDialog(this);
+        loadingDialog.setModal(true);
+        loadingDialog.setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
+        loadingDialog.setStyleSheet("background-color: rgb(0, 0, 0);");
+        loadingDialog.setWindowTitle("Loading");
+        loadingDialog.setFixedSize(mainWidth, mainHeight);
+
+        QMovie loadingMovie(":/icons/loading-5.gif");
+        QLabel loadingLabel(&loadingDialog);
+        loadingLabel.setMovie(&loadingMovie);
+        loadingMovie.start();
+
+        QVBoxLayout loadingLayout(&loadingDialog);
+        loadingLayout.addWidget(&loadingLabel, 0, Qt::AlignCenter);
+
+        // Calculate the position of the loading dialog
+        int dialogX = (mainWidth - loadingDialog.width()) / 2;
+        int dialogY = (mainHeight - loadingDialog.height()) / 2;
+
+        // Move the loading dialog to the center of the main window
+        loadingDialog.move(dialogX, dialogY);
+
+        // Disable the main window
+        setDisabled(true);
+
+        // Show the loading dialog
+        loadingDialog.show();
+        QApplication::processEvents();
         int counter =0;
         for(int i=last_counted_frame; i<frameArray.size(); i++){
             if(counter == 0) {
@@ -383,52 +503,94 @@ void MainWindow::on_addTabNameButton_clicked()
                     layout->addWidget(frameArray[i], 1, 0, 1, 2); //puting the frames like a 2x2 pinaka
                 }
 
-                std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(counter + 2).c_str());
-                qDebug() << "ebala sto frame[" << i << "] = ";
 
-                QChart *chart = new QChart();
-                chart->setTitle(preferences_split.at(counter + 2).c_str());
+            // Run the long-running code
+            chartCreationSetup(parses, preferences_split, frameArray);
+            std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(parses+1).c_str());
+            qDebug() << "ebala sto frame[" << i << "] = ";
 
-                // Create a line series object and set the points
-                QLineSeries *series = new QLineSeries();
+            QChart *chart = new QChart();
+            chart->setTitle(preferences_split.at(parses+1).c_str());
+            // Create a QPointF vector and add the values from the array
+            QVector<QPointF> points;
+            int N = DataRead.size();
+            for (int j = 0; j < N; j++) {
+                points.append(QPointF(j + 0.5, DataRead[j]));
+            }
+            // Create a line series object and set the points
+            QLineSeries *series = new QLineSeries();
+            series->append(points);
+            chart->addSeries(series);
 
-                // Create a QPointF vector and add the values from the array
-                QVector<QPointF> points;
-                int N = DataRead.size();
-                for (int j = 0; j < N; j++) {
-                    points.append(QPointF(j + 0.5, DataRead[j]));
-                }
+            // Set up the X-axis with 0.5 increments
+            QValueAxis *axisX1 = new QValueAxis();
+            axisX1->setTickCount(10);
+            axisX1->setLabelFormat("%.1f");
+            axisX1->setRange(0, N);
+            axisX1->setTickInterval(0.5);
+            chart->addAxis(axisX1, Qt::AlignBottom);
+            series->attachAxis(axisX1);
 
-                series->append(points);
-                chart->addSeries(series);
+            // Set up the Y-axis
+            QValueAxis *axisY1 = new QValueAxis();
+            chart->addAxis(axisY1, Qt::AlignLeft);
+            series->attachAxis(axisY1);
 
-                // Set up the X-axis with 0.5 increments
-                QValueAxis *axisX1 = new QValueAxis();
-                axisX1->setTickCount(N);
-                axisX1->setLabelFormat("%.1f");
-                axisX1->setRange(0, N);
-                axisX1->setTickInterval(0.5);
-                chart->addAxis(axisX1, Qt::AlignBottom);
-                series->attachAxis(axisX1);
+            // Create a chart view object and set the chart
+            QChartView *chartView = new QChartView(chart);
+            chartView->setRenderHint(QPainter::Antialiasing);
+            chartView->setChart(chart);
 
-                // Set up the Y-axis
-                QValueAxis *axisY1 = new QValueAxis();
-                chart->addAxis(axisY1, Qt::AlignLeft);
-                series->attachAxis(axisY1);
+            // Enable panning and disable zooming
+            chartView->setRubberBand(QChartView::HorizontalRubberBand);
+            chartView->setDragMode(QGraphicsView::ScrollHandDrag);
 
-                // Create a chart view object and set the chart
-                QChartView *chartView = new QChartView(chart);
-                chartView->setRenderHint(QPainter::Antialiasing);
-                chartView->setChart(chart);
+            // Disable animations
+            chart->setAnimationOptions(QChart::NoAnimation);
 
-                // Get the layout for the current frame and add the chart view
-                QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
-                layout->addWidget(chartView);
+            // Get the layout for the current frame and add the chart view
+            QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
+            layout->addWidget(chartView);
 
-                counter++;
+            // Hide the loading dialog and enable the main window
+                    counter++;
         }
+        loadingDialog.hide();
+        setDisabled(false);
     }else if(parses == 4){
         int counter =0;
+        int mainWidth = this->width();
+        int mainHeight = this->height();
+
+        // Create a loading dialog with a spinning animation
+        QDialog loadingDialog(this);
+        loadingDialog.setModal(true);
+        loadingDialog.setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
+        loadingDialog.setStyleSheet("background-color: rgb(0, 0, 0);");
+        loadingDialog.setWindowTitle("Loading");
+        loadingDialog.setFixedSize(mainWidth, mainHeight);
+
+        QMovie loadingMovie(":/icons/loading-5.gif");
+        QLabel loadingLabel(&loadingDialog);
+        loadingLabel.setMovie(&loadingMovie);
+        loadingMovie.start();
+
+        QVBoxLayout loadingLayout(&loadingDialog);
+        loadingLayout.addWidget(&loadingLabel, 0, Qt::AlignCenter);
+
+        // Calculate the position of the loading dialog
+        int dialogX = (mainWidth - loadingDialog.width()) / 2;
+        int dialogY = (mainHeight - loadingDialog.height()) / 2;
+
+        // Move the loading dialog to the center of the main window
+        loadingDialog.move(dialogX, dialogY);
+
+        // Disable the main window
+        setDisabled(true);
+
+        // Show the loading dialog
+        loadingDialog.show();
+        QApplication::processEvents();
         for(int i=last_counted_frame; i<frameArray.size(); i++){
             if(counter == 0) {
                     layout->addWidget(frameArray[i], 0, 0);
@@ -440,52 +602,59 @@ void MainWindow::on_addTabNameButton_clicked()
                     layout->addWidget(frameArray[i], 1, 1);
                 }
 
-                std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(counter + 2).c_str());
-                qDebug() << "ebala sto frame[" << i << "] = ";
+            // Run the long-running code
+            chartCreationSetup(parses, preferences_split, frameArray);
+            std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(parses+1).c_str());
+            qDebug() << "ebala sto frame[" << i << "] = ";
 
-                QChart *chart = new QChart();
-                chart->setTitle(preferences_split.at(counter + 2).c_str());
+            QChart *chart = new QChart();
+            chart->setTitle(preferences_split.at(parses+1).c_str());
+            // Create a QPointF vector and add the values from the array
+            QVector<QPointF> points;
+            int N = DataRead.size();
+            for (int j = 0; j < N; j++) {
+                points.append(QPointF(j + 0.5, DataRead[j]));
+            }
+            // Create a line series object and set the points
+            QLineSeries *series = new QLineSeries();
+            series->append(points);
+            chart->addSeries(series);
 
-                // Create a line series object and set the points
-                QLineSeries *series = new QLineSeries();
+            // Set up the X-axis with 0.5 increments
+            QValueAxis *axisX1 = new QValueAxis();
+            axisX1->setTickCount(10);
+            axisX1->setLabelFormat("%.1f");
+            axisX1->setRange(0, N);
+            axisX1->setTickInterval(0.5);
+            chart->addAxis(axisX1, Qt::AlignBottom);
+            series->attachAxis(axisX1);
 
-                // Create a QPointF vector and add the values from the array
-                QVector<QPointF> points;
-                int N = DataRead.size();
-                for (int j = 0; j < N; j++) {
-                    points.append(QPointF(j + 0.5, DataRead[j]));
-                }
+            // Set up the Y-axis
+            QValueAxis *axisY1 = new QValueAxis();
+            chart->addAxis(axisY1, Qt::AlignLeft);
+            series->attachAxis(axisY1);
 
-                series->append(points);
-                chart->addSeries(series);
+            // Create a chart view object and set the chart
+            QChartView *chartView = new QChartView(chart);
+            chartView->setRenderHint(QPainter::Antialiasing);
+            chartView->setChart(chart);
 
+            // Enable panning and disable zooming
+            chartView->setRubberBand(QChartView::HorizontalRubberBand);
+            chartView->setDragMode(QGraphicsView::ScrollHandDrag);
 
-                // Set up the X-axis with 0.5 increments
-                QValueAxis *axisX1 = new QValueAxis();
-                axisX1->setTickCount(N);
-                axisX1->setLabelFormat("%.1f");
-                axisX1->setRange(0, 2);
-                axisX1->setTickInterval(0.5);
-                chart->addAxis(axisX1, Qt::AlignBottom);
-                series->attachAxis(axisX1);
+            // Disable animations
+            chart->setAnimationOptions(QChart::NoAnimation);
 
-                // Set up the Y-axis
-                QValueAxis *axisY1 = new QValueAxis();
-                chart->addAxis(axisY1, Qt::AlignLeft);
-                series->attachAxis(axisY1);
+            // Get the layout for the current frame and add the chart view
+            QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
+            layout->addWidget(chartView);
 
-                // Create a chart view object and set the chart
-                QChartView *chartView = new QChartView(chart);
-                chartView->setRenderHint(QPainter::Antialiasing);
-                chartView->setChart(chart);
-                chartView->setDragMode(QGraphicsView::ScrollHandDrag); // Enable drag mode
-
-                // Get the layout for the current frame and add the chart view
-                QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
-                layout->addWidget(chartView);
-
-                counter++;
+            // Hide the loading dialog and enable the main window
+                    counter++;
         }
+        loadingDialog.hide();
+        setDisabled(false);
     }else{
         qDebug() << "NOPE";
 //        for (int i = 0; i < DataRead.size(); i++) {
