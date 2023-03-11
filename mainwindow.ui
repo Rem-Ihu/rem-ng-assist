@@ -1687,7 +1687,7 @@ padding-left:17px;
 padding: 0px;</string>
       </property>
       <property name="currentIndex">
-       <number>6</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
@@ -1734,8 +1734,8 @@ padding: 0px;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1176</width>
-             <height>702</height>
+             <width>82</width>
+             <height>18</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_9"/>
@@ -1791,7 +1791,7 @@ border:0px;
          <widget class="QLineEdit" name="nametab">
           <property name="maximumSize">
            <size>
-            <width>200</width>
+            <width>16777215</width>
             <height>16777215</height>
            </size>
           </property>
@@ -1854,7 +1854,7 @@ background-color: rgba(255, 0, 0, 0);</string>
            <enum>QTabWidget::Rounded</enum>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <property name="documentMode">
            <bool>true</bool>
@@ -1868,6 +1868,95 @@ background-color: rgba(255, 0, 0, 0);</string>
           <property name="tabBarAutoHide">
            <bool>false</bool>
           </property>
+          <widget class="QWidget" name="Tutorial">
+           <attribute name="title">
+            <string>Tutorial</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_15">
+            <item row="0" column="0">
+             <widget class="QFrame" name="frame_2">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgb(255, 255, 255);</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_25">
+               <item row="2" column="1">
+                <spacer name="verticalSpacer_2">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="0">
+                <spacer name="horizontalSpacer_4">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLabel" name="label_3">
+                 <property name="font">
+                  <font>
+                   <pointsize>100</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:black;</string>
+                 </property>
+                 <property name="text">
+                  <string>AX NE</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <spacer name="horizontalSpacer_5">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="1">
+                <spacer name="verticalSpacer_7">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
           <widget class="QWidget" name="Aero">
            <attribute name="title">
             <string>Aero</string>
@@ -2441,7 +2530,7 @@ padding-left:20px;
              <x>0</x>
              <y>0</y>
              <width>3448</width>
-             <height>702</height>
+             <height>648</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -4276,7 +4365,7 @@ padding-left:23px;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1160</width>
+             <width>1144</width>
              <height>1545</height>
             </rect>
            </property>
@@ -4685,5 +4774,22 @@ padding-left:24px;
  <resources>
   <include location="icons.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>nametab</sender>
+   <signal>returnPressed()</signal>
+   <receiver>addTabNameButton</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>194</x>
+     <y>700</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>350</x>
+     <y>700</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

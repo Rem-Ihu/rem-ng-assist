@@ -50,7 +50,7 @@ namespace myNamespace2{
     int number_of_frames = 0;
 //    double* array = (double*) malloc(N*sizeof(double));
 }
-
+std::vector<std::string> dateOfChartContent;
 
 
 std::vector<double> Firestore_Read_Data(std::string chart_id){
@@ -77,7 +77,9 @@ std::vector<double> Firestore_Read_Data(std::string chart_id){
             QJsonObject mapValue = data[i].toObject()["mapValue"].toObject()["fields"].toObject();
             QString timestampStr = mapValue["timestamp"].toObject()["timestampValue"].toString();
             timestamp = QDateTime::fromString(timestampStr, Qt::ISODateWithMs);
-
+            std::string date = timestamp.toString("yyyy/MM/dd hh:mm:ss ap").toStdString();
+            dateOfChartContent.push_back(date);
+//            std::cout << dateOfChartContent << std::endl;
             bool ok = false;
             int intValue = mapValue["value"].toObject()["integerValue"].toString().toInt(&ok);
             if (ok) {

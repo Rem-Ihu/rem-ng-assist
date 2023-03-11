@@ -23,6 +23,12 @@
 #include <QtCharts/QLineSeries>
 #include <QtCharts/QValueAxis>
 #include <variant>
+#include <QtCharts/QChartView>
+#include <QtCharts/QLineSeries>
+#include <QtCharts/QValueAxis>
+#include <QtGui/QPainter>
+#include <QtWidgets/QVBoxLayout>
+#include <QtWidgets/QLabel>
 
 
 
@@ -313,19 +319,40 @@ void MainWindow::on_addTabNameButton_clicked()
         QApplication::processEvents();
         // Run the long-running code
         layout->addWidget(frameArray[frameArray.size()-1], 0, 0);
-        chartCreationSetup(parses, preferences_split, frameArray);
         std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(parses+1).c_str());
-        qDebug() << "ebala sto frame[" << frameArray.size()-1 << "] = ";
+
 
         QChart *chart = new QChart();
+        chart->setTheme(QChart::ChartThemeDark);
+        chart->setBackgroundBrush(QBrush(Qt::transparent));
         chart->setTitle(preferences_split.at(parses+1).c_str());
         // Create a QPointF vector and add the values from the array
         QVector<QPointF> points;
         int N = DataRead.size();
-        for (int j = 0; j < N; j++) {
-            points.append(QPointF(j + 0.5, DataRead[j]));
+
+//        qDebug() << "AXNEEEEEEE " << dateStr;
+        int frontN, rearN;
+        bool flagN = false;
+        for(int i=0; i<dateOfChartContent.size(); i++){
+            QString dateString = QString::fromStdString(dateOfChartContent[i]);
+            QStringList parts = dateString.split(" ");
+            QString dateStr = parts[0]; // Get the first part (the date)
+            if(preferences_split.at(parses+2).c_str()==dateStr.toStdString() && flagN==false){
+                frontN=i;
+                flagN=true;
+            }else if(preferences_split.at(parses+2).c_str()!=dateStr.toStdString() && flagN==true){
+                rearN= i-1;
+                break;
+            }
         }
-        // Create a line series object and set the points
+
+
+
+        for (int j = frontN; j < rearN; j++) {
+                points.append(QPointF(j + 0.5, DataRead[j]));
+        }
+
+        // Create a line series with the data points
         QLineSeries *series = new QLineSeries();
         series->append(points);
         chart->addSeries(series);
@@ -349,6 +376,7 @@ void MainWindow::on_addTabNameButton_clicked()
         chartView->setRenderHint(QPainter::Antialiasing);
         chartView->setChart(chart);
 
+        // Set up the hover area
         // Enable panning and disable zooming
         chartView->setRubberBand(QChartView::HorizontalRubberBand);
         chartView->setDragMode(QGraphicsView::ScrollHandDrag);
@@ -359,6 +387,36 @@ void MainWindow::on_addTabNameButton_clicked()
         // Get the layout for the current frame and add the chart view
         QVBoxLayout *layout = new QVBoxLayout(frameArray[frameArray.size()-1]);
         layout->addWidget(chartView);
+
+        // Create a label for showing the x and y axis value
+        QLabel *label = new QLabel(chartView);
+        label->setStyleSheet("QLabel { background-color: #22222; color: white; border: 1px solid white; border-radius: 2px; font-weight: bold; }"); // modify the style sheet to make the labels bold
+        label->setGeometry(QRect(0, 0, 120, 40)); // make the label bigger
+        label->setVisible(false);
+        label->raise(); // set z-index to highest
+
+        // Set the pen of the line series to a thicker width
+        QPen pen = series->pen();
+        pen.setWidth(3);
+        series->setPen(pen);
+
+        // Connect the hovered signal of the series to a custom slot
+        QObject::connect(series, &QLineSeries::hovered, [=](const QPointF &point, bool state) {
+            if (state) {
+                // Show the label and update its text
+                label->setVisible(true);
+                label->setText(QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
+
+                // Move the label to the current mouse position
+                QPoint mousePos = chartView->mapFromGlobal(QCursor::pos());
+                label->move(mousePos.x() - label->width()/2, mousePos.y() - label->height() - 5); // space out the label
+            } else {
+                // Hide the label
+                label->setVisible(false);
+            }
+        });
+
+
 
         // Hide the loading dialog and enable the main window
         loadingDialog.hide();
