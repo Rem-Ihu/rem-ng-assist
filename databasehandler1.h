@@ -79,7 +79,7 @@ std::vector<double> Firestore_Read_Data(std::string chart_id){
             timestamp = QDateTime::fromString(timestampStr, Qt::ISODateWithMs);
             std::string date = timestamp.toString("yyyy/MM/dd hh:mm:ss ap").toStdString();
             dateOfChartContent.push_back(date);
-//            std::cout << dateOfChartContent << std::endl;
+//            std::cout << dateOfChartContent[13] << std::endl;
             bool ok = false;
             int intValue = mapValue["value"].toObject()["integerValue"].toString().toInt(&ok);
             if (ok) {

@@ -378,6 +378,17 @@ void MainWindow::on_addTabNameButton_clicked()
 //        qDebug() << "AXNEEEEEEE " << dateStr;
         int frontN, rearN;
         bool flagN = false;
+
+
+        for(int i=0; i<dateOfChartContent.size(); i++)
+            std::cout << dateOfChartContent[i] << std::endl;
+
+
+        QString dateString = QString::fromStdString(dateOfChartContent[dateOfChartContent.size()-1]);
+        QStringList parts = dateString.split(" ");
+        QString dateStrBreak = parts[0]; // Get the first part (the date)
+
+
         for(int i=0; i<dateOfChartContent.size(); i++){
             QString dateString = QString::fromStdString(dateOfChartContent[i]);
             QStringList parts = dateString.split(" ");
@@ -385,13 +396,18 @@ void MainWindow::on_addTabNameButton_clicked()
             if(preferences_split.at(parses+2).c_str()==dateStr.toStdString() && flagN==false){
                 frontN=i;
                 flagN=true;
-            }else if(preferences_split.at(parses+2).c_str()!=dateStr.toStdString() && flagN==true){
+            }
+            if(preferences_split.at(parses+2).c_str()!=dateStr.toStdString() && flagN==true){
                 rearN= i-1;
+                break;
+            }
+            if(dateStrBreak.toStdString()==dateStr.toStdString() && flagN==true){
+                rearN=dateOfChartContent.size()-1;
                 break;
             }
         }
 
-
+        dateOfChartContent.clear();
 
         for (int j = frontN; j < rearN; j++) {
                 points.append(QPointF(j + 0.5, DataRead[j]));
@@ -502,28 +518,66 @@ void MainWindow::on_addTabNameButton_clicked()
         // Show the loading dialog
         loadingDialog.show();
         QApplication::processEvents();
-        for(int i=last_counted_frame; i<frameArray.size(); i++){
+        std::vector<double> DataRead;
+        int adder;
+        for(int k=last_counted_frame; k<frameArray.size(); k++){
             if(counter == 0) {
-                    layout->addWidget(frameArray[i], 0, 0);
+                    layout->addWidget(frameArray[k], 0, 0);
+                    DataRead = Firestore_Read_Data(preferences_split.at(parses).c_str());
+                    adder=0;
                 } else {
-                    layout->addWidget(frameArray[i], 0, 1);
+                    layout->addWidget(frameArray[k], 0, 1);
+                    DataRead = Firestore_Read_Data(preferences_split.at(parses+1).c_str());
+                    adder=1;
                 }
 
 
-            // Run the long-running code
-            chartCreationSetup(parses, preferences_split, frameArray);
-            std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(parses+1).c_str());
-            qDebug() << "ebala sto frame[" << i << "] = ";
-
             QChart *chart = new QChart();
+            chart->setTheme(QChart::ChartThemeDark);
+            chart->setBackgroundBrush(QBrush(Qt::transparent));
             chart->setTitle(preferences_split.at(parses+1).c_str());
             // Create a QPointF vector and add the values from the array
             QVector<QPointF> points;
             int N = DataRead.size();
-            for (int j = 0; j < N; j++) {
-                points.append(QPointF(j + 0.5, DataRead[j]));
+
+    //        qDebug() << "AXNEEEEEEE " << dateStr;
+            int frontN, rearN;
+            bool flagN = false;
+
+
+            QString dateString = QString::fromStdString(dateOfChartContent[dateOfChartContent.size()-1]);
+            QStringList parts = dateString.split(" ");
+            QString dateStrBreak = parts[0]; // Get the first part (the date)
+
+
+            for(int i=0; i<dateOfChartContent.size(); i++){
+                QString dateString = QString::fromStdString(dateOfChartContent[i]);
+                QStringList parts = dateString.split(" ");
+                QString dateStr = parts[0]; // Get the first part (the date)
+                if(preferences_split.at(parses+2+adder).c_str()==dateStr.toStdString() && flagN==false){
+                    frontN=i;
+                    flagN=true;
+                }
+                std::cout << "EINAI = " << flagN << std::endl;
+                std::cout << "EINAI2 = " << dateStr.toStdString() << std::endl;
+                std::cout << "EINAI3 = " << dateStrBreak.toStdString() << std::endl;
+                if(preferences_split.at(parses+2+adder).c_str()!=dateStr.toStdString() && flagN==true){
+                    rearN= i-1;
+                    break;
+                }
+                if(dateStrBreak.toStdString()==dateStr.toStdString() && flagN==true){
+                    rearN=dateOfChartContent.size()-1;
+                    break;
+                }
             }
-            // Create a line series object and set the points
+
+            dateOfChartContent.clear();
+
+            for (int j = frontN; j < rearN; j++) {
+                    points.append(QPointF(j + 0.5, DataRead[j]));
+            }
+
+            // Create a line series with the data points
             QLineSeries *series = new QLineSeries();
             series->append(points);
             chart->addSeries(series);
@@ -547,6 +601,7 @@ void MainWindow::on_addTabNameButton_clicked()
             chartView->setRenderHint(QPainter::Antialiasing);
             chartView->setChart(chart);
 
+            // Set up the hover area
             // Enable panning and disable zooming
             chartView->setRubberBand(QChartView::HorizontalRubberBand);
             chartView->setDragMode(QGraphicsView::ScrollHandDrag);
@@ -555,9 +610,36 @@ void MainWindow::on_addTabNameButton_clicked()
             chart->setAnimationOptions(QChart::NoAnimation);
 
             // Get the layout for the current frame and add the chart view
-            QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
+            QVBoxLayout *layout = new QVBoxLayout(frameArray[k]);
             layout->addWidget(chartView);
 
+            // Create a label for showing the x and y axis value
+            QLabel *label = new QLabel(chartView);
+            label->setStyleSheet("QLabel { background-color: #22222; color: white; border: 1px solid white; border-radius: 2px; font-weight: bold; }"); // modify the style sheet to make the labels bold
+            label->setGeometry(QRect(0, 0, 120, 40)); // make the label bigger
+            label->setVisible(false);
+            label->raise(); // set z-index to highest
+
+            // Set the pen of the line series to a thicker width
+            QPen pen = series->pen();
+            pen.setWidth(3);
+            series->setPen(pen);
+
+            // Connect the hovered signal of the series to a custom slot
+            QObject::connect(series, &QLineSeries::hovered, [=](const QPointF &point, bool state) {
+                if (state) {
+                    // Show the label and update its text
+                    label->setVisible(true);
+                    label->setText(QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
+
+                    // Move the label to the current mouse position
+                    QPoint mousePos = chartView->mapFromGlobal(QCursor::pos());
+                    label->move(mousePos.x() - label->width()/2, mousePos.y() - label->height() - 5); // space out the label
+                } else {
+                    // Hide the label
+                    label->setVisible(false);
+                }
+            });
             // Hide the loading dialog and enable the main window
                     counter++;
         }
@@ -597,30 +679,67 @@ void MainWindow::on_addTabNameButton_clicked()
         loadingDialog.show();
         QApplication::processEvents();
         int counter =0;
+        int adder;
+        std::vector<double> DataRead;
         for(int i=last_counted_frame; i<frameArray.size(); i++){
             if(counter == 0) {
                     layout->addWidget(frameArray[i], 0, 0);
+                    adder=0;
+                    DataRead = Firestore_Read_Data(preferences_split.at(parses-1).c_str());
                 } else if (counter == 1) {
                     layout->addWidget(frameArray[i], 0, 1);
+                    adder=1;
+                    DataRead = Firestore_Read_Data(preferences_split.at(parses).c_str());
                 }else{
                     layout->addWidget(frameArray[i], 1, 0, 1, 2); //puting the frames like a 2x2 pinaka
+                    adder=2;
+                    DataRead = Firestore_Read_Data(preferences_split.at(parses+1).c_str());
                 }
 
 
-            // Run the long-running code
-            chartCreationSetup(parses, preferences_split, frameArray);
-            std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(parses+1).c_str());
-            qDebug() << "ebala sto frame[" << i << "] = ";
-
             QChart *chart = new QChart();
+            chart->setTheme(QChart::ChartThemeDark);
+            chart->setBackgroundBrush(QBrush(Qt::transparent));
             chart->setTitle(preferences_split.at(parses+1).c_str());
             // Create a QPointF vector and add the values from the array
             QVector<QPointF> points;
             int N = DataRead.size();
-            for (int j = 0; j < N; j++) {
-                points.append(QPointF(j + 0.5, DataRead[j]));
+
+    //        qDebug() << "AXNEEEEEEE " << dateStr;
+            int frontN, rearN;
+            bool flagN = false;
+
+
+            QString dateString = QString::fromStdString(dateOfChartContent[dateOfChartContent.size()-1]);
+            QStringList parts = dateString.split(" ");
+            QString dateStrBreak = parts[0]; // Get the first part (the date)
+
+
+            for(int i=0; i<dateOfChartContent.size(); i++){
+                QString dateString = QString::fromStdString(dateOfChartContent[i]);
+                QStringList parts = dateString.split(" ");
+                QString dateStr = parts[0]; // Get the first part (the date)
+                if(preferences_split.at(parses+2+adder).c_str()==dateStr.toStdString() && flagN==false){
+                    frontN=i;
+                    flagN=true;
+                }
+                if(preferences_split.at(parses+2+adder).c_str()!=dateStr.toStdString() && flagN==true){
+                    rearN= i-1;
+                    break;
+                }
+                if(dateStrBreak.toStdString()==dateStr.toStdString() && flagN==true){
+                    rearN=dateOfChartContent.size()-1;
+                    break;
+                }
             }
-            // Create a line series object and set the points
+
+            dateOfChartContent.clear();
+
+            for (int j = frontN; j < rearN; j++) {
+                    points.append(QPointF(j + 0.5, DataRead[j]));
+            }
+
+            // Create a line series with the data points
             QLineSeries *series = new QLineSeries();
             series->append(points);
             chart->addSeries(series);
@@ -644,6 +763,7 @@ void MainWindow::on_addTabNameButton_clicked()
             chartView->setRenderHint(QPainter::Antialiasing);
             chartView->setChart(chart);
 
+            // Set up the hover area
             // Enable panning and disable zooming
             chartView->setRubberBand(QChartView::HorizontalRubberBand);
             chartView->setDragMode(QGraphicsView::ScrollHandDrag);
@@ -655,6 +775,33 @@ void MainWindow::on_addTabNameButton_clicked()
             QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
             layout->addWidget(chartView);
 
+            // Create a label for showing the x and y axis value
+            QLabel *label = new QLabel(chartView);
+            label->setStyleSheet("QLabel { background-color: #22222; color: white; border: 1px solid white; border-radius: 2px; font-weight: bold; }"); // modify the style sheet to make the labels bold
+            label->setGeometry(QRect(0, 0, 120, 40)); // make the label bigger
+            label->setVisible(false);
+            label->raise(); // set z-index to highest
+
+            // Set the pen of the line series to a thicker width
+            QPen pen = series->pen();
+            pen.setWidth(3);
+            series->setPen(pen);
+
+            // Connect the hovered signal of the series to a custom slot
+            QObject::connect(series, &QLineSeries::hovered, [=](const QPointF &point, bool state) {
+                if (state) {
+                    // Show the label and update its text
+                    label->setVisible(true);
+                    label->setText(QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
+
+                    // Move the label to the current mouse position
+                    QPoint mousePos = chartView->mapFromGlobal(QCursor::pos());
+                    label->move(mousePos.x() - label->width()/2, mousePos.y() - label->height() - 5); // space out the label
+                } else {
+                    // Hide the label
+                    label->setVisible(false);
+                }
+            });
             // Hide the loading dialog and enable the main window
                     counter++;
         }
@@ -694,31 +841,70 @@ void MainWindow::on_addTabNameButton_clicked()
         // Show the loading dialog
         loadingDialog.show();
         QApplication::processEvents();
+        int adder;
+        std::vector<double> DataRead;
         for(int i=last_counted_frame; i<frameArray.size(); i++){
             if(counter == 0) {
                     layout->addWidget(frameArray[i], 0, 0);
+                    adder=0;
+                    DataRead = Firestore_Read_Data(preferences_split.at(parses-2).c_str());
                 }else if(counter == 1) {
                     layout->addWidget(frameArray[i], 0, 1);
+                    adder=1;
+                    DataRead = Firestore_Read_Data(preferences_split.at(parses-1).c_str());
                 }else if(counter == 2){
                     layout->addWidget(frameArray[i], 1, 0); //puting the frames like a 2x2 pinaka
+                    adder=2;
+                    DataRead = Firestore_Read_Data(preferences_split.at(parses).c_str());
                 }else{
                     layout->addWidget(frameArray[i], 1, 1);
+                    adder=3;
+                    DataRead = Firestore_Read_Data(preferences_split.at(parses+1).c_str());
                 }
 
-            // Run the long-running code
-            chartCreationSetup(parses, preferences_split, frameArray);
-            std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(parses+1).c_str());
-            qDebug() << "ebala sto frame[" << i << "] = ";
-
             QChart *chart = new QChart();
+            chart->setTheme(QChart::ChartThemeDark);
+            chart->setBackgroundBrush(QBrush(Qt::transparent));
             chart->setTitle(preferences_split.at(parses+1).c_str());
             // Create a QPointF vector and add the values from the array
             QVector<QPointF> points;
             int N = DataRead.size();
-            for (int j = 0; j < N; j++) {
-                points.append(QPointF(j + 0.5, DataRead[j]));
+
+    //        qDebug() << "AXNEEEEEEE " << dateStr;
+            int frontN, rearN;
+            bool flagN = false;
+
+
+            QString dateString = QString::fromStdString(dateOfChartContent[dateOfChartContent.size()-1]);
+            QStringList parts = dateString.split(" ");
+            QString dateStrBreak = parts[0]; // Get the first part (the date)
+
+
+            for(int i=0; i<dateOfChartContent.size(); i++){
+                QString dateString = QString::fromStdString(dateOfChartContent[i]);
+                QStringList parts = dateString.split(" ");
+                QString dateStr = parts[0]; // Get the first part (the date)
+                if(preferences_split.at(parses+2+adder).c_str()==dateStr.toStdString() && flagN==false){
+                    frontN=i;
+                    flagN=true;
+                }
+                if(preferences_split.at(parses+2+adder).c_str()!=dateStr.toStdString() && flagN==true){
+                    rearN= i-1;
+                    break;
+                }
+                if(dateStrBreak.toStdString()==dateStr.toStdString() && flagN==true){
+                    rearN=dateOfChartContent.size()-1;
+                    break;
+                }
             }
-            // Create a line series object and set the points
+
+            dateOfChartContent.clear();
+
+            for (int j = frontN; j < rearN; j++) {
+                    points.append(QPointF(j + 0.5, DataRead[j]));
+            }
+
+            // Create a line series with the data points
             QLineSeries *series = new QLineSeries();
             series->append(points);
             chart->addSeries(series);
@@ -742,6 +928,7 @@ void MainWindow::on_addTabNameButton_clicked()
             chartView->setRenderHint(QPainter::Antialiasing);
             chartView->setChart(chart);
 
+            // Set up the hover area
             // Enable panning and disable zooming
             chartView->setRubberBand(QChartView::HorizontalRubberBand);
             chartView->setDragMode(QGraphicsView::ScrollHandDrag);
@@ -752,6 +939,34 @@ void MainWindow::on_addTabNameButton_clicked()
             // Get the layout for the current frame and add the chart view
             QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
             layout->addWidget(chartView);
+
+            // Create a label for showing the x and y axis value
+            QLabel *label = new QLabel(chartView);
+            label->setStyleSheet("QLabel { background-color: #22222; color: white; border: 1px solid white; border-radius: 2px; font-weight: bold; }"); // modify the style sheet to make the labels bold
+            label->setGeometry(QRect(0, 0, 120, 40)); // make the label bigger
+            label->setVisible(false);
+            label->raise(); // set z-index to highest
+
+            // Set the pen of the line series to a thicker width
+            QPen pen = series->pen();
+            pen.setWidth(3);
+            series->setPen(pen);
+
+            // Connect the hovered signal of the series to a custom slot
+            QObject::connect(series, &QLineSeries::hovered, [=](const QPointF &point, bool state) {
+                if (state) {
+                    // Show the label and update its text
+                    label->setVisible(true);
+                    label->setText(QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
+
+                    // Move the label to the current mouse position
+                    QPoint mousePos = chartView->mapFromGlobal(QCursor::pos());
+                    label->move(mousePos.x() - label->width()/2, mousePos.y() - label->height() - 5); // space out the label
+                } else {
+                    // Hide the label
+                    label->setVisible(false);
+                }
+            });
 
             // Hide the loading dialog and enable the main window
                     counter++;
