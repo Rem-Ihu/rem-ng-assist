@@ -39,7 +39,11 @@
 #include <iomanip>
 
 
-std::vector<std::variant<double, int>> vec_val; //global vector value for charts.
+std::vector<double> vec_val; //global vector value for charts.
+namespace myNamespace2{
+    int N = vec_val.size();
+    double* array = (double*) malloc(N*sizeof(double));
+}
 
 void Firestore_Read_Data(std::string chart_id){
 
@@ -84,7 +88,8 @@ void Firestore_Read_Data(std::string chart_id){
             bool ok = false;
             int intValue = mapValue["value"].toObject()["integerValue"].toString().toInt(&ok);
             if (ok) {
-                vec_val.push_back(intValue);
+                double doubleValue = static_cast<double>(intValue);
+                vec_val.push_back(doubleValue);
             } else {
                 //if it's not an int, try to extract it as a double
                 double doubleValue = mapValue["value"].toObject()["doubleValue"].toDouble();
@@ -93,26 +98,29 @@ void Firestore_Read_Data(std::string chart_id){
 
             std::string testprintdate = timestamp.toString("yyyy-MM-dd hh:mm:ss.zzz").toStdString();
 
-
-            //printing the modified results
-            std::visit([](auto&& value){
-                if constexpr(std::is_same_v<double, decltype(value)>){
-                    std::cout << "THIS HERE " << value << std::endl;
-                } else if constexpr(std::is_same_v<int, decltype(value)>){
-                    std::cout << value << std::endl;
-                }
-            }, vec_val.back());
+//            //printing the modified results
+//            std::visit([](auto&& value){
+//                if constexpr(std::is_same_v<double, decltype(value)>){
+//                    std::cout << "THIS HERE " << value << std::endl;
+//                } else if constexpr(std::is_same_v<int, decltype(value)>){
+//                    std::cout << value << std::endl;
+//                }
+//            }, vec_val.back());
+            myNamespace2::N = vec_val.size();
         }
 
 
 
         //printing the vector
-        for (auto&& value : vec_val) {
-            std::visit([](auto&& arg){
-                std::cout << std::setprecision(15) <<"Value: " << arg << std::endl;
-            }, value);
+        for (int i = 0; i < vec_val.size(); i++) {
+            std::cout << vec_val[i] << std::endl;
         }
 
+        for (int i = 0; i < myNamespace2::N; i++) {
+            qDebug() << "1111111111--->" << vec_val[i];
+            myNamespace2::array[i]=vec_val[i];
+            qDebug() << "2222222222--->" << myNamespace2::array[i];
+        }
 
 
 
