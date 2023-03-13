@@ -27,6 +27,7 @@ set(PROJECT_SOURCES
         colors.qss
         main.qss
         includes.h
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -72,10 +73,6 @@ set_target_properties(REM PROPERTIES
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
-
-install(TARGETS REM
-    BUNDLE DESTINATION .
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(REM)

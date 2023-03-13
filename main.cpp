@@ -1,5 +1,6 @@
 #include "databasehandler1.h"
 #include "mainwindow.h"
+#include <QTimer>
 //end of file and headers (#include)
 
 
@@ -82,6 +83,7 @@ int main(int argc, char *argv[])
 
 
 
+    // In your main window class constructor:
 
 
 

@@ -17,8 +17,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QTimer* timer_2;
 
+public slots:
 
+    void advanceSlideshow();
 
 private slots:
 //    void on_pushButtonRTG_9_released();
@@ -53,6 +56,10 @@ private slots:
     void on_pushButtonContact_clicked();
 
     void on_pushButtonErrorPopUp_clicked();
+
+    void on_pushButton_Viewmore_2_clicked();
+
+
 
 private:
     Ui::MainWindow *ui;
