@@ -483,7 +483,7 @@ void MainWindow::on_addTabNameButton_clicked()
         loadingDialog.hide();
         setDisabled(false);
 
-
+        //sd
     }else if (parses == 2){
         int counter =0;
         int mainWidth = this->width();
