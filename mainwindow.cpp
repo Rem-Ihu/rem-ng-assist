@@ -74,10 +74,7 @@ MainWindow::MainWindow(QWidget *parent)
     chart_bigOneChart->setTitleBrush(QBrush(Qt::white));//customize the color of the title in the chart
     chart_bigOneChart->setBackgroundBrush(QBrush(Qt::transparent));//customize the color of the background in the chart
 
-    QColor orange(255, 165, 0); // RGB values for orange
-    QPen pen(orange);//customize the color of the series in the chart--create the color layer
-    pen.setWidth(1);//customize the width of the series in the chart
-    series_bigOneChart->setPen(pen); //apply the color to the series
+
 
     // Create a QTimer object and set its interval to 500 milliseconds (0.5 seconds)
     QTimer *timer = new QTimer(this); //create a timer
@@ -155,7 +152,13 @@ MainWindow::MainWindow(QWidget *parent)
     series_bigOneChart->attachAxis(axisX);
     series_bigOneChart->attachAxis(axisY);
 
+    chart_bigOneChart->setTheme(QChart::ChartThemeDark);
+    chart_bigOneChart->setBackgroundBrush(Qt::transparent);
 
+    QColor orange(255, 165, 0); // RGB values for orange
+    QPen pen(orange);//customize the color of the series in the chart--create the color layer
+    pen.setWidth(1);//customize the width of the series in the chart
+    series_bigOneChart->setPen(pen); //apply the color to the series
     QFrame *frame = ui->bigOneChart_2;
     //creating a drop shadow effect
     QGraphicsDropShadowEffect *shadow_bigOneChart = new QGraphicsDropShadowEffect;
@@ -168,13 +171,55 @@ MainWindow::MainWindow(QWidget *parent)
     QChartView *chartView_bigOneChart = new QChartView(chart_bigOneChart);
     chartView_bigOneChart->setRenderHint(QPainter::Antialiasing);
     chartView_bigOneChart->setBackgroundBrush(QBrush());
-//    chartView->setBackgroundBrush(QBrush(QColor("salmon")));
 
+
+
+
+    // Create a label for showing the x and y axis value
+    QLabel *label = new QLabel(chartView_bigOneChart);
+    label->setStyleSheet("QLabel { background-color: #22222; color: white; border: 1px solid white; border-radius: 2px; font-weight: bold; }"); // modify the style sheet to make the labels bold
+    label->setGeometry(QRect(0, 0, 120, 40)); // make the label bigger
+    label->setVisible(true); // Set the label to be visible by default
+    label->raise(); // set z-index to highest
+
+    // Create a label for showing the plot points
+    QLabel *pointLabel = new QLabel(chartView_bigOneChart);
+    pointLabel->setStyleSheet("QLabel { background-color: #22222; color: white; border: 1px solid white; border-radius: 2px; font-weight: bold; }"); // modify the style sheet to make the labels bold
+    pointLabel->setGeometry(QRect(0, 0, 120, 40)); // make the label bigger
+    pointLabel->setVisible(true); // Set the label to be visible by default
+    pointLabel->raise(); // set z-index to highest
+
+    // Connect the signal of the chart view to a custom slot
+    QObject::connect(chartView_bigOneChart, &QChartView::rubberBandChanged, [=](const QRectF &viewportRect, const QPointF &fromScenePoint, const QPointF &toScenePoint) {
+        QPointF point = chartView_bigOneChart->chart()->mapToValue(chartView_bigOneChart->mapToScene(toScenePoint.toPoint()));
+        // Update the label with the new x and y values
+        label->setText(QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
+    });
+
+    // Connect the clicked signal of the series to a custom slot
+    QObject::connect(series_bigOneChart, &QLineSeries::clicked, [=](const QPointF &point) {
+        // Update the point label text and position
+        pointLabel->setText(QString("Point: (%1, %2)").arg(point.x()).arg(point.y()));
+        pointLabel->move(chartView_bigOneChart->width() - pointLabel->width() - 5, chartView_bigOneChart->height() - pointLabel->height() - 5);
+    });
+
+    // Connect the series signal to update the label as x value changes
+    QObject::connect(series_bigOneChart, &QLineSeries::pointAdded, [=](int index) {
+        // Get the latest x value
+        qreal x = series_bigOneChart->at(index).x();
+        // Update the label text
+        label->setText(QString("X: %1\nY: %2").arg(x).arg(series_bigOneChart->at(index).y()));
+    });
+
+    // Add the chart view, label, and point label to the layout
     QVBoxLayout *layout_bigOneChart1 = new QVBoxLayout(ui->bigOneChart_2);
     layout_bigOneChart1->addWidget(chartView_bigOneChart);
+    layout_bigOneChart1->addWidget(label);
+    layout_bigOneChart1->addWidget(pointLabel);
+
+
+
 }
-
-
 
 void MainWindow::create_chart(/*final_name, */std::vector<QFrame*> frameArray, int parses){
 
