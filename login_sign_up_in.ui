@@ -274,8 +274,8 @@ color: rgb(204, 204, 204);</string>
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>22</y>
+      <x>280</x>
+      <y>20</y>
       <width>181</width>
       <height>16</height>
      </rect>
@@ -288,7 +288,7 @@ color: rgb(204, 204, 204);</string>
 color: rgb(88, 88, 88);</string>
     </property>
     <property name="text">
-     <string>CREATE ACCOUNT</string>
+     <string>REQUEST AN ACCOUNT</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton">
@@ -310,7 +310,7 @@ color: rgb(88, 88, 88);</string>
      <string/>
     </property>
     <property name="icon">
-     <iconset resource="icons.qrc">
+     <iconset>
       <normaloff>:/icons/logo_icon_login_page.png</normaloff>:/icons/logo_icon_login_page.png</iconset>
     </property>
     <property name="iconSize">
@@ -368,7 +368,7 @@ padding-right:11px;</string>
      <string>     Log in with Gmail</string>
     </property>
     <property name="icon">
-     <iconset resource="icons.qrc">
+     <iconset>
       <normaloff>:/icons/gmail_icon.png</normaloff>:/icons/gmail_icon.png</iconset>
     </property>
     <property name="iconSize">
@@ -416,7 +416,7 @@ border-radius:2px;</string>
      <string>   Log in with Facebook</string>
     </property>
     <property name="icon">
-     <iconset resource="icons.qrc">
+     <iconset>
       <normaloff>:/icons/facebook_icon.png</normaloff>:/icons/facebook_icon.png</iconset>
     </property>
     <property name="iconSize">
@@ -470,7 +470,7 @@ border-radius:2px;</string>
      <string>     Log in with Apple ID</string>
     </property>
     <property name="icon">
-     <iconset resource="icons.qrc">
+     <iconset>
       <normaloff>:/icons/apple_icon.png</normaloff>:/icons/apple_icon.png</iconset>
     </property>
     <property name="checkable">
@@ -504,9 +504,7 @@ border-radius:2px;</string>
    <zorder>pushButton_4</zorder>
   </widget>
  </widget>
- <resources>
-  <include location="icons.qrc"/>
- </resources>
+ <resources/>
  <connections>
   <connection>
    <sender>lineEdit_Password</sender>
