@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<Package>
+    <DisplayName>Rem Engineer Assist</DisplayName>
+    <Description>Hyperion motorcycle monitoring tool</Description>
+    <Version>0.0.1</Version>
+    <ReleaseDate>2023-03-10</ReleaseDate>
+    <Name>eu.remihu.ng_assist</Name>
+    <Licenses>
+        <License name="License Agreement" file="license.txt" />
+    </Licenses>
+    <UpdateText>This changed compared to the last release</UpdateText>
+    <Default>true</Default>
+    <ForcedInstallation>true</ForcedInstallation>
+    <ForcedUpdate>false</ForcedUpdate>
+    <Essential>true</Essential>
+    <Operations>
+        <Operation name="Extract">
+            <Argument>@TargetDir@</Argument>
+            <Argument>content.7z</Argument>
+        </Operation>
+    </Operations>
+    <TreeName moveChildren="true">com.vendor.subcomponent</TreeName>
+</Package>
