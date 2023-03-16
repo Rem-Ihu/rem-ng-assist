@@ -6108,9 +6108,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </widget>
     </item>
    </layout>
-  </widget>
- <resources>
- <resource>
+  </widget> 
   <include location="icons.qrc"/>
   </resource>
  </resources>
