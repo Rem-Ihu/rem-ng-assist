@@ -47,7 +47,7 @@ namespace myNamespace{
 
 namespace myNamespace2{
     extern int number_of_frames;
-//    extern double* array;
+//    extern double* array; hello
 }
 
 MainWindow::MainWindow(QWidget *parent)
