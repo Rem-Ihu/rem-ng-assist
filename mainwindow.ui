@@ -1761,7 +1761,11 @@ padding-left:20px;
 padding: 0px;</string>
       </property>
       <property name="currentIndex">
+<<<<<<< HEAD
        <number>0</number>
+=======
+       <number>1</number>
+>>>>>>> parent of 4c4f5db (Merge branch 'main' of https://github.com/Rem-Ihu/rem-ng-assist)
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
@@ -5309,8 +5313,8 @@ padding-left:20px;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>3457</width>
-             <height>698</height>
+             <width>3448</width>
+             <height>648</height>
             </rect>
            </property>
            <property name="styleSheet">
