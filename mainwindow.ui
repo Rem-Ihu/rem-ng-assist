@@ -1762,7 +1762,11 @@ padding: 0px;</string>
       </property>
       <property name="currentIndex">
 <<<<<<< HEAD
+<<<<<<< HEAD
        <number>0</number>
+=======
+       <number>1</number>
+>>>>>>> parent of 4c4f5db (Merge branch 'main' of https://github.com/Rem-Ihu/rem-ng-assist)
 =======
        <number>1</number>
 >>>>>>> parent of 4c4f5db (Merge branch 'main' of https://github.com/Rem-Ihu/rem-ng-assist)
