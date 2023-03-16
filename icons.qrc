@@ -43,6 +43,6 @@
         <file>icons/twitter-icon.png</file>
         <file>icons/insta_logo.png</file>
         <file>icons/linkedin_logo.png</file>
-        <file>icons/TikTok_icon.jpeg</file>
+        <file>icons/tiktok_icon.png</file>
     </qresource>
 </RCC>
