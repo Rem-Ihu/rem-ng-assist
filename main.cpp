@@ -48,7 +48,6 @@
 
 namespace myNamespace{
     float fin_ans,sec_ans=10;
-    float fin_ans,sec_ans=10;
     float ok;
 }
 
@@ -62,10 +61,7 @@ int main(int argc, char *argv[])
     login_sign_up_in loginWindow;
     loginWindow.setWindowModality(Qt::ApplicationModal);
     loginWindow.show();
-    loginWindow.show();
 
-    // Run the application event loop until the login/sign up window is closed
-    int result = app.exec();
     // Run the application event loop until the login/sign up window is closed
     int result = app.exec();
 
@@ -77,14 +73,8 @@ int main(int argc, char *argv[])
     } else {
         return 0;
     }
-    // If the login/sign up window was accepted, show the main window
-    if (result == QDialog::Accepted) {
-        MainWindow mainWindow;
-        mainWindow.show();
-        return app.exec();
-    } else {
-        return 0;
-    }
+
+
 
 
 
