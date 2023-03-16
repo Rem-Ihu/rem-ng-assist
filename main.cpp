@@ -48,6 +48,7 @@
 
 namespace myNamespace{
     float fin_ans,sec_ans=10;
+    float fin_ans,sec_ans=10;
     float ok;
 }
 
@@ -61,7 +62,10 @@ int main(int argc, char *argv[])
     login_sign_up_in loginWindow;
     loginWindow.setWindowModality(Qt::ApplicationModal);
     loginWindow.show();
+    loginWindow.show();
 
+    // Run the application event loop until the login/sign up window is closed
+    int result = app.exec();
     // Run the application event loop until the login/sign up window is closed
     int result = app.exec();
 
@@ -73,8 +77,14 @@ int main(int argc, char *argv[])
     } else {
         return 0;
     }
-
-
+    // If the login/sign up window was accepted, show the main window
+    if (result == QDialog::Accepted) {
+        MainWindow mainWindow;
+        mainWindow.show();
+        return app.exec();
+    } else {
+        return 0;
+    }
 
 
 
@@ -95,47 +105,61 @@ int main(int argc, char *argv[])
     QTimer timer;
     timer.start(100); // send a request every 100 milli-seconds
 
-    // put timer and manager to same thread
-    realtime_manager.moveToThread(&thread);
-    timer.moveToThread(&thread);
+////start of real time reading from firebase
+//        QNetworkAccessManager manager;
+
+//        // creating a QThread to run the timer on
+//        QThread thread;
+//        // setting up the request
+//        QNetworkRequest request;
+//        request.setUrl(QUrl("https://realtimeqttest-default-rtdb.europe-west1.firebasedatabase.app/Dog.json"));
+
+//        // creating a QTimer to send requests at regular intervals
+//        QTimer timer;
+//        timer.start(100); // send a request every 100 milli-seconds
+
+//        // put timer and manager to same thread
+//        manager.moveToThread(&thread);
+//        timer.moveToThread(&thread);
 
 
 
-    // connect the timeout signal of the timer to a slot that sends the request and processes the response
-    QObject::connect(&timer, &QTimer::timeout, [&]() {
-        // sending the request and waiting for the response
-        QNetworkReply *reply = realtime_manager.get(request);
-        // creating an event loop to process the response
-        QEventLoop realtime_loop;
-        QAbstractSocket::connect(reply, &QNetworkReply::finished, &realtime_loop, &QEventLoop::quit); //if there is data it then stops the connection
-        realtime_loop.exec();
+//        // connect the timeout signal of the timer to a slot that sends the request and processes the response
+//        QObject::connect(&timer, &QTimer::timeout, [&]() {
+//            // sending the request and waiting for the response
+//            QNetworkReply *reply = manager.get(request);
 
-        // printf the response data
-        QString qans = reply->readAll(); //convert to QString
-        std::string c_ans = qans.toStdString(); //convert to regural C++ string
+//            // creating an event loop to process the response
+//            QEventLoop loop;
+//            QAbstractSocket::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit); //if there is data it then stops the connection
+//            loop.exec();
 
-        //removing '"' and holding on to '.' for it to be converted to float
-        c_ans.erase(std::remove_if(c_ans.begin(), c_ans.end(), [](char c){return !std::isdigit(c) && c != '.' && c != ' ';}), c_ans.end());
+//            // printf the response data
+//            QString qans = reply->readAll(); //convert to QString
+//            std::string c_ans = qans.toStdString(); //convert to regural C++ string
 
-        std::string first,second; //defining the first and the second numbers
+//            //removing '"' and holding on to '.' for it to be converted to float
+//            c_ans.erase(std::remove_if(c_ans.begin(), c_ans.end(), [](char c){return !std::isdigit(c) && c != '.' && c != ' ';}), c_ans.end());
 
-        std::stringstream ss(c_ans);
-        ss >> first >> second; //spliting the string on space
+//            std::string first,second; //defining the first and the second numbers
+
+//            std::stringstream ss(c_ans);
+//            ss >> first >> second; //spliting the string on space
 
 
 
 
-        myNamespace::fin_ans = atof(first.c_str()); //convert to float
-        myNamespace::sec_ans = atof(second.c_str()); //also
-        std::cout << std::setprecision(12) << myNamespace::fin_ans << "  |||  " << std::setprecision(8) << myNamespace::sec_ans << std::endl; //print output
-//        with float precision (counting the decimal numbers also) 12.
+//            myNamespace::fin_ans = atof(first.c_str()); //convert to float
+//            myNamespace::sec_ans = atof(second.c_str()); //also
+//            std::cout << std::setprecision(12) << myNamespace::fin_ans << "  |||  " << std::setprecision(8) << myNamespace::sec_ans << std::endl; //print output
+//    //        with float precision (counting the decimal numbers also) 12.
 
     });
 
-    //start the thread
-    thread.start();
-    ////end of reading from firebase
-    loginWindow.show();
+//    //start the thread
+//    thread.start();
+////end of reading from firebase
+
 
 }
 
