@@ -18,6 +18,7 @@
 #include <QWidget>
 #include <QDate>
 #include <QTextCharFormat>
+#include <sstream>
 #include <QModelIndex>
 #include <QPainter>
 #include <QPaintEvent>
