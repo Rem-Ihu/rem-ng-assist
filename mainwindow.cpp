@@ -1,17 +1,12 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
-#include "qregularexpression.h"
-#include <QJSEngine>
-#include <QDebug>
 #include "ui_mainwindow.h"
 #include "databasehandler1.h"
 #include <QFrame>
 #include <QLabel>
 #include <QSvgRenderer>
 #include <QStackedWidget>
-#include <QDialog>
 #include <iostream>
-#include <QGraphicsProxyWidget>
 #include <QGraphicsView>
 #include <QGraphicsScene>
 #include <QProgressBar>
@@ -50,28 +45,9 @@
 #include <QCalendarWidget>
 
 
-
-
-int vector_counter_chart=0;
-
-bool flag_first_chart=false;
-std::vector<QFrame*> frameArray;
-int last_counted_frame =0;
-std::vector<double> Pasxa;
-
-namespace myNamespace{
-    extern float fin_ans,sec_ans,ok;
-}
-
-namespace myNamespace2{
-    extern int number_of_frames;
-//    extern double* array; hello
-}
-
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
-
 {
     ui->setupUi(this);
 
@@ -200,9 +176,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-    timer_2 = new QTimer(this);
-            connect(timer_2, &QTimer::timeout, this, &MainWindow::advanceSlideshow);
-            timer_2->start(3500);
+
 
 
 
@@ -309,61 +283,30 @@ MainWindow::MainWindow(QWidget *parent)
     chart_bigOneChart->setTitleBrush(QBrush(Qt::white));//customize the color of the title in the chart
     chart_bigOneChart->setBackgroundBrush(QBrush(Qt::transparent));//customize the color of the background in the chart
 
+    QPen pen(Qt::blue);//customize the color of the series in the chart
+    pen.setWidth(1);//customize the width of the series in the chart
+    series_bigOneChart->setPen(pen);
 
     chart_bigOneChart->setBackgroundBrush(QBrush(::Qt::white));
 
-    // Create a QTimer object and set its interval to 500 milliseconds (0.5 seconds)
-    QTimer *timer = new QTimer(this); //create a timer
-    timer->setInterval(80); //to 80 milliseconds
+    // Customize plot area background(in the chart)
+//    QLinearGradient plotAreaGradient;
+//    plotAreaGradient.setStart(QPointF(0, 1));
+//    plotAreaGradient.setFinalStop(QPointF(1, 0));
+//    plotAreaGradient.setColorAt(0.0, QRgb(0x555555));
+//    plotAreaGradient.setColorAt(1.0, QRgb(0x55aa55));
+//    plotAreaGradient.setCoordinateMode(QGradient::ObjectBoundingMode);
+    chart_bigOneChart->setPlotAreaBackgroundBrush(QColor(255, 255, 255, 0));
+    chart_bigOneChart->setPlotAreaBackgroundVisible(true);
 
-    int x = 0;
-
-    // Add the first 10 data points
-    for (int i = 0; i < 10; i++) {
-        float y = myNamespace::sec_ans;
-        series_bigOneChart->append(x, y);
-        x++;
-    }
-
-    // Connect the timeout() signal of the timer to a lambda function that generates
-    // random numbers and updates the chart
-    connect(timer, &QTimer::timeout, [=]() mutable {
-        // Generate a random number between 1 and 10
-        float y = myNamespace::sec_ans;
-
-        // Append the new data point
-        QTime currentTime = QTime::currentTime();
-        QString currentTimeString = currentTime.toString("hh:mm:ss");
-//        series_bigOneChart->append("<span style=\"color: #000000;\">"+currentTimeString+"</span>", y);
-        series_bigOneChart->append(x, y);
-        x++;
-
-        // Remove the first data point if the series has more than 20 points
-        if (series_bigOneChart->count() > 20) {
-            series_bigOneChart->remove(0);
-        }
-
-        // Update the X range of the chart to show the last 20 data points
-        chart_bigOneChart->setAnimationOptions(QChart::NoAnimation);
-        chart_bigOneChart->axes(Qt::Horizontal).first()->setRange(x - 20, x);
-    });
-
-    // Start the timer
-    timer->start();
-
-
-
-    chart_bigOneChart->setPlotAreaBackgroundBrush(QColor(255, 255, 255, 0));// set the color of the plot area to trasnparent
-    chart_bigOneChart->setPlotAreaBackgroundVisible(true); //set the application layer to visible
-    chart_bigOneChart->setAnimationOptions(QChart::NoAnimation); //disable the animation for a smoother transition from point to point
-    QCategoryAxis *axisX = new QCategoryAxis();//create the 2 axes
+    QCategoryAxis *axisX = new QCategoryAxis();
     QCategoryAxis *axisY = new QCategoryAxis();
 
-    QFont labelsFont; //create a font
-    labelsFont.setPixelSize(12); //set the size of the letters
-    axisX->setLabelsFont(labelsFont); //apply to axis x
-    axisX->setLabelsColor(Qt::white); //change the color
-    axisY->setLabelsFont(labelsFont); //apply to axis y
+    QFont labelsFont;
+    labelsFont.setPixelSize(12);
+    axisX->setLabelsFont(labelsFont);
+    axisX->setLabelsColor(Qt::white);
+    axisY->setLabelsFont(labelsFont);
 
     // Customize axis colors
     QPen axisPen(Qt::black);
@@ -380,7 +323,17 @@ MainWindow::MainWindow(QWidget *parent)
     format.setForeground(Qt::blue);
     axisX->setLabelsColor(Qt::blue);
     axisY->setLabelsColor(Qt::blue);
+//    axisX->append("<span style=\"color: #339966;\">low</span>", 7);
+//    axisX->append("<span style=\"color: #330066;\">optimal</span>", 14);
+//    axisX->append("<span style=\"color: #55ff66;\">high</span>", 20);
 
+
+//    axisY->append("<font color=\"red\">slow</font>", 3);
+//    axisY->append("<font color=\"green\">med</font>", 7);
+//    axisY->append("<span style=\"color: #ffff00;\">fast</span>", 10);
+
+//    axisX->setRange(0, 20);
+//    axisY->setRange(0, 10);
 
     chart_bigOneChart->addAxis(axisX, Qt::AlignBottom);
     chart_bigOneChart->addAxis(axisY, Qt::AlignLeft);
@@ -388,14 +341,8 @@ MainWindow::MainWindow(QWidget *parent)
     series_bigOneChart->attachAxis(axisX);
     series_bigOneChart->attachAxis(axisY);
 
-    chart_bigOneChart->setTheme(QChart::ChartThemeDark);
-    chart_bigOneChart->setBackgroundBrush(Qt::transparent);
 
-    QColor orange(255, 165, 0); // RGB values for orange
-    QPen pen(orange);//customize the color of the series in the chart--create the color layer
-    pen.setWidth(5);//customize the width of the series in the chart
-    series_bigOneChart->setPen(pen); //apply the color to the series
-    QFrame *frame = ui->bigOneChart_2;
+    QFrame *frame = ui->bigOneChart;
     //creating a drop shadow effect
     QGraphicsDropShadowEffect *shadow_bigOneChart = new QGraphicsDropShadowEffect;
     shadow_bigOneChart->setBlurRadius(15);
@@ -403,56 +350,14 @@ MainWindow::MainWindow(QWidget *parent)
     shadow_bigOneChart->setOffset(0.5, 0);
     frame->setGraphicsEffect(shadow_bigOneChart);
 
-
+    chart_bigOneChart->setAnimationOptions(QChart::SeriesAnimations);
     QChartView *chartView_bigOneChart = new QChartView(chart_bigOneChart);
     chartView_bigOneChart->setRenderHint(QPainter::Antialiasing);
     chartView_bigOneChart->setBackgroundBrush(QBrush());
+//    chartView->setBackgroundBrush(QBrush(QColor("salmon")));
 
-
-
-
-    // Create a label for showing the x and y axis value
-    QLabel *label = new QLabel(chartView_bigOneChart);
-    label->setStyleSheet("QLabel { background-color: #22222; color: white; border: 1px solid white; border-radius: 2px; font-weight: bold; }"); // modify the style sheet to make the labels bold
-    label->setGeometry(QRect(0, 0, 120, 40)); // make the label bigger
-    label->setVisible(true); // Set the label to be visible by default
-    label->raise(); // set z-index to highest
-
-    // Create a label for showing the plot points
-    QLabel *pointLabel = new QLabel(chartView_bigOneChart);
-    pointLabel->setStyleSheet("QLabel { background-color: #22222; color: white; border: 1px solid white; border-radius: 2px; font-weight: bold; }"); // modify the style sheet to make the labels bold
-    pointLabel->setGeometry(QRect(0, 0, 120, 40)); // make the label bigger
-    pointLabel->setVisible(true); // Set the label to be visible by default
-    pointLabel->raise(); // set z-index to highest
-
-    // Connect the signal of the chart view to a custom slot
-    QObject::connect(chartView_bigOneChart, &QChartView::rubberBandChanged, [=](const QRectF &viewportRect, const QPointF &fromScenePoint, const QPointF &toScenePoint) {
-        QPointF point = chartView_bigOneChart->chart()->mapToValue(chartView_bigOneChart->mapToScene(toScenePoint.toPoint()));
-        // Update the label with the new x and y values
-        label->setText(QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
-    });
-
-    // Connect the clicked signal of the series to a custom slot
-    QObject::connect(series_bigOneChart, &QLineSeries::clicked, [=](const QPointF &point) {
-        // Update the point label text and position
-        pointLabel->setText(QString("Point: (%1, %2)").arg(point.x()).arg(point.y()));
-        pointLabel->move(chartView_bigOneChart->width() - pointLabel->width() - 5, chartView_bigOneChart->height() - pointLabel->height() - 5);
-    });
-
-    // Connect the series signal to update the label as x value changes
-    QObject::connect(series_bigOneChart, &QLineSeries::pointAdded, [=](int index) {
-        // Get the latest x value
-        qreal x = series_bigOneChart->at(index).x();
-        // Update the label text
-        label->setText(QString("X: %1\nY: %2").arg(x).arg(series_bigOneChart->at(index).y()));
-    });
-
-    // Add the chart view, label, and point label to the layout
-    QVBoxLayout *layout_bigOneChart1 = new QVBoxLayout(ui->bigOneChart_2);
+    QVBoxLayout *layout_bigOneChart1 = new QVBoxLayout(ui->bigOneChart);
     layout_bigOneChart1->addWidget(chartView_bigOneChart);
-    layout_bigOneChart1->addWidget(label);
-    layout_bigOneChart1->addWidget(pointLabel);
-//    qDebug() << series_bigOneChart;
 
     //AREA CHART
 
