@@ -1687,7 +1687,7 @@ padding-left:17px;
 padding: 0px;</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
@@ -2529,8 +2529,8 @@ padding-left:20px;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>3448</width>
-             <height>648</height>
+             <width>3457</width>
+             <height>698</height>
             </rect>
            </property>
            <property name="styleSheet">
