@@ -14,7 +14,7 @@ login_sign_up_in::login_sign_up_in(QWidget *parent) :
     setTabOrder(ui->lineEdit_User_Name, ui->lineEdit_Password);
 
     connect(ui->lineEdit_Password, &QLineEdit::returnPressed, ui->pushButton_Login, &QPushButton::click); //for the ENTER key when it's pressed while being selected on the linedit_password
-
+    connect(ui->lineEdit_User_Name, &QLineEdit::returnPressed, ui->pushButton_Login, &QPushButton::click);
 
 }
 
@@ -30,7 +30,31 @@ void login_sign_up_in::on_pushButton_Login_clicked()
     QString Username = ui->lineEdit_User_Name->text();
     QString Password = ui->lineEdit_Password->text();
     //MANUAL OVERRIDE FOR DEBUG
-    if(Username == "" && Password == ""){
+    int i=0;
+    for (const auto& email : myNamespace::emails) {
+
+        std::string test = email.toStdString();
+        if(test==Username.toStdString()){
+            emailCorrect=true;
+            pass_check_number=i;
+        }
+        i++;
+    }
+    int k=0;
+    for (const auto& password : myNamespace::passwords) {
+
+        std::string test_password = password.toStdString();
+        if(test_password==Password.toStdString() && pass_check_number==k){
+            passwordCorrect=true;
+            std::cout << "Welcome back " << username_change::full_name[pass_check_number] << "!" << std::endl;
+        }
+        k++;
+    }
+
+
+
+        if(1){
+//    if(emailCorrect && passwordCorrect){
     //if(Username == "jim123" && Password == "123"){
         if(!mainwindow){
             mainwindow = new MainWindow();

@@ -2,6 +2,7 @@
 #include "./ui_mainwindow.h"
 #include "qregularexpression.h"
 #include <QJSEngine>
+#include <QDebug>
 #include "ui_mainwindow.h"
 #include "databasehandler1.h"
 #include <QSvgRenderer>
@@ -157,7 +158,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QColor orange(255, 165, 0); // RGB values for orange
     QPen pen(orange);//customize the color of the series in the chart--create the color layer
-    pen.setWidth(1);//customize the width of the series in the chart
+    pen.setWidth(5);//customize the width of the series in the chart
     series_bigOneChart->setPen(pen); //apply the color to the series
     QFrame *frame = ui->bigOneChart_2;
     //creating a drop shadow effect
@@ -216,10 +217,11 @@ MainWindow::MainWindow(QWidget *parent)
     layout_bigOneChart1->addWidget(chartView_bigOneChart);
     layout_bigOneChart1->addWidget(label);
     layout_bigOneChart1->addWidget(pointLabel);
-
+//    qDebug() << series_bigOneChart;
 
 
 }
+
 
 void MainWindow::create_chart(/*final_name, */std::vector<QFrame*> frameArray, int parses){
 
