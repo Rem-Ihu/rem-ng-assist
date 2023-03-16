@@ -64,8 +64,6 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-
-
     QChart *chart_bigOneChart = new QChart();//create the aero chart
     chart_bigOneChart->addSeries(series_bigOneChart); //add the values
     QFont titleFont("Arial", 16, QFont::Bold); // Create a QFont object with desired font family, size, and weight
@@ -101,10 +99,9 @@ MainWindow::MainWindow(QWidget *parent)
         QTime currentTime = QTime::currentTime();
         QString currentTimeString = currentTime.toString("hh:mm:ss");
 //        series_bigOneChart->append("<span style=\"color: #000000;\">"+currentTimeString+"</span>", y);
-        if(myNamespace::fin_ans!=0 && myNamespace::sec_ans!=0){
-            series_bigOneChart->append(x, y);
-            x++;
-        }
+        series_bigOneChart->append(x, y);
+        x++;
+
         // Remove the first data point if the series has more than 20 points
         if (series_bigOneChart->count() > 20) {
             series_bigOneChart->remove(0);
