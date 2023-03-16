@@ -54,5 +54,7 @@
         <file>icons/tiktok_icon.png</file>
         <file>icons/map1_iconpng.png</file>
         <file>icons/map2_iconpng.png</file>
+        <file>icons/map1_iconpng.png</file>
+        <file>icons/map2_iconpng.png</file>
     </qresource>
 </RCC>
