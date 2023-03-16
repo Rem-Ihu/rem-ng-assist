@@ -128,7 +128,7 @@ padding-left:20px;
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset>
            <normaloff>:/icons/real_time_icon_checked.png</normaloff>:/icons/real_time_icon_checked.png</iconset>
          </property>
          <property name="iconSize">
@@ -214,7 +214,7 @@ padding-left:20px;
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset>
            <normaloff>:/icons/home_icon_checked.png</normaloff>:/icons/home_icon_checked.png</iconset>
          </property>
          <property name="iconSize">
@@ -508,7 +508,7 @@ padding-left:20px;
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset>
            <normaloff>:/icons/chart_icon_checked.png</normaloff>:/icons/chart_icon_checked.png</iconset>
          </property>
          <property name="iconSize">
@@ -601,7 +601,7 @@ padding-left:19px;
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset>
            <normaloff>:/icons/contact_icon_checked.png</normaloff>:/icons/contact_icon_checked.png</iconset>
          </property>
          <property name="checkable">
@@ -871,7 +871,7 @@ padding-left:18px;
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset>
            <normaloff>:/icons/3d_view_checked_icon.png</normaloff>:/icons/3d_view_checked_icon.png</iconset>
          </property>
          <property name="iconSize">
@@ -932,7 +932,7 @@ padding-left:15px;
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset>
            <normaloff>:/icons/log_out_icon_checked.png</normaloff>:/icons/log_out_icon_checked.png</iconset>
          </property>
          <property name="checkable">
@@ -1218,7 +1218,7 @@ padding-left:20px;
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset>
            <normaloff>:/icons/news_checked_icon.png</normaloff>:/icons/news_checked_icon.png</iconset>
          </property>
          <property name="iconSize">
@@ -1497,7 +1497,7 @@ padding-left:16px;
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset>
            <normaloff>:/icons/merch_icon_checked.png</normaloff>:/icons/merch_icon_checked.png</iconset>
          </property>
          <property name="iconSize">
@@ -1583,7 +1583,7 @@ padding-left:17px;
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset>
            <normaloff>:/icons/about_us_icon_checked.png</normaloff>:/icons/about_us_icon_checked.png</iconset>
          </property>
          <property name="iconSize">
@@ -1651,7 +1651,7 @@ padding-left:17px;
           <string/>
          </property>
          <property name="icon">
-          <iconset resource="icons.qrc">
+          <iconset>
            <normaloff>:/icons/others_icon_checked.png</normaloff>:/icons/others_icon_checked.png</iconset>
          </property>
          <property name="iconSize">
@@ -2357,7 +2357,7 @@ padding-left:20px;
          <string>  3D Bike View</string>
         </property>
         <property name="icon">
-         <iconset resource="icons.qrc">
+         <iconset>
           <normaloff>:/icons/3d_view_icon.png</normaloff>
           <normalon>:/icons/3d_view_checked_icon.png</normalon>:/icons/3d_view_icon.png</iconset>
         </property>
@@ -3994,7 +3994,7 @@ padding-left:20px;
          <string>  Merch</string>
         </property>
         <property name="icon">
-         <iconset resource="icons.qrc">
+         <iconset>
           <normaloff>:/icons/merch_icon.png</normaloff>
           <normalon>:/icons/merch_icon_checked.png</normalon>:/icons/merch_icon.png</iconset>
         </property>
@@ -4063,7 +4063,7 @@ padding-left:22px;
            <string>  Settings</string>
           </property>
           <property name="icon">
-           <iconset resource="icons.qrc">
+           <iconset>
             <normaloff>:/icons/settings_icon.png</normaloff>
             <normalon>:/icons/settings_icon_checked.png</normalon>:/icons/settings_icon.png</iconset>
           </property>
@@ -4138,7 +4138,7 @@ padding-left:23px;
          <string>  Others</string>
         </property>
         <property name="icon">
-         <iconset resource="icons.qrc">
+         <iconset>
           <normaloff>:/icons/others_icon.png</normaloff>
           <normalon>:/icons/others_icon_checked.png</normalon>:/icons/others_icon.png</iconset>
         </property>
@@ -4168,7 +4168,11 @@ padding-left:23px;
       <widget class="QWidget" name="AboutUs">
        <layout class="QGridLayout" name="gridLayout_18">
         <item row="1" column="1">
-         <widget class="QScrollArea" name="scrollArea_3">
+         <widget class="QScrollArea" name="scrollArea_AboutUs">
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(255, 0, 0, 0);
+border:none;</string>
+          </property>
           <property name="verticalScrollBarPolicy">
            <enum>Qt::ScrollBarAlwaysOff</enum>
           </property>
@@ -4182,10 +4186,14 @@ padding-left:23px;
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>-1720</y>
-             <width>1169</width>
-             <height>2416</height>
+             <y>0</y>
+             <width>1171</width>
+             <height>2075</height>
             </rect>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgba(255, 0, 0, 0);
+border:none;</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_19">
             <item row="3" column="0">
@@ -4195,6 +4203,10 @@ padding-left:23px;
                 <width>0</width>
                 <height>450</height>
                </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgba(255, 0, 0, 0);
+border:none;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -4233,7 +4245,7 @@ background-color: rgba(255, 0, 0, 0);</string>
                   <string/>
                  </property>
                  <property name="pixmap">
-                  <pixmap resource="icons.qrc">:/icons/rem3.png</pixmap>
+                  <pixmap>:/icons/rem3.png</pixmap>
                  </property>
                  <property name="scaledContents">
                   <bool>true</bool>
@@ -4252,7 +4264,7 @@ background-color: rgba(255, 0, 0, 0);</string>
                   <string/>
                  </property>
                  <property name="pixmap">
-                  <pixmap resource="icons.qrc">:/icons/rem 2.png</pixmap>
+                  <pixmap>:/icons/rem 2.png</pixmap>
                  </property>
                  <property name="scaledContents">
                   <bool>true</bool>
@@ -4269,6 +4281,10 @@ background-color: rgba(255, 0, 0, 0);</string>
                 <width>188888</width>
                 <height>18888</height>
                </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgba(255, 0, 0, 0);
+border:none;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -4289,7 +4305,7 @@ background-color: rgba(255, 0, 0, 0);</string>
                   <string/>
                  </property>
                  <property name="pixmap">
-                  <pixmap resource="icons.qrc">:/icons/ihu-photo.png</pixmap>
+                  <pixmap>:/icons/ihu-photo.png</pixmap>
                  </property>
                  <property name="scaledContents">
                   <bool>true</bool>
@@ -4312,6 +4328,10 @@ background-color: rgba(255, 0, 0, 0);</string>
                 <width>11112030</width>
                 <height>1000</height>
                </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgba(255, 0, 0, 0);
+border:none;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -4382,6 +4402,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
                 <width>0</width>
                 <height>750</height>
                </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgba(255, 0, 0, 0);
+border:none;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -4484,7 +4508,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                   <string/>
                  </property>
                  <property name="pixmap">
-                  <pixmap resource="icons.qrc">:/icons/Group_Photo.jpg</pixmap>
+                  <pixmap>:/icons/Group_Photo.jpg</pixmap>
                  </property>
                  <property name="scaledContents">
                   <bool>true</bool>
@@ -4514,6 +4538,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
                 <width>0</width>
                 <height>500</height>
                </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgba(255, 0, 0, 0);
+border:none;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -4587,6 +4615,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
             </item>
             <item row="1" column="0">
              <widget class="QFrame" name="frame_AboutUsTitle">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgba(255, 0, 0, 0);
+border:none;</string>
+              </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
               </property>
@@ -4663,7 +4695,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                 </spacer>
                </item>
                <item row="1" column="1">
-                <spacer name="verticalSpacer_6">
+                <spacer name="verticalSpacer_BelowTitle">
                  <property name="orientation">
                   <enum>Qt::Vertical</enum>
                  </property>
@@ -4685,6 +4717,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
                 <width>0</width>
                 <height>100</height>
                </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color: rgba(255, 0, 0, 0);
+border:none;</string>
               </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
@@ -4740,7 +4776,7 @@ padding-left:24px;
          <string>  Contact</string>
         </property>
         <property name="icon">
-         <iconset resource="icons.qrc">
+         <iconset>
           <normaloff>:/icons/contact_icon.png</normaloff>
           <normalon>:/icons/contact_icon_checked.png</normalon>:/icons/contact_icon.png</iconset>
         </property>
@@ -4766,8 +4802,6 @@ padding-left:24px;
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="icons.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
