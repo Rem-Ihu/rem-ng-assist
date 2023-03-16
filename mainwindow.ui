@@ -5099,7 +5099,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
                      </item>
            </layout>
           </widget>
-         </widget>
         </item>
        </layout>
       </widget>
