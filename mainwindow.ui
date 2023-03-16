@@ -5091,12 +5091,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;in the context of the global competion in Motostudent 2019-2021&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:14pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
            </layout>
           </widget>
          </widget>
@@ -5107,9 +5107,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <layout class="QGridLayout" name="gridLayout_15">
         <item row="0" column="0">
          <widget class="QScrollArea" name="scrollArea_Contacts">
-          <property name="styleSheet">
+                       <property name="styleSheet">
            <string notr="true">border:none;</string>
-          </property>
+                       </property>
           <property name="widgetResizable">
            <bool>true</bool>
           </property>
@@ -5125,42 +5125,42 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <layout class="QGridLayout" name="gridLayout_25">
             <item row="3" column="1">
              <widget class="QFrame" name="frame">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
               <layout class="QGridLayout" name="gridLayout_27">
                <item row="1" column="4">
                 <widget class="QFrame" name="frame_2">
                  <property name="minimumSize">
-                  <size>
+                           <size>
                    <width>0</width>
                    <height>500</height>
-                  </size>
-                 </property>
+                           </size>
+                          </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
-                 </property>
+                          </property>
                  <property name="frameShadow">
                   <enum>QFrame::Raised</enum>
-                 </property>
+                          </property>
                  <layout class="QGridLayout" name="gridLayout_29">
                   <item row="1" column="1">
                    <widget class="QFrame" name="frame_3">
-                    <property name="minimumSize">
-                     <size>
-                      <width>0</width>
+                          <property name="minimumSize">
+                           <size>
+                            <width>0</width>
                       <height>400</height>
-                     </size>
-                    </property>
-                    <property name="maximumSize">
-                     <size>
+                           </size>
+                          </property>
+                          <property name="maximumSize">
+                           <size>
                       <width>16777215</width>
                       <height>400</height>
-                     </size>
-                    </property>
+                           </size>
+                          </property>
                     <property name="styleSheet">
                      <string notr="true"/>
                     </property>
@@ -5178,13 +5178,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
                          <width>270</width>
                          <height>400</height>
                         </size>
-                       </property>
-                       <property name="styleSheet">
+                          </property>
+                          <property name="styleSheet">
                         <string notr="true">border: 1px solid white;</string>
-                       </property>
+                          </property>
                        <property name="frameShape">
                         <enum>QFrame::StyledPanel</enum>
-                       </property>
+                          </property>
                        <property name="frameShadow">
                         <enum>QFrame::Raised</enum>
                        </property>
@@ -5230,6 +5230,50 @@ li.checked::marker { content: &quot;\2612&quot;; }
                           </property>
                          </spacer>
                         </item>
+                        <item row="4" column="0">
+                         <spacer name="horizontalSpacer_5">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeType">
+                           <enum>QSizePolicy::Maximum</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>120</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item row="0" column="3">
+                      <widget class="QFrame" name="frame_7">
+                       <property name="minimumSize">
+                        <size>
+                         <width>0</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize">
+                        <size>
+                         <width>270</width>
+                         <height>400</height>
+                        </size>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">border: 1px solid white;
+</string>
+                       </property>
+                       <property name="frameShape">
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow">
+                        <enum>QFrame::Raised</enum>
+                       </property>
+                       <layout class="QGridLayout" name="gridLayout_34">
                         <item row="2" column="0">
                          <spacer name="horizontalSpacer_7">
                           <property name="orientation">
@@ -5241,6 +5285,22 @@ li.checked::marker { content: &quot;\2612&quot;; }
                           <property name="sizeHint" stdset="0">
                            <size>
                             <width>120</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
+                        </item>
+                        <item row="2" column="2">
+                         <spacer name="horizontalSpacer_10">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeType">
+                           <enum>QSizePolicy::Maximum</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>100</width>
                             <height>20</height>
                            </size>
                           </property>
