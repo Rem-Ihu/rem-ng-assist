@@ -4,12 +4,9 @@
 #include <QJSEngine>
 #include <QDebug>
 #include "ui_mainwindow.h"
-<<<<<<< HEAD
 #include "databasehandler1.h"
-=======
 #include <QFrame>
 #include <QLabel>
->>>>>>> Home_Page_Creation_final
 #include <QSvgRenderer>
 #include <QStackedWidget>
 #include <QDialog>
@@ -22,7 +19,6 @@
 #include <QPixmap>
 #include <QBrush>
 #include <QPainter>
-<<<<<<< HEAD
 #include <QTimer>
 #include <QFont>
 #include <QPalette>
@@ -38,7 +34,6 @@
 #include <QtGui/QPainter>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QLabel>
-=======
 #include <QPaintEvent>
 #include <QTimer>
 #include <QWidget>
@@ -53,7 +48,6 @@
 #include <QFont>
 #include <QVBoxLayout>
 #include <QCalendarWidget>
->>>>>>> Home_Page_Creation_final
 
 
 
@@ -80,14 +74,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 {
     ui->setupUi(this);
-//    DataRead = Firestore_Read_Data("AAA");
-    //AERO CHART SETUP
-    QSplineSeries *series_bigOneChart = new QSplineSeries();//create the series for the aero chart
-    series_bigOneChart->setName("Real Time Values");//set the name of the measurement
 
-
-<<<<<<< HEAD
-=======
 
     // Create calendar widget
        QCalendarWidget *calendar = new QCalendarWidget(this);
@@ -310,13 +297,8 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-
-    QSplineSeries *series_bigOneChart = new QSplineSeries();
-    series_bigOneChart->setName("Spline Values");//set the name of the measurement
->>>>>>> Home_Page_Creation_final
-
-
-
+    QSplineSeries *series_bigOneChart = new QSplineSeries();//create the series for the aero chart
+    series_bigOneChart->setName("Real Time Values");//set the name of the measurement
     QChart *chart_bigOneChart = new QChart();//create the aero chart
     chart_bigOneChart->addSeries(series_bigOneChart); //add the values
     QFont titleFont("Arial", 16, QFont::Bold); // Create a QFont object with desired font family, size, and weight
@@ -328,17 +310,7 @@ MainWindow::MainWindow(QWidget *parent)
     chart_bigOneChart->setBackgroundBrush(QBrush(Qt::transparent));//customize the color of the background in the chart
 
 
-<<<<<<< HEAD
-=======
-// Customize chart background(behind the chart)
-//    QLinearGradient backgroundGradient;
-//    backgroundGradient.setStart(QPointF(0, 0));
-//    backgroundGradient.setFinalStop(QPointF(0, 1));
-//    backgroundGradient.setColorAt(0.0, QRgb(0xd2d0d1));
-//    backgroundGradient.setColorAt(1.0, QRgb(0x4c4547));
-//    backgroundGradient.setCoordinateMode(QGradient::ObjectBoundingMode);
     chart_bigOneChart->setBackgroundBrush(QBrush(::Qt::white));
->>>>>>> Home_Page_Creation_final
 
     // Create a QTimer object and set its interval to 500 milliseconds (0.5 seconds)
     QTimer *timer = new QTimer(this); //create a timer
@@ -482,109 +454,20 @@ MainWindow::MainWindow(QWidget *parent)
     layout_bigOneChart1->addWidget(pointLabel);
 //    qDebug() << series_bigOneChart;
 
-
-<<<<<<< HEAD
-=======
     //AREA CHART
-
-    QLineSeries *series0 = new QLineSeries();
-    series0->setName("Area Chart Values");
-    *series0 << QPointF(1, 5) << QPointF(3, 7) << QPointF(7, 6) << QPointF(9, 7) << QPointF(12, 6)
-             << QPointF(16, 7) << QPointF(18, 5);
-
 
     timer_2 = new QTimer(this);
         connect(timer_2, &QTimer::timeout, this, &MainWindow::advanceSlideshow);
         timer_2->start(3500);
 
 
-    QAreaSeries *area_series = new QAreaSeries(series0);//, series1);
-    series0->setName("Area Chart");
-    QPen pen1(0x111110);
-    pen1.setWidth(2);
-    area_series->setPen(pen1);
-
-    QLinearGradient gradient(QPointF(0, 0), QPointF(0, 1));
-    gradient.setColorAt(0.0, 0xf9f6f3);
-    gradient.setColorAt(1.0, 0xa3a2a1);
-    gradient.setCoordinateMode(QGradient::ObjectBoundingMode);
-    area_series->setBrush(gradient);
-
-    QChart *area_chart = new QChart();
-    area_chart->addSeries(area_series);
-    area_chart->setTitle("Simple areachart example");
-    area_chart->createDefaultAxes();
-    area_chart->axes(Qt::Horizontal).first()->setRange(0, 20);
-    area_chart->axes(Qt::Vertical).first()->setRange(0, 10);
-    area_chart->setTitleBrush(QBrush(Qt::black));//customize the color of the title in the chart
-    area_chart->setBackgroundBrush(QBrush(Qt::white));//customize the color of the background in the chart
-    area_chart->setPlotAreaBackgroundBrush(QColor(255, 255, 255, 0));
-    area_chart->setPlotAreaBackgroundVisible(true);
-
-    QGraphicsDropShadowEffect *shadow_area_chart = new QGraphicsDropShadowEffect;
-    shadow_area_chart->setBlurRadius(15);
-    shadow_area_chart->setColor(QColor(0, 0, 0, 60));
-    shadow_area_chart->setOffset(0.5, 0);
-    frame->setGraphicsEffect(shadow_area_chart);
-
     chart_bigOneChart->setAnimationOptions(QChart::SeriesAnimations);
 
-
-    QChartView *chartView_areaChart = new QChartView(area_chart);
-    chartView_areaChart->setRenderHint(QPainter::Antialiasing);
-    chartView_areaChart->setBackgroundBrush(QBrush());
-
     QVBoxLayout *layout_bigOneChart = new QVBoxLayout(ui->area_chart);
-    layout_bigOneChart->addWidget(chartView_areaChart);
->>>>>>> Home_Page_Creation_final
 }
 
 
 void MainWindow::create_chart(/*final_name, */std::vector<QFrame*> frameArray, int parses){
-
-//        qDebug() << "HEREEEEE--->" << frameArray.size();
-
-    qDebug() << "HEREEEEE VECTOR--->" << vector_counter_chart;
-//    qDebug() << "HEREEEEE N--->" << N;
-
-//    for (int i = 0; i < frameArray.size(); i++) {
-//        QChart *chart = new QChart();
-//        chart->setTitle("My Chart " + QString::number(i+1));
-//        // Create a QPointF vector and add the values from the array
-//        QVector<QPointF> points;
-//        for (int j = vector_counter_chart; j < myNamespace2::N; j++) {
-//            points.append(QPointF(j + 0.5, myNamespace2::array[j]));
-//        }
-
-//        // Create a line series object and set the points
-//        QLineSeries *series = new QLineSeries();
-//        series->append(points);
-//        chart->addSeries(series);
-
-//        // Set up the X-axis with 0.5 increments
-//        QValueAxis *axisX1 = new QValueAxis();
-//        axisX1->setTickCount(myNamespace2::N);
-//        axisX1->setLabelFormat("%.1f");
-//        axisX1->setRange(0, myNamespace2::N);
-//        axisX1->setTickInterval(0.5);
-//        chart->addAxis(axisX1, Qt::AlignBottom);
-//        series->attachAxis(axisX1);
-
-//        // Set up the Y-axis
-//        QValueAxis *axisY1 = new QValueAxis();
-//        chart->addAxis(axisY1, Qt::AlignLeft);
-//        series->attachAxis(axisY1);
-
-//        // Create a chart view object and set the chart
-//        QChartView *chartView = new QChartView(chart);
-//        chartView->setRenderHint(QPainter::Antialiasing);
-//        chartView->setChart(chart);
-
-//        // Get the layout for the current frame and add the chart view
-//        QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
-//        layout->addWidget(chartView);
-//    }
-
 
 }
 
@@ -1407,26 +1290,6 @@ void MainWindow::on_pushButton_Viewmore_2_clicked()
     ui->stackedWidget->setCurrentIndex(4);
 }
 
-
-
-
-
-
-<<<<<<< HEAD
-=======
-void MainWindow::on_pushButtonErrorPopUp_clicked()
-{
-    QMessageBox messageBox;
-    messageBox.setText("ERROR");
-    messageBox.setIcon(QMessageBox::Critical);
-    messageBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-    messageBox.setDefaultButton(QMessageBox::Ok);
-    messageBox.exec();
-}
-
-
-
-
 void MainWindow::advanceSlideshow()
 {
     int nextIndex = (ui->SlideshowWid->currentIndex() + 1) % ui->SlideshowWid->count();
@@ -1458,5 +1321,3 @@ void MainWindow::advanceSlideshow()
 }
 
 
-
->>>>>>> Home_Page_Creation_final
