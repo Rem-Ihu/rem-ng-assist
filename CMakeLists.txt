@@ -78,10 +78,6 @@ set_target_properties(REM PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-install(TARGETS REM
-    BUNDLE DESTINATION .
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
-
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(REM)
 endif()

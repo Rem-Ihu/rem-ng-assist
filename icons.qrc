@@ -46,5 +46,11 @@
         <file>icons/tiktok_icon.png</file>
         <file>icons/map1_iconpng.png</file>
         <file>icons/map2_iconpng.png</file>
+        <file>icons/arrow-left.png</file>
+        <file>icons/arrow-right.png</file>
+        <file>icons/Bike.png</file>
+        <file>icons/Bike2.png</file>
+        <file>icons/Bike3.png</file>
+        <file>icons/Bike4.png</file>
     </qresource>
 </RCC>

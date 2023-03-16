@@ -19,8 +19,11 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    QTimer* timer_2;
     void chartCreationSetup(int parses, std::vector<std::string> preferences_split, std::vector<QFrame*> frameArray);
+public slots:
 
+    void advanceSlideshow();
 
 private slots:
 //    void on_pushButtonRTG_9_released();
@@ -40,7 +43,7 @@ private slots:
 
     void on_pushButtonMerch_clicked();
 
-    void on_pushButtonSettings_clicked();
+//    void on_pushButtonSettings_clicked();
 
     void on_pushButtonOthers_clicked();
 
@@ -55,6 +58,9 @@ private slots:
     void on_pushButtonContact_clicked();
 
     void on_pushButtonErrorPopUp_clicked();
+
+    void on_pushButton_Viewmore_2_clicked();
+
 
     void create_chart(std::vector<QFrame*> frameArray, int parses);
 

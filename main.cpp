@@ -42,6 +42,7 @@
 #include <QFile>
 #include <QTextStream>
 //#include "databasehandler1.h"
+#include <QTimer>
 //end of file and headers (#include)
 //hello_test
 
