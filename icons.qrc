@@ -46,13 +46,5 @@
         <file>icons/tiktok_icon.png</file>
         <file>icons/map1_iconpng.png</file>
         <file>icons/map2_iconpng.png</file>
-        <file>icons/facebook_logo.png</file>
-        <file>icons/yt_icon.jpeg</file>
-        <file>icons/twitter-icon.png</file>
-        <file>icons/insta_logo.png</file>
-        <file>icons/linkedin_logo.png</file>
-        <file>icons/tiktok_icon.png</file>
-        <file>icons/map1_iconpng.png</file>
-        <file>icons/map2_iconpng.png</file>
     </qresource>
 </RCC>
