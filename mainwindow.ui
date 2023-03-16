@@ -4642,21 +4642,49 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <property name="styleSheet">
            <string notr="true">border:none;</string>
           </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
           <property name="widgetResizable">
            <bool>true</bool>
           </property>
           <widget class="QWidget" name="scrollAreaWidgetContents_4">
            <property name="geometry">
             <rect>
-             <x>-132</x>
-             <y>-156</y>
+             <x>-115</x>
+             <y>-1053</y>
              <width>1286</width>
              <height>2415</height>
             </rect>
            </property>
+           <property name="styleSheet">
+            <string notr="true">background-color: rgba(255, 0, 0, 0);</string>
+           </property>
            <layout class="QGridLayout" name="gridLayout_25">
+            <item row="3" column="0">
+             <spacer name="horizontalSpacer_20">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Maximum</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
             <item row="3" column="1">
-             <widget class="QFrame" name="frame">
+             <widget class="QFrame" name="frame_BehindEverything">
+              <property name="styleSheet">
+               <string notr="true">background-color: rgba(255, 0, 0, 0);</string>
+              </property>
               <property name="frameShape">
                <enum>QFrame::StyledPanel</enum>
               </property>
@@ -4665,12 +4693,15 @@ li.checked::marker { content: &quot;\2612&quot;; }
               </property>
               <layout class="QGridLayout" name="gridLayout_27">
                <item row="1" column="4">
-                <widget class="QFrame" name="frame_2">
+                <widget class="QFrame" name="frame_ContactsPartMedWeb">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
                    <height>500</height>
                   </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 0, 0, 0);</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
@@ -4680,7 +4711,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  </property>
                  <layout class="QGridLayout" name="gridLayout_29">
                   <item row="1" column="1">
-                   <widget class="QFrame" name="frame_3">
+                   <widget class="QFrame" name="frame_ContactsPartMedWeb2">
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -4694,7 +4725,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                      </size>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true"/>
+                     <string notr="true">background-color: rgba(255, 0, 0, 0);</string>
                     </property>
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
@@ -4704,7 +4735,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                     </property>
                     <layout class="QGridLayout" name="gridLayout_30">
                      <item row="0" column="2">
-                      <widget class="QFrame" name="frame_6">
+                      <widget class="QFrame" name="frame_MediaSquare">
                        <property name="maximumSize">
                         <size>
                          <width>270</width>
@@ -4712,7 +4743,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
                         </size>
                        </property>
                        <property name="styleSheet">
-                        <string notr="true">border: 1px solid white;</string>
+                        <string notr="true">border: 1px solid white;
+background-color: rgba(255, 0, 0, 0);</string>
                        </property>
                        <property name="frameShape">
                         <enum>QFrame::StyledPanel</enum>
@@ -4747,7 +4779,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                          </widget>
                         </item>
                         <item row="2" column="2">
-                         <spacer name="horizontalSpacer_8">
+                         <spacer name="horizontalSpacer_RightMediaSquare">
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
                           </property>
@@ -4763,7 +4795,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                          </spacer>
                         </item>
                         <item row="2" column="0">
-                         <spacer name="horizontalSpacer_7">
+                         <spacer name="horizontalSpacer_LeftMediaSquare">
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
                           </property>
@@ -4846,6 +4878,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                        </property>
                        <property name="styleSheet">
                         <string notr="true">border: 1px solid white;
+background-color: rgba(255, 0, 0, 0);
 </string>
                        </property>
                        <property name="frameShape">
@@ -4936,7 +4969,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                          </widget>
                         </item>
                         <item row="4" column="2">
-                         <spacer name="horizontalSpacer_6">
+                         <spacer name="horizontalSpacer_RightPartSquare">
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
                           </property>
@@ -4952,7 +4985,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                          </spacer>
                         </item>
                         <item row="4" column="0">
-                         <spacer name="horizontalSpacer_5">
+                         <spacer name="horizontalSpacer_LeftPartSquare">
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
                           </property>
@@ -4971,7 +5004,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                       </widget>
                      </item>
                      <item row="0" column="3">
-                      <widget class="QFrame" name="frame_7">
+                      <widget class="QFrame" name="frame_WebsiteSquare">
                        <property name="minimumSize">
                         <size>
                          <width>0</width>
@@ -4986,6 +5019,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                        </property>
                        <property name="styleSheet">
                         <string notr="true">border: 1px solid white;
+background-color: rgba(255, 0, 0, 0);
 </string>
                        </property>
                        <property name="frameShape">
@@ -4996,7 +5030,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                        </property>
                        <layout class="QGridLayout" name="gridLayout_34">
                         <item row="2" column="0">
-                         <spacer name="horizontalSpacer_9">
+                         <spacer name="horizontalSpacer_LeftWebsiteSquare">
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
                           </property>
@@ -5012,7 +5046,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                          </spacer>
                         </item>
                         <item row="2" column="2">
-                         <spacer name="horizontalSpacer_10">
+                         <spacer name="horizontalSpacer_RightWebsiteSquare">
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
                           </property>
@@ -5057,6 +5091,9 @@ border: 2px solid white;</string>
                         </item>
                         <item row="0" column="1">
                          <widget class="QTextBrowser" name="textBrowser_Website">
+                          <property name="enabled">
+                           <bool>false</bool>
+                          </property>
                           <property name="maximumSize">
                            <size>
                             <width>16777215</width>
@@ -5129,7 +5166,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    </widget>
                   </item>
                   <item row="0" column="1">
-                   <spacer name="verticalSpacer_7">
+                   <spacer name="verticalSpacer_AboveFramePartMedWeb">
                     <property name="orientation">
                      <enum>Qt::Vertical</enum>
                     </property>
@@ -5145,7 +5182,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    </spacer>
                   </item>
                   <item row="2" column="1">
-                   <spacer name="verticalSpacer_8">
+                   <spacer name="verticalSpacer_BelowFramePartMedWeb">
                     <property name="orientation">
                      <enum>Qt::Vertical</enum>
                     </property>
@@ -5164,12 +5201,15 @@ li.checked::marker { content: &quot;\2612&quot;; }
                 </widget>
                </item>
                <item row="3" column="4">
-                <widget class="QFrame" name="frame_4">
+                <widget class="QFrame" name="frame_LastOneContacts">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
                    <height>500</height>
                   </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 0, 0, 0);</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
@@ -5179,7 +5219,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  </property>
                  <layout class="QGridLayout" name="gridLayout_32">
                   <item row="0" column="2">
-                   <spacer name="horizontalSpacer_4">
+                   <spacer name="horizontalSpacer_RightFromMediaIcons">
                     <property name="orientation">
                      <enum>Qt::Horizontal</enum>
                     </property>
@@ -5195,7 +5235,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    </spacer>
                   </item>
                   <item row="1" column="1">
-                   <spacer name="verticalSpacer_11">
+                   <spacer name="verticalSpacer_BelowFromMediaIcons">
                     <property name="orientation">
                      <enum>Qt::Vertical</enum>
                     </property>
@@ -5211,7 +5251,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    </spacer>
                   </item>
                   <item row="0" column="1">
-                   <widget class="QFrame" name="frame_5">
+                   <widget class="QFrame" name="frame_AllMediaIcons">
                     <property name="maximumSize">
                      <size>
                       <width>16777215</width>
@@ -5219,7 +5259,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                      </size>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true"/>
+                     <string notr="true">background-color: rgba(255, 0, 0, 0);</string>
                     </property>
                     <property name="frameShape">
                      <enum>QFrame::StyledPanel</enum>
@@ -5379,7 +5419,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                       </widget>
                      </item>
                      <item row="0" column="7">
-                      <widget class="QPushButton" name="pushButton">
+                      <widget class="QPushButton" name="pushButton_Website_2">
                        <property name="maximumSize">
                         <size>
                          <width>45</width>
@@ -5440,12 +5480,15 @@ li.checked::marker { content: &quot;\2612&quot;; }
                 </spacer>
                </item>
                <item row="2" column="4">
-                <widget class="QFrame" name="frame_8">
+                <widget class="QFrame" name="frame_ContactsMapsPhotos">
                  <property name="minimumSize">
                   <size>
                    <width>1200</width>
                    <height>1100</height>
                   </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 0, 0, 0);</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
@@ -5477,7 +5520,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    </widget>
                   </item>
                   <item row="3" column="1">
-                   <spacer name="verticalSpacer_10">
+                   <spacer name="verticalSpacer_BelowContactsMapsPhotos">
                     <property name="orientation">
                      <enum>Qt::Vertical</enum>
                     </property>
@@ -5493,7 +5536,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    </spacer>
                   </item>
                   <item row="1" column="3">
-                   <spacer name="horizontalSpacer_15">
+                   <spacer name="horizontalSpacer_RightContactsMapsPhotos">
                     <property name="orientation">
                      <enum>Qt::Horizontal</enum>
                     </property>
@@ -5541,7 +5584,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    </widget>
                   </item>
                   <item row="0" column="1">
-                   <spacer name="verticalSpacer_9">
+                   <spacer name="verticalSpacer_AboveContactsMapsPhotos">
                     <property name="orientation">
                      <enum>Qt::Vertical</enum>
                     </property>
@@ -5557,7 +5600,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                    </spacer>
                   </item>
                   <item row="1" column="0">
-                   <spacer name="horizontalSpacer_16">
+                   <spacer name="horizontalSpacer_LeftContactsMapsPhotos">
                     <property name="orientation">
                      <enum>Qt::Horizontal</enum>
                     </property>
@@ -5611,12 +5654,15 @@ li.checked::marker { content: &quot;\2612&quot;; }
                 </spacer>
                </item>
                <item row="0" column="4">
-                <widget class="QFrame" name="frame_1">
+                <widget class="QFrame" name="frame_Title">
                  <property name="minimumSize">
                   <size>
                    <width>0</width>
                    <height>250</height>
                   </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(255, 0, 0, 0);</string>
                  </property>
                  <property name="frameShape">
                   <enum>QFrame::StyledPanel</enum>
@@ -5627,6 +5673,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  <layout class="QGridLayout" name="gridLayout_26">
                   <item row="1" column="0">
                    <widget class="QTextBrowser" name="textBrowser_Title">
+                    <property name="enabled">
+                     <bool>false</bool>
+                    </property>
                     <property name="minimumSize">
                      <size>
                       <width>0</width>
@@ -5768,22 +5817,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
                </item>
               </layout>
              </widget>
-            </item>
-            <item row="3" column="0">
-             <spacer name="horizontalSpacer_20">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Maximum</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
             </item>
            </layout>
           </widget>
