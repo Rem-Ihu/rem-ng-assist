@@ -41,7 +41,7 @@ private slots:
 
     void on_pushButtonMerch_clicked();
 
-    void on_pushButtonSettings_clicked();
+//    void on_pushButtonSettings_clicked();
 
     void on_pushButtonOthers_clicked();
 
@@ -58,7 +58,6 @@ private slots:
     void on_pushButtonErrorPopUp_clicked();
 
     void on_pushButton_Viewmore_2_clicked();
-
 
 
 private:

@@ -1,7 +1,8 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <QFrame>
+#include <QLabel>
 #include <QSvgRenderer>
 #include <QStackedWidget>
 #include <iostream>
@@ -10,17 +11,21 @@
 #include <QProgressBar>
 #include <QSvgRenderer>
 #include <QPixmap>
+#include <QBrush>
 #include <QPainter>
+#include <QPaintEvent>
 #include <QTimer>
 #include <QWidget>
-#include <QCalendarWidget>
-#include <QVBoxLayout>
 #include <QDate>
 #include <QTextCharFormat>
 #include <QModelIndex>
 #include <QPainter>
 #include <QPaintEvent>
 #include <QProgressBar>
+#include <QRectF>
+#include <QFont>
+#include <QVBoxLayout>
+#include <QCalendarWidget>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -34,34 +39,136 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     // Create calendar widget
-    QCalendarWidget *calendar = new QCalendarWidget(this);
+       QCalendarWidget *calendar = new QCalendarWidget(this);
 
 
     // Set the text format for the current date with the text "My Text"
-    // Set white background for days and gray background for header
-    calendar->setStyleSheet("QCalendarWidget QAbstractItemView:enabled:selected { color: black; } \
-                             QCalendarWidget QAbstractItemView:enabled { color: black; } \
-                             QCalendarWidget QWidget#qt_calendar_navigationbar { background-color: #e5e5e5; } \
-                             QCalendarWidget QTableView { background-color: white; } \
-                             QCalendarWidget QHeaderView::section { background-color: #e5e5e5; color: black; } \
-                             QCalendarWidget QToolButton { background-color: transparent; border: none; } \
-                             QCalendarWidget QToolButton:hover { background-color: #dcdcdc; } \
-                             QCalendarWidget QToolButton::menu-indicator { image: url(:/arrow.svg); subcontrol-position: right; subcontrol-origin: padding; } \
-                             QCalendarWidget QMenu { background-color: white; } \
-                             QCalendarWidget QMenu::item:selected { color: black; background-color: #dcdcdc; } \
-                             QCalendarWidget QYearEdit { background-color: white; color: black; } \
-                             QCalendarWidget QSpinBox { color: black; } \
-                             QCalendarWidget QAbstractItemView:enabled:selected:focus { border: none; } \
-                             QCalendarWidget QAbstractItemView:enabled:selected:!focus { border: none; } \
-                             QCalendarWidget QAbstractItemView:focus { border: 1px black;} ");
+       // Set white background for days and gray background for header
+       calendar->setStyleSheet("QCalendarWidget QAbstractItemView:enabled:selected { color: black; } \
+                                QCalendarWidget QAbstractItemView:enabled { color: black; } \
+                                QCalendarWidget QWidget#qt_calendar_navigationbar { background-color: #e5e5e5; } \
+                                QCalendarWidget QTableView { background-color: white; } \
+                                QCalendarWidget QHeaderView::section { background-color: #e5e5e5; color: black; } \
+                                QCalendarWidget QToolButton { background-color: transparent; border: none; } \
+                                QCalendarWidget QToolButton:hover { background-color: #dcdcdc; } \
+                                QCalendarWidget QToolButton::menu-indicator { image: url(:/arrow.svg); subcontrol-position: right; subcontrol-origin: padding; } \
+                                QCalendarWidget QMenu { background-color: white; } \
+                                QCalendarWidget QMenu::item:selected { color: black; background-color: #dcdcdc; } \
+                                QCalendarWidget QYearEdit { background-color: white; color: black; } \
+                                QCalendarWidget QSpinBox { color: black; } \
+                                QCalendarWidget QAbstractItemView:enabled:selected:focus { border: none; } \
+                                QCalendarWidget QAbstractItemView:enabled:selected:!focus { border: none; } \
+                                QCalendarWidget QAbstractItemView:focus { border: 1px black;} ");
 
-    // Add calendar widget to layout
+       // Add calendar widget to layout
+
+
+                               // Define date and color array
+                                   QDate dates[] = { QDate(2023, 3, 3), QDate(2023, 3, 15), QDate(2023, 3, 28), QDate(2023, 3, 31), QDate(2023, 10, 2), QDate(2023, 10, 2), QDate(2023, 6, 9), QDate(2023, 5, 1)};
+                                   QColor colors[] = { QColor(48, 172, 255), QColor(255, 125, 33), QColor(161, 66, 255), QColor(152, 8, 8), QColor(12, 207, 100) };
+
+                                   // Loop over dates and set text format for each one
+                                   for (int i = 0; i < 5; i++) {
+                                       QTextCharFormat format1;
+                                       format1.setBackground(QBrush(colors[i]));
+                                       calendar->setDateTextFormat(dates[i], format1);
+                                    }
+
+                                   // Add calendar widget to layout
+                                   ui->teamCalendar->setLayout(new QVBoxLayout());
+                                   ui->teamCalendar->layout()->addWidget(calendar);
 
 
 
-    // Add the calendar widget to the layout
-    ui->teamCalendar->setLayout(new QVBoxLayout());
-    ui->teamCalendar->layout()->addWidget(calendar);
+
+
+
+    class ProgressBarsFrame : public QWidget {
+    public:
+        ProgressBarsFrame(QWidget* parent = nullptr) : QWidget(parent) {
+            QVBoxLayout* mainLayout = new QVBoxLayout(this);
+            QVBoxLayout* progressBarLayout = new QVBoxLayout();
+
+            QLabel* label1 = new QLabel("Progress 1");
+            QProgressBar* progressBar1 = new QProgressBar();
+            progressBar1->setRange(0, 100);
+            progressBar1->setValue(50);   // Value from Firestore
+            progressBar1->setStyleSheet("QProgressBar {border-radius: 10px; text-align: left; border: 1px solid grey; color: black;}"
+                                        "QProgressBar::chunk { background-color: orange; border-radius: 10px};"
+                                        "QProgressBar::chunk:disabled {background-color: lightgrey;}"
+                                        "QProgressBar::groove:horizontal {border: 1px solid black; background: black;}"
+                                        "QProgressBar::groove:vertical {border: 1px solid black; background: black;}"
+                                        "QProgressBar::chunk:horizontal {background: red;}"
+                                        "QProgressBar::chunk:vertical {background: red;}"
+                                        "QProgressBar::chunk:horizontal:disabled {background: lightgrey;}"
+                                        "QProgressBar::chunk:vertical:disabled {background: lightgrey;}"
+                                        "QProgressBar::text {color: black;}"
+                                        "QProgressBar::text:disabled {color: lightgrey;}");
+            QLabel* label2 = new QLabel("Progress 2");
+            QProgressBar* progressBar2 = new QProgressBar();
+            progressBar2->setRange(0, 100);
+            progressBar2->setValue(75);  //Value from Firestore
+            progressBar2->setStyleSheet("QProgressBar {border-radius: 10px; text-align: left; border: 1px solid grey; color: black;}"
+                                        "QProgressBar::chunk { background-color: red; border-radius: 10px};"
+                                        "QProgressBar::chunk:disabled {background-color: lightgrey;}"
+                                        "QProgressBar::groove:horizontal {border: 1px solid black; background: black;}"
+                                        "QProgressBar::groove:vertical {border: 1px solid black; background: black;}"
+                                        "QProgressBar::chunk:horizontal {background: red;}"
+                                        "QProgressBar::chunk:vertical {background: red;}"
+                                        "QProgressBar::chunk:horizontal:disabled {background: lightgrey;}"
+                                        "QProgressBar::chunk:vertical:disabled {background: lightgrey;}"
+                                        "QProgressBar::text {color: black;}"
+                                        "QProgressBar::text:disabled {color: lightgrey;}");
+
+
+            QLabel* label3 = new QLabel("Progress 3");
+            QProgressBar* progressBar3 = new QProgressBar();
+            progressBar3->setRange(0, 100);
+            progressBar3->setValue(10);  //Value from Firestore
+            progressBar3->setStyleSheet("QProgressBar {border-radius: 10px; text-align: left; border: 1px solid grey; color: black;}"
+                                        "QProgressBar::chunk { background-color: green; border-radius: 10px};"
+                                        "QProgressBar::chunk:disabled {background-color: lightgrey;}"
+                                        "QProgressBar::groove:horizontal {border: 1px solid black; background: black;}"
+                                        "QProgressBar::groove:vertical {border: 1px solid black; background: black;}"
+                                        "QProgressBar::chunk:horizontal {background: red;}"
+                                        "QProgressBar::chunk:vertical {background: red;}"
+                                        "QProgressBar::chunk:horizontal:disabled {background: lightgrey;}"
+                                        "QProgressBar::chunk:vertical:disabled {background: lightgrey;}"
+                                        "QProgressBar::text {color: black;}"
+                                        "QProgressBar::text:disabled {color: lightgrey;}");
+
+
+
+            progressBarLayout->addWidget(label1);
+            progressBarLayout->addWidget(progressBar1);
+            progressBarLayout->addWidget(label2);
+            progressBarLayout->addWidget(progressBar2);
+            progressBarLayout->addWidget(label3);
+            progressBarLayout->addWidget(progressBar3);
+
+            mainLayout->addLayout(progressBarLayout);
+        }
+    };
+
+    // In your MainWindow.cpp file:
+
+    ProgressBarsFrame* progressBarsFrame = new ProgressBarsFrame(this);
+    ui->bars_frame->setLayout(new QVBoxLayout());
+    ui->bars_frame->layout()->addWidget(progressBarsFrame);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     class RadialThermometerProgressBar : public QProgressBar {
@@ -76,24 +183,23 @@ MainWindow::MainWindow(QWidget *parent)
             QPainter painter(this);
             painter.setRenderHint(QPainter::Antialiasing, true);
 
-            QRectF rect = this->rect().adjusted(10, 10, -10, -10);
+            QRectF rect = this->rect().adjusted(20, 20, -20, -30);
             int minSize = qMin(rect.width(), rect.height());
-            int padding = qMax(minSize / 25, 8);
-            int fontSize = qMax(minSize / 25, 8);
+            int padding = qMax(minSize / 50, 4);
+            int fontSize = qMax(minSize / 50, 30);
 
             QFont font;
             font.setPointSize(fontSize);
             painter.setFont(font);
 
             // Draw the background circle
-            painter.setPen(QPen(QBrush(QColor(200, 200, 200)), padding));
+            painter.setPen(QPen(QBrush(QColor(Qt::transparent)), padding));
             painter.setBrush(Qt::NoBrush);
             painter.drawEllipse(rect);
 
             // Draw the progress arc
             painter.setPen(QPen(QBrush(Qt::green), padding * 2));
             painter.setBrush(Qt::NoBrush);
-//            painter.setPen(3);
             int value = this->value();
             if (value > minimum() && value < maximum()) {
                 int angle = (int)((value - minimum()) * 180.0 / (maximum() - minimum()));
@@ -107,15 +213,48 @@ MainWindow::MainWindow(QWidget *parent)
             QRect valueRect = painter.fontMetrics().boundingRect(valueStr);
             painter.drawText(rect.center() - valueRect.center(), valueStr);
         }
-
     };
 
-    RadialThermometerProgressBar* gauge = new RadialThermometerProgressBar(this);
-    gauge->setRange(0, 100); // set the range of the gauge to be from 0 to 100
-    gauge->setValue(50); // set the initial value of the gauge to be 50
+    // Create progress bars
+    // Create progress bars
+    RadialThermometerProgressBar* gauge1 = new RadialThermometerProgressBar(ui->frame_4);
+    RadialThermometerProgressBar* gauge2 = new RadialThermometerProgressBar(ui->battery_frame);
+    RadialThermometerProgressBar* gauge3 = new RadialThermometerProgressBar(ui->prog_bar2);
+    RadialThermometerProgressBar* gauge4 = new RadialThermometerProgressBar(ui->prog_bar3);
 
-    ui->albanos->setLayout(new QVBoxLayout());
-    ui->albanos->layout()->addWidget(gauge);
+    // Set progress bar ranges and values
+    gauge1->setRange(0, 100);
+    gauge1->setValue(25);
+
+    gauge2->setRange(0, 100);
+    gauge2->setValue(50);
+
+    gauge3->setRange(0, 100);
+    gauge3->setValue(75);
+
+    gauge4->setRange(0, 100);
+    gauge4->setValue(99);
+
+    // Set layouts for frames and add progress bars to frames
+    ui->frame_4->setLayout(new QVBoxLayout(ui->frame_4));
+    ui->frame_4->layout()->addWidget(gauge1);
+    ui->frame_4->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+
+    ui->battery_frame->setLayout(new QVBoxLayout(ui->battery_frame));
+    ui->battery_frame->layout()->addWidget(gauge2);
+    ui->battery_frame->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+
+    ui->prog_bar2->setLayout(new QVBoxLayout(ui->prog_bar2));
+    ui->prog_bar2->layout()->addWidget(gauge3);
+    ui->prog_bar2->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+
+    ui->prog_bar3->setLayout(new QVBoxLayout(ui->prog_bar3));
+    ui->prog_bar3->layout()->addWidget(gauge4);
+    ui->prog_bar3->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+
+
+
+
 
 
 
@@ -145,7 +284,7 @@ MainWindow::MainWindow(QWidget *parent)
     pen.setWidth(1);//customize the width of the series in the chart
     series_bigOneChart->setPen(pen);
 
-    // Customize chart background(behind the chart)
+// Customize chart background(behind the chart)
 //    QLinearGradient backgroundGradient;
 //    backgroundGradient.setStart(QPointF(0, 0));
 //    backgroundGradient.setFinalStop(QPointF(0, 1));
@@ -314,10 +453,10 @@ void MainWindow::on_pushButtonMerch_clicked()
 }
 
 
-void MainWindow::on_pushButtonSettings_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(6);
-}
+//void MainWindow::on_pushButtonSettings_clicked()
+//{
+//    ui->stackedWidget->setCurrentIndex(6);
+//}
 
 
 void MainWindow::on_pushButtonOthers_clicked()
@@ -344,6 +483,7 @@ void MainWindow::on_pushButton_Viewmore_2_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
 }
+
 
 
 //adding new tabs! ========================================
@@ -471,7 +611,6 @@ void MainWindow::advanceSlideshow()
     // Start the animations
     animFadeOut->start();
 }
-
 
 
 

@@ -24,11 +24,11 @@
         <file>icons/log_out_icon.png</file>
         <file>icons/log_out_icon_checked.png</file>
         <file>main.qss</file>
-        <file>icons/20221001_095736 (convert.io).png</file>
-        <file>icons/cropped-cropped-PWSTOEKANALATHOSRE-3.png</file>
-        <file>icons/DSC_0221 (convert.io).png</file>
-        <file>icons/IMG_9988 (convert.io).png</file>
         <file>icons/arrow-left.png</file>
         <file>icons/arrow-right.png</file>
+        <file>icons/Bike.png</file>
+        <file>icons/Bike2.png</file>
+        <file>icons/Bike3.png</file>
+        <file>icons/Bike4.png</file>
     </qresource>
 </RCC>
