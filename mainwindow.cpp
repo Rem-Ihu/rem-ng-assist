@@ -1,18 +1,19 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
+#include "qregularexpression.h"
+#include <QJSEngine>
+#include <QDebug>
 #include "ui_mainwindow.h"
 #include "databasehandler1.h"
-#include <QFrame>
-#include <QLabel>
 #include <QSvgRenderer>
 #include <QStackedWidget>
+#include <QDialog>
 #include <iostream>
+#include <QGraphicsProxyWidget>
 #include <QGraphicsView>
 #include <QGraphicsScene>
-#include <QProgressBar>
 #include <QSvgRenderer>
 #include <QPixmap>
-#include <QBrush>
 #include <QPainter>
 #include <QTimer>
 #include <QFont>
@@ -29,250 +30,43 @@
 #include <QtGui/QPainter>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QLabel>
-#include <QPaintEvent>
-#include <QTimer>
-#include <QWidget>
-#include <QDate>
-#include <QTextCharFormat>
-#include <sstream>
-#include <QModelIndex>
-#include <QPainter>
-#include <QPaintEvent>
-#include <QProgressBar>
-#include <QRectF>
-#include <QFont>
-#include <QVBoxLayout>
-#include <QCalendarWidget>
 
+
+
+
+int vector_counter_chart=0;
+
+bool flag_first_chart=false;
+std::vector<QFrame*> frameArray;
+int last_counted_frame =0;
+std::vector<double> Pasxa;
+
+namespace myNamespace{
+    extern float fin_ans,sec_ans,ok;
+}
+
+namespace myNamespace2{
+    extern int number_of_frames;
+//    extern double* array;
+}
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+
 {
     ui->setupUi(this);
-
-
-    // Create calendar widget
-       QCalendarWidget *calendar = new QCalendarWidget(this);
-
-
-    // Set the text format for the current date with the text "My Text"
-       // Set white background for days and gray background for header
-       calendar->setStyleSheet("QCalendarWidget QAbstractItemView:enabled:selected { color: black; } \
-                                QCalendarWidget QAbstractItemView:enabled { color: black; } \
-                                QCalendarWidget QWidget#qt_calendar_navigationbar { background-color: #e5e5e5; } \
-                                QCalendarWidget QTableView { background-color: white; } \
-                                QCalendarWidget QHeaderView::section { background-color: #e5e5e5; color: black; } \
-                                QCalendarWidget QToolButton { background-color: transparent; border: none; } \
-                                QCalendarWidget QToolButton:hover { background-color: #dcdcdc; } \
-                                QCalendarWidget QToolButton::menu-indicator { image: url(:/arrow.svg); subcontrol-position: right; subcontrol-origin: padding; } \
-                                QCalendarWidget QMenu { background-color: white; } \
-                                QCalendarWidget QMenu::item:selected { color: black; background-color: #dcdcdc; } \
-                                QCalendarWidget QYearEdit { background-color: white; color: black; } \
-                                QCalendarWidget QSpinBox { color: black; } \
-                                QCalendarWidget QAbstractItemView:enabled:selected:focus { border: none; } \
-                                QCalendarWidget QAbstractItemView:enabled:selected:!focus { border: none; } \
-                                QCalendarWidget QAbstractItemView:focus { border: 1px black;} ");
-
-       // Add calendar widget to layout
-
-
-                               // Define date and color array
-                                   QDate dates[] = { QDate(2023, 3, 3), QDate(2023, 3, 15), QDate(2023, 3, 28), QDate(2023, 3, 31), QDate(2023, 10, 2), QDate(2023, 10, 2), QDate(2023, 6, 9), QDate(2023, 5, 1)};
-                                   QColor colors[] = { QColor(48, 172, 255), QColor(255, 125, 33), QColor(161, 66, 255), QColor(152, 8, 8), QColor(12, 207, 100) };
-
-                                   // Loop over dates and set text format for each one
-                                   for (int i = 0; i < 5; i++) {
-                                       QTextCharFormat format1;
-                                       format1.setBackground(QBrush(colors[i]));
-                                       calendar->setDateTextFormat(dates[i], format1);
-                                    }
-
-                                   // Add calendar widget to layout
-                                   ui->teamCalendar->setLayout(new QVBoxLayout());
-                                   ui->teamCalendar->layout()->addWidget(calendar);
-
-
-
-
-
-
-    class ProgressBarsFrame : public QWidget {
-    public:
-        ProgressBarsFrame(QWidget* parent = nullptr) : QWidget(parent) {
-            QVBoxLayout* mainLayout = new QVBoxLayout(this);
-            QVBoxLayout* progressBarLayout = new QVBoxLayout();
-
-            QLabel* label1 = new QLabel("Progress 1");
-            QProgressBar* progressBar1 = new QProgressBar();
-            progressBar1->setRange(0, 100);
-            progressBar1->setValue(50);   // Value from Firestore
-            progressBar1->setStyleSheet("QProgressBar {border-radius: 10px; text-align: left; border: 1px solid grey; color: black;}"
-                                        "QProgressBar::chunk { background-color: orange; border-radius: 10px};"
-                                        "QProgressBar::chunk:disabled {background-color: lightgrey;}"
-                                        "QProgressBar::groove:horizontal {border: 1px solid black; background: black;}"
-                                        "QProgressBar::groove:vertical {border: 1px solid black; background: black;}"
-                                        "QProgressBar::chunk:horizontal {background: red;}"
-                                        "QProgressBar::chunk:vertical {background: red;}"
-                                        "QProgressBar::chunk:horizontal:disabled {background: lightgrey;}"
-                                        "QProgressBar::chunk:vertical:disabled {background: lightgrey;}"
-                                        "QProgressBar::text {color: black;}"
-                                        "QProgressBar::text:disabled {color: lightgrey;}");
-            QLabel* label2 = new QLabel("Progress 2");
-            QProgressBar* progressBar2 = new QProgressBar();
-            progressBar2->setRange(0, 100);
-            progressBar2->setValue(75);  //Value from Firestore
-            progressBar2->setStyleSheet("QProgressBar {border-radius: 10px; text-align: left; border: 1px solid grey; color: black;}"
-                                        "QProgressBar::chunk { background-color: red; border-radius: 10px};"
-                                        "QProgressBar::chunk:disabled {background-color: lightgrey;}"
-                                        "QProgressBar::groove:horizontal {border: 1px solid black; background: black;}"
-                                        "QProgressBar::groove:vertical {border: 1px solid black; background: black;}"
-                                        "QProgressBar::chunk:horizontal {background: red;}"
-                                        "QProgressBar::chunk:vertical {background: red;}"
-                                        "QProgressBar::chunk:horizontal:disabled {background: lightgrey;}"
-                                        "QProgressBar::chunk:vertical:disabled {background: lightgrey;}"
-                                        "QProgressBar::text {color: black;}"
-                                        "QProgressBar::text:disabled {color: lightgrey;}");
-
-
-            QLabel* label3 = new QLabel("Progress 3");
-            QProgressBar* progressBar3 = new QProgressBar();
-            progressBar3->setRange(0, 100);
-            progressBar3->setValue(10);  //Value from Firestore
-            progressBar3->setStyleSheet("QProgressBar {border-radius: 10px; text-align: left; border: 1px solid grey; color: black;}"
-                                        "QProgressBar::chunk { background-color: green; border-radius: 10px};"
-                                        "QProgressBar::chunk:disabled {background-color: lightgrey;}"
-                                        "QProgressBar::groove:horizontal {border: 1px solid black; background: black;}"
-                                        "QProgressBar::groove:vertical {border: 1px solid black; background: black;}"
-                                        "QProgressBar::chunk:horizontal {background: red;}"
-                                        "QProgressBar::chunk:vertical {background: red;}"
-                                        "QProgressBar::chunk:horizontal:disabled {background: lightgrey;}"
-                                        "QProgressBar::chunk:vertical:disabled {background: lightgrey;}"
-                                        "QProgressBar::text {color: black;}"
-                                        "QProgressBar::text:disabled {color: lightgrey;}");
-
-
-
-            progressBarLayout->addWidget(label1);
-            progressBarLayout->addWidget(progressBar1);
-            progressBarLayout->addWidget(label2);
-            progressBarLayout->addWidget(progressBar2);
-            progressBarLayout->addWidget(label3);
-            progressBarLayout->addWidget(progressBar3);
-
-            mainLayout->addLayout(progressBarLayout);
-        }
-    };
-
-    // In your MainWindow.cpp file:
-
-    ProgressBarsFrame* progressBarsFrame = new ProgressBarsFrame(this);
-    ui->bars_frame->setLayout(new QVBoxLayout());
-    ui->bars_frame->layout()->addWidget(progressBarsFrame);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    class RadialThermometerProgressBar : public QProgressBar {
-    public:
-        RadialThermometerProgressBar(QWidget* parent = nullptr) : QProgressBar(parent) {
-            setFixedSize(250, 250);
-        }
-
-    protected:
-        void paintEvent(QPaintEvent* event) override {
-            Q_UNUSED(event);
-            QPainter painter(this);
-            painter.setRenderHint(QPainter::Antialiasing, true);
-
-            QRectF rect = this->rect().adjusted(20, 20, -20, -30);
-            int minSize = qMin(rect.width(), rect.height());
-            int padding = qMax(minSize / 50, 4);
-            int fontSize = qMax(minSize / 50, 30);
-
-            QFont font;
-            font.setPointSize(fontSize);
-            painter.setFont(font);
-
-            // Draw the background circle
-            painter.setPen(QPen(QBrush(QColor(Qt::transparent)), padding));
-            painter.setBrush(Qt::NoBrush);
-            painter.drawEllipse(rect);
-
-            // Draw the progress arc
-            painter.setPen(QPen(QBrush(Qt::green), padding * 2));
-            painter.setBrush(Qt::NoBrush);
-            int value = this->value();
-            if (value > minimum() && value < maximum()) {
-                int angle = (int)((value - minimum()) * 180.0 / (maximum() - minimum()));
-                painter.drawArc(rect, 180 * 16, -angle * 16);
-            }
-
-            // Draw the value text
-            painter.setPen(QPen(QBrush(Qt::white), padding));
-            painter.setBrush(Qt::NoBrush);
-            QString valueStr = QString::number(value);
-            QRect valueRect = painter.fontMetrics().boundingRect(valueStr);
-            painter.drawText(rect.center() - valueRect.center(), valueStr);
-        }
-    };
-
-    // Create progress bars
-    // Create progress bars
-    RadialThermometerProgressBar* gauge1 = new RadialThermometerProgressBar(ui->frame_4);
-    RadialThermometerProgressBar* gauge2 = new RadialThermometerProgressBar(ui->battery_frame);
-    RadialThermometerProgressBar* gauge3 = new RadialThermometerProgressBar(ui->prog_bar2);
-    RadialThermometerProgressBar* gauge4 = new RadialThermometerProgressBar(ui->prog_bar3);
-
-    // Set progress bar ranges and values
-    gauge1->setRange(0, 100);
-    gauge1->setValue(25);
-
-    gauge2->setRange(0, 100);
-    gauge2->setValue(50);
-
-    gauge3->setRange(0, 100);
-    gauge3->setValue(75);
-
-    gauge4->setRange(0, 100);
-    gauge4->setValue(99);
-
-    // Set layouts for frames and add progress bars to frames
-    ui->frame_4->setLayout(new QVBoxLayout(ui->frame_4));
-    ui->frame_4->layout()->addWidget(gauge1);
-    ui->frame_4->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
-
-    ui->battery_frame->setLayout(new QVBoxLayout(ui->battery_frame));
-    ui->battery_frame->layout()->addWidget(gauge2);
-    ui->battery_frame->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
-
-    ui->prog_bar2->setLayout(new QVBoxLayout(ui->prog_bar2));
-    ui->prog_bar2->layout()->addWidget(gauge3);
-    ui->prog_bar2->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
-
-    ui->prog_bar3->setLayout(new QVBoxLayout(ui->prog_bar3));
-    ui->prog_bar3->layout()->addWidget(gauge4);
-    ui->prog_bar3->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
-
-
-
-
-
-
+//    DataRead = Firestore_Read_Data("AAA");
+    //AERO CHART SETUP
     QSplineSeries *series_bigOneChart = new QSplineSeries();//create the series for the aero chart
     series_bigOneChart->setName("Real Time Values");//set the name of the measurement
+
+
+
+
+
+
+
     QChart *chart_bigOneChart = new QChart();//create the aero chart
     chart_bigOneChart->addSeries(series_bigOneChart); //add the values
     QFont titleFont("Arial", 16, QFont::Bold); // Create a QFont object with desired font family, size, and weight
@@ -283,30 +77,61 @@ MainWindow::MainWindow(QWidget *parent)
     chart_bigOneChart->setTitleBrush(QBrush(Qt::white));//customize the color of the title in the chart
     chart_bigOneChart->setBackgroundBrush(QBrush(Qt::transparent));//customize the color of the background in the chart
 
-    QPen pen(Qt::blue);//customize the color of the series in the chart
-    pen.setWidth(1);//customize the width of the series in the chart
-    series_bigOneChart->setPen(pen);
 
-    chart_bigOneChart->setBackgroundBrush(QBrush(::Qt::white));
 
-    // Customize plot area background(in the chart)
-//    QLinearGradient plotAreaGradient;
-//    plotAreaGradient.setStart(QPointF(0, 1));
-//    plotAreaGradient.setFinalStop(QPointF(1, 0));
-//    plotAreaGradient.setColorAt(0.0, QRgb(0x555555));
-//    plotAreaGradient.setColorAt(1.0, QRgb(0x55aa55));
-//    plotAreaGradient.setCoordinateMode(QGradient::ObjectBoundingMode);
-    chart_bigOneChart->setPlotAreaBackgroundBrush(QColor(255, 255, 255, 0));
-    chart_bigOneChart->setPlotAreaBackgroundVisible(true);
+    // Create a QTimer object and set its interval to 500 milliseconds (0.5 seconds)
+    QTimer *timer = new QTimer(this); //create a timer
+    timer->setInterval(80); //to 80 milliseconds
 
-    QCategoryAxis *axisX = new QCategoryAxis();
+    int x = 0;
+
+    // Add the first 10 data points
+    for (int i = 0; i < 10; i++) {
+        float y = myNamespace::sec_ans;
+        series_bigOneChart->append(x, y);
+        x++;
+    }
+
+    // Connect the timeout() signal of the timer to a lambda function that generates
+    // random numbers and updates the chart
+    connect(timer, &QTimer::timeout, [=]() mutable {
+        // Generate a random number between 1 and 10
+        float y = myNamespace::sec_ans;
+
+        // Append the new data point
+        QTime currentTime = QTime::currentTime();
+        QString currentTimeString = currentTime.toString("hh:mm:ss");
+//        series_bigOneChart->append("<span style=\"color: #000000;\">"+currentTimeString+"</span>", y);
+        if(myNamespace::fin_ans!=0 && myNamespace::sec_ans!=0){
+            series_bigOneChart->append(x, y);
+            x++;
+        }
+        // Remove the first data point if the series has more than 20 points
+        if (series_bigOneChart->count() > 20) {
+            series_bigOneChart->remove(0);
+        }
+
+        // Update the X range of the chart to show the last 20 data points
+        chart_bigOneChart->setAnimationOptions(QChart::NoAnimation);
+        chart_bigOneChart->axes(Qt::Horizontal).first()->setRange(x - 20, x);
+    });
+
+    // Start the timer
+    timer->start();
+
+
+
+    chart_bigOneChart->setPlotAreaBackgroundBrush(QColor(255, 255, 255, 0));// set the color of the plot area to trasnparent
+    chart_bigOneChart->setPlotAreaBackgroundVisible(true); //set the application layer to visible
+    chart_bigOneChart->setAnimationOptions(QChart::NoAnimation); //disable the animation for a smoother transition from point to point
+    QCategoryAxis *axisX = new QCategoryAxis();//create the 2 axes
     QCategoryAxis *axisY = new QCategoryAxis();
 
-    QFont labelsFont;
-    labelsFont.setPixelSize(12);
-    axisX->setLabelsFont(labelsFont);
-    axisX->setLabelsColor(Qt::white);
-    axisY->setLabelsFont(labelsFont);
+    QFont labelsFont; //create a font
+    labelsFont.setPixelSize(12); //set the size of the letters
+    axisX->setLabelsFont(labelsFont); //apply to axis x
+    axisX->setLabelsColor(Qt::white); //change the color
+    axisY->setLabelsFont(labelsFont); //apply to axis y
 
     // Customize axis colors
     QPen axisPen(Qt::black);
@@ -323,17 +148,7 @@ MainWindow::MainWindow(QWidget *parent)
     format.setForeground(Qt::blue);
     axisX->setLabelsColor(Qt::blue);
     axisY->setLabelsColor(Qt::blue);
-//    axisX->append("<span style=\"color: #339966;\">low</span>", 7);
-//    axisX->append("<span style=\"color: #330066;\">optimal</span>", 14);
-//    axisX->append("<span style=\"color: #55ff66;\">high</span>", 20);
 
-
-//    axisY->append("<font color=\"red\">slow</font>", 3);
-//    axisY->append("<font color=\"green\">med</font>", 7);
-//    axisY->append("<span style=\"color: #ffff00;\">fast</span>", 10);
-
-//    axisX->setRange(0, 20);
-//    axisY->setRange(0, 10);
 
     chart_bigOneChart->addAxis(axisX, Qt::AlignBottom);
     chart_bigOneChart->addAxis(axisY, Qt::AlignLeft);
@@ -341,8 +156,14 @@ MainWindow::MainWindow(QWidget *parent)
     series_bigOneChart->attachAxis(axisX);
     series_bigOneChart->attachAxis(axisY);
 
+    chart_bigOneChart->setTheme(QChart::ChartThemeDark);
+    chart_bigOneChart->setBackgroundBrush(Qt::transparent);
 
-    QFrame *frame = ui->bigOneChart;
+    QColor orange(255, 165, 0); // RGB values for orange
+    QPen pen(orange);//customize the color of the series in the chart--create the color layer
+    pen.setWidth(5);//customize the width of the series in the chart
+    series_bigOneChart->setPen(pen); //apply the color to the series
+    QFrame *frame = ui->bigOneChart_2;
     //creating a drop shadow effect
     QGraphicsDropShadowEffect *shadow_bigOneChart = new QGraphicsDropShadowEffect;
     shadow_bigOneChart->setBlurRadius(15);
@@ -350,29 +171,106 @@ MainWindow::MainWindow(QWidget *parent)
     shadow_bigOneChart->setOffset(0.5, 0);
     frame->setGraphicsEffect(shadow_bigOneChart);
 
-    chart_bigOneChart->setAnimationOptions(QChart::SeriesAnimations);
+
     QChartView *chartView_bigOneChart = new QChartView(chart_bigOneChart);
     chartView_bigOneChart->setRenderHint(QPainter::Antialiasing);
     chartView_bigOneChart->setBackgroundBrush(QBrush());
-//    chartView->setBackgroundBrush(QBrush(QColor("salmon")));
 
-    QVBoxLayout *layout_bigOneChart1 = new QVBoxLayout(ui->bigOneChart);
+
+
+
+    // Create a label for showing the x and y axis value
+    QLabel *label = new QLabel(chartView_bigOneChart);
+    label->setStyleSheet("QLabel { background-color: #22222; color: white; border: 1px solid white; border-radius: 2px; font-weight: bold; }"); // modify the style sheet to make the labels bold
+    label->setGeometry(QRect(0, 0, 120, 40)); // make the label bigger
+    label->setVisible(true); // Set the label to be visible by default
+    label->raise(); // set z-index to highest
+
+    // Create a label for showing the plot points
+    QLabel *pointLabel = new QLabel(chartView_bigOneChart);
+    pointLabel->setStyleSheet("QLabel { background-color: #22222; color: white; border: 1px solid white; border-radius: 2px; font-weight: bold; }"); // modify the style sheet to make the labels bold
+    pointLabel->setGeometry(QRect(0, 0, 120, 40)); // make the label bigger
+    pointLabel->setVisible(true); // Set the label to be visible by default
+    pointLabel->raise(); // set z-index to highest
+
+    // Connect the signal of the chart view to a custom slot
+    QObject::connect(chartView_bigOneChart, &QChartView::rubberBandChanged, [=](const QRectF &viewportRect, const QPointF &fromScenePoint, const QPointF &toScenePoint) {
+        QPointF point = chartView_bigOneChart->chart()->mapToValue(chartView_bigOneChart->mapToScene(toScenePoint.toPoint()));
+        // Update the label with the new x and y values
+        label->setText(QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
+    });
+
+    // Connect the clicked signal of the series to a custom slot
+    QObject::connect(series_bigOneChart, &QLineSeries::clicked, [=](const QPointF &point) {
+        // Update the point label text and position
+        pointLabel->setText(QString("Point: (%1, %2)").arg(point.x()).arg(point.y()));
+        pointLabel->move(chartView_bigOneChart->width() - pointLabel->width() - 5, chartView_bigOneChart->height() - pointLabel->height() - 5);
+    });
+
+    // Connect the series signal to update the label as x value changes
+    QObject::connect(series_bigOneChart, &QLineSeries::pointAdded, [=](int index) {
+        // Get the latest x value
+        qreal x = series_bigOneChart->at(index).x();
+        // Update the label text
+        label->setText(QString("X: %1\nY: %2").arg(x).arg(series_bigOneChart->at(index).y()));
+    });
+
+    // Add the chart view, label, and point label to the layout
+    QVBoxLayout *layout_bigOneChart1 = new QVBoxLayout(ui->bigOneChart_2);
     layout_bigOneChart1->addWidget(chartView_bigOneChart);
-
-    //AREA CHART
-
-    timer_2 = new QTimer(this);
-        connect(timer_2, &QTimer::timeout, this, &MainWindow::advanceSlideshow);
-        timer_2->start(3500);
+    layout_bigOneChart1->addWidget(label);
+    layout_bigOneChart1->addWidget(pointLabel);
+//    qDebug() << series_bigOneChart;
 
 
-    chart_bigOneChart->setAnimationOptions(QChart::SeriesAnimations);
-
-    QVBoxLayout *layout_bigOneChart = new QVBoxLayout(ui->area_chart);
 }
 
 
 void MainWindow::create_chart(/*final_name, */std::vector<QFrame*> frameArray, int parses){
+
+//        qDebug() << "HEREEEEE--->" << frameArray.size();
+
+    qDebug() << "HEREEEEE VECTOR--->" << vector_counter_chart;
+//    qDebug() << "HEREEEEE N--->" << N;
+
+//    for (int i = 0; i < frameArray.size(); i++) {
+//        QChart *chart = new QChart();
+//        chart->setTitle("My Chart " + QString::number(i+1));
+//        // Create a QPointF vector and add the values from the array
+//        QVector<QPointF> points;
+//        for (int j = vector_counter_chart; j < myNamespace2::N; j++) {
+//            points.append(QPointF(j + 0.5, myNamespace2::array[j]));
+//        }
+
+//        // Create a line series object and set the points
+//        QLineSeries *series = new QLineSeries();
+//        series->append(points);
+//        chart->addSeries(series);
+
+//        // Set up the X-axis with 0.5 increments
+//        QValueAxis *axisX1 = new QValueAxis();
+//        axisX1->setTickCount(myNamespace2::N);
+//        axisX1->setLabelFormat("%.1f");
+//        axisX1->setRange(0, myNamespace2::N);
+//        axisX1->setTickInterval(0.5);
+//        chart->addAxis(axisX1, Qt::AlignBottom);
+//        series->attachAxis(axisX1);
+
+//        // Set up the Y-axis
+//        QValueAxis *axisY1 = new QValueAxis();
+//        chart->addAxis(axisY1, Qt::AlignLeft);
+//        series->attachAxis(axisY1);
+
+//        // Create a chart view object and set the chart
+//        QChartView *chartView = new QChartView(chart);
+//        chartView->setRenderHint(QPainter::Antialiasing);
+//        chartView->setChart(chart);
+
+//        // Get the layout for the current frame and add the chart view
+//        QVBoxLayout *layout = new QVBoxLayout(frameArray[i]);
+//        layout->addWidget(chartView);
+//    }
+
 
 }
 
@@ -1190,39 +1088,7 @@ void MainWindow::on_pushButtonHome_clicked()
 {
     ui->stackedWidget->setCurrentIndex(0);
 }
-void MainWindow::on_pushButton_Viewmore_2_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(4);
-}
 
-void MainWindow::advanceSlideshow()
-{
-    int nextIndex = (ui->SlideshowWid->currentIndex() + 1) % ui->SlideshowWid->count();
-    QWidget* nextPage = ui->SlideshowWid->widget(nextIndex);
 
-    // Create QGraphicsOpacityEffect object and set the opacity to 0
-    QGraphicsOpacityEffect* effect = new QGraphicsOpacityEffect(nextPage);
-    nextPage->setGraphicsEffect(effect);
-    effect->setOpacity(0.0);
-
-    // Create the animation and connect the finished() signal to the slot
-    QPropertyAnimation* animFadeOut = new QPropertyAnimation(ui->SlideshowWid->currentWidget()->graphicsEffect(), "opacity");
-    animFadeOut->setDuration(1000);
-    animFadeOut->setStartValue(1.0);
-    animFadeOut->setEndValue(0.0);
-
-    QPropertyAnimation* animFadeIn = new QPropertyAnimation(effect, "opacity");
-    animFadeIn->setDuration(1000);
-    animFadeIn->setStartValue(0.0);
-    animFadeIn->setEndValue(1.0);
-
-    connect(animFadeOut, &QPropertyAnimation::finished, this, [=]() {
-        ui->SlideshowWid->setCurrentIndex(nextIndex);
-        animFadeIn->start();
-    });
-
-    // Start the animations
-    animFadeOut->start();
-}
 
 

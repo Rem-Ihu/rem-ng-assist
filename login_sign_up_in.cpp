@@ -1,6 +1,59 @@
 #include "login_sign_up_in.h"
 #include "ui_login_sign_up_in.h"
 #include <QMainWindow>
+#include <iostream>
+#include <fstream>
+#include <QApplication>
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
+#include <QQuickWindow>
+#include <QtQuick3D/qquick3d.h>
+#include <QCoreApplication>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QEventLoop>
+#include <QDebug>
+#include <QVariant>
+#include <QString>
+#include <QSocketDescriptor>
+#include <QObject>
+#include <QThread>
+#include <QTimer>
+#include <iostream>
+#include <QMutex>
+#include <string>
+#include <algorithm>
+#include <iomanip>
+#include <sstream>
+#include <QtConcurrent/qtconcurrentrun.h>
+#include <QtCore>
+#include <QtWidgets>
+#include <QUrl>
+#include <QUrlQuery>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QCoreApplication>
+#include <QSvgRenderer>
+#include <QStackedWidget>
+#include <iostream>
+#include <iomanip>
+#include <fstream>
+#include <QFile>
+#include <QMap>
+#include <QMutex>
+#include <QTextStream>
+
+namespace myNamespace{
+    extern float fin_ans,sec_ans,ok;
+    extern std::vector<QString> emails;
+    extern std::vector<QString> passwords;
+}
+
+namespace username_change{
+    std::vector<std::string> full_name;
+}
 
 login_sign_up_in::login_sign_up_in(QWidget *parent) :
     QMainWindow(parent),
@@ -15,7 +68,7 @@ login_sign_up_in::login_sign_up_in(QWidget *parent) :
 
     connect(ui->lineEdit_Password, &QLineEdit::returnPressed, ui->pushButton_Login, &QPushButton::click); //for the ENTER key when it's pressed while being selected on the linedit_password
     connect(ui->lineEdit_User_Name, &QLineEdit::returnPressed, ui->pushButton_Login, &QPushButton::click);
-
+    //hellos
 }
 
 login_sign_up_in::~login_sign_up_in()
@@ -23,12 +76,14 @@ login_sign_up_in::~login_sign_up_in()
     delete ui;
 }
 
-
+bool emailCorrect=false;
+bool passwordCorrect=false;
 void login_sign_up_in::on_pushButton_Login_clicked()
 {
 
     QString Username = ui->lineEdit_User_Name->text();
     QString Password = ui->lineEdit_Password->text();
+    int pass_check_number;
     //MANUAL OVERRIDE FOR DEBUG
     int i=0;
     for (const auto& email : myNamespace::emails) {
@@ -77,4 +132,3 @@ void login_sign_up_in::on_pushButton_Cancel_clicked()
         QApplication::quit();
     }
 }
-
