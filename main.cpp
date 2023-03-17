@@ -110,6 +110,18 @@ int main(int argc, char *argv[])
 
 
 
+                    for (auto iter1 = jsonObject1.constBegin(); iter1 != jsonObject1.constEnd(); ++iter1) {
+                        QString key1 = iter1.key();
+                        QString value1 = iter1.value().toString();
+                        myNamespace::passwords.push_back(value1);
+                    }
+
+                    // print the emails in the vector
+                    for (const auto& passwords : myNamespace::passwords) {
+                        std::cout << passwords.toStdString() << std::endl;
+                    }
+                reply1->deleteLater();
+            });
 
 
             QNetworkAccessManager manager2;
@@ -125,15 +137,6 @@ int main(int argc, char *argv[])
                     QJsonDocument jsonDoc2 = QJsonDocument::fromJson(data2);
                         QJsonObject jsonObject2 = jsonDoc2.object();
 
-                        for (auto iter2 = jsonObject2.constBegin(); iter2 != jsonObject2.constEnd(); ++iter2) {
-                            QString key2 = iter2.key();
-                            QString value2 = iter2.value().toString();
-                            std::string value_last = value2.toStdString();
-                            username_change::full_name.push_back(value_last);
-                        }
-
-                    reply2->deleteLater();
-                });
 
 
                         for (auto iter2 = jsonObject2.constBegin(); iter2 != jsonObject2.constEnd(); ++iter2) {
