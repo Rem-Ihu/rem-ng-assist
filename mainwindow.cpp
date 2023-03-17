@@ -12,6 +12,7 @@
 #include <QGraphicsProxyWidget>
 #include <QGraphicsView>
 #include <QGraphicsScene>
+#include <sstream>
 #include <QSvgRenderer>
 #include <QPixmap>
 #include <QPainter>
