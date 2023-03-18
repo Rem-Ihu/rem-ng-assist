@@ -10,6 +10,7 @@
 #include <QPixmap>
 #include <QPainter>
 #include <QTimer>
+#include <sstream>
 
 namespace myNamespace{
     extern float fin_ans,sec_ans,ok;
