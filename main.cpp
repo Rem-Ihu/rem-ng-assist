@@ -46,6 +46,7 @@
 //hello_test
 
 
+
 namespace myNamespace{
     float fin_ans,sec_ans;
     float ok;
@@ -59,7 +60,6 @@ namespace username_change{
 
 int main(int argc, char *argv[])
 {
-
 
     QApplication app(argc, argv); //creates the application
 
@@ -275,3 +275,5 @@ int main(int argc, char *argv[])
 
 
 */
+
+

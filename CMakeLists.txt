@@ -32,6 +32,7 @@ set(PROJECT_SOURCES
         login_sign_up_in.cpp
         login_sign_up_in.ui
         global_variables.h
+        font.qrc
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

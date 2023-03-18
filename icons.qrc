@@ -52,5 +52,9 @@
         <file>icons/Bike2.png</file>
         <file>icons/Bike3.png</file>
         <file>icons/Bike4.png</file>
+        <file>icons/display.png</file>
+        <file>icons/measure.png</file>
+        <file>icons/history.png</file>
+        <file>icons/image.jpg</file>
     </qresource>
 </RCC>
