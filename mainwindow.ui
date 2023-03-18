@@ -4643,7 +4643,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <string notr="true">border:none;</string>
           </property>
           <property name="verticalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOn</enum>
+           <enum>Qt::ScrollBarAlwaysOff</enum>
           </property>
           <property name="horizontalScrollBarPolicy">
            <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -4655,7 +4655,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>-573</y>
+             <y>-698</y>
              <width>1286</width>
              <height>2415</height>
             </rect>
