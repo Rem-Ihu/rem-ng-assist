@@ -20,7 +20,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void chartCreationSetup(int parses, std::vector<std::string> preferences_split, std::vector<QFrame*> frameArray);
-
+    void on_pushButtonSettings_clicked();
 
 private slots:
 //    void on_pushButtonRTG_9_released();
@@ -56,7 +56,7 @@ private slots:
 
 //    void on_pushButtonOthers_clicked();
 
-//    void on_pushButtonSettings_clicked();
+
 
     void create_chart(std::vector<QFrame*> frameArray, int parses);
 

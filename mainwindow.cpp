@@ -1021,20 +1021,6 @@ void MainWindow::on_tabChartWidget_tabCloseRequested(int index)
 }
 
 
-
-void MainWindow::on_pushButtonErrorPopUp_clicked()
-{
-    QMessageBox messageBox;
-    messageBox.setText("ERROR");
-    messageBox.setIcon(QMessageBox::Critical);
-    messageBox.setStandardButtons(QMessageBox::Ok | QMessageBox::Cancel);
-    messageBox.setDefaultButton(QMessageBox::Ok);
-    messageBox.exec();
-}
-
-
-
-
 MainWindow::~MainWindow()
 {
     delete ui;
