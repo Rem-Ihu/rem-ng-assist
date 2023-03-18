@@ -20,9 +20,15 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+
+
+    // set font to bold, doesnt work to text browsers
+   //QFont font;
+    //font.setWeight(QFont::Bold);
+    // Set the default font for all widgets to be bold
+   //QApplication::setFont(font);
     ui->setupUi(this);
-
-
+    ui->resolutionslider->setValue(25);
     //AERO CHART SETUP
 
     QSplineSeries *series_bigOneChart = new QSplineSeries();//create the series for the aero chart
@@ -218,6 +224,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     QVBoxLayout *layout_bigOneChart = new QVBoxLayout(ui->area_chart);
     layout_bigOneChart->addWidget(chartView_areaChart);
+
 }
 
 MainWindow::~MainWindow()
@@ -262,19 +269,14 @@ void MainWindow::on_pushButtonSettings_clicked()
 }
 
 
-void MainWindow::on_pushButtonOthers_clicked()
+void MainWindow::on_pushButtonAboutUs_clicked()
 {
     ui->stackedWidget->setCurrentIndex(7);
 }
 
-void MainWindow::on_pushButtonAboutUs_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(8);
-}
-
 void MainWindow::on_pushButtonContact_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(9);
+    ui->stackedWidget->setCurrentIndex(8);
 }
 
 
@@ -375,4 +377,189 @@ void MainWindow::on_pushButtonErrorPopUp_clicked()
     messageBox.setDefaultButton(QMessageBox::Ok);
     messageBox.exec();
 }
+
+
+
+
+
+
+
+
+void MainWindow::on_displaybutton_clicked()
+{
+    ui->optionswidget->setCurrentIndex(0);
+}
+
+
+void MainWindow::on_historybutton_clicked()
+{
+    ui->optionswidget->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_measurementsbutton_clicked()
+{
+    ui->optionswidget->setCurrentIndex(2);
+}
+
+
+void MainWindow::on_accountbutton_clicked()
+{
+    ui->optionswidget->setCurrentIndex(3);
+}
+
+void MainWindow::on_greenblack_clicked()
+{
+    ui->centralwidget->setStyleSheet("background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0.1 black, stop:0.95 #1E8449)");
+}
+
+
+void MainWindow::on_defaultblackblue_clicked()
+{
+ ui->centralwidget->setStyleSheet("background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0.1 black, stop:0.95 #0C2A6A)");
+}
+
+
+void MainWindow::on_bluepink_clicked()
+{
+    ui->centralwidget->setStyleSheet( "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0.1 black, stop:0.95 #17AEBF)");
+}
+
+
+void MainWindow::on_whiteblack_clicked()
+{
+     ui->centralwidget->setStyleSheet( "background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0.05 black, stop:0.95 white)");
+}
+
+
+void MainWindow::on_blackpurple_clicked()
+{
+  ui->centralwidget->setStyleSheet("background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0.1 black, stop:0.95 #8B00FF)");
+;
+}
+
+
+void MainWindow::on_blackred_clicked()
+{
+    ui->centralwidget->setStyleSheet(" background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0.1 black, stop:0.95 #8B0000)");
+}
+
+
+void MainWindow::on_resolutionslider_valueChanged(int value)
+{
+
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QWindow *window = windowHandle();
+    if (screen && window) {
+        int width = screen->size().width() * value  / 100;
+        int height = screen->size().height() * value  / 100;
+        QPoint pos = window->position();
+        window->setGeometry(pos.x(), pos.y(), width, height);
+
+        // Update the slider value
+        ui->resolutionslider->blockSignals(true);
+        ui->resolutionslider->setValue(value);
+        ui->resolutionslider->blockSignals(false);
+    }
+    }
+
+
+
+void MainWindow::on_chart1buttonhistory_clicked()
+{
+     ui->historystacked->setCurrentIndex(0);
+}
+
+
+void MainWindow::on_chart2buttonhistory_clicked()
+{
+    ui->historystacked->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_chart3buttonhistory_clicked()
+{
+    ui->historystacked->setCurrentIndex(2);
+}
+
+
+void MainWindow::on_chart4buttonhistory_clicked()
+{
+    ui->historystacked->setCurrentIndex(3);
+}
+
+
+void MainWindow::on_chart5buttonhistory_clicked()
+{
+    ui->historystacked->setCurrentIndex(4);
+}
+
+
+void MainWindow::on_chart6buttonhistory_clicked()
+{
+    ui->historystacked->setCurrentIndex(5);
+}
+
+
+void MainWindow::on_chart7buttonhistory_clicked()
+{
+    ui->historystacked->setCurrentIndex(6);
+}
+
+void MainWindow::on_IconButton_clicked()
+{
+    {
+        // Show a file dialog to select a new icon file
+        QString fileName = QFileDialog::getOpenFileName(this, tr("Open Image"), "", tr("Images (*.png *.xpm *.jpg)"));
+
+        if (!fileName.isEmpty())
+        {
+            // Set the style sheet of the button to change its icon to the selected image
+            QString styleSheet = QString("QPushButton#IconButton { border-image: url(%1); }").arg(fileName);
+            ui->IconButton->setStyleSheet(styleSheet);
+
+            // Update the icon of the button to reflect the selected image
+           ui->IconButton->setIcon(QIcon(fileName));
+        }
+
+    }
+}
+
+
+
+void MainWindow::on_password_button_clicked()
+{
+     ui->accountstack->setCurrentIndex(1);
+}
+
+
+void MainWindow::on_username_button_clicked()
+{
+         ui->accountstack->setCurrentIndex(2);
+}
+
+
+void MainWindow::on_go_back_user_clicked()
+{
+    ui->accountstack->setCurrentIndex(0);
+}
+
+
+void MainWindow::on_go_back_passw_clicked()
+{
+    ui->accountstack->setCurrentIndex(0);
+}
+
+
+void MainWindow::on_color_change_button_clicked()
+{
+    QColor color = QColorDialog::getColor();
+        if (color.isValid())
+        {
+            QString styleSheet = QString("background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0.1 black, stop:0.95 %1) }").arg(color.name());
+            ui->centralwidget->setStyleSheet(styleSheet);
+        }
+   }
+
+
 

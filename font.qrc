@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Mulish.ttf</file>
+    </qresource>
+</RCC>

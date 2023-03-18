@@ -1,8 +1,10 @@
 #include "databasehandler1.h"
 #include "login_sign_up_in.h"
 #include "mainwindow.h"
+
 //end of file and headers (#include)
 //hello_test
+
 
 
 namespace myNamespace{
@@ -14,8 +16,7 @@ namespace myNamespace{
 int main(int argc, char *argv[])
 {
 
-
-    QApplication app(argc, argv); //creates the application
+    QApplication app(argc, argv); //creates the application    
     login_sign_up_in loginWindow;
        loginWindow.setWindowModality(Qt::ApplicationModal);
        loginWindow.show();
@@ -178,3 +179,5 @@ int main(int argc, char *argv[])
 
 
 */
+
+
