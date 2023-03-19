@@ -398,7 +398,7 @@ border-radius:2px;
 color:black;</string>
     </property>
     <property name="text">
-     <string>Request buisness acount</string>
+     <string>Request busisness account</string>
     </property>
     <property name="icon">
      <iconset>
@@ -453,7 +453,7 @@ border-radius:2px;
 color:black;</string>
     </property>
     <property name="text">
-     <string>Request proffesional account</string>
+     <string>Request professional account</string>
     </property>
     <property name="icon">
      <iconset>
