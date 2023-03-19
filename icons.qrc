@@ -56,5 +56,6 @@
         <file>icons/measure.png</file>
         <file>icons/history.png</file>
         <file>icons/image.jpg</file>
+        <file>icons/left_arrow_white.png</file>
     </qresource>
 </RCC>

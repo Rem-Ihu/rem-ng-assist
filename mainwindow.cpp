@@ -43,6 +43,7 @@ int last_counted_frame =0;
 std::vector<double> Pasxa;
 #include <sstream>
 
+
 namespace myNamespace{
     extern float fin_ans,sec_ans,ok;
 }
@@ -1056,12 +1057,10 @@ void MainWindow::on_pushButtonMerch_clicked()
     ui->stackedWidget->setCurrentIndex(5);
 }
 
-
-//void MainWindow::on_pushButtonSettings_clicked()
-//{
-//    ui->stackedWidget->setCurrentIndex(6);
-//}
-
+void MainWindow::on_pushButtonSettings_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(6);
+}
 
 void MainWindow::on_pushButtonAboutUs_clicked()
 {

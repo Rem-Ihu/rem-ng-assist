@@ -20,7 +20,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void chartCreationSetup(int parses, std::vector<std::string> preferences_split, std::vector<QFrame*> frameArray);
-    void on_pushButtonSettings_clicked();
 
 private slots:
 //    void on_pushButtonRTG_9_released();
@@ -40,7 +39,7 @@ private slots:
 
     void on_pushButtonMerch_clicked();
 
-//    void on_pushButtonSettings_clicked();
+    void on_pushButtonSettings_clicked();
 
     void on_pushButtonHome_clicked();
 
@@ -53,8 +52,6 @@ private slots:
     void on_pushButtonContact_clicked();
 
     void on_pushButtonErrorPopUp_clicked();
-
-//    void on_pushButtonOthers_clicked();
 
 
 
