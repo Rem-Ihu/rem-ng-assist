@@ -45,7 +45,7 @@
      <string notr="true">background-color: rgba(255, 0, 0, 0);
 border:none;
 font: 12pt &quot;Segoe UI&quot;;
-
+color:grey;
 </string>
     </property>
     <property name="frame">
@@ -73,7 +73,8 @@ font: 12pt &quot;Segoe UI&quot;;
     <property name="styleSheet">
      <string notr="true">background-color: rgba(255, 0, 0, 0);
 font: 12pt &quot;Segoe UI&quot;;
-border:none;</string>
+border:none;
+color:grey;</string>
     </property>
     <property name="inputMask">
      <string/>
@@ -98,6 +99,7 @@ border:none;</string>
      <string notr="true">border: 1px solid black;
 border-radius:2px;
 background-color: #ffffff;
+color:black;
 
 </string>
     </property>
@@ -268,60 +270,11 @@ color: rgb(204, 204, 204);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 700 8pt &quot;Segoe UI&quot;;</string>
+     <string notr="true">font: 700 8pt &quot;Segoe UI&quot;;
+color:black;</string>
     </property>
     <property name="text">
      <string>OR</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>91</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="minimumSize">
-     <size>
-      <width>50</width>
-      <height>50</height>
-     </size>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="icon">
-     <iconset>
-      <normaloff>:/icons/logo_icon_login_page.png</normaloff>:/icons/logo_icon_login_page.png</iconset>
-    </property>
-    <property name="iconSize">
-     <size>
-      <width>60</width>
-      <height>60</height>
-     </size>
-    </property>
-    <property name="checkable">
-     <bool>false</bool>
-    </property>
-    <property name="checked">
-     <bool>false</bool>
-    </property>
-    <property name="autoRepeat">
-     <bool>true</bool>
-    </property>
-    <property name="autoExclusive">
-     <bool>true</bool>
-    </property>
-    <property name="autoDefault">
-     <bool>false</bool>
-    </property>
-    <property name="default">
-     <bool>false</bool>
-    </property>
-    <property name="flat">
-     <bool>true</bool>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_2">
@@ -472,6 +425,60 @@ color:black;</string>
      <bool>true</bool>
     </property>
    </widget>
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>100</y>
+      <width>391</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>50</width>
+      <height>50</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(129, 129, 129);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="icons.qrc">
+      <normaloff>:/icons/team_logo_blackandwhite.png</normaloff>:/icons/team_logo_blackandwhite.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>400</width>
+      <height>400</height>
+     </size>
+    </property>
+    <property name="checkable">
+     <bool>false</bool>
+    </property>
+    <property name="checked">
+     <bool>false</bool>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoExclusive">
+     <bool>true</bool>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>pushButton</zorder>
    <zorder>line1</zorder>
    <zorder>line2</zorder>
    <zorder>lineEdit_Password</zorder>
@@ -483,13 +490,14 @@ color:black;</string>
    <zorder>line2_2</zorder>
    <zorder>line2_3</zorder>
    <zorder>label</zorder>
-   <zorder>pushButton</zorder>
    <zorder>pushButton_2</zorder>
    <zorder>pushButton_3</zorder>
    <zorder>pushButton_4</zorder>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="icons.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>lineEdit_Password</sender>

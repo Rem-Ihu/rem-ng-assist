@@ -7,7 +7,6 @@
 #include <QLineSeries>
 
 
-
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
@@ -109,6 +108,8 @@ private slots:
     void on_color_change_button_clicked();
 
     void on_greenblack_clicked();
+
+    void on_pushButtonLogOut_clicked();
 
 private:
     Ui::MainWindow *ui;

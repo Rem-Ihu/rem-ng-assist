@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+//#include "login_sign_up_in.h"
 #include "./ui_mainwindow.h"
 #include "qregularexpression.h"
 #include <QJSEngine>
@@ -1275,4 +1276,10 @@ void MainWindow::on_color_change_button_clicked()
    }
 
 
+
+
+void MainWindow::on_pushButtonLogOut_clicked()
+{
+
+}
 
