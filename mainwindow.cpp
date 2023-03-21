@@ -37,7 +37,6 @@
 
 
 int vector_counter_chart=0;
-
 bool flag_first_chart=false;
 std::vector<QFrame*> frameArray;
 int last_counted_frame =0;
@@ -52,6 +51,11 @@ namespace myNamespace{
 namespace myNamespace2{
     extern int number_of_frames;
 //    extern double* array;
+}
+
+namespace username_change{
+    extern int pass_check_number;
+    extern std::vector<std::string> full_name;
 }
 
 MainWindow::MainWindow(QWidget *parent)
@@ -73,9 +77,8 @@ MainWindow::MainWindow(QWidget *parent)
     series_bigOneChart->setName("Real Time Values");//set the name of the measurement
 
 
-
-
-
+    QString username = QString::fromStdString(username_change::full_name[username_change::pass_check_number]);
+    ui->username_label->setText(username);
 
 
     QChart *chart_bigOneChart = new QChart();//create the aero chart
@@ -84,7 +87,7 @@ MainWindow::MainWindow(QWidget *parent)
     chart_bigOneChart->setTitle("Real Time Chart"); // Set the chart title
     chart_bigOneChart->setTitleFont(titleFont); // Set the font of the chart title
     chart_bigOneChart->createDefaultAxes(); //create the axes
-    chart_bigOneChart->axes(Qt::Vertical).first()->setRange(-7, 12); //set the range of values of axis y
+    chart_bigOneChart->axes(Qt::Vertical).first()->setRange(-7, 130); //set the range of values of axis y
     chart_bigOneChart->setTitleBrush(QBrush(Qt::white));//customize the color of the title in the chart
     chart_bigOneChart->setBackgroundBrush(QBrush(Qt::transparent));//customize the color of the background in the chart
 
@@ -465,6 +468,7 @@ void MainWindow::on_addTabNameButton_clicked()
         QVBoxLayout *layout = new QVBoxLayout(frameArray[frameArray.size()-1]);
         layout->addWidget(chartView);
 
+
         // Create a label for showing the x and y axis value
         QLabel *label = new QLabel(chartView);
         label->setStyleSheet("QLabel { background-color: #22222; color: white; border: 1px solid white; border-radius: 2px; font-weight: bold; }"); // modify the style sheet to make the labels bold
@@ -492,6 +496,8 @@ void MainWindow::on_addTabNameButton_clicked()
                 label->setVisible(false);
             }
         });
+
+
 
 
 
