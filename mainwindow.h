@@ -33,11 +33,7 @@ private slots:
 
     void on_pushButtonCharts_clicked();
 
-    void on_pushButton3DBikeView_clicked();
-
     void on_pushButtonNews_clicked();
-
-    void on_pushButtonMerch_clicked();
 
     void on_pushButtonSettings_clicked();
 
@@ -109,6 +105,23 @@ private slots:
     void on_color_change_button_clicked();
 
     void on_greenblack_clicked();
+
+    void on_pushButtonLogOut_clicked();
+
+private slots:
+    void onReturnToLoginClicked();
+
+    void on_website_button_clicked();
+
+    void on_sponsors_button_clicked();
+
+    void on_facebook_button_clicked();
+
+    void on_instagram_button_clicked();
+
+    void on_tiktok_button_clicked();
+
+    void on_email_button_clicked();
 
 private:
     Ui::MainWindow *ui;

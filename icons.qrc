@@ -57,5 +57,6 @@
         <file>icons/history.png</file>
         <file>icons/image.jpg</file>
         <file>icons/left_arrow_white.png</file>
+        <file>icons/location_of_rem.png</file>
     </qresource>
 </RCC>

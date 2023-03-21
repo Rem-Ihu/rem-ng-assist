@@ -31,8 +31,11 @@
 #include <QtGui/QPainter>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QLabel>
-
-
+#include "login_sign_up_in.h"
+#include "ui_login_sign_up_in.h"
+#include <QMouseEvent>
+#include <QUrl>
+#include <QObject>
 
 
 int vector_counter_chart=0;
@@ -46,6 +49,7 @@ std::vector<double> Pasxa;
 
 namespace myNamespace{
     extern float fin_ans,sec_ans,ok;
+
 }
 
 namespace myNamespace2{
@@ -53,12 +57,16 @@ namespace myNamespace2{
 //    extern double* array;
 }
 
+
+
+
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 
 {
-
 
     // set font to bold, doesnt work to text browsers
    //QFont font;
@@ -72,8 +80,10 @@ MainWindow::MainWindow(QWidget *parent)
     series_bigOneChart->setName("Real Time Values");//set the name of the measurement
 
 
+ connect(ui->tributemainframe, SIGNAL(clicked()), this, SLOT(openUrl()));
 
 
+\
 
 
 
@@ -1040,36 +1050,24 @@ void MainWindow::on_pushButtonCharts_clicked()
 }
 
 
-void MainWindow::on_pushButton3DBikeView_clicked()
+void MainWindow::on_pushButtonNews_clicked()
 {
     ui->stackedWidget->setCurrentIndex(3);
 }
 
-
-void MainWindow::on_pushButtonNews_clicked()
+void MainWindow::on_pushButtonSettings_clicked()
 {
     ui->stackedWidget->setCurrentIndex(4);
 }
 
-
-void MainWindow::on_pushButtonMerch_clicked()
+void MainWindow::on_pushButtonAboutUs_clicked()
 {
     ui->stackedWidget->setCurrentIndex(5);
 }
 
-void MainWindow::on_pushButtonSettings_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(6);
-}
-
-void MainWindow::on_pushButtonAboutUs_clicked()
-{
-    ui->stackedWidget->setCurrentIndex(7);
-}
-
 void MainWindow::on_pushButtonContact_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(8);
+    ui->stackedWidget->setCurrentIndex(6);
 }
 
 
@@ -1275,4 +1273,62 @@ void MainWindow::on_color_change_button_clicked()
    }
 
 
+
+
+void MainWindow::on_pushButtonLogOut_clicked()
+{
+    onReturnToLoginClicked();
+}
+
+void MainWindow::onReturnToLoginClicked()
+{
+    close();
+
+}
+
+
+
+void MainWindow::on_website_button_clicked()
+{
+    QUrl url("https://remihu.eu/");
+    QDesktopServices::openUrl(url);
+
+}
+
+\
+
+void MainWindow::on_sponsors_button_clicked()
+{
+    QUrl url("https://remihu.eu/sponsors/2021-23/");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_facebook_button_clicked()
+{
+    QUrl url("https://www.facebook.com/ridethethunder");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_instagram_button_clicked()
+{
+    QUrl url("https://www.instagram.com/rem.ihu/");
+    QDesktopServices::openUrl(url);
+
+}
+
+
+void MainWindow::on_tiktok_button_clicked()
+{
+    QUrl url("https://www.tiktok.com/@rem.ihu?_t=8apyi27wnn4&_r=1");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_email_button_clicked()
+{
+    QUrl url("mailto:team@remihu.eu");
+    QDesktopServices::openUrl(url);
+}
 
