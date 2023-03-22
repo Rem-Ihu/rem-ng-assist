@@ -1160,7 +1160,7 @@ padding-left:17px;
 padding: 0px;</string>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
@@ -2028,7 +2028,7 @@ padding-left:20px;
            <enum>Qt::ScrollBarAlwaysOff</enum>
           </property>
           <property name="horizontalScrollBarPolicy">
-           <enum>Qt::ScrollBarAlwaysOn</enum>
+           <enum>Qt::ScrollBarAlwaysOff</enum>
           </property>
           <property name="widgetResizable">
            <bool>true</bool>
@@ -2036,10 +2036,10 @@ padding-left:20px;
           <widget class="QWidget" name="scrollAreaWidgetContents">
            <property name="geometry">
             <rect>
-             <x>0</x>
+             <x>-2332</x>
              <y>0</y>
              <width>3504</width>
-             <height>713</height>
+             <height>728</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6023,7 +6023,7 @@ border:none;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1166</width>
+             <width>1156</width>
              <height>2229</height>
             </rect>
            </property>
@@ -6437,8 +6437,8 @@ border:none;</string>
            <property name="geometry">
             <rect>
              <x>0</x>
-             <y>-944</y>
-             <width>1166</width>
+             <y>0</y>
+             <width>1020</width>
              <height>1672</height>
             </rect>
            </property>
