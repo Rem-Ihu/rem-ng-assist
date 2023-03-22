@@ -450,13 +450,6 @@ void MainWindow::on_pushButtonMerch_clicked()
     ui->stackedWidget->setCurrentIndex(5);
 }
 
-
-//void MainWindow::on_pushButtonSettings_clicked()
-//{
-//    ui->stackedWidget->setCurrentIndex(6);
-//}
-
-
 void MainWindow::on_pushButtonOthers_clicked()
 {
     ui->stackedWidget->setCurrentIndex(7);
