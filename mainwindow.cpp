@@ -1249,14 +1249,16 @@ void MainWindow::on_IconButton_clicked()
 
 void MainWindow::on_password_button_clicked()
 {
-     ui->accountstack->setCurrentIndex(1);
+    QUrl url("mailto:team@remihu.eu?Body=Greetings%20REM%20team%0AI%27d%20like%20to%20request%20a%20password%20change%20in%20the%20official%20REM%20app.%0AThanks%20in%20advance.");
+    QDesktopServices::openUrl(url);
 }
 
 
 void MainWindow::on_username_button_clicked()
 {
-         ui->accountstack->setCurrentIndex(2);
-}
+    QUrl url("mailto:team@remihu.eu?Body=Greetings%20REM%20team%0AI%27d%20like%20to%20request%20a%20username%20change%20in%20the%20official%20REM%20app.%0AThanks%20in%20advance.");
+    QDesktopServices::openUrl(url);
+        }
 
 
 void MainWindow::on_go_back_user_clicked()
@@ -1287,5 +1289,133 @@ void MainWindow::on_color_change_button_clicked()
 void MainWindow::on_pushButtonLogOut_clicked()
 {
 
+}
+
+
+void MainWindow::on_web_button_clicked()
+{
+
+        QUrl url("https://remihu.eu/");
+        QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_sponsors_button_clicked()
+{
+    QUrl url("https://remihu.eu/sponsors/2021-23/");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_email_button_clicked()
+{
+    QUrl url("mailto:team@remihu.eu");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_map2_clicked()
+{
+    QUrl url("https://www.google.com/maps/place/%CE%94%CE%B9%CE%B5%CE%B8%CE%BD%CE%AD%CF%82+%CE%A0%CE%B1%CE%BD%CE%B5%CF%80%CE%B9%CF%83%CF%84%CE%AE%CE%BC%CE%B9%CE%BF+%CF%84%CE%B7%CF%82+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%BF%CF%82+%CF%80%CE%B1%CE%BD%CE%B5%CF%80%CE%B9%CF%83%CF%84%CE%B7%CE%BC%CE%B9%CE%BF%CF%8D%CF%80%CE%BF%CE%BB%CE%B7+%CE%A3%CE%B5%CF%81%CF%81%CF%8E%CE%BD/@41.0751444,23.5484963,16.48z/data=!4m10!1m2!2m1!1sdipae+serres!3m6!1s0x14a9718e43956661:0x3c635d9f4c5c8a1a!8m2!3d41.0747983!4d23.5537024!15sCgxkaXBhZSBzZXJyZXNaDiIMZGlwYWUgc2VycmVzkgERcHVibGljX3VuaXZlcnNpdHngAQA!16s%2Fm%2F0qsc8x5");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_map1_clicked()
+{
+    QUrl url("https://www.google.com/maps/place/%CE%94%CE%B9%CE%B5%CE%B8%CE%BD%CE%AD%CF%82+%CE%A0%CE%B1%CE%BD%CE%B5%CF%80%CE%B9%CF%83%CF%84%CE%AE%CE%BC%CE%B9%CE%BF+%CF%84%CE%B7%CF%82+%CE%95%CE%BB%CE%BB%CE%AC%CE%B4%CE%BF%CF%82+%CF%80%CE%B1%CE%BD%CE%B5%CF%80%CE%B9%CF%83%CF%84%CE%B7%CE%BC%CE%B9%CE%BF%CF%8D%CF%80%CE%BF%CE%BB%CE%B7+%CE%A3%CE%B5%CF%81%CF%81%CF%8E%CE%BD/@41.0751444,23.5484963,16.48z/data=!4m10!1m2!2m1!1sdipae+serres!3m6!1s0x14a9718e43956661:0x3c635d9f4c5c8a1a!8m2!3d41.0747983!4d23.5537024!15sCgxkaXBhZSBzZXJyZXNaDiIMZGlwYWUgc2VycmVzkgERcHVibGljX3VuaXZlcnNpdHngAQA!16s%2Fm%2F0qsc8x5");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_facebook_button_clicked()
+{
+    QUrl url("https://www.facebook.com/ridethethunder");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_insta_button_clicked()
+{
+    QUrl url("https://www.instagram.com/rem.ihu/");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_tiktok_button_clicked()
+{
+    QUrl url("https://www.tiktok.com/@rem.ihu?_t=8apyi27wnn4&_r=1");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_tribute_link_clicked()
+{
+    QUrl url("https://remihu.eu/02-11-2022_a-tribute-to-our-sponsors/");
+    QDesktopServices::openUrl(url);
+}
+
+
+
+void MainWindow::on_bmwxihu_link_clicked()
+{
+    QUrl url("https://remihu.eu/07-11-2022_rem-ihu-x-bmw-motorrad-hellas/");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_abbxihu_link_clicked()
+{
+    QUrl url("https://remihu.eu/16-11-2022_rem-ihu-x-abb/");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_remxsp_clicked()
+{
+    QUrl url("https://remihu.eu/25-11-2022_rem-ihu-x-sp-motorsports/");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_remxtypo_clicked()
+{
+    QUrl url("https://remihu.eu/23-11-2022_rem-ihu-x-typographic/");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_bmu_link_clicked()
+{
+    QUrl url("https://remihu.eu/24-10-2022_bmu-championship/");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_challenge_link_clicked()
+{
+    QUrl url("https://remihu.eu/31-03-2022_pressentation-challenge-of-march-2022/");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_presentation_link_clicked()
+{
+    QUrl url("https://remihu.eu/29-05-2022_presentation-with-bmw-motorrad-hellas/");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_serres_racing_link_clicked()
+{
+    QUrl url("https://remihu.eu/23-06-2022_support-from-serres-racing-circuit/");
+    QDesktopServices::openUrl(url);
+}
+
+
+void MainWindow::on_adaylink_clicked()
+{
+    QUrl url("https://remihu.eu/05-06-2022_a-day-to-be-remembered/");
+    QDesktopServices::openUrl(url);
 }
 

@@ -111,6 +111,42 @@ private slots:
 
     void on_pushButtonLogOut_clicked();
 
+    void on_web_button_clicked();
+
+    void on_sponsors_button_clicked();
+
+    void on_email_button_clicked();
+
+    void on_map2_clicked();
+
+    void on_map1_clicked();
+
+    void on_facebook_button_clicked();
+
+    void on_insta_button_clicked();
+
+    void on_tiktok_button_clicked();
+
+    void on_tribute_link_clicked();
+
+    void on_bmwxihu_link_clicked();
+
+    void on_abbxihu_link_clicked();
+
+    void on_remxsp_clicked();
+
+    void on_remxtypo_clicked();
+
+    void on_bmu_link_clicked();
+
+    void on_challenge_link_clicked();
+
+    void on_presentation_link_clicked();
+
+    void on_serres_racing_link_clicked();
+
+    void on_adaylink_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTabWidget *tabWidget;
