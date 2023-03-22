@@ -38,6 +38,14 @@
       <height>24</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
@@ -70,6 +78,14 @@ color:grey;
       <height>24</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>12</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgba(255, 0, 0, 0);
 font: 12pt &quot;Segoe UI&quot;;
@@ -86,11 +102,22 @@ color:grey;</string>
    <widget class="QPushButton" name="pushButton_Login">
     <property name="geometry">
      <rect>
-      <x>72</x>
+      <x>89</x>
       <y>240</y>
-      <width>251</width>
+      <width>220</width>
       <height>31</height>
      </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>220</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+     </font>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
@@ -137,6 +164,11 @@ color:black;
       <height>24</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">color:black;</string>
     </property>
@@ -165,6 +197,14 @@ color:black;
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>7</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgba(255, 0, 0, 0);
 font: 7pt &quot;Segoe UI&quot;;
@@ -182,6 +222,14 @@ color: rgb(190, 190, 190);</string>
       <width>161</width>
       <height>16</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>7</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgba(255, 0, 0, 0);
@@ -269,6 +317,14 @@ color: rgb(204, 204, 204);</string>
       <height>16</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>8</pointsize>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">font: 700 8pt &quot;Segoe UI&quot;;
 color:black;</string>
@@ -291,6 +347,12 @@ color:black;</string>
       <width>220</width>
       <height>16777215</height>
      </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+      <pointsize>14</pointsize>
+     </font>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
@@ -341,6 +403,12 @@ color:black;</string>
       <width>220</width>
       <height>16777215</height>
      </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+      <pointsize>14</pointsize>
+     </font>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
@@ -396,6 +464,12 @@ color:black;</string>
       <width>220</width>
       <height>16777215</height>
      </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>Avenir</family>
+      <pointsize>14</pointsize>
+     </font>
     </property>
     <property name="cursor">
      <cursorShape>PointingHandCursor</cursorShape>
@@ -463,10 +537,10 @@ color:black;</string>
      <bool>false</bool>
     </property>
     <property name="autoRepeat">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="autoExclusive">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="autoDefault">
      <bool>false</bool>

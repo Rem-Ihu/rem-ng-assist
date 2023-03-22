@@ -16,6 +16,8 @@
 #include <sstream>
 #include <QSvgRenderer>
 #include <QPixmap>
+#include <QCalendarWidget>
+#include <QVBoxLayout>
 #include <QPainter>
 #include <QTimer>
 #include <QFont>
@@ -65,6 +67,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
 
 
+
+
     // set font to bold, doesnt work to text browsers
    //QFont font;
     //font.setWeight(QFont::Bold);
@@ -72,7 +76,135 @@ MainWindow::MainWindow(QWidget *parent)
    //QApplication::setFont(font);
     ui->setupUi(this);
     ui->resolutionslider->setValue(25);
-    //AERO CHART SETUP
+
+
+
+
+    QCalendarWidget *calendar = new QCalendarWidget(this);
+
+    // Set the text format for the current date with the text "My Text"
+    QTextCharFormat format1212;
+    format1212.setForeground(Qt::red);
+    calendar->setDateTextFormat(QDate::currentDate(), format1212);
+
+    // Define date and color array
+    QDate dates[] = { QDate(2023, 3, 3), QDate(2023, 3, 15), QDate(2023, 3, 28), QDate(2023, 3, 31), QDate(2023, 10, 2), QDate(2023, 10, 2), QDate(2023, 6, 9), QDate(2023, 5, 1)};
+    QColor colors[] = { QColor(48, 172, 255), QColor(255, 125, 33), QColor(161, 66, 255), QColor(152, 8, 8), QColor(12, 207, 100) };
+
+    // Loop over dates and set text format for each one
+    for (int i = 0; i < 5; i++) {
+        QTextCharFormat format1;
+        format1.setBackground(QBrush(colors[i]));
+        calendar->setDateTextFormat(dates[i], format1);
+    }
+
+    // Set stylesheet to remove arrows and make the month and year background transparent
+    calendar->setStyleSheet("QCalendarWidget QAbstractItemView {"
+                            "selection-background-color: palette(highlight);"
+                            "selection-color: palette(highlighted-text);"
+                            "background-color: transparent; }"
+                            "QCalendarWidget QWidget {"
+                            "background-color: transparent; }"
+                            "QCalendarWidget QToolButton {"
+                            "background-color: transparent; }"
+                            "QCalendarWidget QToolButton#qt_calendar_prevmonth {"
+                            "icon-size: 0px; }"
+                            "QCalendarWidget QToolButton#qt_calendar_nextmonth {"
+                            "icon-size: 0px; }");
+
+    // Add calendar widget to layout
+    QVBoxLayout *layout = new QVBoxLayout(ui->frameCalendar);
+    layout->addWidget(calendar);
+    ui->frameCalendar->setLayout(layout);
+
+
+
+
+
+
+
+
+
+
+    class RadialThermometerProgressBar : public QProgressBar {
+    public:
+        RadialThermometerProgressBar(QWidget* parent = nullptr) : QProgressBar(parent) {
+            setFixedSize(190, 190);
+        }
+
+    protected:
+        void paintEvent(QPaintEvent* event) override {
+            Q_UNUSED(event);
+            QPainter painter(this);
+            painter.setRenderHint(QPainter::Antialiasing, true);
+
+            QRectF rect = this->rect().adjusted(20, 20, -20, -30);
+            int minSize = qMin(rect.width(), rect.height());
+            int padding = qMax(minSize / 50, 4);
+            int fontSize = qMax(minSize / 40, 20);
+
+            QFont font;
+            font.setPointSize(fontSize);
+            painter.setFont(font);
+
+            // Draw the background circle
+            painter.setPen(QPen(QBrush(QColor(Qt::transparent)), padding));
+            painter.setBrush(Qt::NoBrush);
+            painter.drawEllipse(rect);
+
+            // Draw the progress arc
+            painter.setPen(QPen(QBrush(Qt::cyan), padding * 2));
+            painter.setBrush(Qt::NoBrush);
+            int value = this->value();
+            if (value > minimum() && value < maximum()) {
+                int angle = (int)((value - minimum()) * 180.0 / (maximum() - minimum()));
+                painter.drawArc(rect, 180 * 16, -angle * 16);
+            }
+
+            // Draw the value text
+            painter.setPen(QPen(QBrush(Qt::white), padding));
+            painter.setBrush(Qt::NoBrush);
+            QString valueStr = QString::number(value);
+            QRect valueRect = painter.fontMetrics().boundingRect(valueStr);
+            painter.drawText(rect.center() - valueRect.center(), valueStr);
+        }
+    };
+
+    // Create progress bars
+    RadialThermometerProgressBar* gauge1 = new RadialThermometerProgressBar(ui->progressBarLeft);
+    RadialThermometerProgressBar* gauge2 = new RadialThermometerProgressBar(ui->progressBarMiddle);
+    RadialThermometerProgressBar* gauge3 = new RadialThermometerProgressBar(ui->progressBarRight);
+
+    // Set progress bar ranges and values
+    gauge1->setRange(0, 100);
+    gauge1->setValue(25);
+
+    gauge2->setRange(0, 100);
+    gauge2->setValue(50);
+
+    gauge3->setRange(0, 100);
+    gauge3->setValue(75);
+
+    ui->progressBarLeft->setLayout(new QVBoxLayout(ui->progressBarLeft));
+    ui->progressBarLeft->layout()->addWidget(gauge1);
+    ui->progressBarLeft->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+
+    ui->progressBarMiddle->setLayout(new QVBoxLayout(ui->progressBarMiddle));
+    ui->progressBarMiddle->layout()->addWidget(gauge2);
+    ui->progressBarMiddle->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+
+    ui->progressBarRight->setLayout(new QVBoxLayout(ui->progressBarRight));
+    ui->progressBarRight->layout()->addWidget(gauge3);
+    ui->progressBarRight->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding));
+
+
+    QTimer *timer_2 = new QTimer(this);
+        connect(timer_2, &QTimer::timeout, this, &MainWindow::advanceSlideshow);
+        timer_2->start(3500);
+
+
+
+    //REAL TIME CHART SETUP
     QSplineSeries *series_bigOneChart = new QSplineSeries();//create the series for the aero chart
     series_bigOneChart->setName("Real Time Values");//set the name of the measurement
 
@@ -238,6 +370,38 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 }
+
+
+void MainWindow::advanceSlideshow()
+{
+    int nextIndex = (ui->SlideshowWid->currentIndex() + 1) % ui->SlideshowWid->count();
+    QWidget* nextPage = ui->SlideshowWid->widget(nextIndex);
+
+    // Create QGraphicsOpacityEffect object and set the opacity to 0
+    QGraphicsOpacityEffect* effect = new QGraphicsOpacityEffect(nextPage);
+    nextPage->setGraphicsEffect(effect);
+    effect->setOpacity(0.0);
+
+    // Create the animation and connect the finished() signal to the slot
+    QPropertyAnimation* animFadeOut = new QPropertyAnimation(ui->SlideshowWid->currentWidget()->graphicsEffect(), "opacity");
+    animFadeOut->setDuration(1000);
+    animFadeOut->setStartValue(1.0);
+    animFadeOut->setEndValue(0.0);
+
+    QPropertyAnimation* animFadeIn = new QPropertyAnimation(effect, "opacity");
+    animFadeIn->setDuration(1000);
+    animFadeIn->setStartValue(0.0);
+    animFadeIn->setEndValue(1.0);
+
+    connect(animFadeOut, &QPropertyAnimation::finished, this, [=]() {
+        ui->SlideshowWid->setCurrentIndex(nextIndex);
+        animFadeIn->start();
+    });
+
+    // Start the animations
+    animFadeOut->start();
+}
+
 
 
 void MainWindow::create_chart(/*final_name, */std::vector<QFrame*> frameArray, int parses){

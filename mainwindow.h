@@ -27,6 +27,7 @@ private slots:
 
 //    void on_pushButtonHome_windowIconTextChanged(const QString &iconText);
 
+    void advanceSlideshow();
 
     void on_pushButtonRealTimeData_clicked();
 

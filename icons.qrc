@@ -60,5 +60,6 @@
         <file>icons/team_logo_resized.png</file>
         <file>icons/team_logo_resized-modified.png</file>
         <file>icons/team_logo_blackandwhite.png</file>
+        <file>icons/scroll_down.png</file>
     </qresource>
 </RCC>
