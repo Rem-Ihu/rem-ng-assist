@@ -25,6 +25,12 @@ private slots:
     void on_pushButton_Login_clicked();
     void on_pushButton_Cancel_clicked();
 
+    void on_pushButton_4_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
 private:
     Ui::login_sign_up_in *ui;
     MainWindow *mainwindow;

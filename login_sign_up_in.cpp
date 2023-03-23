@@ -134,3 +134,25 @@ void login_sign_up_in::on_pushButton_Cancel_clicked()
         QApplication::quit();
     }
 }
+
+void login_sign_up_in::on_pushButton_4_clicked()
+{
+
+    QUrl url("mailto:team@remihu.eu?Subject=Request%20professional%20account&Body=Greetings%20REM%20team%2C%0AI%20would%20like%20to%20formally%20request%20the%20creation%20of%20a%20professional%20account.");
+    QDesktopServices::openUrl(url);
+}
+
+
+void login_sign_up_in::on_pushButton_2_clicked()
+{
+    QUrl url("mailto:team@remihu.eu?Subject=Request%20guest%20account&Body=Greetings%20REM%20team%2C%0AI%20would%20like%20to%20formally%20request%20the%20creation%20of%20a%20guest%20account.");
+    QDesktopServices::openUrl(url);
+}
+
+
+void login_sign_up_in::on_pushButton_3_clicked()
+{
+    QUrl url("mailto:team@remihu.eu?Subject=Request%20business%20account&Body=Greetings%20REM%20team%2C%0AI%20would%20like%20to%20formally%20request%20the%20creation%20of%20a%20business%20account.");
+    QDesktopServices::openUrl(url);
+   }
+
