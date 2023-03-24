@@ -227,7 +227,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Create a QTimer object and set its interval to 500 milliseconds (0.5 seconds)
     QTimer *timer = new QTimer(this); //create a timer
-    timer->setInterval(80); //to 80 milliseconds
+    timer->setInterval(150); //to 80 milliseconds
 
     int x = 0;
 
