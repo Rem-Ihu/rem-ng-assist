@@ -46,7 +46,7 @@
 #include <QTextStream>
 
 namespace myNamespace{
-    extern float fin_ans,sec_ans,ok;
+    extern float first_realtime_answer,second_realtime_answer,ok;
     extern std::vector<QString> emails;
     extern std::vector<QString> passwords;
 }
@@ -62,14 +62,13 @@ login_sign_up_in::login_sign_up_in(QWidget *parent) :
     mainwindow(nullptr)
 {
     ui->setupUi(this);
-    // remove title bar and window buttons
+    // Remove title bar and window buttons
     setWindowFlags(Qt::FramelessWindowHint);
     ui->lineEdit_User_Name->setFocus();
     setTabOrder(ui->lineEdit_User_Name, ui->lineEdit_Password);
 
-    connect(ui->lineEdit_Password, &QLineEdit::returnPressed, ui->pushButton_Login, &QPushButton::click); //for the ENTER key when it's pressed while being selected on the linedit_password
+    connect(ui->lineEdit_Password, &QLineEdit::returnPressed, ui->pushButton_Login, &QPushButton::click); // For the ENTER key when it's pressed while being selected on the linedit_password
     connect(ui->lineEdit_User_Name, &QLineEdit::returnPressed, ui->pushButton_Login, &QPushButton::click);
-    //hellos
 }
 
 login_sign_up_in::~login_sign_up_in()
@@ -77,15 +76,16 @@ login_sign_up_in::~login_sign_up_in()
     delete ui;
 }
 
-bool emailCorrect=false;
+bool emailCorrect=false; // Initialize boolean variables to check if email and password are correct
 bool passwordCorrect=false;
-void login_sign_up_in::on_pushButton_Login_clicked()
+void login_sign_up_in::on_pushButton_Login_clicked() // Function called when the "Login" button is clicked
 {
 
-    QString Username = ui->lineEdit_User_Name->text();
+    QString Username = ui->lineEdit_User_Name->text(); // Get the username and password entered by the user
     QString Password = ui->lineEdit_Password->text();
     //MANUAL OVERRIDE FOR DEBUG
     int i=0;
+    // Check if the email entered by the user is correct
     for (const auto& email : myNamespace::emails) {
 
         std::string test = email.toStdString();
@@ -95,7 +95,7 @@ void login_sign_up_in::on_pushButton_Login_clicked()
         }
         i++;
     }
-    int k=0;
+    int k=0; // Check if the password entered by the user is correct
     for (const auto& password : myNamespace::passwords) {
 
         std::string test_password = password.toStdString();
@@ -110,17 +110,17 @@ void login_sign_up_in::on_pushButton_Login_clicked()
 
 
 
-        if(1){
-//    if(emailCorrect && passwordCorrect){
+        if(1){//<-------------------------------------------------
+//    if(emailCorrect && passwordCorrect){// Open the main window if the email and password are correct
     //if(Username == "jim123" && Password == "123"){
         if(!mainwindow){
             mainwindow = new MainWindow();
         }
         this->hide();
-        if(!mainwindow->isVisible()){ //preventing the main window from opening 2 times with the press of the ENTER key.
+        if(!mainwindow->isVisible()){ // Preventing the main window from opening 2 times with the press of the ENTER key.
             mainwindow->show();
         }
-    }else{
+    }else{ // Display an error message if the email and password are not correct
         QMessageBox::warning(this,"Jim", "Enter correct info.");
     }
 }
