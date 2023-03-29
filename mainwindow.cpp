@@ -43,6 +43,7 @@ bool flag_first_chart=false;
 std::vector<QFrame*> frameArray;
 int last_counted_frame =0;
 std::vector<double> Pasxa;
+std::vector<int> tries;
 #include <sstream>
 
 
