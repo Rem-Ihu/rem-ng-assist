@@ -1150,6 +1150,19 @@ padding-left:17px;
          </property>
         </widget>
        </item>
+       <item row="7" column="1">
+        <widget class="QPushButton" name="button3d">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">color:white;</string>
+         </property>
+         <property name="text">
+          <string>3d</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>
@@ -1207,8 +1220,8 @@ padding: 0px;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1189</width>
-             <height>2530</height>
+             <width>1488</width>
+             <height>2556</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_9">
@@ -1626,7 +1639,7 @@ border-radius:2px;</string>
                     <x>0</x>
                     <y>0</y>
                     <width>648</width>
-                    <height>648</height>
+                    <height>652</height>
                    </rect>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_58">
@@ -2953,8 +2966,8 @@ padding-left:20px;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>3448</width>
-             <height>734</height>
+             <width>3457</width>
+             <height>652</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -5840,8 +5853,8 @@ border-radius:2px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>84</width>
-                 <height>278</height>
+                 <width>88</width>
+                 <height>288</height>
                 </rect>
                </property>
                <layout class="QGridLayout" name="gridLayout_32">
@@ -7167,8 +7180,8 @@ border:none;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1176</width>
-             <height>2157</height>
+             <width>1151</width>
+             <height>2175</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_19">
@@ -7587,8 +7600,8 @@ border:none;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1176</width>
-             <height>1636</height>
+             <width>1164</width>
+             <height>1643</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_51">

@@ -148,6 +148,8 @@ private slots:
 
     void on_adaylink_clicked();
 
+    void on_button3d_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTabWidget *tabWidget;

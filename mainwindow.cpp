@@ -34,7 +34,7 @@
 #include <QtGui/QPainter>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QLabel>
-
+#include "ui_ui3d.h"
 
 
 
@@ -71,7 +71,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-
+    connect(ui->button3d, SIGNAL(clicked()), this, SLOT(onButton3dClicked()));
     QCalendarWidget *calendar = new QCalendarWidget(this); // Setting up the calendar
 
 
@@ -1482,3 +1482,16 @@ void MainWindow::on_adaylink_clicked()
 void MainWindow::create_chart(/*final_name, */std::vector<QFrame*> frameArray, int parses){
     qDebug() << "HEREEEEE VECTOR--->" << vector_counter_chart;
 }
+
+void MainWindow::on_button3d_clicked()
+{
+    // Create an instance of your second window class
+    QMainWindow* secondWindow = new QMainWindow();
+    // Load the UI from the ui3d file
+    Ui::ui3d ui3d;
+    ui3d.setupUi(secondWindow);
+    secondWindow->setWindowTitle("3DModel"); // Set the window title to desired name
+    // Show the second window
+    secondWindow->show();
+}
+
