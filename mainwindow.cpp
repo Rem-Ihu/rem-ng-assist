@@ -34,7 +34,9 @@
 #include <QtGui/QPainter>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QLabel>
-
+#include <QtWebEngineWidgets/QWebEngineView>
+#include <QtWidgets/QFrame>
+#include <QtMultimedia/QCamera>
 
 
 
@@ -68,6 +70,20 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->setupUi(this);
     ui->resolutionslider->setValue(25);
+
+
+    QFrame *VIDEO_frame = findChild<QFrame*>("realtimevideo");
+
+    VIDEO_frame->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    QVBoxLayout *VIDEO_layout = new QVBoxLayout(VIDEO_frame);
+
+    QWebEngineView *VIDEO_view = new QWebEngineView(VIDEO_frame);
+    VIDEO_view->setUrl(QUrl("http://127.0.0.1:5500/index.html")); //our url
+    VIDEO_view->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+    VIDEO_layout->addWidget(VIDEO_view);
+
 
 
 
