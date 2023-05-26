@@ -15,7 +15,6 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(Qt6 REQUIRED COMPONENTS Charts Core Gui)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Network)
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Quick Quick3D Widgets)
-find_package(Qt6 REQUIRED WebEngineWidgets)
 find_package(Qt6 REQUIRED Multimedia)
 
 
@@ -36,6 +35,9 @@ set(PROJECT_SOURCES
         login_sign_up_in.ui
         global_variables.h
         font.qrc
+        secdialog.cpp
+        secdialog.h
+        secdialog.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -66,7 +68,6 @@ target_link_libraries(REM PRIVATE Qt${QT_VERSION_MAJOR}::Svg)
 target_link_libraries(REM PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(REM PRIVATE Qt${QT_VERSION_MAJOR}::Charts)
 target_link_libraries(REM PRIVATE Qt${QT_VERSION_MAJOR}::Network)
-target_link_libraries(REM PRIVATE Qt${QT_VERSION_MAJOR}::WebEngineWidgets)
 #target_link_libraries(REM PRIVATE Qt${QT_VERSION_MAJOR}::Multimedia)
 
 

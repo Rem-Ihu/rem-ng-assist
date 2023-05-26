@@ -34,10 +34,11 @@
 #include <QtGui/QPainter>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QLabel>
-#include <QtWebEngineWidgets/QWebEngineView>
 #include <QtWidgets/QFrame>
 #include <QtMultimedia/QCamera>
-
+#include "secdialog.h"
+#include "ui_secdialog.h"
+#include <QDialog>
 
 
 int vector_counter_chart=0;
@@ -70,21 +71,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->setupUi(this);
     ui->resolutionslider->setValue(25);
-
-
-    QFrame *VIDEO_frame = findChild<QFrame*>("realtimevideo");
-
-    VIDEO_frame->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
-    QVBoxLayout *VIDEO_layout = new QVBoxLayout(VIDEO_frame);
-
-    QWebEngineView *VIDEO_view = new QWebEngineView(VIDEO_frame);
-    VIDEO_view->setUrl(QUrl("https://stream.remihu.eu/")); //our url
-    VIDEO_view->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-
-    VIDEO_layout->addWidget(VIDEO_view);
-
-
 
 
 
@@ -1498,3 +1484,15 @@ void MainWindow::on_adaylink_clicked()
 void MainWindow::create_chart(/*final_name, */std::vector<QFrame*> frameArray, int parses){
     qDebug() << "HEREEEEE VECTOR--->" << vector_counter_chart;
 }
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    secDialog secDialog;
+    secDialog.setModal(true);
+    secDialog.show();
+
+    QEventLoop loop;
+    connect(&secDialog, &::secDialog::close, &loop, &QEventLoop::quit);
+    loop.exec();
+}
+
