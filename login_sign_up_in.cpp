@@ -47,7 +47,7 @@
 
 namespace myNamespace{
     extern float first_realtime_answer,second_realtime_answer,ok;
-    extern std::vector<QString> emails;
+    std::vector<QString> emails;
     extern std::vector<QString> passwords;
 }
 
@@ -112,7 +112,7 @@ void login_sign_up_in::on_pushButton_Login_clicked() // Function called when the
 
         if(1){//<-------------------------------------------------
 //    if(emailCorrect && passwordCorrect){// Open the main window if the email and password are correct
-    //if(Username == "jim123" && Password == "123"){
+//    if(Username == "jim123" && Password == "123"){
         if(!mainwindow){
             mainwindow = new MainWindow();
         }

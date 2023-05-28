@@ -53,11 +53,9 @@ private slots:
 
     void on_pushButtonErrorPopUp_clicked();
 
-
-
     void create_chart(std::vector<QFrame*> frameArray, int parses);
 
-
+    void addLoadingScreen(bool finishLoading, QDialog *loadingDialog);
 
 
 

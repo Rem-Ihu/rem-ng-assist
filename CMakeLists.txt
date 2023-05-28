@@ -36,6 +36,8 @@ set(PROJECT_SOURCES
         login_sign_up_in.ui
         global_variables.h
         font.qrc
+        firebaseget.h
+        firebaseget.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
