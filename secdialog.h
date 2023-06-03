@@ -17,21 +17,15 @@ public:
     void setModal(bool modal); // function declaration
 private slots:
 
-    void on_cell_clicked();
-
-    void on_charge_clicked();
-
     void on_battery_clicked();
-
-    void on_energy_clicked();
-
-    void on_live_clicked();
-
-    void on_battery_error_clicked();
 
     void on_protec_error_clicked();
 
     void on_misc_button_clicked();
+
+    void on_live_2_clicked();
+
+    void on_pushButton_27_clicked();
 
 private:
     Ui::secDialog *ui;

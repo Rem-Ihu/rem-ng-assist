@@ -27,39 +27,19 @@ void secDialog::on_protec_error_clicked()
     ui->main_stacked->setCurrentIndex(2);
 }
 
-
-void secDialog::on_cell_clicked()
-{
-    ui->battery_stacked->setCurrentIndex(0);
-}
-
-
-void secDialog::on_charge_clicked()
-{
-        ui->battery_stacked->setCurrentIndex(1);
-}
-
-
-void secDialog::on_energy_clicked()
-{
-        ui->battery_stacked->setCurrentIndex(2);
-}
-
-
-void secDialog::on_live_clicked()
-{
-        ui->battery_stacked->setCurrentIndex(3);
-}
-
-
-void secDialog::on_battery_error_clicked()
-{
-        ui->battery_stacked->setCurrentIndex(4);
-}
-
-
 void secDialog::on_misc_button_clicked()
 {
         ui->main_stacked->setCurrentIndex(1);
+}
+
+void secDialog::on_live_2_clicked()
+{
+    ui->main_stacked->setCurrentIndex(4);
+}
+
+
+void secDialog::on_pushButton_27_clicked()
+{
+     ui->main_stacked->setCurrentIndex(3);
 }
 
