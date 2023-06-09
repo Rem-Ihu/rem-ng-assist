@@ -1,7 +1,6 @@
 #include "login_sign_up_in.h"
 #include "mainwindow.h"
 #include "firebaseget.h"
-#include "realtimedatastream.h"
 #include <iostream>
 #include <fstream>
 #include <QApplication>
