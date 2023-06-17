@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Installer>
+    <Name>Rem Engineer Assist</Name>
+    <Version>0.0.1</Version>
+    <Title>Rem Engineer Assist Installer</Title>
+    <Publisher>Rem Ihu</Publisher>
+    <StartMenuDir>Super App</StartMenuDir>
+    <TargetDir>@HomeDir@/.rem-ng-assist</TargetDir>
+</Installer>
