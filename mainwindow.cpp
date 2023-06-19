@@ -514,28 +514,56 @@ void MainWindow::on_addTabNameButton_clicked()
 
         dateOfChartContent.clear(); // Clears the elements in dateOfChartContent
 
+
+        QVector<QPointF> points2;
+        QLineSeries *series = new QLineSeries();
+        QLineSeries *series2 = new QLineSeries();
+        srand(time(NULL));
         for (int j = frontN; j < rearN; j++) {
-                points.append(QPointF(j + 0.5, DataRead[j]));
+//                points.append(QPointF(j + 0.5, DataRead[j]));
+                series->append(QPointF(j + 0.5, DataRead[j]));
+                series2->append(QPointF(j + 0.5, rand() % 21));
         }
+//                points2.append(QPointF(j + 0.5, DataRead[j] + 10));
+
 
         // Create a line series with the data points
-        QLineSeries *series = new QLineSeries();
-        series->append(points);
+
+//        series->append(points);
+//        series->append(points2);
         chart->addSeries(series);
+        chart->addSeries(series2);
 
         // Set up the X-axis with 0.5 increments
+        // Find the maximum y-value among both line series
+        qreal maxYValue = std::numeric_limits<qreal>::min();
+
+        // Iterate over the points in the first line series
+        for (const QPointF& point : series->pointsVector()) {
+            maxYValue = std::max(maxYValue, point.y());
+        }
+
+        // Iterate over the points in the second line series
+        for (const QPointF& point : series2->pointsVector()) {
+            maxYValue = std::max(maxYValue, point.y());
+        }
+
         QValueAxis *axisX1 = new QValueAxis();
         axisX1->setTickCount(10);
         axisX1->setLabelFormat("%.1f");
-        axisX1->setRange(0, N);
+        axisX1->setRange(0, N + 5);
         axisX1->setTickInterval(0.5);
         chart->addAxis(axisX1, Qt::AlignBottom);
         series->attachAxis(axisX1);
 
+        series2->attachAxis(axisX1);
+
         // Set up the Y-axis
         QValueAxis *axisY1 = new QValueAxis();
         chart->addAxis(axisY1, Qt::AlignLeft);
+        axisY1->setRange(-5, maxYValue + 5);
         series->attachAxis(axisY1);
+        series2->attachAxis(axisY1);
 
         // Create a chart view object and set the chart
         QChartView *chartView = new QChartView(chart);
@@ -554,7 +582,6 @@ void MainWindow::on_addTabNameButton_clicked()
         QVBoxLayout *layout = new QVBoxLayout(frameArray[frameArray.size()-1]);
         layout->addWidget(chartView);
 
-
         // Create a label for showing the x and y axis value
         QLabel *label = new QLabel(chartView);
         label->setStyleSheet("QLabel { background-color: #22222; color: white; border: 1px solid white; border-radius: 2px; font-weight: bold; }"); // modify the style sheet to make the labels bold
@@ -565,10 +592,31 @@ void MainWindow::on_addTabNameButton_clicked()
         // Set the pen of the line series to a thicker width
         QPen pen = series->pen();
         pen.setWidth(3);
+        pen.setColor(QColor(Qt::yellow));
         series->setPen(pen);
+
+        QPen pen2 = series->pen();
+        pen2.setWidth(3);
+        pen2.setColor(QColor(Qt::red));
+        series2->setPen(pen2);
 
 
         QObject::connect(series, &QLineSeries::hovered, [=](const QPointF &point, bool state) {  // Connect the hovered signal of the series to a custom slot
+            if (state) {
+
+                label->setVisible(true); // Show the label and update its text
+                label->setText(QString("X: %1\nY: %2").arg(point.x()).arg(point.y()));
+
+
+                QPoint mousePos = chartView->mapFromGlobal(QCursor::pos()); // Move the label to the current mouse position
+                label->move(mousePos.x() - label->width()/2, mousePos.y() - label->height() - 5); // Space out the label
+            } else {
+
+                label->setVisible(false); // Hide the label
+            }
+        });
+
+        QObject::connect(series2, &QLineSeries::hovered, [=](const QPointF &point, bool state) {  // Connect the hovered signal of the series to a custom slot
             if (state) {
 
                 label->setVisible(true); // Show the label and update its text
