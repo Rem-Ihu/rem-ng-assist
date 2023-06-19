@@ -40,6 +40,7 @@
 
 
 
+
 int vector_counter_chart=0;
 bool flag_first_chart=false;
 std::vector<QFrame*> frameArray;
@@ -334,6 +335,42 @@ MainWindow::MainWindow(QWidget *parent)
     realtime_layout->addWidget(pointLabel);
 }
 
+void MainWindow::addLoadingScreen(bool finishLoading, QDialog *loadingDialog){
+
+
+    int mainWidth = this->width();
+    int mainHeight = this->height();
+
+    // Create a loading dialog with a spinning animation
+
+    loadingDialog->setModal(true);
+    loadingDialog->setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
+    loadingDialog->setStyleSheet("background-color: rgb(0, 0, 0);");
+    loadingDialog->setWindowTitle("Loading");
+    loadingDialog->setFixedSize(mainWidth, mainHeight);
+
+    QMovie loadingMovie(":/icons/loading-5.gif");
+    QLabel loadingLabel(loadingDialog);
+    loadingLabel.setMovie(&loadingMovie);
+    loadingMovie.start();
+
+    QVBoxLayout loadingLayout(loadingDialog);
+    loadingLayout.addWidget(&loadingLabel, 0, Qt::AlignCenter);
+
+
+    int dialogX = (mainWidth - loadingDialog->width()) / 2; // Calculate the position of the loading dialog
+    int dialogY = (mainHeight - loadingDialog->height()) / 2;
+
+
+    loadingDialog->move(dialogX, dialogY); // Move the loading dialog to the center of the main window
+
+
+    setDisabled(true);  // Disable the main window
+
+
+
+}
+
 
 void MainWindow::advanceSlideshow()
 {
@@ -425,38 +462,14 @@ void MainWindow::on_addTabNameButton_clicked()
     flag_first_chart = true;
 
     if(parses == 1){
-        int mainWidth = this->width();
-        int mainHeight = this->height();
 
-        // Create a loading dialog with a spinning animation
+        bool finishLoading = false;
         QDialog loadingDialog(this);
-        loadingDialog.setModal(true);
-        loadingDialog.setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
-        loadingDialog.setStyleSheet("background-color: rgb(0, 0, 0);");
-        loadingDialog.setWindowTitle("Loading");
-        loadingDialog.setFixedSize(mainWidth, mainHeight);
-
-        QMovie loadingMovie(":/icons/loading-5.gif");
-        QLabel loadingLabel(&loadingDialog);
-        loadingLabel.setMovie(&loadingMovie);
-        loadingMovie.start();
-
-        QVBoxLayout loadingLayout(&loadingDialog);
-        loadingLayout.addWidget(&loadingLabel, 0, Qt::AlignCenter);
-
-
-        int dialogX = (mainWidth - loadingDialog.width()) / 2; // Calculate the position of the loading dialog
-        int dialogY = (mainHeight - loadingDialog.height()) / 2;
-
-
-        loadingDialog.move(dialogX, dialogY); // Move the loading dialog to the center of the main window
-
-
-        setDisabled(true);  // Disable the main window
-
-
+        addLoadingScreen(finishLoading, &loadingDialog);
         loadingDialog.show(); // Show the loading dialog
         QApplication::processEvents();
+
+
 
         layout->addWidget(frameArray[frameArray.size()-1], 0, 0); // Run the long-running code
         std::vector<double> DataRead = Firestore_Read_Data(preferences_split.at(parses+1).c_str()); // This line declares a vector of doubles named DataRead and initializes it with data retrieved from Firestore.
@@ -571,16 +584,8 @@ void MainWindow::on_addTabNameButton_clicked()
         });
 
 
-
-
-
-        // Hide the loading dialog and enable the main window
         loadingDialog.hide();
         setDisabled(false);
-
-
-
-
 
 
     }else if (parses == 2){
