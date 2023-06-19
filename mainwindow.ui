@@ -1160,7 +1160,7 @@ padding-left:17px;
 padding: 0px;</string>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
@@ -1208,7 +1208,7 @@ padding: 0px;</string>
              <x>0</x>
              <y>0</y>
              <width>1166</width>
-             <height>2606</height>
+             <height>2597</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_9">
@@ -1359,7 +1359,7 @@ border:none;</string>
                 <widget class="QLabel" name="label_17">
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                    <pointsize>22</pointsize>
                   </font>
                  </property>
@@ -1381,7 +1381,7 @@ and some of the best we had in our testing.
                 <widget class="QLabel" name="label_18">
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                    <pointsize>22</pointsize>
                   </font>
                  </property>
@@ -1424,7 +1424,7 @@ and get us some insights on the overall runs.</string>
              <widget class="QLabel" name="REM_Engineer_Assist_Label">
               <property name="font">
                <font>
-                <family>Avenir</family>
+                <family>Arial</family>
                 <pointsize>36</pointsize>
                 <bold>false</bold>
                </font>
@@ -1485,7 +1485,7 @@ and get us some insights on the overall runs.</string>
                 <widget class="QLabel" name="label_10">
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                    <pointsize>22</pointsize>
                   </font>
                  </property>
@@ -1531,7 +1531,7 @@ color: rgb(255, 255, 255);</string>
                </property>
                <property name="font">
                 <font>
-                 <family>Avenir</family>
+                 <family>Arial</family>
                  <pointsize>22</pointsize>
                 </font>
                </property>
@@ -1683,7 +1683,7 @@ border:none;</string>
                         </property>
                         <property name="font">
                          <font>
-                          <family>Avenir</family>
+                          <family>Arial</family>
                          </font>
                         </property>
                         <property name="mouseTracking">
@@ -1714,7 +1714,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; color:#ffffff;&quot;&gt;Welcoming November with a tribute to the people and companies who believe in and passionately support our team’s effort, the sponsors of REM IHU.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; color:#ffffff;&quot;&gt;Their seamless support combined with the passion and willingness of our team’s members are our driving force in order to design and develop the 2nd Greek electric racing motorcycle. &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu #rem #ridethethunder #sponsors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                         </property>
@@ -1727,6 +1727,11 @@ li.checked::marker { content: &quot;\2612&quot;; }
                           <width>500</width>
                           <height>40</height>
                          </size>
+                        </property>
+                        <property name="font">
+                         <font>
+                          <family>Arial</family>
+                         </font>
                         </property>
                         <property name="styleSheet">
                          <string notr="true">color:white;</string>
@@ -1861,7 +1866,7 @@ border-radius:2px;</string>
                 <widget class="QLabel" name="fingertips">
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                    <pointsize>22</pointsize>
                    <italic>false</italic>
                    <bold>false</bold>
@@ -1881,6 +1886,11 @@ color: rgb(255, 255, 255);</string>
                </item>
                <item row="0" column="1">
                 <widget class="QLabel" name="label_16">
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                  </font>
+                 </property>
                  <property name="styleSheet">
                   <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
                  </property>
@@ -1950,7 +1960,7 @@ color: rgb(255, 255, 255);</string>
                   </property>
                   <property name="font">
                    <font>
-                    <family>Avenir</family>
+                    <family>Arial</family>
                    </font>
                   </property>
                   <property name="text">
@@ -1990,7 +2000,7 @@ color: rgb(255, 255, 255);</string>
                   </property>
                   <property name="font">
                    <font>
-                    <family>Avenir</family>
+                    <family>Arial</family>
                    </font>
                   </property>
                   <property name="text">
@@ -2043,7 +2053,7 @@ color: rgb(255, 255, 255);</string>
                   </property>
                   <property name="font">
                    <font>
-                    <family>Avenir</family>
+                    <family>Arial</family>
                    </font>
                   </property>
                   <property name="text">
@@ -2069,7 +2079,7 @@ color: rgb(255, 255, 255);</string>
                 <widget class="QLabel" name="label_8">
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                   </font>
                  </property>
                  <property name="text">
@@ -2087,9 +2097,9 @@ color: rgb(255, 255, 255);</string>
                 <widget class="QLabel" name="label_9">
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                    <pointsize>18</pointsize>
-                   <bold>true</bold>
+                   <bold>false</bold>
                   </font>
                  </property>
                  <property name="text">
@@ -2174,7 +2184,7 @@ border:0px;
           </property>
           <property name="font">
            <font>
-            <family>Avenir</family>
+            <family>Arial</family>
            </font>
           </property>
           <property name="styleSheet">
@@ -2198,7 +2208,7 @@ border-radius:2px;</string>
           </property>
           <property name="font">
            <font>
-            <family>Avenir</family>
+            <family>Arial</family>
            </font>
           </property>
           <property name="styleSheet">
@@ -2256,7 +2266,7 @@ border-radius:2px;</string>
          <widget class="QPushButton" name="pushButtonErrorPopUp">
           <property name="font">
            <font>
-            <family>Avenir</family>
+            <family>Arial</family>
            </font>
           </property>
           <property name="styleSheet">
@@ -2281,7 +2291,7 @@ border-radius:2px;</string>
           </property>
           <property name="font">
            <font>
-            <family>Avenir</family>
+            <family>Arial</family>
            </font>
           </property>
           <property name="styleSheet">
@@ -2954,7 +2964,7 @@ padding-left:20px;
              <x>0</x>
              <y>0</y>
              <width>3504</width>
-             <height>710</height>
+             <height>728</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6818,44 +6828,7 @@ border:none;</string>
                <enum>QFrame::Raised</enum>
               </property>
               <layout class="QGridLayout" name="gridLayout_23">
-               <item row="0" column="0">
-                <widget class="QLabel" name="label_TheBegining">
-                 <property name="font">
-                  <font>
-                   <family>Microsoft JhengHei</family>
-                   <pointsize>14</pointsize>
-                   <bold>true</bold>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color:white;
-background-color: rgba(255, 0, 0, 0);</string>
-                 </property>
-                 <property name="text">
-                  <string>The Begining :</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="label_photo1_2019">
-                 <property name="maximumSize">
-                  <size>
-                   <width>600</width>
-                   <height>300</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="pixmap">
-                  <pixmap resource="icons.qrc">:/icons/rem3.png</pixmap>
-                 </property>
-                 <property name="scaledContents">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="1">
+               <item row="0" column="1">
                 <widget class="QLabel" name="label_photo2_2019">
                  <property name="maximumSize">
                   <size>
@@ -6868,6 +6841,25 @@ background-color: rgba(255, 0, 0, 0);</string>
                  </property>
                  <property name="pixmap">
                   <pixmap resource="icons.qrc">:/icons/rem 2.png</pixmap>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="label_photo1_2019">
+                 <property name="maximumSize">
+                  <size>
+                   <width>600</width>
+                   <height>300</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="icons.qrc">:/icons/rem3.png</pixmap>
                  </property>
                  <property name="scaledContents">
                   <bool>true</bool>
@@ -6949,7 +6941,7 @@ background-color: rgba(255, 0, 0, 0);</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                   </font>
                  </property>
                  <property name="styleSheet">
@@ -6973,7 +6965,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:28pt;&quot;&gt;About Us&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
@@ -7166,7 +7158,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
               </property>
               <property name="font">
                <font>
-                <family>Avenir</family>
+                <family>Arial</family>
                </font>
               </property>
               <property name="styleSheet">
@@ -7184,12 +7176,12 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:700; color:#ffffff;&quot;&gt;We as REM are a group of ambitious and determined individuals who have come together to participate in a thrilling competition for the construction of an electric racing motorcycle.This team is made up of young and talented students from International Hellenic University in Serres Greece, who are eager to showcase their skills and knowledge in the field of electric vehicle engineering. The members of this team come from diverse backgrounds, but we share a common passion for innovation, sustainability, and high-performance&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:700; color:#ffffff;&quot;&gt;technology.Our goal is to design, build and race an electric racing motorcycle that is not only fast and efficient but also environmentally friendly. We aim to push the boundaries of what is possible and demonstrate our abilities as the next generation of engineers, technicians and innovators.With the combined expertise in electrical engineering, mechanics, and computer science, the team is confident that we have the skills and knowledge to create the winning motorcycle. We have been working tirelessly over the past months, conducting research and  testing new technologies.Our team has put in countless hours of hard work and dedication to ensure that this electric racing motorcycle is a true masterpiece. From the design and engineering, to the testing and refinement, we have left no stone unturned in our quest for excellence.With the competition fast approaching, our team is gearing up for the ultimate test of our skills and the electric racing motorcycle’s performance. We are confident that this motorcycle will set the standard for electric racing and demonstrate the potential of this exciting new technology.&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:700; color:#ffffff;&quot;&gt;The competition promises to be intense, with teams from universities across the world participating. But our  team is undaunted, we are determined to bring home the trophy and make a big mark on the world of electric racing.&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; font-weight:700; color:#ffffff;&quot;&gt;In conclusion, our electric racing motorcycle is a testament to the power of innovation and the drive to create a better and more sustainable future.&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:9pt; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;We as REM are a group of ambitious and determined individuals who have come together to participate in a thrilling competition for the construction of an electric racing motorcycle.This team is made up of young and talented students from International Hellenic University in Serres Greece, who are eager to showcase their skills and knowledge in the field of electric vehicle engineering. The members of this team come from diverse backgrounds, but we share a common passion for innovation, sustainability, and high-performance&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;technology.Our goal is to design, build and race an electric racing motorcycle that is not only fast and efficient but also environmentally friendly. We aim to push the boundaries of what is possible and demonstrate our abilities as the next generation of engineers, technicians and innovators.With the combined expertise in electrical engineering, mechanics, and computer science, the team is confident that we have the skills and knowledge to create the winning motorcycle. We have been working tirelessly over the past months, conducting research and  testing new technologies.Our team has put in countless hours of hard work and dedication to ensure that this electric racing motorcycle is a true masterpiece. From the design and engineering, to the testing and refinement, we have left no stone unturned in our quest for excellence.With the competition fast approaching, our team is gearing up for the ultimate test of our skills and the electric racing motorcycle’s performance. We are confident that this motorcycle will set the standard for electric racing and demonstrate the potential of this exciting new technology.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;The competition promises to be intense, with teams from universities across the world participating. But our  team is undaunted, we are determined to bring home the trophy and make a big mark on the world of electric racing.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;In conclusion, our electric racing motorcycle is a testament to the power of innovation and the drive to create a better and more sustainable future.&lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </item>
@@ -7265,7 +7257,7 @@ border-radius:2px;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                   </font>
                  </property>
                  <property name="styleSheet">
@@ -7279,7 +7271,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;Need more information about us? Take a look at our online website and learn extra details about our project.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
@@ -7294,7 +7286,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  </property>
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                    <pointsize>-1</pointsize>
                   </font>
                  </property>
@@ -7320,7 +7312,7 @@ font-size: 26px;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                   </font>
                  </property>
                  <property name="styleSheet">
@@ -7367,7 +7359,7 @@ border:none;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                   </font>
                  </property>
                  <property name="styleSheet">
@@ -7390,7 +7382,7 @@ border:none;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                    <pointsize>18</pointsize>
                   </font>
                  </property>
@@ -7456,7 +7448,7 @@ border-radius:2px;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                    <pointsize>-1</pointsize>
                   </font>
                  </property>
@@ -7482,7 +7474,7 @@ color:white;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                   </font>
                  </property>
                  <property name="styleSheet">
@@ -7496,7 +7488,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;Just say hi! We love communication and feedback. Tell us your thoughts about our project and help us be better!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
@@ -7511,7 +7503,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  </property>
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                   </font>
                  </property>
                  <property name="styleSheet">
@@ -7714,6 +7706,11 @@ border:none;</string>
                    <height>300</height>
                   </size>
                  </property>
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                  </font>
+                 </property>
                  <property name="html">
                   <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
@@ -7721,7 +7718,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:20pt; font-weight:700; color:#ffffff;&quot;&gt;Location &amp;amp; Contact Information&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:12pt; font-weight:700; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; color:#ffffff;&quot;&gt;International Hellenice University&lt;/span&gt;&lt;/p&gt;
@@ -7827,7 +7824,7 @@ border-radius:2px;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                    <pointsize>-1</pointsize>
                   </font>
                  </property>
@@ -7853,7 +7850,7 @@ color:white;</string>
                  </property>
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                   </font>
                  </property>
                  <property name="styleSheet">
@@ -7867,7 +7864,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;We're working with awesome companies that are helping us grow our project. Check them out below.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
@@ -7882,7 +7879,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
                  </property>
                  <property name="font">
                   <font>
-                   <family>Avenir</family>
+                   <family>Arial</family>
                   </font>
                  </property>
                  <property name="styleSheet">
