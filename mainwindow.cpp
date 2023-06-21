@@ -37,7 +37,7 @@
 //#include <QtWebEngineWidgets/QWebEngineView>
 #include <QtWidgets/QFrame>
 #include <QtMultimedia/QCamera>
-
+#include "secdialog.h"
 
 
 
@@ -1552,3 +1552,16 @@ void MainWindow::on_adaylink_clicked()
 void MainWindow::create_chart(/*final_name, */std::vector<QFrame*> frameArray, int parses){
     qDebug() << "HEREEEEE VECTOR--->" << vector_counter_chart;
 }
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    secDialog secDialog;
+    secDialog.setModal(true);
+    secDialog.show();
+
+    QEventLoop loop;
+    connect(&secDialog, &::secDialog::close, &loop, &QEventLoop::quit);
+    loop.exec();
+}
+
+

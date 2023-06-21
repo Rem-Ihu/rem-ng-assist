@@ -38,6 +38,9 @@ set(PROJECT_SOURCES
         font.qrc
         firebaseget.h
         firebaseget.cpp
+        secdialog.ui
+        secdialog.cpp
+        secdialog.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
