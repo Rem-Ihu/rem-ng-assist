@@ -1098,7 +1098,7 @@ void MainWindow::on_addTabNameButton_clicked()
             label->setGeometry(QRect(0, 0, 120, 40)); // make the label bigger
             label->setVisible(false);
             label->raise(); // set z-index to highest
-
+//random
             // Set the pen of the line series to a thicker width
             QPen pen = series->pen();
             pen.setWidth(3);
