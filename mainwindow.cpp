@@ -85,7 +85,7 @@ MainWindow::MainWindow(QWidget *parent)
 //    VIDEO_view->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
 //    VIDEO_layout->addWidget(VIDEO_view);
-
+// HELLO TEST
 
 
 
