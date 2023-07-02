@@ -43,6 +43,76 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_average_cell_bal_clicked();
+
+    void on_average_cell_module_clicked();
+
+    void on_average_cell_voltage_clicked();
+
+    void on_max_cell_bal_clicked();
+
+    void on_max_cell_module_temp_clicked();
+
+    void on_max_cell_voltage_clicked();
+
+    void on_min_cell_balancing_clicked();
+
+    void on_min_cell_module_temp_clicked();
+
+    void on_min_cell_voltage_clicked();
+
+    void on_live_msb_clicked();
+
+    void on_live_lsb_clicked();
+
+    void on_energy_charge_clicked();
+
+    void on_energy_consumption_clicked();
+
+    void on_energy_distance_clicked();
+
+    void on_energy_es_energy_clicked();
+
+    void on_charging_state_clicked();
+
+    void on_charging_time_clicked();
+
+    void on_battery_status_clicked();
+
+    void on_battery_input_clicked();
+
+    void on_battery_output_clicked();
+
+    void on_battery_flags_clicked();
+
+    void on_battery_charging_clicked();
+
+    void on_battery_flags_2_clicked();
+
+    void on_battery_input_2_clicked();
+
+    void on_battery_input_5_clicked();
+
+    void on_battery_input_3_clicked();
+
+    void on_battery_input_4_clicked();
+
+    void on_battery_input_7_clicked();
+
+    void on_battery_input_6_clicked();
+
+    void on_battery_input_9_clicked();
+
+    void on_battery_input_8_clicked();
+
+    void on_battery_input_13_clicked();
+
+    void on_battery_input_10_clicked();
+
+    void on_battery_input_11_clicked();
+
+    void on_battery_input_14_clicked();
+
 private:
     Ui::secDialog *ui;
 

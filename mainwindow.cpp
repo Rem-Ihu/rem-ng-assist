@@ -50,6 +50,10 @@ std::vector<int> tries;
 #include <sstream>
 //test ui
 
+namespace _RealTime{
+    extern bool setRealTime;
+    extern QString nameSetRealTime;
+}
 
 namespace myNamespace{
     extern float first_realtime_answer,second_realtime_answer,ok;
@@ -217,7 +221,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     //REAL TIME CHART SETUP
     QSplineSeries *realtime_series = new QSplineSeries(); // Create the series for the aero chart
-    realtime_series->setName("Real Time Values"); // Set the name of the measurement
 
 
     QString username = QString::fromStdString(username_change::full_name[username_change::pass_check_number]);
@@ -230,7 +233,9 @@ MainWindow::MainWindow(QWidget *parent)
     realtime_chart->setTitle("Real Time Chart"); // Set the chart title
     realtime_chart->setTitleFont(titleFont); // Set the font of the chart title
     realtime_chart->createDefaultAxes(); // Create the axes
-    realtime_chart->axes(Qt::Vertical).first()->setRange(-7, 130); // Set the range of values of axis y
+    QValueAxis *axisY = qobject_cast<QValueAxis *>(realtime_chart->axes(Qt::Vertical).first()); // Get the y-axis
+    axisY->setRange(0, 300); // Set the range of values of the y-axis
+    axisY->setTickCount(10); // Set the number of tick intervals on the y-axis
     realtime_chart->setTitleBrush(QBrush(Qt::white)); // Customize the color of the title in the chart
     realtime_chart->setBackgroundBrush(QBrush(Qt::transparent)); // Customize the color of the background in the chart
 
@@ -241,15 +246,16 @@ MainWindow::MainWindow(QWidget *parent)
     realtime_chart_timer->setInterval(150); //to 150 milliseconds
 
     int x = 0;
-
+    float y;
     // Add the first 10 data points
     for (int i = 0; i < 10; i++) {
-        float y = myNamespace::second_realtime_answer;
+        y = myNamespace::second_realtime_answer;
         realtime_series->append(x, y);
         x++;
     }
     connect(realtime_chart_timer, &QTimer::timeout, [=]() mutable {  // Connect the timeout() signal of the timer to a lambda function that generates random numbers and updates the chart
-        float y = myNamespace::second_realtime_answer;
+        realtime_series->setName(_RealTime::nameSetRealTime); // Set the name of the measurement
+        y = myNamespace::second_realtime_answer;
 
         // Append the new data point
         QTime currentTime = QTime::currentTime();
@@ -280,7 +286,7 @@ MainWindow::MainWindow(QWidget *parent)
     realtime_chart->setBackgroundBrush(Qt::transparent); // Apply transparent to the background
 
     QColor orange(255, 165, 0); // RGB values for orange
-    QPen pen(orange); // Customize the color of the series in the chart--create the color layer
+    QPen pen(Qt::red); // Customize the color of the series in the chart--create the color layer
     pen.setWidth(5); // Customize the width of the series in the chart
     realtime_series->setPen(pen); // Apply the color to the series
     QFrame *frame = ui->realtime_chart_frame; // Place the chart on the frame
@@ -299,26 +305,12 @@ MainWindow::MainWindow(QWidget *parent)
     plot_points_label->setVisible(true); // Set the label to be visible by default
     plot_points_label->raise(); // Set z-index to highest
 
-    // Create a label for showing the plot points
-    QLabel *pointLabel = new QLabel(realtime_chartView);
-    pointLabel->setStyleSheet("QLabel { background-color: #22222; color: white; border: 1px solid white; border-radius: 2px; font-weight: bold; }"); // Modify the style sheet to make the labels bold
-    pointLabel->setGeometry(QRect(0, 0, 120, 40)); // Make the label bigger
-    pointLabel->setVisible(true); // Set the label to be visible by default
-    pointLabel->raise(); // Set z-index to highest
-
-
     QObject::connect(realtime_chartView, &QChartView::rubberBandChanged, [=](const QRectF &viewportRect, const QPointF &fromScenePoint, const QPointF &toScenePoint) { // Connect the signal of the chart view to a custom slot
         QPointF point = realtime_chartView->chart()->mapToValue(realtime_chartView->mapToScene(toScenePoint.toPoint()));
 
-        plot_points_label->setText(QString("X: %1\nY: %2").arg(point.x()).arg(point.y())); // Update the label with the new x and y values
+        plot_points_label->setText(QString("X: "+QString::number(x)+"\nY: "+QString::number(y))); // Update the label with the new x and y values
     });
 
-
-    QObject::connect(realtime_series, &QLineSeries::clicked, [=](const QPointF &point) { // Connect the clicked signal of the series to a custom slot
-
-        pointLabel->setText(QString("Point: (%1, %2)").arg(point.x()).arg(point.y())); // Update the point label text and position
-        pointLabel->move(realtime_chartView->width() - pointLabel->width() - 5, realtime_chartView->height() - pointLabel->height() - 5);
-    });
 
 
     QObject::connect(realtime_series, &QLineSeries::pointAdded, [=](int index) { // Connect the series signal to update the label as x value changes
@@ -332,7 +324,6 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout *realtime_layout = new QVBoxLayout(ui->realtime_chart_frame); // Add the chart view, label, and point label to the layout
     realtime_layout->addWidget(realtime_chartView);
     realtime_layout->addWidget(plot_points_label);
-    realtime_layout->addWidget(pointLabel);
 }
 
 void MainWindow::addLoadingScreen(bool finishLoading, QDialog *loadingDialog){
@@ -463,10 +454,39 @@ void MainWindow::on_addTabNameButton_clicked()
 
     if(parses == 1){
 
-        bool finishLoading = false;
+        int counter =0;
+        int mainWidth = this->width();
+        int mainHeight = this->height();
+
+        // Create a loading dialog with a spinning animation
         QDialog loadingDialog(this);
-        addLoadingScreen(finishLoading, &loadingDialog);
-        loadingDialog.show(); // Show the loading dialog
+        loadingDialog.setModal(true);
+        loadingDialog.setWindowFlags(Qt::CustomizeWindowHint | Qt::WindowTitleHint);
+        loadingDialog.setStyleSheet("background-color: rgb(0, 0, 0);");
+        loadingDialog.setWindowTitle("Loading");
+        loadingDialog.setFixedSize(mainWidth, mainHeight);
+
+        QMovie loadingMovie(":/icons/loading-5.gif");
+        QLabel loadingLabel(&loadingDialog);
+        loadingLabel.setMovie(&loadingMovie);
+        loadingMovie.start();
+
+        QVBoxLayout loadingLayout(&loadingDialog);
+        loadingLayout.addWidget(&loadingLabel, 0, Qt::AlignCenter);
+
+        // Calculate the position of the loading dialog
+        int dialogX = (mainWidth - loadingDialog.width()) / 2;
+        int dialogY = (mainHeight - loadingDialog.height()) / 2;
+
+        // Move the loading dialog to the center of the main window
+        loadingDialog.move(dialogX, dialogY);
+
+        // Disable the main window
+        setDisabled(true);
+
+        // Show the loading dialog
+        loadingDialog.show();
+        QApplication::processEvents();
         QApplication::processEvents();
 
 
@@ -517,12 +537,13 @@ void MainWindow::on_addTabNameButton_clicked()
 
         QVector<QPointF> points2;
         QLineSeries *series = new QLineSeries();
+        series->setName(_RealTime::nameSetRealTime);
         QLineSeries *series2 = new QLineSeries();
         srand(time(NULL));
         for (int j = frontN; j < rearN; j++) {
 //                points.append(QPointF(j + 0.5, DataRead[j]));
                 series->append(QPointF(j + 0.5, DataRead[j]));
-                series2->append(QPointF(j + 0.5, rand() % 21));
+//                series2->append(QPointF(j + 0.5, rand() % 21));
         }
 //                points2.append(QPointF(j + 0.5, DataRead[j] + 10));
 
@@ -532,7 +553,7 @@ void MainWindow::on_addTabNameButton_clicked()
 //        series->append(points);
 //        series->append(points2);
         chart->addSeries(series);
-        chart->addSeries(series2);
+//        chart->addSeries(series2);
 
         // Set up the X-axis with 0.5 increments
         // Find the maximum y-value among both line series
