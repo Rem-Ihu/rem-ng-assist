@@ -1160,7 +1160,7 @@ padding-left:17px;
 padding: 0px;</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
@@ -1207,8 +1207,8 @@ padding: 0px;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1488</width>
-             <height>2556</height>
+             <width>1134</width>
+             <height>2597</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_9">
@@ -1626,7 +1626,7 @@ border-radius:2px;</string>
                     <x>0</x>
                     <y>0</y>
                     <width>648</width>
-                    <height>652</height>
+                    <height>654</height>
                    </rect>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_58">
@@ -1714,7 +1714,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; color:#ffffff;&quot;&gt;Welcoming November with a tribute to the people and companies who believe in and passionately support our team’s effort, the sponsors of REM IHU.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; color:#ffffff;&quot;&gt;Their seamless support combined with the passion and willingness of our team’s members are our driving force in order to design and develop the 2nd Greek electric racing motorcycle. &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu #rem #ridethethunder #sponsors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                         </property>
@@ -2133,6 +2133,23 @@ Dashboard Specs/Analytics</string>
       </widget>
       <widget class="QWidget" name="RealTime">
        <layout class="QGridLayout" name="gridLayout_4">
+        <item row="1" column="0">
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>40</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:white;
+color:black;</string>
+          </property>
+          <property name="text">
+           <string>Change Real Time Data Stream</string>
+          </property>
+         </widget>
+        </item>
         <item row="0" column="0">
          <widget class="QFrame" name="frame">
           <property name="frameShape">
@@ -2144,6 +2161,12 @@ Dashboard Specs/Analytics</string>
           <layout class="QGridLayout" name="gridLayout_18">
            <item row="0" column="0">
             <widget class="QFrame" name="realtime_chart_frame">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
              <property name="maximumSize">
               <size>
                <width>18888</width>
@@ -2168,17 +2191,6 @@ border:0px;
             </widget>
            </item>
           </layout>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QPushButton" name="pushButton_3">
-          <property name="styleSheet">
-           <string notr="true">background-color:white;
-color:black;</string>
-          </property>
-          <property name="text">
-           <string>Open Secondary Ui</string>
-          </property>
          </widget>
         </item>
        </layout>
@@ -2503,428 +2515,91 @@ border-radius:2px;</string>
        </layout>
       </widget>
       <widget class="QWidget" name="BikeView3d">
-       <widget class="QPushButton" name="pushButton3DBikeView_2">
-        <property name="enabled">
-         <bool>true</bool>
-        </property>
-        <property name="geometry">
-         <rect>
-          <x>430</x>
-          <y>110</y>
-          <width>230</width>
-          <height>35</height>
-         </rect>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>35</height>
-         </size>
-        </property>
-        <property name="palette">
-         <palette>
-          <active>
-           <colorrole role="WindowText">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>128</red>
-              <green>128</green>
-              <blue>128</blue>
-             </color>
-            </brush>
-           </colorrole>
-           <colorrole role="Button">
-            <brush brushstyle="LinearGradientPattern">
-             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
-              <gradientstop position="0.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-              <gradientstop position="1.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-             </gradient>
-            </brush>
-           </colorrole>
-           <colorrole role="Text">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>128</red>
-              <green>128</green>
-              <blue>128</blue>
-             </color>
-            </brush>
-           </colorrole>
-           <colorrole role="ButtonText">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>128</red>
-              <green>128</green>
-              <blue>128</blue>
-             </color>
-            </brush>
-           </colorrole>
-           <colorrole role="Base">
-            <brush brushstyle="LinearGradientPattern">
-             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
-              <gradientstop position="0.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-              <gradientstop position="1.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-             </gradient>
-            </brush>
-           </colorrole>
-           <colorrole role="Window">
-            <brush brushstyle="LinearGradientPattern">
-             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
-              <gradientstop position="0.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-              <gradientstop position="1.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-             </gradient>
-            </brush>
-           </colorrole>
-           <colorrole role="PlaceholderText">
-            <brush brushstyle="SolidPattern">
-             <color alpha="128">
-              <red>128</red>
-              <green>128</green>
-              <blue>128</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </active>
-          <inactive>
-           <colorrole role="WindowText">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>128</red>
-              <green>128</green>
-              <blue>128</blue>
-             </color>
-            </brush>
-           </colorrole>
-           <colorrole role="Button">
-            <brush brushstyle="LinearGradientPattern">
-             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
-              <gradientstop position="0.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-              <gradientstop position="1.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-             </gradient>
-            </brush>
-           </colorrole>
-           <colorrole role="Text">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>128</red>
-              <green>128</green>
-              <blue>128</blue>
-             </color>
-            </brush>
-           </colorrole>
-           <colorrole role="ButtonText">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>128</red>
-              <green>128</green>
-              <blue>128</blue>
-             </color>
-            </brush>
-           </colorrole>
-           <colorrole role="Base">
-            <brush brushstyle="LinearGradientPattern">
-             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
-              <gradientstop position="0.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-              <gradientstop position="1.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-             </gradient>
-            </brush>
-           </colorrole>
-           <colorrole role="Window">
-            <brush brushstyle="LinearGradientPattern">
-             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
-              <gradientstop position="0.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-              <gradientstop position="1.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-             </gradient>
-            </brush>
-           </colorrole>
-           <colorrole role="PlaceholderText">
-            <brush brushstyle="SolidPattern">
-             <color alpha="128">
-              <red>128</red>
-              <green>128</green>
-              <blue>128</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </inactive>
-          <disabled>
-           <colorrole role="WindowText">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>128</red>
-              <green>128</green>
-              <blue>128</blue>
-             </color>
-            </brush>
-           </colorrole>
-           <colorrole role="Button">
-            <brush brushstyle="LinearGradientPattern">
-             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
-              <gradientstop position="0.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-              <gradientstop position="1.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-             </gradient>
-            </brush>
-           </colorrole>
-           <colorrole role="Text">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>128</red>
-              <green>128</green>
-              <blue>128</blue>
-             </color>
-            </brush>
-           </colorrole>
-           <colorrole role="ButtonText">
-            <brush brushstyle="SolidPattern">
-             <color alpha="255">
-              <red>128</red>
-              <green>128</green>
-              <blue>128</blue>
-             </color>
-            </brush>
-           </colorrole>
-           <colorrole role="Base">
-            <brush brushstyle="LinearGradientPattern">
-             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
-              <gradientstop position="0.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-              <gradientstop position="1.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-             </gradient>
-            </brush>
-           </colorrole>
-           <colorrole role="Window">
-            <brush brushstyle="LinearGradientPattern">
-             <gradient startx="0.000000000000000" starty="0.000000000000000" endx="1.000000000000000" endy="0.000000000000000" type="LinearGradient" spread="PadSpread" coordinatemode="ObjectBoundingMode">
-              <gradientstop position="0.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-              <gradientstop position="1.000000000000000">
-               <color alpha="255">
-                <red>0</red>
-                <green>0</green>
-                <blue>0</blue>
-               </color>
-              </gradientstop>
-             </gradient>
-            </brush>
-           </colorrole>
-           <colorrole role="PlaceholderText">
-            <brush brushstyle="SolidPattern">
-             <color alpha="128">
-              <red>128</red>
-              <green>128</green>
-              <blue>128</blue>
-             </color>
-            </brush>
-           </colorrole>
-          </disabled>
-         </palette>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>11</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="mouseTracking">
-         <bool>false</bool>
-        </property>
-        <property name="autoFillBackground">
-         <bool>false</bool>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-
-color:grey;
-text-align:left;
-padding-left:20px;
-}
-
-QPushButton:focus{
+       <layout class="QGridLayout" name="gridLayout_61">
+        <item row="0" column="0">
+         <widget class="QFrame" name="test_svg1">
+          <property name="minimumSize">
+           <size>
+            <width>1000</width>
+            <height>700</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>1000</width>
+            <height>700</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: #ffffff;</string>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_60">
+           <item row="0" column="0">
+            <widget class="QPushButton" name="pushButton_4">
+             <property name="styleSheet">
+              <string notr="true">background-color: #ffffff;
 border:none;
-}
-
-QPushButton:checked{
-border: none;
-background-color: rgb(79, 93, 218);
-color:white;
-text-align:left;
-padding-left:20px;
-}</string>
-        </property>
-        <property name="text">
-         <string>  3D Bike View</string>
-        </property>
-        <property name="icon">
-         <iconset resource="icons.qrc">
-          <normaloff>:/icons/3d_view_icon.png</normaloff>
-          <normalon>:/icons/3d_view_checked_icon.png</normalon>:/icons/3d_view_icon.png</iconset>
-        </property>
-        <property name="iconSize">
-         <size>
-          <width>25</width>
-          <height>25</height>
-         </size>
-        </property>
-        <property name="checkable">
-         <bool>true</bool>
-        </property>
-        <property name="checked">
-         <bool>false</bool>
-        </property>
-        <property name="autoRepeat">
-         <bool>false</bool>
-        </property>
-        <property name="autoExclusive">
-         <bool>false</bool>
-        </property>
-        <property name="autoDefault">
-         <bool>false</bool>
-        </property>
-        <property name="flat">
-         <bool>true</bool>
-        </property>
-       </widget>
-       <widget class="QFrame" name="test_svg">
-        <property name="geometry">
-         <rect>
-          <x>190</x>
-          <y>200</y>
-          <width>671</width>
-          <height>421</height>
-         </rect>
-        </property>
-        <property name="frameShape">
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow">
-         <enum>QFrame::Raised</enum>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label">
-        <property name="geometry">
-         <rect>
-          <x>230</x>
-          <y>-60</y>
-          <width>651</width>
-          <height>361</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>72</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-    background-color:none;
-    color: rgba(253, 218, 13, 0.15);
-}</string>
-        </property>
-        <property name="text">
-         <string>HELLO</string>
-        </property>
-       </widget>
+</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset resource="icons.qrc">
+               <normaloff>:/icons/PackSVG.svg</normaloff>:/icons/PackSVG.svg</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>900</width>
+               <height>900</height>
+              </size>
+             </property>
+             <property name="checkable">
+              <bool>false</bool>
+             </property>
+             <property name="checked">
+              <bool>false</bool>
+             </property>
+             <property name="autoRepeat">
+              <bool>true</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>true</bool>
+             </property>
+             <property name="autoDefault">
+              <bool>true</bool>
+             </property>
+             <property name="default">
+              <bool>true</bool>
+             </property>
+             <property name="flat">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <spacer name="horizontalSpacer_20">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="News">
        <layout class="QGridLayout" name="gridLayout_5">
@@ -2955,8 +2630,8 @@ padding-left:20px;
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>3457</width>
-             <height>730</height>
+             <width>3504</width>
+             <height>710</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -3143,10 +2818,10 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;An exciting day spent with our number one supporters @bmwmotorradhellas. A presentation of a ''rad'' electric motorcycle that left everyone astonished took place and we are very happy to be part of all this!&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt; text-decoration: underline; color:#ffffff;&quot;&gt;#bmwmotorrad #bmwmotorradhellas #electricmotorcycle #electric #ridethethunder #motorcycle #motostudentelectric #motostuden2023&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; color:#bcbcbc;&quot;&gt;Published on: 29- March 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; color:#bcbcbc;&quot;&gt;Published on: 29- March 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -3177,10 +2852,10 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;We are grateful for the support we have from the &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt; color:#ffffff;&quot;&gt;@serres.racing.circuit&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt; with our attendance and the opportunity to take photos at such a big event as the ''Balkan Motorcycle championship''.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt; text-decoration: underline; color:#ffffff;&quot;&gt;#serresracingcircuit #serres #motorcycle #motorbike #motor #balkanmotorsports #balkanmotor #ridethethunder #racing #race #raceweekend #raceteam #weels #circuits #racebike #bikelife #superbike #sportsbike #biker #truckbike #bikesofinstagram #motorrad&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; color:#bcbcbc;&quot;&gt;Published on: 23- June 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; color:#bcbcbc;&quot;&gt;Published on: 23- June 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -3266,11 +2941,11 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt;&quot;&gt;After an outstanding team presentation the winner is the subgroup of BSS (brake suspension steering) showcasing its’ progress and accomplishments over the last weeks. The presentation’s challenge was fully accomplished by the BSS subgroup, hence they won a photoshooting with Hyperion, our powerful electric motorbike.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt; text-decoration: underline; color:#ffffff;&quot;&gt;#rem #remihu #ridethethunder #remihupoweredbymotorradhellas #moto #electric&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:10pt; text-decoration: underline; color:#ffffff;&quot;&gt;#motostudent #motostudent2023 #motorbike #photography #photoshooting&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; color:#bcbcbc;&quot;&gt;Published on: 31- March 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; color:#bcbcbc;&quot;&gt;Published on: 31- March 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -3596,7 +3271,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt;&quot;&gt;It is our honor that once again REM IHU, with the help and support of Serres Racing Circuit (@serres.racing.circuit) attended on October 21-22-23 such a big event as the “Balkan Motorcycle Championship”. Throughout these three days, we were given the opportunity to get to know many of you and discuss about us and our work!&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
@@ -3682,7 +3357,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt;&quot;&gt;We would like to thank BMW Motorrad Hellas (@bmwmotorradhellas) for being by our side for the second consecutive racing season. Without their help and support we would not have achieved the desired result.BMW Hellas is one of the most successful premium motorcycle distribution companies. With its presence in the Greek market, as a subsidiary of the BMW Group, BMW Hellas represents BMW Motorrad. The goal of the BMW Group is the perfection of motorcycles and services using minimally natural resources during the production process, aiming at meeting the needs of future mobility. With models that not only express evolution, but the beginning of a new era in motorcycling.&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; text-decoration: underline;&quot;&gt;#remihu #rem #ridethethunder #bmwmotorradhellas #remihupowerredbybmwmotorradhellas&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; color:#bcbcbc;&quot;&gt;Published on: 7-November 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
@@ -3898,9 +3573,9 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt;&quot;&gt;We would like to thank @ABB for trusting and supporting us for the second consecutive racing season. ABB is a leading global technology company that energizes the transformation of society and industry to achieve a more productive, sustainable future. By connecting software to its electrification, robotics, automation and motion portfolio, ABB pushes the boundaries of technology to drive performance to new levels. With a history of excellence stretching back more than 130 years, ABB’s success is driven by about 105,000 talented employees in over 100 countries. &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu #rem #ridethethunder #abb&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; color:#bcbcbc;&quot;&gt;Published on: 16-November 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; color:#bcbcbc;&quot;&gt;Published on: 16-November 2022&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -4066,7 +3741,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt;&quot;&gt;REM x BMW&lt;br /&gt;Special thanks to our supporters &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; text-decoration: underline; color:#ffffff;&quot;&gt;@bmwmotorradhellas&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt;&quot;&gt;for making all this possible!&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; text-decoration: underline; color:#ffffff;&quot;&gt;#bmwmotorradhellas #bmwmotorrad #presentationday #motorcycle #motorcycleelectrics #motostudent #motostudentelectric #motostudent2023 #remihu #ridethethunder.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
@@ -4323,9 +3998,9 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt;&quot;&gt;We would like to thank Typographic &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; text-decoration: underline; color:#ffffff;&quot;&gt;@typographic.gr)&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt;&quot;&gt;  for supporting us and helping us promote our team’s effort by providing us with their services.&lt;br /&gt;&lt;br /&gt;Typographic has been active in the field of graphic arts since 1989 and provides complete solutions for the promotion of companies and professionals through print and digital advertising since they design and print posters, books, letterheads and business cards, calendars, catalogues, magazines and flyers. Going through their fourth decade in the field, they aim at continuous development and the establishment of partnerships with professionals who are looking for the best result in promoting their products or services.&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu #rem #ridethethunder #typographic&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI';&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; color:#bcbcbc;&quot;&gt;Published on: 23-November 2022&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; color:#bcbcbc;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt;&quot;&gt;We would like to thank Typographic &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; color:#ffffff;&quot;&gt;(&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; text-decoration: underline; color:#ffffff;&quot;&gt;@typographic.gr)&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt;&quot;&gt;  for supporting us and helping us promote our team’s effort by providing us with their services.&lt;br /&gt;&lt;br /&gt;Typographic has been active in the field of graphic arts since 1989 and provides complete solutions for the promotion of companies and professionals through print and digital advertising since they design and print posters, books, letterheads and business cards, calendars, catalogues, magazines and flyers. Going through their fourth decade in the field, they aim at continuous development and the establishment of partnerships with professionals who are looking for the best result in promoting their products or services.&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu #rem #ridethethunder #typographic&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; color:#bcbcbc;&quot;&gt;Published on: 23-November 2022&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:9pt; color:#bcbcbc;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -4356,9 +4031,9 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt;&quot;&gt;We would like to thank &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; text-decoration: underline; color:#ffffff;&quot;&gt;@spmotorsports.gr&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt;&quot;&gt;for supporting us in our effort for the first racing season.Sp Motorsports is based at the 3rd km of Serres – Thessaloniki, 3.5 km from the Serres Racing Circuit. After 10 years in the motorcycling field and 6 of them in the racing part, mainly as a technician but also as a rider in panhellenic and international races, SP Motorsports was founded in September 2020. With race track experience and expertise SP Motorsports can offer the market leading motorcycle parts and accessories as well as lubricants and tyres of all types. &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:11pt; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu #rem #ridethethunder #spmotorsports&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; color:#bcbcbc;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:9pt; color:#bcbcbc;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -4475,7 +4150,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Avenir'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; color:#ffffff;&quot;&gt;Welcoming November with a tribute to the people and companies who believe in and passionately support our team’s effort, the sponsors of REM IHU.&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; color:#ffffff;&quot;&gt;Their seamless support combined with the passion and willingness of our team’s members are our driving force in order to design and develop the 2nd Greek electric racing motorcycle. &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; text-decoration: underline; color:#ffffff;&quot;&gt;#remihu #rem #ridethethunder #sponsors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
@@ -5473,8 +5148,8 @@ border-radius:2px;</string>
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>88</width>
-                 <height>288</height>
+                 <width>92</width>
+                 <height>304</height>
                 </rect>
                </property>
                <layout class="QGridLayout" name="gridLayout_32">
@@ -6800,8 +6475,8 @@ border:none;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1171</width>
-             <height>2175</height>
+             <width>1156</width>
+             <height>2229</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_19">
@@ -6957,7 +6632,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:28pt;&quot;&gt;About Us&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
@@ -7065,8 +6740,8 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt;Most our members are active students in International Hellenic University in Serres but we also got a group of member that study in Aristotle University of Thessaloniki and in Democratius University of Thrace&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt;&quot;&gt;Most our members are active students in International Hellenic University in Serres but we also got a group of member that study in Aristotle University of Thessaloniki and in Democratius University of Thrace&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
                </item>
@@ -7168,7 +6843,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;We as REM are a group of ambitious and determined individuals who have come together to participate in a thrilling competition for the construction of an electric racing motorcycle.This team is made up of young and talented students from International Hellenic University in Serres Greece, who are eager to showcase their skills and knowledge in the field of electric vehicle engineering. The members of this team come from diverse backgrounds, but we share a common passion for innovation, sustainability, and high-performance&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;technology.Our goal is to design, build and race an electric racing motorcycle that is not only fast and efficient but also environmentally friendly. We aim to push the boundaries of what is possible and demonstrate our abilities as the next generation of engineers, technicians and innovators.With the combined expertise in electrical engineering, mechanics, and computer science, the team is confident that we have the skills and knowledge to create the winning motorcycle. We have been working tirelessly over the past months, conducting research and  testing new technologies.Our team has put in countless hours of hard work and dedication to ensure that this electric racing motorcycle is a true masterpiece. From the design and engineering, to the testing and refinement, we have left no stone unturned in our quest for excellence.With the competition fast approaching, our team is gearing up for the ultimate test of our skills and the electric racing motorcycle’s performance. We are confident that this motorcycle will set the standard for electric racing and demonstrate the potential of this exciting new technology.&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;The competition promises to be intense, with teams from universities across the world participating. But our  team is undaunted, we are determined to bring home the trophy and make a big mark on the world of electric racing.&lt;/span&gt;&lt;/p&gt;
@@ -7202,8 +6877,8 @@ border:none;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1171</width>
-             <height>1643</height>
+             <width>1020</width>
+             <height>1672</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_51">
@@ -7263,7 +6938,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;Need more information about us? Take a look at our online website and learn extra details about our project.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
@@ -7480,7 +7155,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;Just say hi! We love communication and feedback. Tell us your thoughts about our project and help us be better!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>
@@ -7710,7 +7385,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:20pt; font-weight:700; color:#ffffff;&quot;&gt;Location &amp;amp; Contact Information&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:12pt; font-weight:700; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt; color:#ffffff;&quot;&gt;International Hellenice University&lt;/span&gt;&lt;/p&gt;
@@ -7856,7 +7531,7 @@ p, li { white-space: pre-wrap; }
 hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;We're working with awesome companies that are helping us grow our project. Check them out below.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                  </property>
                 </widget>

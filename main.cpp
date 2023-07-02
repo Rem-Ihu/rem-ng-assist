@@ -44,8 +44,13 @@
 #include <QTextStream>
 //end of file and headers (#include)
 
+#define N 100
 
 
+namespace RTD{
+    bool change_flag = false;
+    QString RTD_val;
+}
 
 namespace myNamespace{
     float first_realtime_answer,second_realtime_answer;
@@ -72,16 +77,18 @@ int main(int argc, char *argv[])
     QNetworkAccessManager realtime_manager;  // Start of real time reading from firebase
     QThread realtime_thread; // Creating a QThread to run the timer on
     QNetworkRequest realtime_request; // Setting up the request
-    realtime_request.setUrl(QUrl("https://realtimeqttest-default-rtdb.europe-west1.firebasedatabase.app/Dog.json"));
     QTimer realtime_timer; // Creating a QTimer to send requests at regular intervals
-    realtime_timer.start(100); // Send a request every 100 milli-seconds
+    realtime_timer.start(500); // Send a request every 100 milli-seconds
     realtime_manager.moveToThread(&realtime_thread); // Put timer and manager to same thread
     realtime_timer.moveToThread(&realtime_thread);
 
-
-
+    realtime_request.setUrl(QUrl("https://realtimeqttest-default-rtdb.europe-west1.firebasedatabase.app/VELOCITY_ACT.json"));
 
     QObject::connect(&realtime_timer, &QTimer::timeout, [&]() { // Connect the timeout signal of the timer to a slot that sends the request and processes the response
+        //RTD::RTD_val
+//        if(RTD::change_flag == true){
+//            RTD::change_flag = false;
+//        }
 
         QNetworkReply *realtime_reply = realtime_manager.get(realtime_request); // Sending the request and waiting for the response
 

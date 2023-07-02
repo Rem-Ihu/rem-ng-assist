@@ -41,6 +41,8 @@ set(PROJECT_SOURCES
         secdialog.ui
         secdialog.cpp
         secdialog.h
+        battery_pack_temp.h
+        battery_pack_temp.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

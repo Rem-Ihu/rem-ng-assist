@@ -43,6 +43,8 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+
+
 private:
     Ui::secDialog *ui;
 

@@ -38,6 +38,9 @@
 #include <QtWidgets/QFrame>
 #include <QtMultimedia/QCamera>
 #include "secdialog.h"
+#include <QLabel>
+#include <QPixmap>
+
 
 
 
@@ -127,6 +130,16 @@ MainWindow::MainWindow(QWidget *parent)
     calendar_layout->addWidget(calendar);
     ui->frameCalendar->setLayout(calendar_layout);
 
+
+
+
+
+    QLabel *label = new QLabel(ui->test_svg1);
+    label->setText("Fwtia ola");
+    label->setGeometry(0, 0, 500, 500);
+    QString value = "blue";
+    label->setStyleSheet("background-color: transparent; color:"+value+"; padding-left:60%; QLabel { qproperty-alignment: 'AlignCenter'; }");
+    label->raise();
 
 
 
@@ -230,7 +243,13 @@ MainWindow::MainWindow(QWidget *parent)
     realtime_chart->setTitle("Real Time Chart"); // Set the chart title
     realtime_chart->setTitleFont(titleFont); // Set the font of the chart title
     realtime_chart->createDefaultAxes(); // Create the axes
-    realtime_chart->axes(Qt::Vertical).first()->setRange(-7, 130); // Set the range of values of axis y
+    QValueAxis *axisY = qobject_cast<QValueAxis *>(realtime_chart->axes(Qt::Vertical).first()); // Get the y-axis
+    axisY->setRange(-7, 130); // Set the range of values of the y-axis
+    axisY->setTickCount(10); // Set the number of tick intervals on the y-axis
+
+    QPen gridLinePen(Qt::DashLine); // Create a pen for grid lines
+    gridLinePen.setColor(Qt::gray); // Set the color of grid lines
+    axisY->setGridLinePen(gridLinePen); // Set the pen for grid lines
     realtime_chart->setTitleBrush(QBrush(Qt::white)); // Customize the color of the title in the chart
     realtime_chart->setBackgroundBrush(QBrush(Qt::transparent)); // Customize the color of the background in the chart
 
@@ -238,18 +257,19 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Create a QTimer object and set its interval to 150 milliseconds (0.5 seconds)
     QTimer *realtime_chart_timer = new QTimer(this); //create a timer
-    realtime_chart_timer->setInterval(150); //to 150 milliseconds
+    realtime_chart_timer->setInterval(500); //to 150 milliseconds
 
     int x = 0;
 
     // Add the first 10 data points
+    float y = myNamespace::second_realtime_answer;
     for (int i = 0; i < 10; i++) {
-        float y = myNamespace::second_realtime_answer;
         realtime_series->append(x, y);
         x++;
     }
+
     connect(realtime_chart_timer, &QTimer::timeout, [=]() mutable {  // Connect the timeout() signal of the timer to a lambda function that generates random numbers and updates the chart
-        float y = myNamespace::second_realtime_answer;
+        y = myNamespace::second_realtime_answer;
 
         // Append the new data point
         QTime currentTime = QTime::currentTime();
@@ -280,7 +300,7 @@ MainWindow::MainWindow(QWidget *parent)
     realtime_chart->setBackgroundBrush(Qt::transparent); // Apply transparent to the background
 
     QColor orange(255, 165, 0); // RGB values for orange
-    QPen pen(orange); // Customize the color of the series in the chart--create the color layer
+    QPen pen(Qt::red); // Customize the color of the series in the chart--create the color layer
     pen.setWidth(5); // Customize the width of the series in the chart
     realtime_series->setPen(pen); // Apply the color to the series
     QFrame *frame = ui->realtime_chart_frame; // Place the chart on the frame
@@ -299,26 +319,12 @@ MainWindow::MainWindow(QWidget *parent)
     plot_points_label->setVisible(true); // Set the label to be visible by default
     plot_points_label->raise(); // Set z-index to highest
 
-    // Create a label for showing the plot points
-    QLabel *pointLabel = new QLabel(realtime_chartView);
-    pointLabel->setStyleSheet("QLabel { background-color: #22222; color: white; border: 1px solid white; border-radius: 2px; font-weight: bold; }"); // Modify the style sheet to make the labels bold
-    pointLabel->setGeometry(QRect(0, 0, 120, 40)); // Make the label bigger
-    pointLabel->setVisible(true); // Set the label to be visible by default
-    pointLabel->raise(); // Set z-index to highest
-
-
     QObject::connect(realtime_chartView, &QChartView::rubberBandChanged, [=](const QRectF &viewportRect, const QPointF &fromScenePoint, const QPointF &toScenePoint) { // Connect the signal of the chart view to a custom slot
         QPointF point = realtime_chartView->chart()->mapToValue(realtime_chartView->mapToScene(toScenePoint.toPoint()));
 
-        plot_points_label->setText(QString("X: %1\nY: %2").arg(point.x()).arg(point.y())); // Update the label with the new x and y values
+        plot_points_label->setText(QString("X: "+QString::number(x)+"\nY: "+QString::number(y))); // Update the label with the new x and y values
     });
 
-
-    QObject::connect(realtime_series, &QLineSeries::clicked, [=](const QPointF &point) { // Connect the clicked signal of the series to a custom slot
-
-        pointLabel->setText(QString("Point: (%1, %2)").arg(point.x()).arg(point.y())); // Update the point label text and position
-        pointLabel->move(realtime_chartView->width() - pointLabel->width() - 5, realtime_chartView->height() - pointLabel->height() - 5);
-    });
 
 
     QObject::connect(realtime_series, &QLineSeries::pointAdded, [=](int index) { // Connect the series signal to update the label as x value changes
@@ -332,7 +338,7 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout *realtime_layout = new QVBoxLayout(ui->realtime_chart_frame); // Add the chart view, label, and point label to the layout
     realtime_layout->addWidget(realtime_chartView);
     realtime_layout->addWidget(plot_points_label);
-    realtime_layout->addWidget(pointLabel);
+
 }
 
 void MainWindow::addLoadingScreen(bool finishLoading, QDialog *loadingDialog){
@@ -1227,13 +1233,6 @@ void MainWindow::on_pushButtonErrorPopUp_clicked()
     messageBox.setDefaultButton(QMessageBox::Ok);
     messageBox.exec();
 }
-
-
-
-
-
-
-
 
 void MainWindow::on_displaybutton_clicked()
 {
