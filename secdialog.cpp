@@ -340,3 +340,10 @@ void secDialog::on_battery_input_14_clicked()
     _RealTime::setRealTime = true;
 }
 
+
+void secDialog::on_battery_input_12_clicked()
+{
+    _RealTime::nameSetRealTime = "CURRENT_BATT";
+    _RealTime::setRealTime = true;
+}
+

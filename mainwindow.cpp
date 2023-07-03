@@ -537,12 +537,13 @@ void MainWindow::on_addTabNameButton_clicked()
 
         QVector<QPointF> points2;
         QLineSeries *series = new QLineSeries();
-        series->setName(_RealTime::nameSetRealTime);
         QLineSeries *series2 = new QLineSeries();
         srand(time(NULL));
         for (int j = frontN; j < rearN; j++) {
 //                points.append(QPointF(j + 0.5, DataRead[j]));
+            if(DataRead[j] > 0 && DataRead[j] < 50){
                 series->append(QPointF(j + 0.5, DataRead[j]));
+            }
 //                series2->append(QPointF(j + 0.5, rand() % 21));
         }
 //                points2.append(QPointF(j + 0.5, DataRead[j] + 10));
@@ -708,7 +709,7 @@ void MainWindow::on_addTabNameButton_clicked()
             QChart *chart = new QChart();
             chart->setTheme(QChart::ChartThemeDark);
             chart->setBackgroundBrush(QBrush(Qt::transparent));
-            chart->setTitle(preferences_split.at(parses+1).c_str());
+            chart->setTitle(preferences_split.at(parses).c_str());
             // Create a QPointF vector and add the values from the array
             QVector<QPointF> points;
             int N = DataRead.size();

@@ -113,6 +113,8 @@ private slots:
 
     void on_battery_input_14_clicked();
 
+    void on_battery_input_12_clicked();
+
 private:
     Ui::secDialog *ui;
 
