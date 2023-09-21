@@ -1160,7 +1160,7 @@ padding-left:17px;
 padding: 0px;</string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
@@ -1207,7 +1207,7 @@ padding: 0px;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1134</width>
+             <width>1166</width>
              <height>2597</height>
             </rect>
            </property>
@@ -2163,7 +2163,7 @@ Dashboard Specs/Analytics</string>
               <enum>Qt::LeftToRight</enum>
              </property>
              <property name="autoFillBackground">
-              <bool>true</bool>
+              <bool>false</bool>
              </property>
              <property name="styleSheet">
               <string notr="true">background-color:white;
@@ -2484,15 +2484,15 @@ name:4:
 -----------------------------------------------------------------------------------------
 You should also choose the respective number of charts to view AND also the appropriate date, so that your text box will look like this:
 -----------------------------------------------------------------------------------------
-name:2:VELOCITY_ACT:VELOCITY:2023/07/02
+name:2:VELOCITY_ACT:VELOCITY:2023/07/02:2023/07/02
 
 or
 
-name:3:VELOCITY_ACT:VELOCITY:TORQUE_MAX:2023/07/02:2023/07/02
+name:3:VELOCITY_ACT:VELOCITY:TORQUE_MAX:2023/07/02:2023/07/02:2023/07/02
 
 or
 
-name:4:VELOCITY_ACT:VELOCITY:TORQUE_MAX:TORQUE:2023/07/02:2023/07/02:2023/07/02</string>
+name:4:VELOCITY_ACT:VELOCITY:TORQUE_MAX:TORQUE:2023/07/02:2023/07/02:2023/07/02:2023/07/02</string>
                     </property>
                    </widget>
                   </item>
@@ -3088,7 +3088,7 @@ padding-left:20px;
              <x>0</x>
              <y>0</y>
              <width>3504</width>
-             <height>710</height>
+             <height>728</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -6932,7 +6932,7 @@ border:none;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1156</width>
+             <width>1166</width>
              <height>2229</height>
             </rect>
            </property>
@@ -7334,7 +7334,7 @@ border:none;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1020</width>
+             <width>1166</width>
              <height>1672</height>
             </rect>
            </property>
