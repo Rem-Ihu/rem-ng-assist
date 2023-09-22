@@ -1609,3 +1609,17 @@ void MainWindow::on_open3d_clicked()
     _RealTime::window->show();
 }
 
+
+
+
+void MainWindow::on_pushButton3DView_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(3);
+}
+
+
+void MainWindow::on_pushButtonLiveStream_clicked()
+{
+    ui->stackedWidget->setCurrentIndex(5);
+}
+

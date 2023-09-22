@@ -153,6 +153,10 @@ private slots:
 
     void on_open3d_clicked();
 
+    void on_pushButton3DView_clicked();
+
+    void on_pushButtonLiveStream_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTabWidget *tabWidget;

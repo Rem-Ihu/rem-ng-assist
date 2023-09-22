@@ -71,6 +71,9 @@
         <height>16777215</height>
        </size>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
@@ -98,7 +101,7 @@ z-index: 10;</string>
        <property name="verticalSpacing">
         <number>-1</number>
        </property>
-       <item row="18" column="1">
+       <item row="20" column="1">
         <widget class="QPushButton" name="pushButtonLogOut">
          <property name="enabled">
           <bool>true</bool>
@@ -207,7 +210,7 @@ background-color: rgba(0,0,0,0);
          </widget>
         </widget>
        </item>
-       <item row="9" column="0">
+       <item row="10" column="0">
         <spacer name="horizontalSpacer_3">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -223,7 +226,7 @@ background-color: rgba(0,0,0,0);
          </property>
         </spacer>
        </item>
-       <item row="15" column="1">
+       <item row="17" column="1">
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>
@@ -236,7 +239,7 @@ background-color: rgba(0,0,0,0);
          </property>
         </spacer>
        </item>
-       <item row="17" column="1">
+       <item row="19" column="1">
         <widget class="QPushButton" name="pushButtonContact">
          <property name="font">
           <font>
@@ -317,7 +320,7 @@ z-index: 100;
          </property>
         </spacer>
        </item>
-       <item row="13" column="1">
+       <item row="15" column="1">
         <widget class="QPushButton" name="pushButtonAboutUs">
          <property name="minimumSize">
           <size>
@@ -463,7 +466,7 @@ padding-left:20px;
          </property>
         </widget>
        </item>
-       <item row="10" column="1">
+       <item row="12" column="1">
         <widget class="QPushButton" name="pushButtonNews">
          <property name="enabled">
           <bool>true</bool>
@@ -747,7 +750,68 @@ padding-left:20px;
          </property>
         </widget>
        </item>
-       <item row="9" column="3">
+       <item row="9" column="1">
+        <widget class="QPushButton" name="pushButton3DView">
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background: none;
+background-color: rgba(0,0,0,0);
+color:grey;
+text-align:left;
+padding-left:18px;
+}
+
+QPushButton:focus{
+border:none;
+background: none;
+background-color: rgba(0,0,0,0);
+}
+
+QPushButton:checked{
+border: none;
+background: none;
+background-color: rgba(0,0,0,0);
+/*background-color: rgb(79, 93, 218);
+/*background-color: #FB2576;*/
+color:white;
+text-align:left;
+padding-left:18px;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="icons.qrc">
+           <normaloff>:/icons/3d-2.png</normaloff>:/icons/3d-2.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>25</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="3">
         <spacer name="horizontalSpacer_2">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
@@ -763,7 +827,7 @@ padding-left:20px;
          </property>
         </spacer>
        </item>
-       <item row="9" column="1">
+       <item row="10" column="1">
         <widget class="QPushButton" name="pushButtonCharts">
          <property name="enabled">
           <bool>true</bool>
@@ -994,7 +1058,7 @@ background: none;
 background-color: rgba(0,0,0,0);
 color:grey;
 text-align:left;
-padding-left:20px;
+padding-left:18px;
 }
 
 QPushButton:focus{
@@ -1011,7 +1075,7 @@ border: none;
 /*background-color: #FB2576;*/
 color:white;
 text-align:left;
-padding-left:20px;
+padding-left:18px;
 }</string>
          </property>
          <property name="text">
@@ -1139,7 +1203,7 @@ padding-left:20px;
          </property>
         </widget>
        </item>
-       <item row="12" column="1">
+       <item row="14" column="1">
         <widget class="QPushButton" name="pushButtonSettings">
          <property name="minimumSize">
           <size>
@@ -1213,9 +1277,60 @@ padding-left:17px;
         </widget>
        </item>
        <item row="11" column="1">
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="pushButtonLiveStream">
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+background: none;
+background-color: rgba(0,0,0,0);
+color:grey;
+text-align:left;
+padding-left:18px;
+}
+
+QPushButton:focus{
+border:none;
+background: none;
+background-color: rgba(0,0,0,0);
+}
+
+QPushButton:checked{
+background: none;
+background-color: rgba(0,0,0,0);
+border: none;
+/*background-color: rgb(79, 93, 218);
+/*background-color: #FB2576;*/
+color:white;
+text-align:left;
+padding-left:18px;
+}</string>
+         </property>
          <property name="text">
-          <string>PushButton</string>
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset resource="icons.qrc">
+           <normaloff>:/icons/livestream-icon.png</normaloff>:/icons/livestream-icon.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>23</width>
+           <height>23</height>
+          </size>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoExclusive">
+          <bool>true</bool>
+         </property>
+         <property name="autoDefault">
+          <bool>true</bool>
+         </property>
+         <property name="flat">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -1230,7 +1345,7 @@ padding: 0px;
 </string>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>5</number>
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
