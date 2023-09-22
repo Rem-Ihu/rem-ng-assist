@@ -41,7 +41,7 @@
 
 
 
-#include <QWebEngineView>
+//#include <QWebEngineView>
 #include <QPropertyAnimation>
 #include <QRect>
 #include <QGuiApplication>
@@ -91,22 +91,22 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-    QFrame *VIDEO_frame = findChild<QFrame*>("realtimevideo");
+//    QFrame *VIDEO_frame = findChild<QFrame*>("realtimevideo");
 
-    VIDEO_frame->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+//    VIDEO_frame->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    QVBoxLayout *VIDEO_layout = new QVBoxLayout(VIDEO_frame);
+//    QVBoxLayout *VIDEO_layout = new QVBoxLayout(VIDEO_frame);
 
-    QWebEngineView *VIDEO_view = new QWebEngineView(VIDEO_frame);
-    VIDEO_view->setUrl(QUrl("https://stream.remihu.eu/")); //our url
-    VIDEO_view->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+//    QWebEngineView *VIDEO_view = new QWebEngineView(VIDEO_frame);
+//    VIDEO_view->setUrl(QUrl("https://stream.remihu.eu/")); //our url
+//    VIDEO_view->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
-    VIDEO_layout->addWidget(VIDEO_view);
-
-
+//    VIDEO_layout->addWidget(VIDEO_view);
 
 
-    ui->buttonFrameAll->setStyleSheet("background-image: url(\"/Users/dimitriosnikou/Downloads/sidebar.png\"); background-repeat: none;");
+
+
+//    ui->buttonFrameAll->setStyleSheet("background-image: url(\"/Users/dimitriosnikou/Downloads/sidebar.png\"); background-repeat: none;");
 
 
 
