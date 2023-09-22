@@ -63,5 +63,6 @@
         <file>icons/scroll_down.png</file>
         <file>icons/3d-2.png</file>
         <file>icons/livestream-icon.png</file>
+        <file>icons/sidebar.png</file>
     </qresource>
 </RCC>

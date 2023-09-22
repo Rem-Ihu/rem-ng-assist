@@ -106,7 +106,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-//    ui->buttonFrameAll->setStyleSheet("background-image: url(\"/Users/dimitriosnikou/Downloads/sidebar.png\"); background-repeat: none;");
+//    ui->buttonFrameAll->setStyleSheet("background-image: url(\"icons/sidebar.png\"); background-repeat: none;");
 
 
 

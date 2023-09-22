@@ -78,7 +78,7 @@
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #181818;
+       <string notr="true">background-image: url(&quot;:/icons/sidebar.png&quot;);
 /*background-color: #3F0071;*/
 z-index: 10;</string>
       </property>
