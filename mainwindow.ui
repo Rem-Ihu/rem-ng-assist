@@ -1345,7 +1345,7 @@ padding: 0px;
 </string>
       </property>
       <property name="currentIndex">
-       <number>5</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="Home">
        <layout class="QGridLayout" name="gridLayout_10">
@@ -2598,7 +2598,7 @@ QTabBar::tab:selected {
            <enum>QTabWidget::Rounded</enum>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <property name="documentMode">
            <bool>true</bool>
@@ -7226,7 +7226,7 @@ border:none;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1200</width>
+             <width>1132</width>
              <height>2181</height>
             </rect>
            </property>

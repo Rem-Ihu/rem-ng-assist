@@ -68,7 +68,9 @@ int main(int argc, char *argv[])
 {
 
     QApplication app(argc, argv); // Creates the application
-
+    app.setApplicationName("REM Engineer Assist");
+    app.setOrganizationName("Racing Electric Motorsports");
+    app.setOrganizationDomain("remihu.eu");
     const auto importUrl = argc > 1 ? QUrl::fromLocalFile(argv[1]) : QUrl{};
 //    realtimeDataStream();
 
