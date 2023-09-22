@@ -16,6 +16,7 @@ find_package(Qt6 REQUIRED COMPONENTS Charts Core Gui)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Network)
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Quick Quick3D Widgets)
 #find_package(Qt6 REQUIRED WebEngineWidgets)
+find_package(Qt6 REQUIRED COMPONENTS WebEngineWidgets)
 find_package(Qt6 REQUIRED Multimedia)
 
 
@@ -72,6 +73,7 @@ target_link_libraries(REM PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 target_link_libraries(REM PRIVATE Qt${QT_VERSION_MAJOR}::Charts)
 target_link_libraries(REM PRIVATE Qt${QT_VERSION_MAJOR}::Network)
 #target_link_libraries(REM PRIVATE Qt${QT_VERSION_MAJOR}::WebEngineWidgets)
+target_link_libraries(REM  PRIVATE Qt::WebEngineWidgets)
 target_link_libraries(REM PRIVATE Qt${QT_VERSION_MAJOR}::Multimedia)
 
 
