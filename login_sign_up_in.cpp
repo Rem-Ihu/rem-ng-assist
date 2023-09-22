@@ -78,6 +78,7 @@ login_sign_up_in::~login_sign_up_in()
 
 bool emailCorrect=false; // Initialize boolean variables to check if email and password are correct
 bool passwordCorrect=false;
+
 void login_sign_up_in::on_pushButton_Login_clicked() // Function called when the "Login" button is clicked
 {
 
@@ -112,7 +113,6 @@ void login_sign_up_in::on_pushButton_Login_clicked() // Function called when the
 
         if(1){//<-------------------------------------------------
 //    if(emailCorrect && passwordCorrect){// Open the main window if the email and password are correct
-//    if(Username == "jim123" && Password == "123"){
         if(!mainwindow){
             mainwindow = new MainWindow();
         }

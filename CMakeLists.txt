@@ -27,7 +27,6 @@ set(PROJECT_SOURCES
         icons.qrc
         chart_data.qrc
         databasehandler1.h
-        main.qml
         colors.qss
         main.qss
         includes.h
@@ -41,6 +40,7 @@ set(PROJECT_SOURCES
         secdialog.ui
         secdialog.cpp
         secdialog.h
+        3d.qml
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

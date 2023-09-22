@@ -48,6 +48,8 @@
 namespace _RealTime{
     bool setRealTime;
     QString nameSetRealTime;
+    bool test = false;
+    QQuickWindow *window;
 }
 
 namespace myNamespace{
@@ -61,14 +63,38 @@ namespace username_change{
     extern std::vector<std::string> full_name;
 }
 
+
 int main(int argc, char *argv[])
 {
 
     QApplication app(argc, argv); // Creates the application
 
+    const auto importUrl = argc > 1 ? QUrl::fromLocalFile(argv[1]) : QUrl{};
 //    realtimeDataStream();
 
+    QSurfaceFormat::setDefaultFormat(QQuick3D::idealSurfaceFormat(4));
+
+    QQmlApplicationEngine engine;
+    const QUrl url(QStringLiteral("/Applications/Repo/rem-ng-assist/3d.qml"));
+
+    engine.load(url);
+
+    if (engine.rootObjects().isEmpty()) {
+        qWarning() << "Could not find root object in" << url;
+    }
+
+    QObject *topLevel = engine.rootObjects().value(0);
+    _RealTime::window = qobject_cast<QQuickWindow *>(topLevel);
+
+    if (_RealTime::window){
+        _RealTime::window->setProperty("importUrl", importUrl);
+        _RealTime::window->hide();
+    }
+
     firebaseGet();
+
+
+
 
 
     //REALTIME EVENT MANAGER
@@ -79,8 +105,6 @@ int main(int argc, char *argv[])
     realtime_timer.start(100); // Send a request every 100 milli-seconds
     realtime_manager.moveToThread(&realtime_thread); // Put timer and manager to same thread
     realtime_timer.moveToThread(&realtime_thread);
-
-
 
 
     QObject::connect(&realtime_timer, &QTimer::timeout, [&]() { // Connect the timeout signal of the timer to a slot that sends the request and processes the response
@@ -127,11 +151,11 @@ int main(int argc, char *argv[])
 
     loginWindow.show();
 
+
+
+
     return app.exec();
 }
-
-
-
 
 
 

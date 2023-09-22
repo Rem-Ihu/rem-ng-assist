@@ -6,6 +6,8 @@
 #include <QChartView>
 #include <QLineSeries>
 
+#include <QPropertyAnimation>
+#include <QRect>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,6 +21,7 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void chartCreationSetup(int parses, std::vector<std::string> preferences_split, std::vector<QFrame*> frameArray);
+
 
 private slots:
 //    void on_pushButtonRTG_9_released();
@@ -148,11 +151,14 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_open3d_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTabWidget *tabWidget;
     QSplitter *splitter;
 
+    QPropertyAnimation *animation_1;
 
 };
 #endif // MAINWINDOW_H

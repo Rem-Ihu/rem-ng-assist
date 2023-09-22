@@ -41,6 +41,16 @@
 
 
 
+
+#include <QPropertyAnimation>
+#include <QRect>
+#include <QGuiApplication>
+#include <QQmlApplicationEngine>
+#include <QQuickWindow>
+#include <QtQuick3D/qquick3d.h>
+
+
+
 int vector_counter_chart=0;
 bool flag_first_chart=false;
 std::vector<QFrame*> frameArray;
@@ -53,6 +63,8 @@ std::vector<int> tries;
 namespace _RealTime{
     extern bool setRealTime;
     extern QString nameSetRealTime;
+    extern bool test;
+    extern QQuickWindow *window;
 }
 
 namespace myNamespace{
@@ -78,6 +90,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->resolutionslider->setValue(25);
 
 
+
 //    QFrame *VIDEO_frame = findChild<QFrame*>("realtimevideo");
 
 //    VIDEO_frame->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
@@ -91,6 +104,15 @@ MainWindow::MainWindow(QWidget *parent)
 //    VIDEO_layout->addWidget(VIDEO_view);
 // HELLO TEST
 
+
+//   animation_1 = new QPropertyAnimation(ui->fingertips,"geometry");
+//   animation_1->setDuration(1000);
+//   animation_1->setStartValue(ui->fingertips->geometry());
+//   animation_1->setEndValue(QRect(0, 0, 500, 500));
+//   animation_1->start();
+
+
+    ui->buttonFrameAll->setStyleSheet("background-image: url(\"/Users/dimitriosnikou/Downloads/sidebar.png\"); background-repeat: none;");
 
 
 
@@ -1440,7 +1462,7 @@ void MainWindow::on_color_change_button_clicked()
 
 void MainWindow::on_pushButtonLogOut_clicked()
 {
-
+    animation_1->start();
 }
 
 
@@ -1586,4 +1608,10 @@ void MainWindow::on_pushButton_3_clicked()
     loop.exec();
 }
 
+
+
+void MainWindow::on_open3d_clicked()
+{
+    _RealTime::window->show();
+}
 
