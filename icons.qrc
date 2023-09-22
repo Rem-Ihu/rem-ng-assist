@@ -64,5 +64,6 @@
         <file>icons/3d-2.png</file>
         <file>icons/livestream-icon.png</file>
         <file>icons/sidebar.png</file>
+        <file>3d.qml</file>
     </qresource>
 </RCC>

@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
     QSurfaceFormat::setDefaultFormat(QQuick3D::idealSurfaceFormat(4));
 
     QQmlApplicationEngine engine;
-    const QUrl url(QStringLiteral("/Applications/Repo/rem-ng-assist/3d.qml"));
+    const QUrl url(QStringLiteral("qrc:/3d.qml"));
 
     engine.load(url);
 
