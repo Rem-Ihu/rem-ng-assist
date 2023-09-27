@@ -14,13 +14,16 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:rgb(217, 217, 217);</string>
+   <string notr="true">background-color:#181818;</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="1">
     <widget class="QStackedWidget" name="main_stacked">
      <property name="cursor">
       <cursorShape>ArrowCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #181818;</string>
      </property>
      <property name="currentIndex">
       <number>3</number>
@@ -51,9 +54,10 @@
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
-color:white;
-border-radius:10px;</string>
+             <string notr="true">background-color:#ffffff;
+color:black;
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>BACK</string>
@@ -85,10 +89,10 @@ border-radius:10px;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:#461e46;
 color:white;
-border-radius:20px;
-font-size: 12pt;</string>
+border-radius:5px;
+font-size: 20pt;</string>
          </property>
          <property name="text">
           <string>Energy Estimation Parameters</string>
@@ -110,9 +114,9 @@ font-size: 12pt;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:rgb(255, 255, 255);
 color:white;
-border-radius:20px;
+border-radius:5px;
 font-size: 12pt;</string>
          </property>
          <property name="frameShape">
@@ -140,9 +144,10 @@ font-size: 12pt;</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>Estimated Charge</string>
@@ -161,9 +166,10 @@ border-radius:10px;</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>Estimated Consumption</string>
@@ -182,9 +188,10 @@ border-radius:10px;</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>Estimated Energy</string>
@@ -203,9 +210,10 @@ border-radius:10px;</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>Estimated Distance Left</string>
@@ -247,9 +255,9 @@ border-radius:10px;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:rgb(255, 255, 255);
 color:white;
-border-radius:20px;
+border-radius:5px;
 font-size: 12pt;</string>
          </property>
          <property name="frameShape">
@@ -265,11 +273,12 @@ font-size: 12pt;</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;
-padding-top:10px;
-padding-bottom:10px;</string>
+border-radius:5px;
+font-size: 14pt;
+padding-top:15px;
+padding-bottom:15px;</string>
             </property>
             <property name="text">
              <string>Charging Time</string>
@@ -282,11 +291,12 @@ padding-bottom:10px;</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;
-padding-top:10px;
-padding-bottom:10px;</string>
+border-radius:5px;
+font-size: 14pt;
+padding-top:15px;
+padding-bottom:15px;</string>
             </property>
             <property name="text">
              <string>Charging State Duration</string>
@@ -311,10 +321,10 @@ padding-bottom:10px;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:#461e46;
 color:white;
-border-radius:20px;
-font-size: 12pt;</string>
+border-radius:5px;
+font-size: 20pt;</string>
          </property>
          <property name="text">
           <string>Charging Parameters</string>
@@ -345,9 +355,10 @@ font-size: 12pt;</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
-color:white;
-border-radius:10px;</string>
+             <string notr="true">background-color:#ffffff;
+color:black;
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>BACK</string>
@@ -387,7 +398,7 @@ border-radius:10px;</string>
      </widget>
      <widget class="QWidget" name="cell">
       <layout class="QGridLayout" name="gridLayout_5">
-       <item row="1" column="0">
+       <item row="0" column="0">
         <widget class="QFrame" name="back_4">
          <property name="styleSheet">
           <string notr="true">background-color: rgba(255, 0, 0, 0);</string>
@@ -417,9 +428,10 @@ border-radius:10px;</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
-color:white;
-border-radius:10px;</string>
+             <string notr="true">background-color:#ffffff;
+color:black;
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>BACK</string>
@@ -429,7 +441,7 @@ border-radius:10px;</string>
          </layout>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="3" column="0">
         <widget class="QFrame" name="background_cell_frame">
          <property name="minimumSize">
           <size>
@@ -447,33 +459,7 @@ border-radius:10px;</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout_9">
-          <item row="0" column="0">
-           <widget class="QPushButton" name="cell_cell">
-            <property name="minimumSize">
-             <size>
-              <width>331</width>
-              <height>61</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>331</width>
-              <height>61</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(166, 166, 166);
-color:white;
-border-radius:20px;
-font-size: 12pt;
-marging-bottom:30px</string>
-            </property>
-            <property name="text">
-             <string>Cell Parameters</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
+          <item row="2" column="0">
            <widget class="QFrame" name="cell_frame">
             <property name="minimumSize">
              <size>
@@ -484,13 +470,13 @@ marging-bottom:30px</string>
             <property name="maximumSize">
              <size>
               <width>329</width>
-              <height>400</height>
+              <height>10000</height>
              </size>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(166, 166, 166);
+             <string notr="true">background-color:rgb(255, 255, 255);
 color:white;
-border-radius:20px;
+border-radius:5px;
 font-size: 12pt;</string>
             </property>
             <property name="frameShape">
@@ -506,11 +492,12 @@ font-size: 12pt;</string>
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color:rgb(78, 82, 93);
+                <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;
-padding-top:5px;
-padding-bottom:5px;</string>
+border-radius:5px;
+font-size: 14pt;
+padding-top:15px;
+padding-bottom:15px;</string>
                </property>
                <property name="text">
                 <string>Max Cell Balancing</string>
@@ -523,11 +510,13 @@ padding-bottom:5px;</string>
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color:rgb(78, 82, 93);
+                <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;
-padding-top:5px;
-padding-bottom:5px;</string>
+border-radius:5px;
+font-size: 14pt;
+padding-top:15px;
+padding-bottom:15px;
+margin-bottom:0px;</string>
                </property>
                <property name="text">
                 <string>Average Cell Balancing</string>
@@ -540,11 +529,12 @@ padding-bottom:5px;</string>
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color:rgb(78, 82, 93);
+                <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;
-padding-top:5px;
-padding-bottom:5px;</string>
+border-radius:5px;
+font-size: 14pt;
+padding-top:15px;
+padding-bottom:15px;</string>
                </property>
                <property name="text">
                 <string>Min Cell Voltage</string>
@@ -557,11 +547,13 @@ padding-bottom:5px;</string>
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color:rgb(78, 82, 93);
+                <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;
-padding-top:5px;
-padding-bottom:5px;</string>
+border-radius:5px;
+font-size: 14pt;
+padding-top:15px;
+padding-bottom:15px;
+margin-bottom:0px;</string>
                </property>
                <property name="text">
                 <string>Average Cell Module</string>
@@ -574,11 +566,12 @@ padding-bottom:5px;</string>
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color:rgb(78, 82, 93);
+                <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;
-padding-top:5px;
-padding-bottom:5px;</string>
+border-radius:5px;
+font-size: 14pt;
+padding-top:15px;
+padding-bottom:15px;</string>
                </property>
                <property name="text">
                 <string>Average Cell Voltage</string>
@@ -591,11 +584,12 @@ padding-bottom:5px;</string>
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color:rgb(78, 82, 93);
+                <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;
-padding-top:5px;
-padding-bottom:5px;</string>
+border-radius:5px;
+font-size: 14pt;
+padding-top:15px;
+padding-bottom:15px;</string>
                </property>
                <property name="text">
                 <string>Max Cell Voltage</string>
@@ -608,11 +602,13 @@ padding-bottom:5px;</string>
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color:rgb(78, 82, 93);
+                <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;
-padding-top:5px;
-padding-bottom:5px;</string>
+border-radius:5px;
+font-size: 14pt;
+padding-top:15px;
+padding-bottom:15px;
+margin-bottom:0px;</string>
                </property>
                <property name="text">
                 <string>Min Cell Module Temperature</string>
@@ -625,11 +621,12 @@ padding-bottom:5px;</string>
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color:rgb(78, 82, 93);
+                <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;
-padding-top:5px;
-padding-bottom:5px;</string>
+border-radius:5px;
+font-size: 14pt;
+padding-top:15px;
+padding-bottom:15px;</string>
                </property>
                <property name="text">
                 <string>Min Cell Balancing</string>
@@ -642,11 +639,12 @@ padding-bottom:5px;</string>
                 <cursorShape>PointingHandCursor</cursorShape>
                </property>
                <property name="styleSheet">
-                <string notr="true">background-color:rgb(78, 82, 93);
+                <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;
-padding-top:5px;
-padding-bottom:5px;</string>
+border-radius:5px;
+font-size: 14pt;
+padding-top:15px;
+padding-bottom:15px;</string>
                </property>
                <property name="text">
                 <string>Max Cell Module Temperature</string>
@@ -656,34 +654,33 @@ padding-bottom:5px;</string>
             </layout>
            </widget>
           </item>
-          <item row="2" column="0">
-           <spacer name="cell_cell_spacer">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
+          <item row="1" column="0">
+           <widget class="QPushButton" name="cell_cell">
+            <property name="minimumSize">
              <size>
-              <width>20</width>
-              <height>40</height>
+              <width>331</width>
+              <height>35</height>
              </size>
             </property>
-           </spacer>
+            <property name="maximumSize">
+             <size>
+              <width>331</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#461e46;
+color:white;
+border-radius:5px;
+font-size: 20pt;</string>
+            </property>
+            <property name="text">
+             <string>Cell Parameters</string>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
-       </item>
-       <item row="0" column="0">
-        <spacer name="verticalSpacer_7">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
        </item>
       </layout>
      </widget>
@@ -697,11 +694,18 @@ padding-bottom:5px;</string>
            <height>61</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>20</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:#461e46;
 color:white;
-border-radius:20px;
-font-size: 12pt;</string>
+border-radius:5px;
+font-size: 20pt;</string>
          </property>
          <property name="text">
           <string>Signal/Misc Parameters</string>
@@ -723,9 +727,9 @@ font-size: 12pt;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:rgb(255, 255, 255);
 color:white;
-border-radius:20px;
+border-radius:5px;
 font-size: 12pt;</string>
          </property>
          <property name="frameShape">
@@ -743,13 +747,20 @@ font-size: 12pt;</string>
               <height>40</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>Live Cell Parameters</string>
@@ -764,13 +775,20 @@ border-radius:10px;</string>
               <height>40</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>Energy Estimation Parameters</string>
@@ -785,14 +803,21 @@ border-radius:10px;</string>
               <height>40</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;
-marging-bottom:10px;</string>
+border-radius:5px;
+marging-bottom:10px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>Charging Parameters</string>
@@ -807,13 +832,20 @@ marging-bottom:10px;</string>
               <height>40</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>Battery Status Flag</string>
@@ -834,13 +866,20 @@ border-radius:10px;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>Cell Parameters</string>
@@ -858,11 +897,18 @@ border-radius:10px;</string>
            <height>61</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>20</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:#461e46;
 color:white;
-border-radius:20px;
-font-size: 12pt;</string>
+border-radius:5px;
+font-size: 20pt;</string>
          </property>
          <property name="text">
           <string>Battery Parameters</string>
@@ -897,9 +943,9 @@ font-size: 12pt;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:rgb(255, 255, 255);
 color:white;
-border-radius:20px;
+border-radius:5px;
 font-size: 12pt;</string>
          </property>
          <property name="frameShape">
@@ -917,13 +963,20 @@ font-size: 12pt;</string>
               <height>40</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>Output Signals</string>
@@ -944,13 +997,20 @@ border-radius:10px;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>Input Signals</string>
@@ -975,9 +1035,9 @@ border-radius:10px;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:rgb(255, 255, 255);
 color:white;
-border-radius:20px;
+border-radius:5px;
 font-size: 12pt;</string>
          </property>
          <property name="frameShape">
@@ -1001,13 +1061,20 @@ font-size: 12pt;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>Protection Flags LSB</string>
@@ -1022,13 +1089,20 @@ border-radius:10px;</string>
               <height>40</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>Last Charging Error</string>
@@ -1049,13 +1123,20 @@ border-radius:10px;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>Protection Flags MSB</string>
@@ -1073,11 +1154,18 @@ border-radius:10px;</string>
            <height>61</height>
           </size>
          </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>20</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:#461e46;
 color:white;
-border-radius:20px;
-font-size: 12pt;</string>
+border-radius:5px;
+font-size: 20pt;</string>
          </property>
          <property name="text">
           <string>Error/Protection Parameters</string>
@@ -1099,9 +1187,9 @@ font-size: 12pt;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:rgb(255, 255, 255);
 color:white;
-border-radius:20px;
+border-radius:5px;
 font-size: 12pt;</string>
          </property>
          <property name="frameShape">
@@ -1125,16 +1213,23 @@ font-size: 12pt;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
-             <string>TEMP_MOTOR</string>
+             <string>Motor Temperature</string>
             </property>
            </widget>
           </item>
@@ -1152,43 +1247,23 @@ border-radius:10px;</string>
               <height>100</height>
              </size>
             </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
-color:white;
-border-radius:10px;</string>
-            </property>
-            <property name="text">
-             <string>TEMP_MOTOR_EST</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="1">
-           <widget class="QPushButton" name="battery_input_12">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="sizeIncrement">
-             <size>
-              <width>0</width>
-              <height>100</height>
-             </size>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
             </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
-             <string>CURRENT_BATT</string>
+             <string>Motor Temp. EST</string>
             </property>
            </widget>
           </item>
@@ -1206,16 +1281,23 @@ border-radius:10px;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
-             <string>TEMP_MOTOR_MAX</string>
+             <string>Max Motor Temp.</string>
             </property>
            </widget>
           </item>
@@ -1233,16 +1315,57 @@ border-radius:10px;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
-             <string>TEMP_SEVCON</string>
+             <string>Sevcon Temperature</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QPushButton" name="battery_input_12">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Battery Current</string>
             </property>
            </widget>
           </item>
@@ -1264,9 +1387,9 @@ border-radius:10px;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:rgb(255, 255, 255);
 color:white;
-border-radius:20px;
+border-radius:5px;
 font-size: 12pt;</string>
          </property>
          <property name="frameShape">
@@ -1290,16 +1413,23 @@ font-size: 12pt;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
-             <string>TORQUE</string>
+             <string>Torque</string>
             </property>
            </widget>
           </item>
@@ -1317,16 +1447,24 @@ border-radius:10px;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;
+</string>
             </property>
             <property name="text">
-             <string>TORQUE_MAX</string>
+             <string>Max Torque</string>
             </property>
            </widget>
           </item>
@@ -1344,16 +1482,23 @@ border-radius:10px;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
-             <string>TORQUE_TARG</string>
+             <string>Torque Target</string>
             </property>
            </widget>
           </item>
@@ -1371,16 +1516,23 @@ border-radius:10px;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
-             <string>TOTAL_VOLTAGE</string>
+             <string>Total Voltage</string>
             </property>
            </widget>
           </item>
@@ -1398,16 +1550,23 @@ border-radius:10px;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
-             <string>THROTTLE</string>
+             <string>Throttle</string>
             </property>
            </widget>
           </item>
@@ -1429,9 +1588,9 @@ border-radius:10px;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:rgb(255, 255, 255);
 color:white;
-border-radius:20px;
+border-radius:5px;
 font-size: 12pt;</string>
          </property>
          <property name="frameShape">
@@ -1455,16 +1614,23 @@ font-size: 12pt;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
-             <string>VOLTAGE_BATT</string>
+             <string>Battery Voltage</string>
             </property>
            </widget>
           </item>
@@ -1482,16 +1648,23 @@ border-radius:10px;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
-             <string>VELOCITY</string>
+             <string>Velocity</string>
             </property>
            </widget>
           </item>
@@ -1509,16 +1682,23 @@ border-radius:10px;</string>
               <height>100</height>
              </size>
             </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
             <property name="cursor">
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;</string>
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
-             <string>VELOCITY_ACT</string>
+             <string>Velocity ACT</string>
             </property>
            </widget>
           </item>
@@ -1544,10 +1724,10 @@ border-radius:10px;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:#461e46;
 color:white;
-border-radius:20px;
-font-size: 12pt;</string>
+border-radius:5px;
+font-size: 20pt;</string>
          </property>
          <property name="text">
           <string>Live Cell Parameters</string>
@@ -1578,9 +1758,10 @@ font-size: 12pt;</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
-color:white;
-border-radius:10px;</string>
+             <string notr="true">background-color:#ffffff;
+color:black;
+border-radius:5px;
+font-size: 14pt;</string>
             </property>
             <property name="text">
              <string>BACK</string>
@@ -1618,9 +1799,9 @@ border-radius:10px;</string>
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">background-color:rgb(166, 166, 166);
+          <string notr="true">background-color:rgb(255, 255, 255);
 color:white;
-border-radius:20px;
+border-radius:5px;
 font-size: 12pt;</string>
          </property>
          <property name="frameShape">
@@ -1636,11 +1817,12 @@ font-size: 12pt;</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;
-padding-top:10px;
-padding-bottom:10px;</string>
+border-radius:5px;
+font-size: 14pt;
+padding-top:15px;
+padding-bottom:15px;</string>
             </property>
             <property name="text">
              <string>Number of Live Cells LSB</string>
@@ -1653,11 +1835,12 @@ padding-bottom:10px;</string>
              <cursorShape>PointingHandCursor</cursorShape>
             </property>
             <property name="styleSheet">
-             <string notr="true">background-color:rgb(78, 82, 93);
+             <string notr="true">background-color:#181818;
 color:white;
-border-radius:10px;
-padding-top:10px;
-padding-bottom:10px;</string>
+border-radius:5px;
+font-size: 14pt;
+padding-top:15px;
+padding-bottom:15px;</string>
             </property>
             <property name="text">
              <string>Number of Live Cells MSB</string>
