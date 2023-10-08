@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
     app.setOrganizationName("Racing Electric Motorsports");
     app.setOrganizationDomain("remihu.eu");
     const auto importUrl = argc > 1 ? QUrl::fromLocalFile(argv[1]) : QUrl{};
-//    realtimeDataStream();
+
 
     QSurfaceFormat::setDefaultFormat(QQuick3D::idealSurfaceFormat(4));
 

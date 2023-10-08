@@ -60,7 +60,7 @@ std::vector<int> tries;
 #include <sstream>
 //test ui
 
-namespace _RealTime{
+namespace _RealTime{ //Linking of the external class for the realtime series
     extern bool setRealTime;
     extern QString nameSetRealTime;
     extern bool test;
@@ -91,7 +91,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-    QFrame *VIDEO_frame = findChild<QFrame*>("realtimevideo");
+    QFrame *VIDEO_frame = findChild<QFrame*>("realtimevideo"); //Setting up the frame for the realtime video frame
 
     VIDEO_frame->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
 
@@ -106,7 +106,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
-//    ui->buttonFrameAll->setStyleSheet("background-image: url(\"icons/sidebar.png\"); background-repeat: none;");
+
 
 
 
@@ -730,7 +730,6 @@ void MainWindow::on_addTabNameButton_clicked()
             QVector<QPointF> points;
             int N = DataRead.size();
 
-    //        qDebug() << "AXNEEEEEEE " << dateStr;
             int frontN, rearN;
             bool flagN = false;
 
