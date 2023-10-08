@@ -119,6 +119,15 @@ MainWindow::MainWindow(QWidget *parent)
     QDate dates[] = { QDate(2023, 3, 3), QDate(2023, 3, 15), QDate(2023, 3, 28), QDate(2023, 3, 31), QDate(2023, 10, 2), QDate(2023, 10, 2), QDate(2023, 6, 9), QDate(2023, 5, 1)};
     QColor colors[] = { QColor(48, 172, 255), QColor(255, 125, 33), QColor(161, 66, 255), QColor(152, 8, 8), QColor(12, 207, 100) };
 
+    QDate startDate(2023, 10, 11); // Start date
+    QDate endDate(2023, 10, 15);   // End date
+    QColor greenColor(0, 255, 0);  // Green color
+
+    for (QDate date = startDate; date <= endDate; date = date.addDays(1)) {
+        QTextCharFormat format;
+        format.setBackground(QBrush(QColor(0, 128, 0)));
+        calendar->setDateTextFormat(date, format);
+    }
 
     for (int i = 0; i < 5; i++) { // Loop over dates and set text format for each one
         QTextCharFormat format1;
