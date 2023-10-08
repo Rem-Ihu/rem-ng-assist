@@ -38,9 +38,6 @@
 #include <QtWidgets/QFrame>
 #include <QtMultimedia/QCamera>
 #include "secdialog.h"
-
-
-
 #include <QWebEngineView>
 #include <QPropertyAnimation>
 #include <QRect>
@@ -65,6 +62,7 @@ namespace _RealTime{
     extern QString nameSetRealTime;
     extern bool test;
     extern QQuickWindow *window;
+    extern int gauge_val[3];
 }
 
 namespace myNamespace{
@@ -146,88 +144,6 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout *calendar_layout = new QVBoxLayout(ui->frameCalendar); // Add calendar widget to layout
     calendar_layout->addWidget(calendar);
     ui->frameCalendar->setLayout(calendar_layout);
-
-
-
-
-
-
-
-
-
-    //GAUGE CLASS
-    class RadialThermometerProgressBar : public QProgressBar {
-    public:
-        RadialThermometerProgressBar(QWidget* parent = nullptr) : QProgressBar(parent) {
-            setFixedSize(190, 190);
-        }
-
-    protected:
-        void paintEvent(QPaintEvent* event) override { // Define a function to handle painting events for the widget
-            Q_UNUSED(event); // Indicate that the `event` parameter is not used to avoid a compiler warning
-            QPainter painter(this); // Create a QPainter object to draw on the widget
-            painter.setRenderHint(QPainter::Antialiasing, true); // Set a rendering hint to enable antialiasing
-
-            QRectF rect = this->rect().adjusted(20, 20, -20, -30); // Create a rectangle to define the drawing area, adjusted with a margin
-            int minSize = qMin(rect.width(), rect.height()); // Determine the smaller dimension of the rectangle and calculate padding and font size based on that size
-            int padding = qMax(minSize / 50, 4);
-            int fontSize = qMax(minSize / 40, 20);
-
-            QFont font; // Create a font object and set the point size
-            font.setPointSize(fontSize);
-            painter.setFont(font);
-
-            // Draw the background circle
-            painter.setPen(QPen(QBrush(QColor(Qt::transparent)), padding)); // Set the pen color and thickness
-            painter.setBrush(Qt::NoBrush); // Set the fill color to none
-            painter.drawEllipse(rect); // Draw the ellipse
-
-            // Draw the progress arc
-            painter.setPen(QPen(QBrush(Qt::cyan), padding * 2)); // Set the pen color and thickness
-            painter.setBrush(Qt::NoBrush); // Set the fill color to none
-            int value = this->value(); // Get the current value of the widget
-            if (value > minimum() && value < maximum()) { // Only draw the arc if the value is within the minimum and maximum range
-                int angle = (int)((value - minimum()) * 180.0 / (maximum() - minimum())); // Calculate the angle of the arc based on the value
-                painter.drawArc(rect, 180 * 16, -angle * 16); // Draw the arc
-            }
-
-            // Draw the value text
-            painter.setPen(QPen(QBrush(Qt::white), padding)); // Set the pen color and thickness
-            painter.setBrush(Qt::NoBrush); // Set the fill color to none
-            QString valueStr = QString::number(value); // Convert the value to a string
-            QRect valueRect = painter.fontMetrics().boundingRect(valueStr); // Get the bounding rectangle of the text
-            painter.drawText(rect.center() - valueRect.center(), valueStr); // Draw the text centered within the widget
-
-        }
-    };
-
-    // Create progress bars
-    RadialThermometerProgressBar* gauge1 = new RadialThermometerProgressBar(ui->progressBarLeft);
-    RadialThermometerProgressBar* gauge2 = new RadialThermometerProgressBar(ui->progressBarMiddle);
-    RadialThermometerProgressBar* gauge3 = new RadialThermometerProgressBar(ui->progressBarRight);
-
-    // Set progress bar ranges and values
-    gauge1->setRange(0, 100);
-    gauge1->setValue(25);
-
-    gauge2->setRange(0, 100);
-    gauge2->setValue(50);
-
-    gauge3->setRange(0, 100);
-    gauge3->setValue(75);
-
-    ui->progressBarLeft->setLayout(new QVBoxLayout(ui->progressBarLeft)); // Set the layout of progressBarLeft to a new QVBoxLayout
-    ui->progressBarLeft->layout()->addWidget(gauge1); // Add gauge1 widget to the layout of progressBarLeft
-    ui->progressBarLeft->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding)); // Add a new QSpacerItem to the layout of progressBarLeft to expand the space
-
-    ui->progressBarMiddle->setLayout(new QVBoxLayout(ui->progressBarMiddle)); // Set the layout of progressBarMiddle to a new QVBoxLayout
-    ui->progressBarMiddle->layout()->addWidget(gauge2); // Add gauge2 widget to the layout of progressBarMiddle
-    ui->progressBarMiddle->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding)); // Add a new QSpacerItem to the layout of progressBarMiddle to expand the space
-
-    ui->progressBarRight->setLayout(new QVBoxLayout(ui->progressBarRight)); // Set the layout of progressBarRight to a new QVBoxLayout
-    ui->progressBarRight->layout()->addWidget(gauge3); // Add gauge3 widget to the layout of progressBarRight
-    ui->progressBarRight->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding)); // Add a new QSpacerItem to the layout of progressBarRight to expand the space
-
 
     QTimer *advanceSlideshow_timer = new QTimer(this);
         connect(advanceSlideshow_timer, &QTimer::timeout, this, &MainWindow::advanceSlideshow);
@@ -340,6 +256,82 @@ MainWindow::MainWindow(QWidget *parent)
     QVBoxLayout *realtime_layout = new QVBoxLayout(ui->realtime_chart_frame); // Add the chart view, label, and point label to the layout
     realtime_layout->addWidget(realtime_chartView);
     realtime_layout->addWidget(plot_points_label);
+
+
+
+    //GAUGE CLASS
+    class RadialThermometerProgressBar : public QProgressBar {
+    public:
+        RadialThermometerProgressBar(QWidget* parent = nullptr) : QProgressBar(parent) {
+            setFixedSize(190, 190);
+        }
+
+    protected:
+        void paintEvent(QPaintEvent* event) override { // Define a function to handle painting events for the widget
+            Q_UNUSED(event); // Indicate that the `event` parameter is not used to avoid a compiler warning
+            QPainter painter(this); // Create a QPainter object to draw on the widget
+            painter.setRenderHint(QPainter::Antialiasing, true); // Set a rendering hint to enable antialiasing
+
+            QRectF rect = this->rect().adjusted(20, 20, -20, -30); // Create a rectangle to define the drawing area, adjusted with a margin
+            int minSize = qMin(rect.width(), rect.height()); // Determine the smaller dimension of the rectangle and calculate padding and font size based on that size
+            int padding = qMax(minSize / 50, 4);
+            int fontSize = qMax(minSize / 40, 20);
+
+            QFont font; // Create a font object and set the point size
+            font.setPointSize(fontSize);
+            painter.setFont(font);
+
+            // Draw the background circle
+            painter.setPen(QPen(QBrush(QColor(Qt::transparent)), padding)); // Set the pen color and thickness
+            painter.setBrush(Qt::NoBrush); // Set the fill color to none
+            painter.drawEllipse(rect); // Draw the ellipse
+
+            // Draw the progress arc
+            painter.setPen(QPen(QBrush(Qt::cyan), padding * 2)); // Set the pen color and thickness
+            painter.setBrush(Qt::NoBrush); // Set the fill color to none
+            int value = this->value(); // Get the current value of the widget
+            if (value > minimum() && value < maximum()) { // Only draw the arc if the value is within the minimum and maximum range
+                int angle = (int)((value - minimum()) * 180.0 / (maximum() - minimum())); // Calculate the angle of the arc based on the value
+                painter.drawArc(rect, 180 * 16, -angle * 16); // Draw the arc
+            }
+
+            // Draw the value text
+            painter.setPen(QPen(QBrush(Qt::white), padding)); // Set the pen color and thickness
+            painter.setBrush(Qt::NoBrush); // Set the fill color to none
+            QString valueStr = QString::number(value); // Convert the value to a string
+            QRect valueRect = painter.fontMetrics().boundingRect(valueStr); // Get the bounding rectangle of the text
+            painter.drawText(rect.center() - valueRect.center(), valueStr); // Draw the text centered within the widget
+
+        }
+    };
+
+        // Create progress bars
+        RadialThermometerProgressBar* gauge1 = new RadialThermometerProgressBar(ui->progressBarLeft);
+        RadialThermometerProgressBar* gauge2 = new RadialThermometerProgressBar(ui->progressBarMiddle);
+        RadialThermometerProgressBar* gauge3 = new RadialThermometerProgressBar(ui->progressBarRight);
+
+        gauge1->setRange(0, 100);
+        gauge1->setValue(_RealTime::gauge_val[0]);
+
+        gauge2->setRange(0, 100);
+        gauge2->setValue(_RealTime::gauge_val[1]);
+
+        gauge3->setRange(0, 100);
+        gauge3->setValue(_RealTime::gauge_val[2]);
+
+
+        ui->progressBarLeft->setLayout(new QVBoxLayout(ui->progressBarLeft)); // Set the layout of progressBarLeft to a new QVBoxLayout
+        ui->progressBarLeft->layout()->addWidget(gauge1); // Add gauge1 widget to the layout of progressBarLeft
+        ui->progressBarLeft->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding)); // Add a new QSpacerItem to the layout of progressBarLeft to expand the space
+
+        ui->progressBarMiddle->setLayout(new QVBoxLayout(ui->progressBarMiddle)); // Set the layout of progressBarMiddle to a new QVBoxLayout
+        ui->progressBarMiddle->layout()->addWidget(gauge2); // Add gauge2 widget to the layout of progressBarMiddle
+        ui->progressBarMiddle->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding)); // Add a new QSpacerItem to the layout of progressBarMiddle to expand the space
+
+        ui->progressBarRight->setLayout(new QVBoxLayout(ui->progressBarRight)); // Set the layout of progressBarRight to a new QVBoxLayout
+        ui->progressBarRight->layout()->addWidget(gauge3); // Add gauge3 widget to the layout of progressBarRight
+        ui->progressBarRight->layout()->addItem(new QSpacerItem(0, 0, QSizePolicy::Expanding, QSizePolicy::Expanding)); // Add a new QSpacerItem to the layout of progressBarRight to expand the space
+
 }
 
 void MainWindow::addLoadingScreen(bool finishLoading, QDialog *loadingDialog){
@@ -1614,7 +1606,7 @@ void MainWindow::on_open3d_clicked()
 
 void MainWindow::on_pushButton3DView_clicked()
 {
-    ui->stackedWidget->setCurrentIndex(3);
+    _RealTime::window->show();
 }
 
 

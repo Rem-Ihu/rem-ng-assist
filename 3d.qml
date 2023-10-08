@@ -137,17 +137,18 @@ Window {
         Rectangle {
             id: messageBox
             visible: importNode.status !== RuntimeLoader.Success
-            color: "lightblue"
+            color: "purple"
             width: parent.width * 0.8
             height: parent.height * 0.8
             anchors.centerIn: parent
             radius: Math.min(width, height) / 10
-            opacity: 0.6
+            opacity: 1
             Text {
                 anchors.fill: parent
                 font.pixelSize: 36
-                text: "Status: " + importNode.errorString + "\nPress \"Import...\" to import a model"
+                text: "Status: " + importNode.errorString + "\nPress \"Import\" to import any model."
                 color: "white"
+                font.bold: true
                 wrapMode: Text.Wrap
                 horizontalAlignment: Text.AlignHCenter
                 verticalAlignment: Text.AlignVCenter
@@ -170,46 +171,82 @@ Window {
     }
     //! [camera control]
 
-    Row {
-        RoundButton {
-            id: importButton
-            text: "Import..."
-            onClicked: fileDialog.open()
-            focusPolicy: Qt.NoFocus
+    Column {
+            spacing: 10  // Adjust the spacing between buttons
+            anchors.horizontalCenter: parent.horizontalCenter  // Center the buttons horizontally
+
+            Row {
+                spacing: 10  // Adjust the spacing between buttons
+
+                RoundButton {
+                    id: importButton
+                    text: "Import Model"
+                    onClicked: fileDialog.open()
+                    focusPolicy: Qt.NoFocus
+                    padding: 10
+                    background: Rectangle {
+                        radius: 5
+                        color: "purple"
+                    }
+                    contentItem: Text {
+                        text: importButton.text
+                        font.family: "Arial"
+                        font.bold: true
+                        font.pixelSize: 16
+                        color: "white"
+                        anchors.centerIn: parent
+                    }
+                }
+
+                RoundButton {
+                    id: resetButton
+                    text: "Reset 3D view"
+                    onClicked: view3D.resetView()
+                    focusPolicy: Qt.NoFocus
+                    padding: 10
+                    background: Rectangle {
+                        radius: 5
+                        color: "purple"
+                    }
+                    contentItem: Text {
+                        text: resetButton.text
+                        font.family: "Arial"
+                        font.bold: true
+                        font.pixelSize: 16
+                        color: "white"
+                        anchors.centerIn: parent
+                    }
+                }
+
+                RoundButton {
+                    id: visualizeButton
+                    checkable: true
+                    text: "Visualize Bounds"
+                    focusPolicy: Qt.NoFocus
+                    padding: 10
+                    background: Rectangle {
+                        radius: 5
+                        color: "purple"
+                    }
+                    contentItem: Text {
+                        text: visualizeButton.text
+                        font.family: "Arial"
+                        font.bold: true
+                        font.pixelSize: 16
+                        color: "white"
+                        anchors.centerIn: parent
+                    }
+                }
+            }
         }
-        RoundButton {
-            id: resetButton
-            text: "Reset view"
-            onClicked: view3D.resetView()
-            focusPolicy: Qt.NoFocus
-        }
-        RoundButton {
-            id: visualizeButton
-            checkable: true
-            text: "Visualize bounds"
-            focusPolicy: Qt.NoFocus
-        }
-//        RoundButton {
-//            id: instancingButton
-//            checkable: true
-//            text: "Instancing"
-//            focusPolicy: Qt.NoFocus
-//        }
-//        RoundButton {
-//            id: controllerButton
-//            text: helper.orbitControllerEnabled ? "Orbit controller" : "WASD controller"
-//            onClicked: helper.switchController(!helper.orbitControllerEnabled)
-//            focusPolicy: Qt.NoFocus
-//        }
-    }
     FileDialog {
         id: fileDialog
         nameFilters: ["glTF files (*.gltf *.glb)", "All files (*)"]
         onAccepted: importUrl = file
-        Settings {
-            id: fileDialogSettings
-            category: "QtQuick3D.Examples.RuntimeLoader"
-            property alias folder: fileDialog.folder
-        }
+//        Settings {
+//            id: fileDialogSettings
+//            category: "QtQuick3D.Examples.RuntimeLoader"
+//            property alias folder: fileDialog.folder
+//        }
     }
 }

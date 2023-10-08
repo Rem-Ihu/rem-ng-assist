@@ -2095,7 +2095,7 @@ border-radius:2px;</string>
 color: rgb(255, 255, 255);</string>
                  </property>
                  <property name="text">
-                  <string> Welcome back Innovation Team! 
+                  <string> Welcome back! 
  Feel free to roam around 
  and explore all the features, 
  right at your fingertips.   </string>
@@ -2172,7 +2172,7 @@ color: rgb(255, 255, 255);</string>
                    <rect>
                     <x>66</x>
                     <y>130</y>
-                    <width>91</width>
+                    <width>141</width>
                     <height>16</height>
                    </rect>
                   </property>
@@ -2182,7 +2182,7 @@ color: rgb(255, 255, 255);</string>
                    </font>
                   </property>
                   <property name="text">
-                   <string>Coolant Temps</string>
+                   <string>Motor Temperature</string>
                   </property>
                  </widget>
                 </widget>
@@ -2212,7 +2212,7 @@ color: rgb(255, 255, 255);</string>
                    <rect>
                     <x>86</x>
                     <y>130</y>
-                    <width>58</width>
+                    <width>91</width>
                     <height>16</height>
                    </rect>
                   </property>
@@ -2222,7 +2222,7 @@ color: rgb(255, 255, 255);</string>
                    </font>
                   </property>
                   <property name="text">
-                   <string>Voltage</string>
+                   <string>Total Voltage</string>
                   </property>
                  </widget>
                 </widget>
@@ -2265,7 +2265,7 @@ color: rgb(255, 255, 255);</string>
                    <rect>
                     <x>71</x>
                     <y>130</y>
-                    <width>101</width>
+                    <width>141</width>
                     <height>16</height>
                    </rect>
                   </property>
@@ -2275,7 +2275,7 @@ color: rgb(255, 255, 255);</string>
                    </font>
                   </property>
                   <property name="text">
-                   <string>Tire Pressure</string>
+                   <string>Sevcon Temperature</string>
                   </property>
                  </widget>
                 </widget>
@@ -2301,13 +2301,9 @@ color: rgb(255, 255, 255);</string>
                   </font>
                  </property>
                  <property name="text">
-                  <string> Current: 123 Volts 
- Range: 123 Km 
- Last Battery Temp: 23 C 
-
- Model: Hilios 
- Racing Number: 28 
- Battery Percentage: 79%</string>
+                  <string>Model: Helios 
+Racing Number: 28 
+</string>
                  </property>
                 </widget>
                </item>
@@ -2407,6 +2403,9 @@ Dashboard Specs/Analytics</string>
                <height>16777215</height>
               </size>
              </property>
+             <property name="cursor">
+              <cursorShape>PointingHandCursor</cursorShape>
+             </property>
              <property name="mouseTracking">
               <bool>false</bool>
              </property>
@@ -2499,6 +2498,95 @@ border:0px;
         <property name="spacing">
          <number>0</number>
         </property>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="addTabNameButton">
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(255, 0, 0, 0);
+color:white;
+border: 1px solid white;
+border-radius:2px;</string>
+          </property>
+          <property name="text">
+           <string>Add Tab</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="3">
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLineEdit" name="nametab">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color:white;
+color:black;</string>
+          </property>
+          <property name="text">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>Name:int of Charts:name1+:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="ChartsLabel">
+          <property name="maximumSize">
+           <size>
+            <width>200</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="font">
+           <font>
+            <family>Avenir</family>
+            <pointsize>14</pointsize>
+            <bold>false</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: rgba(255, 0, 0, 0);
+color:white;
+border: 1px solid white;
+border-radius:2px;
+margin-top: 10px;</string>
+          </property>
+          <property name="text">
+           <string>Charts</string>
+          </property>
+         </widget>
+        </item>
         <item row="2" column="2">
          <widget class="QPushButton" name="moreInfoButton">
           <property name="minimumSize">
@@ -2521,43 +2609,6 @@ border-radius:2px;</string>
           </property>
           <property name="text">
            <string>More Info</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="3">
-         <spacer name="horizontalSpacer">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item row="2" column="1">
-         <widget class="QPushButton" name="addTabNameButton">
-          <property name="minimumSize">
-           <size>
-            <width>100</width>
-            <height>0</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgba(255, 0, 0, 0);
-color:white;
-border: 1px solid white;
-border-radius:2px;</string>
-          </property>
-          <property name="text">
-           <string>Add Tab</string>
           </property>
          </widget>
         </item>
@@ -2735,7 +2786,7 @@ border:none;</string>
                     <property name="plainText">
                      <string>How to add charts:
 
-You first add your name in the text box, after that you divide the space using &quot;:&quot; and you type the number of charts that you want to view (from 1 - 4). After that you again divide the space using &quot;:&quot; and then you select and copy the name of the variable that you want to view. If you choose 1 graph the text box should look something like this for example &quot;name:1:VELOCITY_ACT&quot;. Finally, the last step is to divide again using &quot;:&quot; and then write with this format &quot;2023/07/02&quot; the date of the chart that you want yo view. 
+You first add your name in the text box, after that you seperate the space using &quot;:&quot; and you type the number of charts that you want to view (from 1 - 4). After that you again divide the space using &quot;:&quot; and then you select and copy the name of the variable that you want to view. If you choose 1 graph the text box should look something like this for example &quot;name:1:VELOCITY_ACT&quot;. Finally, the last step is to seperate again using &quot;:&quot; and then write with this format &quot;2023/07/02&quot; the date of the chart that you want yo view. 
 -----------------------------------------------------------------------------------------
 IMPORTANT!
 If you have selected more than 1 chart to view and your text box looks something like this:
@@ -2772,148 +2823,6 @@ name:4:VELOCITY_ACT:VELOCITY:TORQUE_MAX:TORQUE:2023/07/02:2023/07/02:2023/07/02:
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="Aero">
-           <attribute name="title">
-            <string>Aero</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_7">
-            <property name="leftMargin">
-             <number>0</number>
-            </property>
-            <property name="topMargin">
-             <number>0</number>
-            </property>
-            <property name="rightMargin">
-             <number>0</number>
-            </property>
-            <property name="bottomMargin">
-             <number>0</number>
-            </property>
-            <property name="spacing">
-             <number>0</number>
-            </property>
-            <item row="0" column="0" colspan="2">
-             <widget class="QFrame" name="bigOneChart">
-              <property name="maximumSize">
-               <size>
-                <width>18888</width>
-                <height>18888</height>
-               </size>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">background-color: rgba(255, 0, 0, 0);
-border-radius:30px;
-border:0px;
-</string>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <property name="lineWidth">
-               <number>0</number>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="BSS">
-           <attribute name="title">
-            <string>BSS</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_8">
-            <item row="0" column="0">
-             <widget class="QFrame" name="area_chart">
-              <property name="styleSheet">
-               <string notr="true">background-color: rgba(255, 0, 0, 0);
-border-radius:30px;
-border:0px;
-</string>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="Chassis">
-           <attribute name="title">
-            <string>Chassis</string>
-           </attribute>
-          </widget>
-          <widget class="QWidget" name="DriveTrain">
-           <attribute name="title">
-            <string>Drive Train</string>
-           </attribute>
-          </widget>
-          <widget class="QWidget" name="HighVoltage">
-           <attribute name="title">
-            <string>High Voltage</string>
-           </attribute>
-          </widget>
-          <widget class="QWidget" name="LowVoltage">
-           <attribute name="title">
-            <string>Low Voltage</string>
-           </attribute>
-          </widget>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLineEdit" name="nametab">
-          <property name="maximumSize">
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color:white;
-color:black;</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-          <property name="placeholderText">
-           <string>Name:int of Charts:name1+:</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="0">
-         <widget class="QLabel" name="ChartsLabel">
-          <property name="maximumSize">
-           <size>
-            <width>200</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font">
-           <font>
-            <family>Avenir</family>
-            <pointsize>14</pointsize>
-            <bold>false</bold>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color: rgba(255, 0, 0, 0);
-color:white;
-border: 1px solid white;
-border-radius:2px;
-margin-top: 10px;</string>
-          </property>
-          <property name="text">
-           <string>Charts</string>
-          </property>
          </widget>
         </item>
        </layout>
@@ -7226,8 +7135,8 @@ border:none;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1132</width>
-             <height>2181</height>
+             <width>1200</width>
+             <height>2065</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_19">
@@ -7246,6 +7155,165 @@ border:none;</string>
             <property name="horizontalSpacing">
              <number>0</number>
             </property>
+            <item row="1" column="0">
+             <widget class="QFrame" name="frame_AboutUsTitle">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_21">
+               <item row="0" column="0">
+                <spacer name="horizontalSpacer_AboutUsLeft">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="1">
+                <spacer name="verticalSpacer_6">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="0" column="1">
+                <widget class="QTextBrowser" name="textBrowser_AboutUstTit">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>900</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>500</width>
+                   <height>50</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                   <pointsize>-1</pointsize>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:white;
+background-color: rgba(255, 0, 0, 0);
+border:none;</string>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="sizeAdjustPolicy">
+                  <enum>QAbstractScrollArea::AdjustIgnored</enum>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:25px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:28pt;&quot;&gt;About Us&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <spacer name="horizontalSpacer_AboutUsRight">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="1">
+                <widget class="QTextBrowser" name="textBrowser_3">
+                 <property name="minimumSize">
+                  <size>
+                   <width>900</width>
+                   <height>250</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>900</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <family>Arial</family>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">text-color:white;
+background-color: rgba(255, 0, 0, 0);
+border:none;
+padding-bottom: 0px;
+</string>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:18pt; color:#ffffff;&quot;&gt;	We as REM are a group of ambitious and determined individuals who have come together to participate in a thrilling competition for the construction of an electric racing motorcycle.This team is made up of young and talented students from International Hellenic University in Serres Greece, who are eager to showcase their skills and knowledge in the field of electric vehicle engineering. The members of this team come from diverse backgrounds, but we share a common passion for innovation, sustainability, and high-performance&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:18pt; color:#ffffff;&quot;&gt;technology. Our goal is to design, build and race an electric racing motorcycle that is not only fast and efficient but also environmentally friendly. We aim to push the boundaries of what is possible and demonstrate our abilities as the next generation of engineers, technicians and innovators. With the combined expertise in electrical engineering, mechanics, and computer science, the team is confident that we have the skills and knowledge to create the winning motorcycle. We have been working tirelessly over the past months, conducting research and  testing new technologies. Our team has put in countless hours of hard work and dedication to ensure that this electric racing motorcycle is a true masterpiece. From the design and engineering, to the testing and refinement, we have left no stone unturned in our quest for excellence. With the competition fast approaching, our team is gearing up for the ultimate test of our skills and the electric racing motorcycle’s performance. We are confident that this motorcycle will set the standard for electric racing and demonstrate the potential of this exciting new technology.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="7" column="0">
+             <widget class="QFrame" name="frame_Map">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>100</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_26"/>
+             </widget>
+            </item>
             <item row="4" column="0">
              <widget class="QFrame" name="frame_Photos2019">
               <property name="minimumSize">
@@ -7298,6 +7366,138 @@ border:none;</string>
                   <bool>true</bool>
                  </property>
                 </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QFrame" name="frame_Text">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>750</height>
+               </size>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_25">
+               <item row="1" column="0">
+                <spacer name="horizontalSpacer_5">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Maximum</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>0</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="2">
+                <spacer name="horizontalSpacer_7">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="3" column="1">
+                <widget class="QTextBrowser" name="textBrowser_Text3">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>600</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:white;
+background-color: rgba(255, 0, 0, 0);
+border:none;</string>
+                 </property>
+                 <property name="verticalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="horizontalScrollBarPolicy">
+                  <enum>Qt::ScrollBarAlwaysOff</enum>
+                 </property>
+                 <property name="html">
+                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:18pt;&quot;&gt;Most our members are active students in the International Hellenic University in Serres but we have a group of students participating in our team, that study in the Aristotle University of Thessaloniki and in the Democratius University of Thrace.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <spacer name="verticalSpacer_7">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="1" column="1" rowspan="2">
+                <widget class="QLabel" name="label_OurTeamPhoto">
+                 <property name="minimumSize">
+                  <size>
+                   <width>100</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>700</width>
+                   <height>550</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="pixmap">
+                  <pixmap resource="icons.qrc">:/icons/Group_Photo.jpg</pixmap>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <spacer name="horizontalSpacer_6">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
               </layout>
              </widget>
@@ -7357,285 +7557,6 @@ border:none;</string>
               </layout>
              </widget>
             </item>
-            <item row="1" column="0">
-             <widget class="QFrame" name="frame_AboutUsTitle">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_21">
-               <item row="0" column="2">
-                <spacer name="horizontalSpacer_AboutUsRight">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="0" column="1">
-                <widget class="QTextBrowser" name="textBrowser_AboutUstTit">
-                 <property name="enabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>500</width>
-                   <height>50</height>
-                  </size>
-                 </property>
-                 <property name="font">
-                  <font>
-                   <family>Arial</family>
-                  </font>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color:white;
-background-color: rgba(255, 0, 0, 0);
-border:none;</string>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="horizontalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="sizeAdjustPolicy">
-                  <enum>QAbstractScrollArea::AdjustIgnored</enum>
-                 </property>
-                 <property name="html">
-                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:28pt;&quot;&gt;About Us&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <spacer name="horizontalSpacer_AboutUsLeft">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="1" column="1">
-                <spacer name="verticalSpacer_6">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="7" column="0">
-             <widget class="QFrame" name="frame_Map">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>100</height>
-               </size>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_26"/>
-             </widget>
-            </item>
-            <item row="3" column="0">
-             <widget class="QFrame" name="frame_Text">
-              <property name="minimumSize">
-               <size>
-                <width>0</width>
-                <height>750</height>
-               </size>
-              </property>
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_25">
-               <item row="1" column="0">
-                <spacer name="horizontalSpacer_6">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="2" column="1">
-                <widget class="QTextBrowser" name="textBrowser_Text3">
-                 <property name="enabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>16777215</width>
-                   <height>600</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">color:white;
-background-color: rgba(255, 0, 0, 0);
-border:none;</string>
-                 </property>
-                 <property name="verticalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="horizontalScrollBarPolicy">
-                  <enum>Qt::ScrollBarAlwaysOff</enum>
-                 </property>
-                 <property name="html">
-                  <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:12pt;&quot;&gt;Most our members are active students in International Hellenic University in Serres but we also got a group of member that study in Aristotle University of Thessaloniki and in Democratius University of Thrace&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <spacer name="horizontalSpacer_5">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeType">
-                  <enum>QSizePolicy::Maximum</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>0</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="3" column="1">
-                <spacer name="verticalSpacer_7">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="0" column="1" rowspan="2">
-                <widget class="QLabel" name="label_OurTeamPhoto">
-                 <property name="minimumSize">
-                  <size>
-                   <width>100</width>
-                   <height>0</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>700</width>
-                   <height>550</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="pixmap">
-                  <pixmap resource="icons.qrc">:/icons/Group_Photo.jpg</pixmap>
-                 </property>
-                 <property name="scaledContents">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
-                <spacer name="horizontalSpacer_7">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-              </layout>
-             </widget>
-            </item>
-            <item row="2" column="0">
-             <widget class="QTextBrowser" name="textBrowser_3">
-              <property name="minimumSize">
-               <size>
-                <width>500</width>
-                <height>360</height>
-               </size>
-              </property>
-              <property name="font">
-               <font>
-                <family>Arial</family>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">text-color:white;
-background-color: rgba(255, 0, 0, 0);
-border:none;</string>
-              </property>
-              <property name="verticalScrollBarPolicy">
-               <enum>Qt::ScrollBarAlwaysOff</enum>
-              </property>
-              <property name="html">
-               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Arial'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;We as REM are a group of ambitious and determined individuals who have come together to participate in a thrilling competition for the construction of an electric racing motorcycle.This team is made up of young and talented students from International Hellenic University in Serres Greece, who are eager to showcase their skills and knowledge in the field of electric vehicle engineering. The members of this team come from diverse backgrounds, but we share a common passion for innovation, sustainability, and high-performance&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;technology.Our goal is to design, build and race an electric racing motorcycle that is not only fast and efficient but also environmentally friendly. We aim to push the boundaries of what is possible and demonstrate our abilities as the next generation of engineers, technicians and innovators.With the combined expertise in electrical engineering, mechanics, and computer science, the team is confident that we have the skills and knowledge to create the winning motorcycle. We have been working tirelessly over the past months, conducting research and  testing new technologies.Our team has put in countless hours of hard work and dedication to ensure that this electric racing motorcycle is a true masterpiece. From the design and engineering, to the testing and refinement, we have left no stone unturned in our quest for excellence.With the competition fast approaching, our team is gearing up for the ultimate test of our skills and the electric racing motorcycle’s performance. We are confident that this motorcycle will set the standard for electric racing and demonstrate the potential of this exciting new technology.&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;The competition promises to be intense, with teams from universities across the world participating. But our  team is undaunted, we are determined to bring home the trophy and make a big mark on the world of electric racing.&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;In conclusion, our electric racing motorcycle is a testament to the power of innovation and the drive to create a better and more sustainable future.&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Segoe UI'; font-size:14pt; color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-             </widget>
-            </item>
            </layout>
           </widget>
          </widget>
@@ -7661,7 +7582,7 @@ border:none;</string>
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>1176</width>
+             <width>1020</width>
              <height>1672</height>
             </rect>
            </property>
