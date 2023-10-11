@@ -50,6 +50,7 @@ namespace _RealTime{
     QString nameSetRealTime;
     bool test = false;
     QQuickWindow *window;
+    int gauge_val[3];
 }
 
 namespace myNamespace{
@@ -138,9 +139,51 @@ int main(int argc, char *argv[])
 
         myNamespace::first_realtime_answer = atof(first_number.c_str()); // Convert to float
         myNamespace::second_realtime_answer = atof(second_number.c_str()); // Also
-        std::cout << std::setprecision(12) << myNamespace::first_realtime_answer << "  |||  " << std::setprecision(8) << myNamespace::second_realtime_answer << std::endl; //print output with float precision (counting the decimal numbers also) 12
+//        std::cout << std::setprecision(12) << myNamespace::first_realtime_answer << "  |||  " << std::setprecision(8) << myNamespace::second_realtime_answer << std::endl; //print output with float precision (counting the decimal numbers also) 12
     });
 
+    // Define a counter to keep track of received values
+    int valueCounter = 0;
+
+    // Connect the timeout signal of the timer
+    QObject::connect(&realtime_timer, &QTimer::timeout, [&]() {
+        if (valueCounter >= 3) {
+            // If we've received all 3 values, disconnect the timer to stop further requests
+            realtime_timer.disconnect();
+            return;
+        }
+
+        QString url;
+        switch (valueCounter) {
+        case 0:
+            url = "https://realtimeqttest-default-rtdb.europe-west1.firebasedatabase.app/TEMP_MOTOR.json";
+            break;
+        case 1:
+            url = "https://realtimeqttest-default-rtdb.europe-west1.firebasedatabase.app/TEMP_SEVCON.json";
+            break;
+        case 2:
+            url = "https://realtimeqttest-default-rtdb.europe-west1.firebasedatabase.app/TOTAL_VOLTAGE.json";
+            break;
+        }
+
+        realtime_request.setUrl(QUrl(url));
+
+        QNetworkReply *realtime_reply = realtime_manager.get(realtime_request);
+        QEventLoop realtime_loop;
+        QObject::connect(realtime_reply, &QNetworkReply::finished, &realtime_loop, &QEventLoop::quit);
+        realtime_loop.exec();
+
+        QString realtime_Qstring = realtime_reply->readAll();
+        qDebug() << realtime_Qstring;
+        std::string realtime_C_string = realtime_Qstring.toStdString();
+        std::istringstream realtime_stream(realtime_C_string);
+        std::string first_number, second_number;
+        realtime_stream >> first_number >> second_number;
+        second_number = second_number.c_str();
+        second_number = second_number.substr(0, second_number.size() - 1);
+        _RealTime::gauge_val[valueCounter] = stoi(second_number);
+        valueCounter++; // Increment the counter
+    });
 
 
     realtime_thread.start(); // Start the thread
@@ -152,8 +195,6 @@ int main(int argc, char *argv[])
 
 
     loginWindow.show();
-
-
 
 
     return app.exec();
