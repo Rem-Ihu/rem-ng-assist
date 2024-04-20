@@ -11,6 +11,7 @@
 #include <QCoreApplication>
 #include <QNetworkAccessManager>
 #include <QNetworkRequest>
+#include <string>
 #include <QNetworkReply>
 #include <QEventLoop>
 #include <QDebug>
@@ -123,16 +124,17 @@ int main(int argc, char *argv[])
         QEventLoop realtime_loop; // Creating an event loop to process the response
         QAbstractSocket::connect(realtime_reply, &QNetworkReply::finished, &realtime_loop, &QEventLoop::quit); // If there is data it then stops the connection
         realtime_loop.exec();
-        QString realtime_Qstring = realtime_reply->readAll(); // Convert to QString
-        std::string realtime_C_string = realtime_Qstring.toStdString(); // Convert to regural C++ string
+//        QString realtime_Qstring = realtime_reply->readAll(); // Convert to QString
+//        std::string realtime_C_string = realtime_Qstring.toStdString(); // Convert to regural C++ string
 
 
-        realtime_C_string.erase(std::remove_if(realtime_C_string.begin(), realtime_C_string.end(), [](char c){return !std::isdigit(c) && c != '.' && c != ' ';}), realtime_C_string.end()); // Removing '"' and holding on to '.' for it to be converted to float
+//        realtime_C_string.erase(std::remove_if(realtime_C_string.begin(), realtime_C_string.end(), [](char c){return !std::isdigit(c) && c != '.' && c != ' ';}), realtime_C_string.end()); // Removing '"' and holding on to '.' for it to be converted to float
 
         std::string first_number,second_number; // Defining the first and the second numbers
-
-        std::stringstream realtime_stringstream(realtime_C_string);
-        realtime_stringstream >> first_number >> second_number; // Spliting the string on space
+        second_number = realtime_reply->readAll();
+        first_number = second_number;
+//        std::stringstream realtime_stringstream(realtime_C_string);
+//        realtime_stringstream >> first_number >> second_number; // Spliting the string on space
 
 
 
@@ -142,48 +144,6 @@ int main(int argc, char *argv[])
 //        std::cout << std::setprecision(12) << myNamespace::first_realtime_answer << "  |||  " << std::setprecision(8) << myNamespace::second_realtime_answer << std::endl; //print output with float precision (counting the decimal numbers also) 12
     });
 
-    // Define a counter to keep track of received values
-    int valueCounter = 0;
-
-    // Connect the timeout signal of the timer
-    QObject::connect(&realtime_timer, &QTimer::timeout, [&]() {
-        if (valueCounter >= 3) {
-            // If we've received all 3 values, disconnect the timer to stop further requests
-            realtime_timer.disconnect();
-            return;
-        }
-
-        QString url;
-        switch (valueCounter) {
-        case 0:
-            url = "https://realtimeqttest-default-rtdb.europe-west1.firebasedatabase.app/TEMP_MOTOR.json";
-            break;
-        case 1:
-            url = "https://realtimeqttest-default-rtdb.europe-west1.firebasedatabase.app/TEMP_SEVCON.json";
-            break;
-        case 2:
-            url = "https://realtimeqttest-default-rtdb.europe-west1.firebasedatabase.app/TOTAL_VOLTAGE.json";
-            break;
-        }
-
-        realtime_request.setUrl(QUrl(url));
-
-        QNetworkReply *realtime_reply = realtime_manager.get(realtime_request);
-        QEventLoop realtime_loop;
-        QObject::connect(realtime_reply, &QNetworkReply::finished, &realtime_loop, &QEventLoop::quit);
-        realtime_loop.exec();
-
-        QString realtime_Qstring = realtime_reply->readAll();
-        qDebug() << realtime_Qstring;
-        std::string realtime_C_string = realtime_Qstring.toStdString();
-        std::istringstream realtime_stream(realtime_C_string);
-        std::string first_number, second_number;
-        realtime_stream >> first_number >> second_number;
-        second_number = second_number.c_str();
-        second_number = second_number.substr(0, second_number.size() - 1);
-        _RealTime::gauge_val[valueCounter] = stoi(second_number);
-        valueCounter++; // Increment the counter
-    });
 
 
     realtime_thread.start(); // Start the thread

@@ -685,8 +685,623 @@ font-size: 20pt;</string>
       </layout>
      </widget>
      <widget class="QWidget" name="battery_page">
-      <layout class="QGridLayout" name="gridLayout_31">
-       <item row="1" column="1">
+      <layout class="QGridLayout" name="gridLayout_19">
+       <item row="2" column="3">
+        <widget class="QFrame" name="battery_protect_error_frame">
+         <property name="minimumSize">
+          <size>
+           <width>329</width>
+           <height>221</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>329</width>
+           <height>221</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(255, 255, 255);
+color:white;
+border-radius:5px;
+font-size: 12pt;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_7">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="battery_flags">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Protection Flags LSB</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QPushButton" name="battery_charging">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Last Charging Error</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="battery_flags_2">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Protection Flags MSB</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QFrame" name="battery_signal_frame_2">
+         <property name="minimumSize">
+          <size>
+           <width>329</width>
+           <height>221</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>329</width>
+           <height>221</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(255, 255, 255);
+color:white;
+border-radius:5px;
+font-size: 12pt;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_11">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="battery_input_2">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Motor Temperature</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="battery_input_5">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Motor Temp. EST</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QPushButton" name="battery_input_3">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Max Motor Temp.</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QPushButton" name="battery_input_4">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Sevcon Temperature</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" colspan="2">
+           <widget class="QPushButton" name="battery_input_12">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Battery Current</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <spacer name="battery_left_spacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="5" column="3">
+        <widget class="QFrame" name="battery_signal_frame_4">
+         <property name="minimumSize">
+          <size>
+           <width>329</width>
+           <height>221</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>329</width>
+           <height>221</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(255, 255, 255);
+color:white;
+border-radius:5px;
+font-size: 12pt;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_16">
+          <item row="2" column="0">
+           <widget class="QPushButton" name="battery_input_14">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Battery Voltage</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="battery_input_10">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Velocity</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QPushButton" name="battery_input_11">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Velocity ACT</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QPushButton" name="battery_battery">
+         <property name="minimumSize">
+          <size>
+           <width>331</width>
+           <height>61</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>20</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:#461e46;
+color:white;
+border-radius:5px;
+font-size: 20pt;</string>
+         </property>
+         <property name="text">
+          <string>Battery Parameters</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="3">
+        <widget class="QPushButton" name="battery_error_protect">
+         <property name="minimumSize">
+          <size>
+           <width>331</width>
+           <height>61</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <family>Arial</family>
+           <pointsize>20</pointsize>
+           <bold>true</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:#461e46;
+color:white;
+border-radius:5px;
+font-size: 20pt;</string>
+         </property>
+         <property name="text">
+          <string>Error/Protection Parameters</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QFrame" name="battery_signal_frame">
+         <property name="minimumSize">
+          <size>
+           <width>329</width>
+           <height>221</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>329</width>
+           <height>221</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color:rgb(255, 255, 255);
+color:white;
+border-radius:5px;
+font-size: 12pt;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_8">
+          <item row="1" column="0">
+           <widget class="QPushButton" name="battery_output">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Output Signals</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QPushButton" name="battery_input">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Input Signals</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="1" column="2">
         <widget class="QPushButton" name="battery_signal">
          <property name="minimumSize">
           <size>
@@ -889,490 +1504,7 @@ font-size: 14pt;</string>
          </layout>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QPushButton" name="battery_battery">
-         <property name="minimumSize">
-          <size>
-           <width>331</width>
-           <height>61</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>20</pointsize>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color:#461e46;
-color:white;
-border-radius:5px;
-font-size: 20pt;</string>
-         </property>
-         <property name="text">
-          <string>Battery Parameters</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0">
-        <spacer name="battery_left_spacer">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>40</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="2" column="1">
-        <widget class="QFrame" name="battery_signal_frame">
-         <property name="minimumSize">
-          <size>
-           <width>329</width>
-           <height>221</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>329</width>
-           <height>221</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color:rgb(255, 255, 255);
-color:white;
-border-radius:5px;
-font-size: 12pt;</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_8">
-          <item row="1" column="0">
-           <widget class="QPushButton" name="battery_output">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:#181818;
-color:white;
-border-radius:5px;
-font-size: 14pt;</string>
-            </property>
-            <property name="text">
-             <string>Output Signals</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QPushButton" name="battery_input">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="sizeIncrement">
-             <size>
-              <width>0</width>
-              <height>100</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:#181818;
-color:white;
-border-radius:5px;
-font-size: 14pt;</string>
-            </property>
-            <property name="text">
-             <string>Input Signals</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QFrame" name="battery_protect_error_frame">
-         <property name="minimumSize">
-          <size>
-           <width>329</width>
-           <height>221</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>329</width>
-           <height>221</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color:rgb(255, 255, 255);
-color:white;
-border-radius:5px;
-font-size: 12pt;</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_7">
-          <item row="0" column="0">
-           <widget class="QPushButton" name="battery_flags">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="sizeIncrement">
-             <size>
-              <width>0</width>
-              <height>100</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:#181818;
-color:white;
-border-radius:5px;
-font-size: 14pt;</string>
-            </property>
-            <property name="text">
-             <string>Protection Flags LSB</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QPushButton" name="battery_charging">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:#181818;
-color:white;
-border-radius:5px;
-font-size: 14pt;</string>
-            </property>
-            <property name="text">
-             <string>Last Charging Error</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QPushButton" name="battery_flags_2">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="sizeIncrement">
-             <size>
-              <width>0</width>
-              <height>100</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:#181818;
-color:white;
-border-radius:5px;
-font-size: 14pt;</string>
-            </property>
-            <property name="text">
-             <string>Protection Flags MSB</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QPushButton" name="battery_error_protect">
-         <property name="minimumSize">
-          <size>
-           <width>331</width>
-           <height>61</height>
-          </size>
-         </property>
-         <property name="font">
-          <font>
-           <family>Arial</family>
-           <pointsize>20</pointsize>
-           <bold>true</bold>
-          </font>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color:#461e46;
-color:white;
-border-radius:5px;
-font-size: 20pt;</string>
-         </property>
-         <property name="text">
-          <string>Error/Protection Parameters</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="0">
-        <widget class="QFrame" name="battery_signal_frame_2">
-         <property name="minimumSize">
-          <size>
-           <width>329</width>
-           <height>221</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>329</width>
-           <height>221</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true">background-color:rgb(255, 255, 255);
-color:white;
-border-radius:5px;
-font-size: 12pt;</string>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_11">
-          <item row="0" column="0">
-           <widget class="QPushButton" name="battery_input_2">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="sizeIncrement">
-             <size>
-              <width>0</width>
-              <height>100</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:#181818;
-color:white;
-border-radius:5px;
-font-size: 14pt;</string>
-            </property>
-            <property name="text">
-             <string>Motor Temperature</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1">
-           <widget class="QPushButton" name="battery_input_5">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="sizeIncrement">
-             <size>
-              <width>0</width>
-              <height>100</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:#181818;
-color:white;
-border-radius:5px;
-font-size: 14pt;</string>
-            </property>
-            <property name="text">
-             <string>Motor Temp. EST</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QPushButton" name="battery_input_3">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="sizeIncrement">
-             <size>
-              <width>0</width>
-              <height>100</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:#181818;
-color:white;
-border-radius:5px;
-font-size: 14pt;</string>
-            </property>
-            <property name="text">
-             <string>Max Motor Temp.</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="1">
-           <widget class="QPushButton" name="battery_input_4">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="sizeIncrement">
-             <size>
-              <width>0</width>
-              <height>100</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:#181818;
-color:white;
-border-radius:5px;
-font-size: 14pt;</string>
-            </property>
-            <property name="text">
-             <string>Sevcon Temperature</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0" colspan="2">
-           <widget class="QPushButton" name="battery_input_12">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="sizeIncrement">
-             <size>
-              <width>0</width>
-              <height>100</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:#181818;
-color:white;
-border-radius:5px;
-font-size: 14pt;</string>
-            </property>
-            <property name="text">
-             <string>Battery Current</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="3" column="1">
+       <item row="5" column="2">
         <widget class="QFrame" name="battery_signal_frame_3">
          <property name="minimumSize">
           <size>
@@ -1399,40 +1531,6 @@ font-size: 12pt;</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout_15">
-          <item row="0" column="1">
-           <widget class="QPushButton" name="battery_input_6">
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="sizeIncrement">
-             <size>
-              <width>0</width>
-              <height>100</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>Arial</family>
-              <pointsize>14</pointsize>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>PointingHandCursor</cursorShape>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">background-color:#181818;
-color:white;
-border-radius:5px;
-font-size: 14pt;</string>
-            </property>
-            <property name="text">
-             <string>Torque</string>
-            </property>
-           </widget>
-          </item>
           <item row="2" column="0">
            <widget class="QPushButton" name="battery_input_9">
             <property name="minimumSize">
@@ -1465,6 +1563,40 @@ font-size: 14pt;
             </property>
             <property name="text">
              <string>Max Torque</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="battery_input_6">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Torque</string>
             </property>
            </widget>
           </item>
@@ -1574,17 +1706,17 @@ font-size: 14pt;</string>
         </widget>
        </item>
        <item row="3" column="2">
-        <widget class="QFrame" name="battery_signal_frame_4">
+        <widget class="QFrame" name="battery_signal_frame_5">
          <property name="minimumSize">
           <size>
-           <width>329</width>
-           <height>221</height>
+           <width>0</width>
+           <height>140</height>
           </size>
          </property>
          <property name="maximumSize">
           <size>
            <width>329</width>
-           <height>221</height>
+           <height>180</height>
           </size>
          </property>
          <property name="styleSheet">
@@ -1599,13 +1731,19 @@ font-size: 12pt;</string>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QGridLayout" name="gridLayout_16">
-          <item row="2" column="0">
-           <widget class="QPushButton" name="battery_input_14">
+         <layout class="QGridLayout" name="gridLayout_17">
+          <item row="0" column="2">
+           <widget class="QPushButton" name="battery_input_17">
             <property name="minimumSize">
              <size>
-              <width>0</width>
+              <width>75</width>
               <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>16777215</height>
              </size>
             </property>
             <property name="sizeIncrement">
@@ -1630,12 +1768,12 @@ border-radius:5px;
 font-size: 14pt;</string>
             </property>
             <property name="text">
-             <string>Battery Voltage</string>
+             <string>Y Acc Value</string>
             </property>
            </widget>
           </item>
           <item row="0" column="0">
-           <widget class="QPushButton" name="battery_input_10">
+           <widget class="QPushButton" name="battery_input_15">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1664,12 +1802,182 @@ border-radius:5px;
 font-size: 14pt;</string>
             </property>
             <property name="text">
-             <string>Velocity</string>
+             <string>X Value</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QPushButton" name="battery_output_5">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>70</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Temp</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QPushButton" name="battery_output_4">
+            <property name="minimumSize">
+             <size>
+              <width>75</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Z Acc Value</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QPushButton" name="battery_output_3">
+            <property name="minimumSize">
+             <size>
+              <width>75</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>80</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>X Acc Value</string>
             </property>
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QPushButton" name="battery_input_11">
+           <widget class="QPushButton" name="battery_output_2">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>70</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Y Value</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QPushButton" name="battery_input_19">
+            <property name="minimumSize">
+             <size>
+              <width>70</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Humid</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QPushButton" name="battery_input_16">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -1698,7 +2006,41 @@ border-radius:5px;
 font-size: 14pt;</string>
             </property>
             <property name="text">
-             <string>Velocity ACT</string>
+             <string>Z Value</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QPushButton" name="battery_input_18">
+            <property name="minimumSize">
+             <size>
+              <width>30</width>
+              <height>40</height>
+             </size>
+            </property>
+            <property name="sizeIncrement">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>14</pointsize>
+             </font>
+            </property>
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color:#181818;
+color:white;
+border-radius:5px;
+font-size: 14pt;</string>
+            </property>
+            <property name="text">
+             <string>Pot</string>
             </property>
            </widget>
           </item>

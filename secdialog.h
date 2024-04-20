@@ -115,6 +115,24 @@ private slots:
 
     void on_battery_input_12_clicked();
 
+    void on_battery_input_15_clicked();
+
+    void on_battery_output_2_clicked();
+
+    void on_battery_input_19_clicked();
+
+    void on_battery_input_16_clicked();
+
+    void on_battery_output_3_clicked();
+
+    void on_battery_output_5_clicked();
+
+    void on_battery_input_17_clicked();
+
+    void on_battery_output_4_clicked();
+
+    void on_battery_input_18_clicked();
+
 private:
     Ui::secDialog *ui;
 

@@ -175,7 +175,7 @@ MainWindow::MainWindow(QWidget *parent)
     realtime_chart->setTitleFont(titleFont); // Set the font of the chart title
     realtime_chart->createDefaultAxes(); // Create the axes
     QValueAxis *axisY = qobject_cast<QValueAxis *>(realtime_chart->axes(Qt::Vertical).first()); // Get the y-axis
-    axisY->setRange(0, 300); // Set the range of values of the y-axis
+    axisY->setRange(-5000, 5000); // Set the range of values of the y-axis
     axisY->setTickCount(10); // Set the number of tick intervals on the y-axis
     realtime_chart->setTitleBrush(QBrush(Qt::white)); // Customize the color of the title in the chart
     realtime_chart->setBackgroundBrush(QBrush(Qt::transparent)); // Customize the color of the background in the chart
