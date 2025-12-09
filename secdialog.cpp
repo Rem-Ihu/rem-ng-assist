@@ -99,6 +99,7 @@ void secDialog::on_pushButton_5_clicked()
 void secDialog::on_average_cell_bal_clicked()
 {
     _RealTime::nameSetRealTime = "AV_CELL_BALANCING";
+           _RealTime::nameSetRealTime = "test/x";
     _RealTime::setRealTime = true;
 }
 
@@ -224,7 +225,7 @@ void secDialog::on_battery_status_clicked()
 
 void secDialog::on_battery_input_clicked()
 {
-    _RealTime::nameSetRealTime = "INPUT_SIGNALS";
+    _RealTime::nameSetRealTime = "Real_Time_Values";
     _RealTime::setRealTime = true;
 }
 
@@ -344,6 +345,69 @@ void secDialog::on_battery_input_14_clicked()
 void secDialog::on_battery_input_12_clicked()
 {
     _RealTime::nameSetRealTime = "CURRENT_BATT";
+    _RealTime::setRealTime = true;
+}
+
+
+void secDialog::on_battery_input_15_clicked()
+{
+    _RealTime::nameSetRealTime = "test/x";
+    _RealTime::setRealTime = true;
+}
+
+
+void secDialog::on_battery_output_2_clicked()
+{
+    _RealTime::nameSetRealTime = "test/y";
+    _RealTime::setRealTime = true;
+}
+
+
+void secDialog::on_battery_input_19_clicked()
+{
+    _RealTime::nameSetRealTime = "test/humidity";
+    _RealTime::setRealTime = true;
+}
+
+
+void secDialog::on_battery_input_16_clicked()
+{
+    _RealTime::nameSetRealTime = "test/z";
+    _RealTime::setRealTime = true;
+}
+
+
+void secDialog::on_battery_output_3_clicked()
+{
+    _RealTime::nameSetRealTime = "test/x_acceleration";
+    _RealTime::setRealTime = true;
+}
+
+
+void secDialog::on_battery_output_5_clicked()
+{
+    _RealTime::nameSetRealTime = "test/temperature";
+    _RealTime::setRealTime = true;
+}
+
+
+void secDialog::on_battery_input_17_clicked()
+{
+    _RealTime::nameSetRealTime = "test/y_acceleration";
+    _RealTime::setRealTime = true;
+}
+
+
+void secDialog::on_battery_output_4_clicked()
+{
+    _RealTime::nameSetRealTime = "test/z_acceleration";
+    _RealTime::setRealTime = true;
+}
+
+
+void secDialog::on_battery_input_18_clicked()
+{
+    _RealTime::nameSetRealTime = "test/potentiometer";
     _RealTime::setRealTime = true;
 }
 
